@@ -20,21 +20,22 @@ The entire collection is hosted statically via **GitHub Pages**, providing zero-
 | **4. Āyurveda (आयुर्वेदः • ఆయుర్వేదము)** | 🟢 Live | Science of Life: Tridoṣa, Pañca-Mahābhūta, Prakṛti, Tri-Guṇa, Agni & Āma, Ṣaḍ-Rasa, Ṛtucaryā, Dinacaryā | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Ayurveda/) | [`./Ayurveda`](Ayurveda/) |
 | **5. Pañcāṅga (पञ्चाङ्गम् • పంచాంగము)** | 🟢 Live | Five Limbs of Time, Dynamic 60-Year Jovian Cycle, Kāla-Māna Units Converter & precision Muhūrtas | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Panchanga/) | [`./Panchanga`](Panchanga/) |
 | **6. Chandaḥ-śāstra (छन्दःशास्त्रम् • ఛందశ్శాస్త్రము)** | 🟢 Live | World's earliest binary system, Meru Prastāra (Pascal's Triangle), Live Metre Scanner & Cognitive Neuroscience of Mantras | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Chandas/) | [`./Chandas`](Chandas/) |
+| **7. Vāstu-śāstra (వాస్తు శాస్త్రము • वास्तुशास्त्रम्)** | 🟢 Live | Sri Gouru Thirupati Reddy's 16-Zone Matrix, Vīthi Śūla (Road Thrusts), Gunakam 90° Set-Square & Layout Diagnostic | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Vaastu/) | [`./Vaastu`](Vaastu/) |
 
 ---
 
 ## 🏛️ Gateway Highlights: Central Portal (`index.html`)
-The root gateway serves as an integrated, living entry point to all six computational laboratories:
+The root gateway serves as an integrated, living entry point to all seven computational laboratories:
 - **Living Vedic Chronometry & Circadian Ephemeris Dashboard**:
   - **Live Digital Clock**: Real-time local time tracking.
   - **🪐 Bṛhaspati Samvatsara (సంవత్సరం)**: Dynamically calculated active 60-year Jovian year (e.g. *38. Krodhin 2024–25* or *40. Parābhava 2026–27*) factoring in annual Ugadi transitions.
   - **🌙 Lunar Tithi & Pakṣa (తిథి)**: Real-time lunar day phase and elapsed percentage computed via Sūrya Siddhānta celestial revolutions.
   - **✨ Moon Nakṣatra & Vāra (నక్షత్రం & వారం)**: Current lunar mansion and governing planetary weekday lord.
   - **🌿 Circadian Bio-Dosha (ఆయుర్వేద జీవ హోర)**: Live indicator of your current physiological state (**Vāta, Pitta, or Kapha**) based on local hours, with lifestyle guidance.
-- **Unified Knowledge Synthesis (షట్-శాస్త్ర సమన్వయం • षड्दर्शन समन्वयः)**:
-  - Six interconnected cross-disciplinary cards illustrating the seamless union between Astronomy, Linguistics, Prosody, Chronometry, Combinatorics, and Cellular Biology.
+- **Unified Knowledge Synthesis (సప్త-శాస్త్ర సమన్వయం • सप्तशास्त्र समन्वयः)**:
+  - Seven interconnected cross-disciplinary cards illustrating the seamless union between Astronomy, Linguistics, Prosody, Chronometry, Combinatorics, Cellular Biology, and Sacred Architectural Physics.
 - **Living Wisdom Spotlight (సూక్తి సుధ • सुभाषितम्)**:
-  - Interactive selector allowing users to cycle through iconic classical aphorisms across all 6 fields in Devanagari Sanskrit, native Telugu, and English scientific commentary.
+  - Interactive selector allowing users to cycle through iconic classical aphorisms across all 7 fields in Devanagari Sanskrit, native Telugu, and English scientific commentary.
 - **Bilingual & Vector Polish**: Standalone custom SVG vector favicons and native Telugu (`Noto Sans Telugu`) translations alongside Devanagari across every project.
 
 ---
@@ -144,6 +145,20 @@ Acharya Pingala's Binary Combinatorics, Meru Prastāra & Cognitive Neuroscience:
   - **Sacred Harmonic Chime Generator**: Interactive Web Audio API simulator for 432 Hz, 108 Hz, and 528 Hz tones.
 
 👉 [**Launch Chandaḥ-śāstra**](https://nikhilgajam.github.io/AncientWisdom/Chandas/) • [Read Documentation](./Chandas/README.md)
+
+---
+
+### 7. [Vāstu-śāstra (వాస్తు శాస్త్రము • वास्तुशास्त्रम्)](./Vaastu/)
+The architectural science of spatial equilibrium, grounded in empirical geometry and physics:
+- **Authoritative Source**: Based strictly on the definitive work *“The Secret World of Vaastu” (వాస్తు శాస్త్ర వాస్తవాలు)* by **Sri Gouru Thirupati Reddy (గౌరు తిరుపతిరెడ్డి)**, Proddatur, A.P.
+- **The 16-Zone Perimeter Matrix (Vaasthu at a Glance)**: Complete division of residential and commercial boundaries into Exalted (Uccha • ఉచ్ఛ) and Exiguous (Neecha • నీచ) sectors across the 4 cardinal directions, 4 elemental corners (*Eshanya, Agneya, Niruthi, Vayavya*), and the weightless *Brahmasthana*.
+- **Vīthi Śūla (Street Focus & Road Thrust) Simulator**: Interactive physics engine analyzing 4 Beneficent incoming roads (ENE, NNE, SSE, WNW) versus 4 Baneful road thrusts (ESE, SSW "cobra bite", WSW, NNW) with Thirupati Reddy's exact architectural shielding remedies.
+- **Set-Square Principle (Gunakam / గుణకం)**: Mathematical proof of why 90° right angles are non-negotiable; demonstrates how to carve rectangular boundaries and isolate defective triangular corner protrusions outside the compound.
+- **Interactive House Layout Validator & Diagnostic**: Computes a real-time Vaastu Compliance Index (0–100%) across 8 structural variables (Facing, Borewell/Sump, Kitchen, Master Bedroom, Overhead Tank, Septic Tank, Staircase, Site Slope) and flags specific doshas with authoritative remedies.
+- **Industrial & Commercial Vaastu Blueprint**: Complete factory zoning layout (heavy machinery in SW, HT transformers/boilers in SE, raw materials in SW, dispatch in NW, administration in North/East) and forensic disaster case studies (Bhopal Union Carbide and Bhagyanagar Chlorides).
+- **Treasury of Rhyming Golden Proverbs**: Searchable, categorized repository of the author's famous rhyming aphorisms with full Telugu verses and architectural commentary.
+
+👉 [**Launch Vāstu-śāstra**](https://nikhilgajam.github.io/AncientWisdom/Vaastu/) • [Read Documentation](./Vaastu/README.md)
 
 ---
 

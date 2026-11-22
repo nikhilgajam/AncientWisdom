@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#311042"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="2.5"/>
+
+  <!-- Vastu Grid 3x3 mandala lines -->
+  <g stroke="rgba(245, 158, 11, 0.25)" stroke-width="1.2" stroke-dasharray="2,2">
+    <rect x="24" y="24" width="80" height="80" fill="none"/>
+    <line x1="50.6" y1="24" x2="50.6" y2="104"/>
+    <line x1="77.3" y1="24" x2="77.3" y2="104"/>
+    <line x1="24" y1="50.6" x2="104" y2="50.6"/>
+    <line x1="24" y1="77.3" x2="104" y2="77.3"/>
+  </g>
+
+  <!-- Cardinal Compass Cross -->
+  <line x1="64" y1="12" x2="64" y2="116" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="12" y1="64" x2="116" y2="64" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Northeast - Water Aura (Cyan) -->
+  <circle cx="94" cy="34" r="7" fill="url(#cyanGrad)" opacity="0.8"/>
+  <!-- Southeast - Fire Aura (Orange) -->
+  <circle cx="94" cy="94" r="7" fill="#f97316" opacity="0.8"/>
+  <!-- Southwest - Earth Aura (Gold/Brown) -->
+  <circle cx="34" cy="94" r="7" fill="#d97706" opacity="0.8"/>
+  <!-- Northwest - Air Aura (Emerald) -->
+  <circle cx="34" cy="34" r="7" fill="#10b981" opacity="0.8"/>
+
+  <!-- Outer 16-point ring -->
+  <circle cx="64" cy="64" r="44" fill="none" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1"/>
+  <circle cx="64" cy="64" r="28" fill="url(#centerGlow)"/>
+
+  <!-- Center Brahmasthana Square -->
+  <rect x="52" y="52" width="24" height="24" fill="rgba(15, 23, 42, 0.9)" stroke="url(#goldGrad)" stroke-width="1.5" rx="3"/>
+
+  <!-- Central Telugu / Devanagari "వా" / "V" glyph -->
+  <text x="64" y="69" font-family="'Noto Sans Telugu', 'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="bold" fill="url(#goldGrad)" text-anchor="middle">వా</text>
+
+  <!-- Compass Cardinal Letters N, E, S, W -->
+  <text x="64" y="21" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#67e8f9" text-anchor="middle">N</text>
+  <text x="114" y="67" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#fef08a" text-anchor="middle">E</text>
+  <text x="64" y="114" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#f97316" text-anchor="middle">S</text>
+  <text x="14" y="67" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#10b981" text-anchor="middle">W</text>
+</svg>

@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vāstu-śāstra (వాస్తుశాస్త్రము • वास्तुशास्त्रమ్) — The Secret World of Vaastu | Sri Gouru Thirupati Reddy</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .temple-tabs-wrap {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .temple-tab-btn {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 0.55rem 0.95rem;
+      color: var(--text-main);
+      font-size: 0.94rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .temple-tab-btn:hover {
+      background: rgba(45, 60, 85, 0.9);
+      border-color: var(--cyan-accent);
+    }
+    .temple-tab-btn.active {
+      background: rgba(6, 182, 212, 0.2);
+      border-color: var(--cyan-bright);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.35);
+    }
+  </style>
+</head>
+<body data-lang="dual">
+
+  <!-- Sticky Header with Hamburger Navigation (Works for both Mobile & Desktop) -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="vaastu-icon">🏛️</div>
+        <div class="logo-text">
+          <h1>Vāstu-śāstra</h1>
+          <span>వాస్తు శాస్త్రము • Secret World of Vaastu</span>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-segmented" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-opt active" data-lang-val="dual" title="Bilingual View">
+            <span class="lang-full">🌐 Dual</span>
+            <span class="lang-short">Dual</span>
+          </button>
+          <button type="button" class="lang-opt" data-lang-val="telugu" title="తెలుగు మాత్రమే">
+            <span class="lang-full">తెలుగు</span>
+            <span class="lang-short">తెలుగు</span>
+          </button>
+          <button type="button" class="lang-opt" data-lang-val="english" title="English Only">
+            <span class="lang-full">English</span>
+            <span class="lang-short">Eng</span>
+          </button>
+        </div>
+
+        <!-- Hamburger Menu Button (Works for both Desktop & Mobile) -->
+        <button id="menuToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" title="Menu / మెనూ">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Drawer Overlay -->
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation Drawer Menu (Works for both Mobile & Desktop) -->
+  <aside id="navDrawer" class="nav-drawer" aria-label="Main Navigation Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <span style="font-size: 1.35rem;">🏛️</span>
+        <div>
+          <div class="lang-en" style="font-weight: 700; color: #fff; font-size: 1.05rem;">Vaastu Portal Navigation</div>
+          <div class="lang-te" style="font-weight: 700; color: var(--gold-bright); font-size: 0.95rem; font-family: var(--font-telugu);">వాస్తు అంశాల సూచిక</div>
+        </div>
+      </div>
+      <button id="closeDrawer" class="drawer-close-btn" aria-label="Close Navigation Menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav-list">
+      <a href="#zones" class="drawer-nav-item active">
+        <span class="drawer-item-icon">📐</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">1. 16-Zone Perimeter Matrix</span>
+          <span class="lang-te">1. 16 స్థానాల పట్టిక</span>
+        </span>
+      </a>
+      <a href="#vithi" class="drawer-nav-item">
+        <span class="drawer-item-icon">🛣️</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">2. Street Focus (Vithi Shula)</span>
+          <span class="lang-te">2. వీధి శూల విశ్లేషణ</span>
+        </span>
+      </a>
+      <a href="#gunakam" class="drawer-nav-item">
+        <span class="drawer-item-icon">📐</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">3. Gunakam Set-Square Calculator</span>
+          <span class="lang-te">3. గుణకం మూలమట్టం గణన</span>
+        </span>
+      </a>
+      <a href="#sitegrades" class="drawer-nav-item">
+        <span class="drawer-item-icon">⚖️</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">4. Site Grades (A, B, C, D)</span>
+          <span class="lang-te">4. స్థల శ్రేణులు (ఎ, బి, సి, డి)</span>
+        </span>
+      </a>
+      <a href="#diagnostic" class="drawer-nav-item">
+        <span class="drawer-item-icon">🔍</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">5. House Layout Validator & Diagnostic</span>
+          <span class="lang-te">5. గృహ నమూనా పరీక్ష & గణన</span>
+        </span>
+      </a>
+      <a href="#items" class="drawer-nav-item">
+        <span class="drawer-item-icon">🛋️</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">6. Household Item Placement Guide</span>
+          <span class="lang-te">6. గృహోపకరణాల వాస్తు మార్గదర్శి</span>
+        </span>
+      </a>
+      <a href="#temples" class="drawer-nav-item">
+        <span class="drawer-item-icon">🛕</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">7. Temple Vaastu Case Studies (21 Shrines)</span>
+          <span class="lang-te">7. 21 పుణ్యక్షేత్రాల వాస్తు పరిశోధనలు</span>
+        </span>
+      </a>
+      <a href="#living" class="drawer-nav-item">
+        <span class="drawer-item-icon">🏡</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">8. Living Vaastu & Construction Rules</span>
+          <span class="lang-te">8. నివాస సూత్రాలు & నిర్మాణ నియమాలు</span>
+        </span>
+      </a>
+      <a href="#compass" class="drawer-nav-item">
+        <span class="drawer-item-icon">🧭</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">9. Magnetic Compass Tilt & Cardinal Grids</span>
+          <span class="lang-te">9. దిక్సూచి వాలు & దిశా విన్యాసం</span>
+        </span>
+      </a>
+      <a href="#industrial" class="drawer-nav-item">
+        <span class="drawer-item-icon">🏭</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">10. Industrial & Commercial Vaastu</span>
+          <span class="lang-te">10. పరిశ్రమలు & వాణిజ్య వాస్తు</span>
+        </span>
+      </a>
+      <a href="#proverbs" class="drawer-nav-item">
+        <span class="drawer-item-icon">📜</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">11. Folk Proverbs & Authoritative Maxims</span>
+          <span class="lang-te">11. జానపద సామెతలు & ప్రమాణాలు</span>
+        </span>
+      </a>
+    </nav>
+  </aside>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+      <div class="hero-pill">
+        <span class="lang-en">🏛️ Architectural Science of Cosmic Orientation, Energy Grids & Topography</span>
+        <span class="lang-te">🏛️ దిశా విన్యాసం, శక్తి క్షేత్రాలు & నైసర్గిక శాస్త్రీయ వాస్తు విజ్ఞానం</span>
+      </div>
+      <h2 class="hero-title">
+        <span class="lang-en">Vāstu-śāstra & The Science of Built Harmony</span>
+        <span class="lang-te">వాస్తు శాస్త్రము & నిర్మాణ సమతుల్య విజ్ఞానము</span>
+      </h2>
+      <p class="hero-sub lang-en">
+        An accurate computational realization of the complete 352-page seminal masterwork 
+        <strong>“The Secret World of Vaastu” (వాస్తు శాస్త్ర వాస్తవాలు)</strong> by renowned Vaastu authority 
+        <strong>Sri Gouru Thirupati Reddy</strong> of Proddatur, Andhra Pradesh. 
+        Explore the definitive <strong>16-zone perimeter matrix</strong>, 
+        beneficent and baneful <strong>Vīthi Śūla street thrusts</strong>, 
+        rigorous <strong>Gunakam 90° angular plot corrections</strong>, 
+        <strong>1st to 4th Grade Site classifications</strong>, 
+        empirical <strong>Temple Vaastu case studies</strong> (Tirumala, Srisailam, Srikalahasti, Hampi), 
+        <strong>Rented House & bio-magnetic sleeping rules</strong>, and the author's famous <strong>rhyming proverbs</strong>.
+      </p>
+      <p class="hero-sub lang-te" style="font-family: var(--font-telugu);">
+        ప్రముఖ వాస్తు పరిశోధకులు <strong>శ్రీ గౌరు తిరుపతిరెడ్డి (ప్రొద్దుటూరు, ఆం.ప్ర.)</strong> రచించిన 352 పేజీల ప్రామాణిక గ్రంథం 
+        <strong>“వాస్తు శాస్త్ర వాస్తవాలు” (The Secret World of Vaastu)</strong> ఆధారంగా సంపూర్ణ శాస్త్రీయ కచ్చితత్వంతో నిర్మించబడిన డిజిటల్ వ్యవస్థ. 
+        గృహ పరిధిలోని <strong>16 స్థానాలు</strong>, శుభ/అశుభ <strong>వీధి శూలల విశ్లేషణ</strong>, 
+        <strong>గుణకం (మూలమట్టం) ఆధారంగా స్థలాల సవరణ</strong>, <strong>4 శ్రేణుల స్థలాల వర్గీకరణ</strong>, 
+        <strong>ప్రసిద్ధ దేవాలయాల వాస్తు పరిశోధనలు</strong> (తిరుమల, శ్రీశైలం, శ్రీకాళహస్తి, హంపి), 
+        <strong>అద్దె ఇళ్లు & శయన దిశా నియమాలు</strong>, మరియు తిరుపతిరెడ్డి గారి <strong>ప్రాసతో కూడిన సువర్ణ సామెతల ఖజానా</strong>ను ఇక్కడ పరిశీలించండి.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#zones" class="btn-primary">
+          <span class="lang-en">Explore 16-Zone Matrix 📐</span>
+          <span class="lang-te">16 స్థానాల పట్టిక 📐</span>
+        </a>
+        <a href="#diagnostic" class="btn-ghost">
+          <span class="lang-en">Validate House Layout 🔍</span>
+          <span class="lang-te">గృహ నమూనా పరీక్ష 🔍</span>
+        </a>
+        <a href="#items" class="btn-primary" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#000; font-weight:700;">
+          <span class="lang-en">Item Placement Guide 🛋️</span>
+          <span class="lang-te">వస్తు విన్యాస మార్గదర్శి 🛋️</span>
+        </a>
+        <a href="#temples" class="btn-ghost">
+          <span class="lang-en">Temple Case Studies 🛕</span>
+          <span class="lang-te">దేవాలయాల పరిశోధన 🛕</span>
+        </a>
+        <a href="#sitegrades" class="btn-ghost">
+          <span class="lang-en">4 Site Grades ⭐</span>
+          <span class="lang-te">4 స్థల శ్రేణులు ⭐</span>
+        </a>
+        <a href="#proverbs" class="btn-ghost">
+          <span class="lang-en">Treasury of Proverbs 📜</span>
+          <span class="lang-te">వాస్తు సామెతలు 📜</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Author Citation Banner -->
+    <div class="citation-banner">
+      <div class="citation-badge">📖</div>
+      <div class="citation-content">
+        <h4>
+          <span class="lang-en">Authoritative Source: “The Secret World of Vaastu” (వాస్తు శాస్త్ర వాస్తవాలు) — All 352 Pages Analyzed</span>
+          <span class="lang-te">ప్రామాణిక గ్రంథం: “వాస్తు శాస్త్ర వాస్తవాలు” — సమగ్ర 352 పేజీల విశ్లేషణ</span>
+        </h4>
+        <p class="lang-en">
+          Authored by <strong>Sri Gouru Thirupati Reddy</strong> — 8th Edition (June 2013), Prajahitha Publishers, Proddatur, Y.S.R. Kadapa Dist., A.P. 
+          Renowned across India and abroad for stripping superstition away from traditional architecture, 
+          grounding Vastu in empirical geometry, solar trajectories, magnetic fields, and topographic gravity gradients.
+        </p>
+        <p class="lang-te" style="font-family: var(--font-telugu);">
+          రచయిత: <strong>శ్రీ గౌరు తిరుపతిరెడ్డి</strong> — 8వ ముద్రణ (జూన్ 2013), ప్రజాహిత పబ్లిషర్స్, ప్రొద్దుటూరు, వై.ఎస్.ఆర్. కడప జిల్లా, ఆంధ్రప్రదేశ్. 
+          అంధవిశ్వాసాలను తొలగించి రేఖాగణితం, సౌరశక్తి, అయస్కాంత తరంగాలు, భూగురుత్వాకర్షణ మరియు వాలు ఆధారంగా వాస్తును శాస్త్రీయంగా నిరూపించిన మహోన్నత గ్రంథం.
+        </p>
+      </div>
+    </div>
+
+    <!-- SECTION 1: 16-ZONE PERIMETER MATRIX -->
+    <section id="zones" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>📐</span>
+          <span class="lang-en">1. “Vaasthu at a Glance” — The 16-Zone Perimeter Matrix</span>
+          <span class="lang-te">1. సమగ్ర వాస్తు దర్శిని — 16 పరిధీయ స్థానాలు (పేజీలు 12–13)</span>
+        </h3>
+        <p class="section-sub lang-en">
+          Sri Thirupati Reddy divides the boundary of every rectangular dwelling into 16 distinct sectors 
+          (Pages 12–13 of the book). Each cardinal direction is bisected into 
+          <strong>Exalted (Uccha — Highly Auspicious)</strong> and 
+          <strong>Exiguous / Debilitated (Neecha — Inauspicious)</strong> zones, flanked by the 4 elemental corners 
+          and the cosmic <strong>Brahmasthana</strong> in the center. Click any cell to inspect exact prescriptions.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          గౌరు తిరుపతిరెడ్డి గారు ప్రతి దీర్ఘచతురస్రాకార స్థలాన్ని 16 స్పష్టమైన విభాగాలుగా వర్గీకరించారు (పుస్తకంలో పేజీలు 12–13). 
+          ప్రతి ప్రధాన దిక్కు <strong>ఉచ్ఛ (అత్యంత శుభం)</strong> మరియు <strong>నీచ (అశుభం)</strong> భాగాలుగా విభజించబడింది. 
+          4 మూలల స్థానాలు మరియు కేంద్ర <strong>బ్రహ్మస్థానము</strong>తో కూడిన ఈ పట్టికలో ఏ గడిపైనైనా క్లిక్ చేసి సమగ్ర ఫలితాలను చూడండి.
+        </p>
+      </div>
+
+      <div class="zones-layout">
+        <!-- Interactive Visual Plot -->
+        <div class="interactive-compass-card">
+          <div style="font-size:0.92rem; font-weight:700; color:var(--cyan-bright); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.6rem;">
+            <span class="lang-en">NORTH • KUBERA </span>
+            <span class="lang-te">ఉత్తరం • కుబేర స్థానం</span>
+          </div>
+
+          <div class="perimeter-grid">
+            <!-- Row 1: NW, NNW, NNE, NE -->
+            <div class="zone-cell corner-air" data-zone="vayavya" title="Northwest (Vayavya Corner)">
+              <div class="zone-code"><span class="lang-en">NW </span><span class="lang-te">వాయువ్యం</span></div>
+              <div class="zone-title"><span class="lang-en">Vayavya </span><span class="lang-te">వాయువ్య మూల</span></div>
+              <span class="zone-tag" style="background:rgba(168,85,247,0.3); color:#c084fc;">
+                <span class="lang-en">Air </span><span class="lang-te">వాయువు</span>
+              </span>
+            </div>
+
+            <div class="zone-cell neecha" data-zone="nnw" title="Northern Northwest">
+              <div class="zone-code"><span class="lang-en">NNW </span><span class="lang-te">ఉ.వా</span></div>
+              <div class="zone-title"><span class="lang-en">North NW </span><span class="lang-te">ఉత్తర వాయువ్యం</span></div>
+              <span class="zone-tag neecha"><span class="lang-en">Neecha </span><span class="lang-te">నీచ స్థానం</span></span>
+            </div>
+
+            <div class="zone-cell uccha" data-zone="nne" title="Northern Northeast">
+              <div class="zone-code"><span class="lang-en">NNE </span><span class="lang-te">ఉ.ఈ</span></div>
+              <div class="zone-title"><span class="lang-en">North NE </span><span class="lang-te">ఉత్తర ఈశాన్యం</span></div>
+              <span class="zone-tag uccha"><span class="lang-en">Uccha </span><span class="lang-te">ఉచ్ఛ స్థానం</span></span>
+            </div>
+
+            <div class="zone-cell corner-water" data-zone="eshanya" title="Northeast (Eshanya Corner)">
+              <div class="zone-code"><span class="lang-en">NE </span><span class="lang-te">ఈశాన్యం</span></div>
+              <div class="zone-title"><span class="lang-en">Eshanya </span><span class="lang-te">ఈశాన్య మూల</span></div>
+              <span class="zone-tag" style="background:rgba(6,182,212,0.3); color:#67e8f9;">
+                <span class="lang-en">Water </span><span class="lang-te">జలం</span>
+              </span>
+            </div>
+
+            <!-- Row 2: WNW, Brahmasthana (Center span), ENE -->
+            <div class="zone-cell neecha" data-zone="wnw" title="Western Northwest">
+              <div class="zone-code"><span class="lang-en">WNW </span><span class="lang-te">ప.వా</span></div>
+              <div class="zone-title"><span class="lang-en">West NW </span><span class="lang-te">పశ్చిమ వాయువ్యం</span></div>
+              <span class="zone-tag neecha"><span class="lang-en">Neecha </span><span class="lang-te">నీచ స్థానం</span></span>
+            </div>
+
+            <div class="zone-cell brahma" data-zone="brahmasthana" title="Brahmasthana (Cosmic Center)">
+              <div style="font-size: 1.8rem; margin-bottom: 0.2rem;">☸️</div>
+              <div class="lang-en" style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; color: var(--gold-bright);">
+                BRAHMASTHANA
+              </div>
+              <div class="lang-te" style="font-family: var(--font-telugu); font-size: 1.05rem; font-weight: 700; color: #fff;">
+                బ్రహ్మస్థానము (ఆకాశం)
+              </div>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">
+                <span class="lang-en">Open • Weightless • Pure </span>
+                <span class="lang-te">ఖాళీ • నిర్మలం • బరువులేనిది</span>
+              </div>
+            </div>
+
+            <div class="zone-cell uccha active" data-zone="ene" title="Eastern Northeast">
+              <div class="zone-code"><span class="lang-en">ENE </span><span class="lang-te">తూ.ఈ</span></div>
+              <div class="zone-title"><span class="lang-en">East NE </span><span class="lang-te">తూర్పు ఈశాన్యం</span></div>
+              <span class="zone-tag uccha"><span class="lang-en">Uccha </span><span class="lang-te">ఉచ్ఛ స్థానం</span></span>
+            </div>
+
+            <!-- Row 3: WSW, ESE -->
+            <div class="zone-cell uccha" data-zone="wsw" title="Western Southwest">
+              <div class="zone-code"><span class="lang-en">WSW </span><span class="lang-te">ప.నై</span></div>
+              <div class="zone-title"><span class="lang-en">West SW </span><span class="lang-te">పశ్చిమ నైరుతి</span></div>
+              <span class="zone-tag uccha"><span class="lang-en">Uccha </span><span class="lang-te">ఉచ్ఛ స్థానం</span></span>
+            </div>
+
+            <div class="zone-cell neecha" data-zone="ese" title="Eastern Southeast">
+              <div class="zone-code"><span class="lang-en">ESE </span><span class="lang-te">తూ.ఆ</span></div>
+              <div class="zone-title"><span class="lang-en">East SE </span><span class="lang-te">తూర్పు ఆగ్నేయం</span></div>
+              <span class="zone-tag neecha"><span class="lang-en">Neecha </span><span class="lang-te">నీచ స్థానం</span></span>
+            </div>
+
+            <!-- Row 4: SW, SSW, SSE, SE -->
+            <div class="zone-cell corner-earth" data-zone="niruthi" title="Southwest (Niruthi Corner)">
+              <div class="zone-code"><span class="lang-en">SW </span><span class="lang-te">నైరుతి</span></div>
+              <div class="zone-title"><span class="lang-en">Niruthi </span><span class="lang-te">నైరుతి మూల</span></div>
+              <span class="zone-tag" style="background:rgba(217,119,6,0.3); color:#fbbf24;">
+                <span class="lang-en">Earth </span><span class="lang-te">భూమి</span>
+              </span>
+            </div>
+
+            <div class="zone-cell neecha" data-zone="ssw" title="Southern Southwest">
+              <div class="zone-code"><span class="lang-en">SSW </span><span class="lang-te">ద.నై</span></div>
+              <div class="zone-title"><span class="lang-en">South SW </span><span class="lang-te">దక్షిణ నైరుతి</span></div>
+              <span class="zone-tag neecha"><span class="lang-en">Neecha </span><span class="lang-te">నీచ స్థానం</span></span>
+            </div>
+
+            <div class="zone-cell uccha" data-zone="sse" title="Southern Southeast">
+              <div class="zone-code"><span class="lang-en">SSE </span><span class="lang-te">ద.ఆ</span></div>
+              <div class="zone-title"><span class="lang-en">South SE </span><span class="lang-te">దక్షిణ ఆగ్నేయం</span></div>
+              <span class="zone-tag uccha"><span class="lang-en">Uccha </span><span class="lang-te">ఉచ్ఛ స్థానం</span></span>
+            </div>
+
+            <div class="zone-cell corner-fire" data-zone="agneya" title="Southeast (Agneya Corner)">
+              <div class="zone-code"><span class="lang-en">SE </span><span class="lang-te">ఆగ్నేయం</span></div>
+              <div class="zone-title"><span class="lang-en">Agneya </span><span class="lang-te">ఆగ్నేయ మూల</span></div>
+              <span class="zone-tag" style="background:rgba(249,115,22,0.3); color:#fb923c;">
+                <span class="lang-en">Fire </span><span class="lang-te">అగ్ని</span>
+              </span>
+            </div>
+          </div>
+
+          <div style="font-size:0.92rem; font-weight:700; color:#fb923c; text-transform:uppercase; letter-spacing:0.06em; margin-top:0.6rem;">
+            <span class="lang-en">SOUTH • YAMA </span>
+            <span class="lang-te">దక్షిణం • యమ స్థానం</span>
+          </div>
+        </div>
+
+        <!-- Zone Detail Card -->
+        <div class="zone-detail-card" id="zoneDetailContainer">
+          <!-- Dynamically populated by vaastu.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: STREET FOCUS (VITHI SHULA) SIMULATOR -->
+    <section id="vithi" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>🛣️</span>
+          <span class="lang-en">2. Street Focus & Road Thrust Simulator (Vīthi Śūla)</span>
+          <span class="lang-te">2. వీధి శూల (వీధి పోటు) పరిశీలన యంత్రము (పేజీ 76)</span>
+        </h3>
+        <p class="section-sub lang-en">
+          When an incoming road terminates directly into a house or plot, it exerts a dynamic energy thrust 
+          known as <strong>Vīthi Śūla (వీధి శూల)</strong>. Sri Thirupati Reddy classifies 4 street thrusts as 
+          <strong>Beneficent (శుభ ప్రదం)</strong> and 4 as <strong>Baneful / Detrimental (అశుభం)</strong>. 
+          Select any incoming road below to simulate its impact and review Thirupati Reddy's exact remedial architecture.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          ఒక వీధి నేరుగా స్థలానికి లేదా ఇంటికి ఎదురుగా వచ్చి ముగిసినపుడు ఏర్పడే తీవ్ర శక్తి ప్రవాహాన్ని <strong>'వీధి శూల' (వీధి పోటు)</strong> అంటారు. 
+          గౌరు తిరుపతిరెడ్డి గారు 4 వీధి పోట్లను <strong>అత్యంత శుభప్రదమైనవిగాను</strong>, 4 పోట్లను <strong>తీవ్రమైన అశుభాలుగాను</strong> వర్గీకరించారు. 
+          క్రింది బటన్లపై క్లిక్ చేసి వాటి ప్రభావం మరియు శాస్త్రీయ నివారణలను పరిశీలించండి.
+        </p>
+      </div>
+
+      <div class="vithi-grid">
+        <!-- SVG Visual Container -->
+        <div class="vithi-visual-container">
+          <svg viewBox="0 0 300 300" width="100%" height="280" style="max-width:320px;">
+            <rect x="0" y="0" width="300" height="300" fill="#080c14" rx="14"/>
+            <rect x="85" y="85" width="130" height="130" fill="rgba(30, 41, 59, 0.7)" stroke="#f59e0b" stroke-width="2" rx="4"/>
+            <rect x="110" y="110" width="80" height="80" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" rx="3"/>
+            <text x="150" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">
+              <tspan class="lang-en">HOUSE</tspan>
+              <tspan class="lang-te">గృహం</tspan>
+            </text>
+            <text x="150" y="160" font-family="'Noto Sans Telugu', sans-serif" font-size="9" fill="var(--gold-bright)" text-anchor="middle">
+              <tspan class="lang-en">PLOT</tspan>
+              <tspan class="lang-te">స్థలము</tspan>
+            </text>
+
+            <text x="150" y="75" font-size="10" font-weight="700" fill="#67e8f9" text-anchor="middle">
+              <tspan class="lang-en">NORTH</tspan>
+              <tspan class="lang-te">ఉత్తరం</tspan>
+            </text>
+            <text x="245" y="153" font-size="10" font-weight="700" fill="#fef08a" text-anchor="start">
+              <tspan class="lang-en">EAST</tspan>
+              <tspan class="lang-te">తూర్పు</tspan>
+            </text>
+            <text x="150" y="235" font-size="10" font-weight="700" fill="#f97316" text-anchor="middle">
+              <tspan class="lang-en">SOUTH</tspan>
+              <tspan class="lang-te">దక్షిణం</tspan>
+            </text>
+            <text x="55" y="153" font-size="10" font-weight="700" fill="#34d399" text-anchor="end">
+              <tspan class="lang-en">WEST</tspan>
+              <tspan class="lang-te">పడమర</tspan>
+            </text>
+
+            <g id="vithiSvgArrow">
+              <line id="streetArrowLine" x1="280" y1="120" x2="215" y2="120" stroke="#10b981" stroke-width="5" stroke-dasharray="6,3" stroke-linecap="round"/>
+              <circle id="streetArrowHead" cx="215" cy="120" r="6" fill="#10b981"/>
+              <text id="streetRoadLabel" x="150" y="20" font-size="11" font-weight="700" fill="#10b981" text-anchor="middle">ENE Road Focus</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Controls & Results -->
+        <div>
+          <div style="font-size:0.92rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.6rem;">
+            <span class="lang-en">Select Incoming Road Thrust:</span>
+            <span class="lang-te">పరిశీలించవలసిన వీధి పోటును ఎంచుకోండి:</span>
+          </div>
+
+          <div class="vithi-controls">
+            <button class="vithi-btn beneficent active" data-vithi="ene">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🟢 East of NE (ENE)</span>
+                <span class="lang-te">🟢 తూర్పు ఈశాన్యం (ENE)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Beneficent • All Prosperity</span>
+                <span class="lang-te">శుభ ప్రదం • సర్వ సంపదలు</span>
+              </div>
+            </button>
+            <button class="vithi-btn beneficent" data-vithi="nne">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🟢 North of NE (NNE)</span>
+                <span class="lang-te">🟢 ఉత్తర ఈశాన్యం (NNE)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Beneficent • Kubera Wealth</span>
+                <span class="lang-te">శుభ ప్రదం • అపార ధనలాభం</span>
+              </div>
+            </button>
+            <button class="vithi-btn beneficent" data-vithi="sse">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🟢 South of SE (SSE)</span>
+                <span class="lang-te">🟢 దక్షిణ ఆగ్నేయం (SSE)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Beneficent • Energy & Growth</span>
+                <span class="lang-te">శుభ ప్రదం • ధైర్యం & విజయం</span>
+              </div>
+            </button>
+            <button class="vithi-btn beneficent" data-vithi="wnw">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🟢 West of NW (WNW)</span>
+                <span class="lang-te">🟢 పశ్చిమ వాయువ్యం (WNW)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Beneficent • Fame & Influence</span>
+                <span class="lang-te">శుభ ప్రదం • కీర్తి & పరపతి</span>
+              </div>
+            </button>
+
+            <button class="vithi-btn baneful" data-vithi="ese">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🔴 East of SE (ESE)</span>
+                <span class="lang-te">🔴 తూర్పు ఆగ్నేయం (ESE)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Baneful • Fire & Litigation</span>
+                <span class="lang-te">అశుభం • అగ్ని ప్రమాదాలు & వ్యాజ్యాలు</span>
+              </div>
+            </button>
+            <button class="vithi-btn baneful" data-vithi="ssw">
+              <div class="vithi-btn-title">
+                <span class="lang-en">☠️ South of SW (SSW)</span>
+                <span class="lang-te">☠️ దక్షిణ నైరుతి (SSW)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Baneful • Fatal 'Cobra Bite'</span>
+                <span class="lang-te">అత్యంత ప్రమాదం • 'నాగుపాము కాటు'</span>
+              </div>
+            </button>
+            <button class="vithi-btn baneful" data-vithi="wsw">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🔴 West of SW (WSW)</span>
+                <span class="lang-te">🔴 పశ్చిమ నైరుతి (WSW)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Baneful • Ruin & Downfall</span>
+                <span class="lang-te">అశుభం • దివాలా & పతనం</span>
+              </div>
+            </button>
+            <button class="vithi-btn baneful" data-vithi="nnw">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🔴 North of NW (NNW)</span>
+                <span class="lang-te">🔴 ఉత్తర వాయువ్యం (NNW)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Baneful • Enmity & Restlessness</span>
+                <span class="lang-te">అశుభం • శత్రుత్వం & అశాంతి</span>
+              </div>
+            </button>
+          </div>
+
+          <div class="vithi-analysis-box" id="vithiDetailContainer">
+            <!-- Populated by vaastu.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ANGULAR PLOTS & GUNAKAM SET-SQUARE -->
+    <section id="gunakam" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>📐</span>
+          <span class="lang-en">3. Angular Plots & The Set-Square Principle (Gunakam)</span>
+          <span class="lang-te">3. మూల మట్టం సూత్రం & గుణకం పద్ధతి (పేజీ 299)</span>
+        </h3>
+        <p class="section-sub lang-en">
+          Sri Thirupati Reddy unequivocally emphasizes that irregular, non-90° angles in a plot produce severe 
+          energetic distortions (Page 299 of the book). Except for an extension in the <strong>Northeast</strong>, 
+          extensions in any other corner cause grave distress. Learn the <strong>Gunakam (Set-square) method</strong> 
+          to square off an irregular plot and partition out defective triangular wedges.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          స్థలంలో 90 డిగ్రీలు లేని మూలలు తీవ్రమైన వాస్తు దోషాలను కలిగిస్తాయని శ్రీ తిరుపతిరెడ్డి గారు స్పష్టంగా నిరూపించారు (పుస్తకంలో పేజీ 299). 
+          <strong>ఈశాన్యం పెరుగుదల</strong> మినహా మిగిలిన ఏ మూల పెరిగినా తీవ్ర అరిష్టాలు కలుగుతాయి. 
+          <strong>'గుణకం' (మూలమట్టం)</strong> ద్వారా స్థలాన్ని 90 డిగ్రీల చతురస్రంగా చేసి దోషపూరితమైన త్రికోణ భాగాలను ఎలా సరిచేయాలో క్రింద చూడండి.
+        </p>
+      </div>
+
+      <div class="gunakam-container">
+        <!-- SVG Canvas for Gunakam Plot -->
+        <div class="gunakam-canvas-box">
+          <svg viewBox="0 0 300 300" width="100%" height="280" style="max-width:320px;">
+            <rect x="0" y="0" width="300" height="300" fill="#080c14" rx="14"/>
+
+            <rect x="70" y="70" width="160" height="160" fill="none" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5" stroke-dasharray="4,4"/>
+            <text x="150" y="155" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle">
+              <tspan class="lang-en">90° GUNAKAM SQUARE</tspan>
+              <tspan class="lang-te">90° మూలమట్టం చతురస్రం</tspan>
+            </text>
+            <text x="150" y="170" font-family="'Noto Sans Telugu', sans-serif" font-size="9" fill="#fef08a" text-anchor="middle">
+              <tspan class="lang-en">Balanced Core Dwelling</tspan>
+              <tspan class="lang-te">గృహ నిర్మాణ స్థలం</tspan>
+            </text>
+
+            <polygon id="gunakamIrregularPlot" points="70,70 265,50 230,230 70,230" fill="rgba(6, 182, 212, 0.12)" stroke="#06b6d4" stroke-width="2"/>
+            <polygon id="gunakamSlicePolygon" points="230,70 265,50 230,120" fill="rgba(16, 185, 129, 0.35)" stroke="#10b981" stroke-width="1.5"/>
+
+            <text id="gunakamSvgLabel" x="150" y="25" font-size="11" font-weight="700" fill="#34d399" text-anchor="middle">
+              Northeast Extension (ఈశాన్యం పెరుగుదల)
+            </text>
+
+            <text x="230" y="60" font-size="9" fill="#67e8f9"><tspan class="lang-en">NE</tspan><tspan class="lang-te">ఈశాన్యం</tspan></text>
+            <text x="230" y="245" font-size="9" fill="#fb923c"><tspan class="lang-en">SE</tspan><tspan class="lang-te">ఆగ్నేయం</tspan></text>
+            <text x="50" y="245" font-size="9" fill="#fbbf24"><tspan class="lang-en">SW</tspan><tspan class="lang-te">నైరుతి</tspan></text>
+            <text x="50" y="60" font-size="9" fill="#c084fc"><tspan class="lang-en">NW</tspan><tspan class="lang-te">వాయువ్యం</tspan></text>
+          </svg>
+        </div>
+
+        <div>
+          <div style="font-size:0.92rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.6rem;">
+            <span class="lang-en">Examine Irregular Corner Configurations:</span>
+            <span class="lang-te">వివిధ మూలల పెరుగుదలలు / తరుగుదలలు:</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1rem;">
+            <button class="gunakam-btn vithi-btn active" data-case="ne_ext">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🌟 Northeast Extension</span>
+                <span class="lang-te">🌟 ఈశాన్యం పెరగడం (NE Extension)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Highly Auspicious • Boundless wealth & progeny</span>
+                <span class="lang-te">అత్యుత్తమ శుభం • అఖండ సంపద & వంశాభివృద్ధి</span>
+              </div>
+            </button>
+            <button class="gunakam-btn vithi-btn" data-case="se_ext">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🔥 Southeast Extension</span>
+                <span class="lang-te">🔥 ఆగ్నేయం పెరగడం (SE Extension)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Severe Dosha • Agni Vikriti, fire hazards & lawsuits</span>
+                <span class="lang-te">తీవ్ర దోషం • అగ్ని వికృతి, ప్రమాదాలు & వ్యాజ్యాలు</span>
+              </div>
+            </button>
+            <button class="gunakam-btn vithi-btn" data-case="sw_ext">
+              <div class="vithi-btn-title">
+                <span class="lang-en">☠️ Southwest Extension</span>
+                <span class="lang-te">☠️ నైరుతి పెరగడం (SW Extension)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Disastrous Dosha • Tragic downfalls & insolvency</span>
+                <span class="lang-te">మహా దోషం • ఆకస్మిక పతనం & దరిద్రం</span>
+              </div>
+            </button>
+            <button class="gunakam-btn vithi-btn" data-case="nw_ext">
+              <div class="vithi-btn-title">
+                <span class="lang-en">🌪️ Northwest Extension</span>
+                <span class="lang-te">🌪️ వాయువ్యం పెరగడం (NW Extension)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Detrimental • Instability, wandering & litigation</span>
+                <span class="lang-te">అశుభం • అస్థిరత, వృథా సంచారం & కోర్టు గొడవలు</span>
+              </div>
+            </button>
+            <button class="gunakam-btn vithi-btn" data-case="ne_cut">
+              <div class="vithi-btn-title">
+                <span class="lang-en">⚠️ Northeast Cut</span>
+                <span class="lang-te">⚠️ ఈశాన్యం తెగడం / తగ్గడం (NE Cut)</span>
+              </div>
+              <div class="vithi-btn-sub">
+                <span class="lang-en">Catastrophic • Decapitation of Vastu Purusha</span>
+                <span class="lang-te">తీవ్ర విపత్తు • వాస్తు పురుషుని శిరోహరణ దోషం</span>
+              </div>
+            </button>
+          </div>
+
+          <div class="vithi-analysis-box" id="gunakamDetailContainer">
+            <!-- Populated by vaastu.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: 4 GRADES OF BUILDING SITES -->
+    <section id="sitegrades" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>⭐</span>
+          <span class="lang-en">4. Classification & 4 Grades of Building Sites</span>
+          <span class="lang-te">4. స్థలాల వర్గీకరణ & 4 శ్రేణులు (పేజీలు 61–63)</span>
+        </h3>
+        <p class="section-sub lang-en">
+          Sri Thirupati Reddy categorizes residential and commercial plots into 4 distinct quality grades based on surrounding roads, 
+          topographical elevation gradients, and neighbouring building heights.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          చుట్టూ ఉన్న రహదారులు, నైసర్గిక ఎత్తుపల్లాలు, మరియు ఇరుగుపొరుగు భవనాల ఎత్తుల ఆధారంగా శ్రీ తిరుపతిరెడ్డి గారు గృహ స్థలాలను 4 ప్రామాణిక శ్రేణులుగా వర్గీకరించారు.
+        </p>
+      </div>
+
+      <div class="proverbs-grid" id="siteGradesContainer" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+        <!-- Rendered by vaastu.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 5: HOUSE LAYOUT DIAGNOSTIC CALCULATOR -->
+    <section id="diagnostic" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>🔍</span>
+          <span class="lang-en">5. Interactive House Layout Validator & Diagnostic Calculator</span>
+          <span class="lang-te">5. గృహ నమూనా పరీక్ష & వాస్తు ఫలితాల కాలిక్యులేటర్</span>
+        </h3>
+        <p class="section-sub lang-en">
+          Test any residential or commercial plan against Sri Gouru Thirupati Reddy's strict rules. 
+          Select the location of primary rooms and utilities. The calculation engine will evaluate your plan, 
+          compute an overall Vaastu Compliance Score, and report specific doshas with authoritative remedies.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          శ్రీ గౌరు తిరుపతిరెడ్డి గారి కచ్చితమైన గ్రంథ సూత్రాల ప్రకారం మీ ఇంటి ప్లాన్‌ను పరీక్షించండి. 
+          ప్రధాన గదులు మరియు నిర్మాణాల స్థానాలను ఎంచుకోండి. కంప్యూటర్ ఇంజిన్ మీ ప్లాన్‌ను విశ్లేషించి, 
+          వాస్తు స్కోరును లెక్కించి, లోపాలకు ప్రామాణిక నివారణలను తెలియజేస్తుంది.
+        </p>
+      </div>
+
+      <div class="diagnostic-layout">
+        <div>
+          <div class="form-group-grid">
+            <div class="form-group">
+              <label class="form-label" for="diagFacing">
+                <span class="lang-en">1. Plot & Entrance Facing:</span>
+                <span class="lang-te">1. స్థలం & సింహద్వారం ముఖము:</span>
+              </label>
+              <select id="diagFacing" class="form-select">
+                <option value="east" data-en="East Facing (Indra / Solar Prana)" data-te="తూర్పు ముఖము (ఇంద్ర స్థానం / సౌర ప్రాణశక్తి)" data-dual="East Facing (తూర్పు ముఖము • Indra)">East Facing (తూర్పు ముఖము • Indra)</option>
+                <option value="north" data-en="North Facing (Kubera / Wealth Corridor)" data-te="ఉత్తర ముఖము (కుబేర స్థానం / ధన ప్రవాహం)" data-dual="North Facing (ఉత్తర ముఖము • Kubera)">North Facing (ఉత్తర ముఖము • Kubera)</option>
+                <option value="ne_facing" data-en="Northeast Facing (Eshanya Corner / Divine)" data-te="ఈశాన్య ముఖము (దేవతా స్థానం / అత్యంత శుభం)" data-dual="Northeast Facing (ఈశాన్య ముఖము)">Northeast Facing (ఈశాన్య ముఖము)</option>
+                <option value="south" data-en="South Facing (Yama / High Wall Needed)" data-te="దక్షిణ ముఖము (యమ స్థానం / ఎత్తైన గోడ అవసరం)" data-dual="South Facing (దక్షిణ ముఖము • Yama)">South Facing (దక్షిణ ముఖము • Yama)</option>
+                <option value="west" data-en="West Facing (Varuna / Thermal Shield)" data-te="పశ్చిమ ముఖము (వరుణ స్థానం / సూర్యతాప రక్షణ)" data-dual="West Facing (పశ్చిమ ముఖము • Varuna)">West Facing (పశ్చిమ ముఖము • Varuna)</option>
+                <option value="nw_facing" data-en="Northwest Facing (Vayuvya / Wind Dynamic)" data-te="వాయువ్య ముఖము (వాయు స్థానం / చలనాత్మకం)" data-dual="Northwest Facing (వాయువ్య ముఖము)">Northwest Facing (వాయువ్య ముఖము)</option>
+                <option value="se_facing" data-en="Southeast Facing (Agneya / Fire Caution)" data-te="ఆగ్నేయ ముఖము (అగ్ని స్థానం / ద్వార జాగ్రత్త)" data-dual="Southeast Facing (ఆగ్నేయ ముఖము)">Southeast Facing (ఆగ్నేయ ముఖము)</option>
+                <option value="sw_facing" data-en="Southwest Facing (Nairuthi / Heavy Dosha)" data-te="నైరుతి ముఖము (నైరుతి దోషం / తీవ్ర లోపం)" data-dual="Southwest Facing (నైరుతి ముఖము — Heavy Dosha)">Southwest Facing (నైరుతి ముఖము — Heavy Dosha)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="diagBorewell">
+                <span class="lang-en">2. Borewell / Underground Sump:</span>
+                <span class="lang-te">2. బోరుబావి / అండర్‌గ్రౌండ్ సంపు:</span>
+              </label>
+              <select id="diagBorewell" class="form-select">
+                <option value="ne" data-en="Northeast / Eshanya (Prescribed / Amritha Sthana)" data-te="ఈశాన్యం (అమృత స్థానం / శాస్త్ర సమ్మతం)" data-dual="Northeast (ఈశాన్యం — Prescribed)">Northeast (ఈశాన్యం — Prescribed)</option>
+                <option value="east" data-en="East (Auspicious / Pleasure Resort)" data-te="తూర్పు (ఆనంద నిలయం / శుభం)" data-dual="East (తూర్పు — Auspicious)">East (తూర్పు — Auspicious)</option>
+                <option value="north" data-en="North (Auspicious / Kubera Wealth)" data-te="ఉత్తరం (కుబేర సంపద / శుభం)" data-dual="North (ఉత్తరం — Auspicious)">North (ఉత్తరం — Auspicious)</option>
+                <option value="nw" data-en="Northwest (Unstable / Mind Agitation)" data-te="వాయువ్యం (అస్థిరత / మానసిక అలజడి)" data-dual="Northwest (వాయువ్యం — Unstable)">Northwest (వాయువ్యం — Unstable)</option>
+                <option value="se" data-en="Southeast (Agni Clash / Chronic Debts)" data-te="ఆగ్నేయం (అగ్ని దోషం / రుణాల పాలు)" data-dual="Southeast (ఆగ్నేయం — Agni clash)">Southeast (ఆగ్నేయం — Agni clash)</option>
+                <option value="south" data-en="South (Yama Dosha / Heavy Losses)" data-te="దక్షిణం (యమ దోషం / ధన నష్టం)" data-dual="South (దక్షిణం — Inauspicious)">South (దక్షిణం — Inauspicious)</option>
+                <option value="west" data-en="West (Varuna Pit / Chronic Sickness)" data-te="పశ్చిమం (వరుణ గోయి / అనారోగ్యం)" data-dual="West (పశ్చిమం — Inauspicious)">West (పశ్చిమం — Inauspicious)</option>
+                <option value="sw" data-en="Southwest (Lethal Pit / Fatal Downfall)" data-te="నైరుతి (మహా వినాశనం / ప్రాణాంతక గోయి)" data-dual="Southwest (నైరుతి — Fatal Pit)">Southwest (నైరుతి — Fatal Pit)</option>
+                <option value="center" data-en="Brahmasthana / Center (Catastrophic Core Cavity)" data-te="నడిమి ఇల్లు / బ్రహ్మస్థాన గుంత (వంశ నాశనం)" data-dual="Brahmasthana (నడిమి ఇల్లు — Catastrophic)">Brahmasthana (నడిమి ఇల్లు — Catastrophic)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="diagKitchen">
+                <span class="lang-en">3. Kitchen Hearth:</span>
+                <span class="lang-te">3. వంటగది / పొయ్యి స్థానం:</span>
+              </label>
+              <select id="diagKitchen" class="form-select">
+                <option value="se" data-en="Southeast (1st Choice / Agneya)" data-te="ఆగ్నేయం (ప్రథమ ఎంపిక / అగ్ని స్థానం)" data-dual="Southeast (ఆగ్నేయం — 1st Choice)">Southeast (ఆగ్నేయం — 1st Choice)</option>
+                <option value="nw" data-en="Northwest (2nd Choice / Vayuvya)" data-te="వాయువ్యం (రెండవ ఎంపిక / వాయు స్థానం)" data-dual="Northwest (వాయువ్యం — 2nd Choice)">Northwest (వాయువ్యం — 2nd Choice)</option>
+                <option value="east" data-en="East (Permissible Morning Sun)" data-te="తూర్పు (మధ్యమం / ఉదయపు ఎండ)" data-dual="East (తూర్పు — Permissible)">East (తూర్పు — Permissible)</option>
+                <option value="south" data-en="South (Secondary / Tolerable)" data-te="దక్షిణం (గౌణ ఎంపిక)" data-dual="South (దక్షిణం — Secondary)">South (దక్షిణం — Secondary)</option>
+                <option value="west" data-en="West (Medium Stability)" data-te="పశ్చిమం (సాధారణం)" data-dual="West (పశ్చిమం — Medium)">West (పశ్చిమం — Medium)</option>
+                <option value="north" data-en="North (Kubera Burn / Wealth Drainage)" data-te="ఉత్తరం (కుబేర దహనం / ధన నష్టం)" data-dual="North (ఉత్తరం — Wealth Loss)">North (ఉత్తరం — Wealth Loss)</option>
+                <option value="ne" data-en="Northeast (Severe Dosha / Prana Burn)" data-te="ఈశాన్యం (తీవ్ర అరిష్టం / ప్రాణ దహనం)" data-dual="Northeast (ఈశాన్యం — Severe Dosha)">Northeast (ఈశాన్యం — Severe Dosha)</option>
+                <option value="sw" data-en="Southwest (Master Dosha / Domestic Ruin)" data-te="నైరుతి (గృహనాశనం / యజమాని రోగం)" data-dual="Southwest (నైరుతి — Master Dosha)">Southwest (నైరుతి — Master Dosha)</option>
+                <option value="center" data-en="Brahmasthana / Center (Fire in Heart)" data-te="నడిమి ఇల్లు / బ్రహ్మస్థాన అగ్ని" data-dual="Center (నడిమి ఇల్లు — Severe)">Center (నడిమి ఇల్లు — Severe)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="diagBedroom">
+                <span class="lang-en">4. Master Bedroom:</span>
+                <span class="lang-te">4. యజమాని పడకగది (మాస్టర్ బెడ్‌రూమ్):</span>
+              </label>
+              <select id="diagBedroom" class="form-select">
+                <option value="sw" data-en="Southwest (Master / Prescribed)" data-te="నైరుతి (యజమాని స్థానం / శాస్త్ర సమ్మతం)" data-dual="Southwest (నైరుతి — Prescribed)">Southwest (నైరుతి — Prescribed)</option>
+                <option value="south" data-en="South (Excellent for Elders)" data-te="దక్షిణం (పెద్దలకు ఉత్తమం)" data-dual="South (దక్షిణం — Elders)">South (దక్షిణం — Elders)</option>
+                <option value="west" data-en="West (Children & Study / Stability)" data-te="పశ్చిమం (పిల్లల గది / స్థిరత్వం)" data-dual="West (పశ్చిమం — Stability)">West (పశ్చిమం — Stability)</option>
+                <option value="nw" data-en="Northwest (Guest & Daughters / Movement)" data-te="వాయువ్యం (అతిథులు & వివాహిత పుత్రికలు)" data-dual="Northwest (వాయువ్యం — Guests)">Northwest (వాయువ్యం — Guests)</option>
+                <option value="east" data-en="East (Students & Unmarried Youth)" data-te="తూర్పు (విద్యార్థులు & బ్రహ్మచారులు)" data-dual="East (తూర్పు — Students)">East (తూర్పు — Students)</option>
+                <option value="se" data-en="Southeast (Restless / Temper & Fevers)" data-te="ఆగ్నేయం (కోపతాపాలు / అనారోగ్యం)" data-dual="Southeast (ఆగ్నేయం — Restless)">Southeast (ఆగ్నేయం — Restless)</option>
+                <option value="north" data-en="North (Financial Volatility for Master)" data-te="ఉత్తరం (యజమానికి అస్థిరత)" data-dual="North (ఉత్తరం — Volatile)">North (ఉత్తరం — Volatile)</option>
+                <option value="ne" data-en="Northeast (Severe Headaches / Mental Stress)" data-te="ఈశాన్యం (తీవ్ర తలనొప్పులు / మానసిక వ్యధ)" data-dual="Northeast (ఈశాన్యం — Headaches)">Northeast (ఈశాన్యం — Headaches)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="diagOht">
+                <span class="lang-en">5. Overhead Water Tank:</span>
+                <span class="lang-te">5. ఓవర్‌హెడ్ వాటర్ ట్యాంక్:</span>
+              </label>
+              <select id="diagOht" class="form-select">
+                <option value="sw" data-en="Southwest Roof Slab (Highest / Supreme Ballast)" data-te="నైరుతి పైకప్పు (అత్యున్నత స్థానం / స్థిరత్వ శిఖరం)" data-dual="Southwest Roof Slab (నైరుతి స్లాబ్ — Highest)">Southwest Roof Slab (నైరుతి స్లాబ్ — Highest)</option>
+                <option value="w" data-en="West Roof Slab (Good Stability)" data-te="పశ్చిమ పైకప్పు (ఉత్తమ స్థిరత్వం)" data-dual="West Roof Slab (పశ్చిమ స్లాబ్)">West Roof Slab (పశ్చిమ స్లాబ్)</option>
+                <option value="s" data-en="South Roof Slab (Good Load Bearing)" data-te="దక్షిణ పైకప్పు (ఉత్తమ భార స్థానం)" data-dual="South Roof Slab (దక్షిణ స్లాబ్)">South Roof Slab (దక్షిణ స్లాబ్)</option>
+                <option value="nw" data-en="Northwest Roof Slab (Secondary / Keep Lower than SW)" data-te="వాయువ్య పైకప్పు (మధ్యమం / నైరుతి కంటే పల్లం)" data-dual="Northwest Roof Slab (వాయువ్య స్లాబ్)">Northwest Roof Slab (వాయువ్య స్లాబ్)</option>
+                <option value="se" data-en="Southeast Roof Slab (Fire & Water Clash)" data-te="ఆగ్నేయ పైకప్పు (అగ్ని స్థానంలో నీటి భారం)" data-dual="Southeast Roof Slab (ఆగ్నేయ స్లాబ్)">Southeast Roof Slab (ఆగ్నేయ స్లాబ్)</option>
+                <option value="east" data-en="East Roof Slab (Blocks Early Morning Sun)" data-te="తూర్పు పైకప్పు (ఉదయపు సూర్యకాంతి నిరోధం)" data-dual="East Roof Slab (తూర్పు స్లాబ్)">East Roof Slab (తూర్పు స్లాబ్)</option>
+                <option value="north" data-en="North Roof Slab (Crushes Kubera Flux)" data-te="ఉత్తర పైకప్పు (కుబేర తరంగ నిరోధం)" data-dual="North Roof Slab (ఉత్తర స్లాబ్)">North Roof Slab (ఉత్తర స్లాబ్)</option>
+                <option value="ne" data-en="Northeast Roof (Catastrophic Weight on Eshanya)" data-te="ఈశాన్య పైకప్పు (మహా వినాశకర ఈశాన్య భారం)" data-dual="Northeast Roof Slab (ఈశాన్య స్లాబ్ — Catastrophic)">Northeast Roof Slab (ఈశాన్య స్లాబ్ — Catastrophic)</option>
+                <option value="center" data-en="Center / Brahmasthana Roof (Dead Weight on Heart)" data-te="నడిమి పైకప్పు (బ్రహ్మస్థాన భార మహాదోషం)" data-dual="Center Roof Slab (నడిమి స్లాబ్ — Severe)">Center Roof Slab (నడిమి స్లాబ్ — Severe)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="diagSeptic">
+                <span class="lang-en">6. Septic Tank Placement:</span>
+                <span class="lang-te">6. సెప్టిక్ ట్యాంక్ స్థానం:</span>
+              </label>
+              <select id="diagSeptic" class="form-select">
+                <option value="nw" data-en="Northern Northwest (Prescribed / Vayuvya)" data-te="ఉత్తర వాయువ్యం (శాస్త్ర సమ్మతం)" data-dual="Northern Northwest (ఉత్తర వాయువ్యం)">Northern Northwest (ఉత్తర వాయువ్యం)</option>
+                <option value="north" data-en="Central North (Permissible Setback)" data-te="మధ్య ఉత్తరం (సమ్మతం)" data-dual="Central North (మధ్య ఉత్తరం)">Central North (మధ్య ఉత్తరం)</option>
+                <option value="south" data-en="Central South (Permissible)" data-te="మధ్య దక్షిణం (అనుమతించదగినది)" data-dual="Central South (మధ్య దక్షిణం)">Central South (మధ్య దక్షిణం)</option>
+                <option value="east" data-en="East (Pollutes Morning Solar Prana)" data-te="తూర్పు (సౌర ప్రాణ కాలుష్యం)" data-dual="East (తూర్పు — Pollutes Prana)">East (తూర్పు — Pollutes Prana)</option>
+                <option value="se" data-en="Southeast (Agni & Water Pit Clash)" data-te="ఆగ్నేయం (అగ్ని స్థానంలో మురుగు గుంత)" data-dual="Southeast (ఆగ్నేయం — Agni clash)">Southeast (ఆగ్నేయం — Agni clash)</option>
+                <option value="west" data-en="West (Tolerable with Proper Venting)" data-te="పశ్చిమం (సరైన వెంట్స్ తో అనుమతి)" data-dual="West (పశ్చిమం — Secondary)">West (పశ్చిమం — Secondary)</option>
+                <option value="sw" data-en="Southwest (Severe Ruin / Deep Pit in SW)" data-te="నైరుతి (మహా దోషం / నైరుతిలో గుంత)" data-dual="Southwest (నైరుతి — Severe Ruin)">Southwest (నైరుతి — Severe Ruin)</option>
+                <option value="ne" data-en="Northeast (Catastrophic / Filth in Eshanya)" data-te="ఈశాన్యం (మహా ఘోరం / ఈశాన్య మలినం)" data-dual="Northeast (ఈశాన్యం — Catastrophic)">Northeast (ఈశాన్యం — Catastrophic)</option>
+                <option value="center" data-en="Brahmasthana / Center (Navel Pollution)" data-te="నడిమి ఇల్లు (గృహ నాభి కాలుష్యం)" data-dual="Center (నడిమి ఇల్లు — Fatal)">Center (నడిమి ఇల్లు — Fatal)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="diagStairs">
+                <span class="lang-en">7. Staircase Location:</span>
+                <span class="lang-te">7. మెట్ల నిర్మాణం:</span>
+              </label>
+              <select id="diagStairs" class="form-select">
+                <option value="sw" data-en="Southwest (Ideal / Maximum Mass)" data-te="నైరుతి (అత్యుత్తమం / గరిష్ఠ బరువు)" data-dual="Southwest (నైరుతి — Ideal)">Southwest (నైరుతి — Ideal)</option>
+                <option value="south" data-en="South (Excellent / Financial Growth)" data-te="దక్షిణం (ఉత్తమం / ధనాభివృద్ధి)" data-dual="South (దక్షిణం — Excellent)">South (దక్షిణం — Excellent)</option>
+                <option value="west" data-en="West (Excellent / Stability)" data-te="పశ్చిమం (ఉత్తమం / స్థిరత్వం)" data-dual="West (పశ్చిమం — Excellent)">West (పశ్చిమం — Excellent)</option>
+                <option value="nw" data-en="Northwest (Acceptable Secondary)" data-te="వాయువ్యం (మధ్యమం / వాయు స్థానం)" data-dual="Northwest (వాయువ్యం — Acceptable)">Northwest (వాయువ్యం — Acceptable)</option>
+                <option value="se" data-en="Southeast (Permissible in SSE)" data-te="ఆగ్నేయం (దక్షిణ ఆగ్నేయంలో అనుమతి)" data-dual="Southeast (ఆగ్నేయం — Permissible)">Southeast (ఆగ్నేయం — Permissible)</option>
+                <option value="north" data-en="North (Defective / Blocks Kubera Energy)" data-te="ఉత్తరం (దోషం / కుబేర శక్తి నిరోధం)" data-dual="North (ఉత్తరం — Defective)">North (ఉత్తరం — Defective)</option>
+                <option value="east" data-en="East (Defective / Blocks Morning Sun)" data-te="తూర్పు (దోషం / సౌరకాంతి నిరోధం)" data-dual="East (తూర్పు — Defective)">East (తూర్పు — Defective)</option>
+                <option value="ne" data-en="Northeast (Catastrophic / Crushes Eshanya)" data-te="ఈశాన్యం (మహా దోషం / ఈశాన్య భార నాశనం)" data-dual="Northeast (ఈశాన్యం — Catastrophic)">Northeast (ఈశాన్యం — Catastrophic)</option>
+                <option value="center" data-en="Center / Brahmasthana (Severe Core Weight)" data-te="నడిమి ఇల్లు / బ్రహ్మస్థానం (తీవ్ర అరిష్టం)" data-dual="Center / Brahmasthana (నడిమి ఇల్లు — Severe)">Center / Brahmasthana (నడిమి ఇల్లు — Severe)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="diagSlope">
+                <span class="lang-en">8. Site Gradient & Drainage:</span>
+                <span class="lang-te">8. నేల మట్టం & మురుగు వాలు:</span>
+              </label>
+              <select id="diagSlope" class="form-select">
+                <option value="sw_to_ne" data-en="SW High to NE Low (Golden Slope / Amritha Valu)" data-te="నైరుతి ఎత్తు, ఈశాన్యం పల్లం (అమృత వాలు — పరమ శ్రేష్ఠం)" data-dual="SW High to NE Low (నైరుతి ఎత్తు, ఈశాన్యం పల్లం)">SW High to NE Low (నైరుతి ఎత్తు, ఈశాన్యం పల్లం)</option>
+                <option value="west_to_east" data-en="West High to East Low (Indra Slope / Morning Prana)" data-te="పశ్చిమం ఎత్తు, తూర్పు పల్లం (ఇంద్ర వాలు / సౌర శక్తి)" data-dual="West High to East Low (పశ్చిమం ఎత్తు, తూర్పు పల్లం)">West High to East Low (పశ్చిమం ఎత్తు, తూర్పు పల్లం)</option>
+                <option value="south_to_north" data-en="South High to North Low (Kubera Slope / Wealth Growth)" data-te="దక్షిణం ఎత్తు, ఉత్తరం పల్లం (కుబేర వాలు / సంపద)" data-dual="South High to North Low (దక్షిణం ఎత్తు, ఉత్తరం పల్లం)">South High to North Low (దక్షిణం ఎత్తు, ఉత్తరం పల్లం)</option>
+                <option value="se_to_nw" data-en="SE High to NW Low (Vayuvya Drain / Fast Turnover)" data-te="ఆగ్నేయం ఎత్తు, వాయువ్యం పల్లం (వాయువ్య వాలు / మధ్యమం)" data-dual="SE High to NW Low (ఆగ్నేయం ఎత్తు, వాయువ్యం పల్లం)">SE High to NW Low (ఆగ్నేయం ఎత్తు, వాయువ్యం పల్లం)</option>
+                <option value="nw_to_se" data-en="NW High to SE Low (Agni Drain / Fire Water Clash)" data-te="వాయువ్యం ఎత్తు, ఆగ్నేయం పల్లం (అగ్ని వాలు / అశుభం)" data-dual="NW High to SE Low (వాయువ్యం ఎత్తు, ఆగ్నేయం పల్లం)">NW High to SE Low (వాయువ్యం ఎత్తు, ఆగ్నేయం పల్లం)</option>
+                <option value="north_to_south" data-en="North High to South Low (Yama Drain / Wealth Loss)" data-te="ఉత్తరం ఎత్తు, దక్షిణం పల్లం (యమ వాలు / ధన నష్టం)" data-dual="North High to South Low (ఉత్తరం ఎత్తు, దక్షిణం పల్లం)">North High to South Low (ఉత్తరం ఎత్తు, దక్షిణం పల్లం)</option>
+                <option value="east_to_west" data-en="East High to West Low (Varuna Drain / Vitality Loss)" data-te="తూర్పు ఎత్తు, పశ్చిమం పల్లం (వరుణ వాలు / నీరసం)" data-dual="East High to West Low (తూర్పు ఎత్తు, పశ్చిమం పల్లం)">East High to West Low (తూర్పు ఎత్తు, పశ్చిమం పల్లం)</option>
+                <option value="ne_to_sw" data-en="NE High to SW Low (Fatal Nairuthi Drain / Bankruptcy)" data-te="ఈశాన్యం ఎత్తు, నైరుతి పల్లం (వినాశకర వాలు / దివాలా)" data-dual="NE High to SW Low (ఈశాన్యం ఎత్తు, నైరుతి పల్లం — Fatal)">NE High to SW Low (ఈశాన్యం ఎత్తు, నైరుతి పల్లం — Fatal)</option>
+                <option value="flat" data-en="Completely Flat Level (Sluggish Drainage Risk)" data-te="సమాంతర మట్టం (నీటి నిల్వ ప్రమాదం)" data-dual="Completely Flat Level (సమాంతర మట్టం)">Completely Flat Level (సమాంతర మట్టం)</option>
+                <option value="high_center" data-en="High Center Core / Kurma Prishta (Elevated Plinth)" data-te="నడిమి ఇల్లు ఎత్తు, చుట్టూ వాలు (కూర్మ పృష్ఠం — రక్షణ)" data-dual="High Center / Kurma Prishta (నడిమి ఇల్లు ఎత్తు)">High Center / Kurma Prishta (నడిమి ఇల్లు ఎత్తు)</option>
+                <option value="low_center" data-en="Low Center Basin / Gaja Prishta Pit (Depression Dosha)" data-te="నడిమి ఇల్లు పల్లం, చుట్టూ ఎత్తు (గజ పృష్ఠ దోషం)" data-dual="Low Center Basin (నడిమి ఇల్లు పల్లం — Severe)">Low Center Basin (నడిమి ఇల్లు పల్లం — Severe)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="diagnostic-results-box">
+          <div class="score-meter-wrap">
+            <div style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); font-weight:700;">
+              <span class="lang-en">VAASTU COMPLIANCE INDEX</span>
+              <span class="lang-te">వాస్తు అనుకూలతా సూచిక</span>
+            </div>
+            <div class="score-number" id="diagScoreVal">100%</div>
+            <span class="score-badge" id="diagScoreBadge">Evaluating...</span>
+          </div>
+
+          <div>
+            <div style="font-size:0.92rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.6rem;">
+              <span class="lang-en">Diagnostic Findings & Authoritative Remedies:</span>
+              <span class="lang-te">పరిశీలనా ఫలితాలు & శాస్త్రీయ పరిష్కారాలు:</span>
+            </div>
+            <div class="doshas-list" id="diagDoshasList">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 6: INTERACTIVE HOUSEHOLD ITEM PLACEMENT GUIDE & CHECKER -->
+    <section id="items" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>🛋️</span>
+          <span class="lang-en">6. Interactive Household Item Placement Guide & Checker</span>
+          <span class="lang-te">6. గృహోపకరణాలు & వస్తువుల వాస్తు మార్గదర్శి (పేజీలు 12, 13, 140–195, 201)</span>
+        </h3>
+        <p class="section-sub lang-en">
+          Where must each household item be placed according to Sri Gouru Thirupati Reddy? 
+          Use the interactive placement validator below to check your cash locker, gas stove, bed cot, refrigerator, 
+          puja mandir, study desk, and more against authentic principles of elemental counterpoise.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          ఇంట్లో ఏ వస్తువును ఎక్కడ ఉంచాలి? శ్రీ గౌరు తిరుపతిరెడ్డి గారి శాస్త్రీయ గ్రంథం ఆధారంగా మీ నగదు బీరువా, వంట పొయ్యి, 
+          పడక మంచం, పూజా మందిరం, వాషింగ్ మెషిన్, మరియు ఫ్రిడ్జ్ వంటి 24+ గృహోపకరణాల సరైన స్థానాలను ఇక్కడ తనిఖీ చేసుకోండి.
+        </p>
+      </div>
+
+      <!-- Item Placement Checker Tool -->
+      <div class="item-checker-card">
+        <div style="font-size:0.82rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gold-bright); font-weight:700; margin-bottom:0.75rem;">
+          <span class="lang-en">⚡ Real-Time Item Placement Validator</span>
+          <span class="lang-te">⚡ ప్రత్యక్ష వస్తు స్థాన నిర్ధారణ సాధనం</span>
+        </div>
+
+        <div class="item-checker-grid">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="itemSelect">
+              <span class="lang-en">Select Household Item:</span>
+              <span class="lang-te">గృహోపకరణం / వస్తువును ఎంచుకోండి:</span>
+            </label>
+            <select id="itemSelect" class="form-select">
+              <!-- Populated dynamically by vaastu.js -->
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="posSelect">
+              <span class="lang-en">Select Proposed Position / Direction:</span>
+              <span class="lang-te">ఉంచదలచిన దిశ / స్థానాన్ని ఎంచుకోండి:</span>
+            </label>
+            <select id="posSelect" class="form-select">
+              <!-- Populated dynamically by vaastu.js -->
+            </select>
+          </div>
+
+          <div>
+            <button type="button" id="btnCheckItem" class="btn-primary" style="padding:0.7rem 1.4rem; font-size:0.95rem; width:100%; white-space:nowrap;">
+              <span class="lang-en">Check Placement 🔍</span>
+              <span class="lang-te">పరిశీలించు 🔍</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Verification Result Box -->
+        <div id="checkerResultBox" style="background:rgba(9,11,17,0.85); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:1.25rem; display:none;">
+          <!-- Dynamically populated by vaastu.js -->
+        </div>
+      </div>
+
+      <!-- Directional Room Map Tab View -->
+      <div style="margin-top:2.5rem; margin-bottom:1.5rem;">
+        <h4 style="font-size:1.25rem; color:#fff; margin-bottom:0.4rem;">
+          <span>🧭</span>
+          <span class="lang-en">Directional Room Guide: What Belongs in Each Sector?</span>
+          <span class="lang-te">దిశల వారీ గృహ సూచిక: ఏ దిశలో ఏ వస్తువులు ఉంచాలి?</span>
+        </h4>
+        <p class="section-sub lang-en" style="font-size:0.94rem; margin-bottom:1rem;">
+          Click any of the 8 cardinal/diagonal directions or Center to see all prescribed and strictly prohibited items.
+        </p>
+        <p class="section-sub lang-te" style="font-size:0.94rem; margin-bottom:1rem; font-family:var(--font-telugu);">
+          ఏ దిశలో ఏ వస్తువులు శుభప్రదమో మరియు వేటిని నివారించాలో తెలుసుకోవడానికి క్రింది దిశలలో ఒకదానిని ఎంచుకోండి.
+        </p>
+
+        <div class="dir-tabs-grid" id="dirTabsWrap">
+          <!-- Populated dynamically by vaastu.js -->
+        </div>
+
+        <div id="dirDetailContainer" class="vithi-analysis-box" style="background:rgba(15,23,42,0.92); border:1px solid var(--border-gold); border-radius:14px; padding:1.5rem;">
+          <!-- Populated dynamically by vaastu.js -->
+        </div>
+      </div>
+
+      <!-- Searchable Directory of All Household Items -->
+      <div style="margin-top:2.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.25rem;">
+          <div>
+            <h4 style="font-size:1.25rem; color:#fff; margin:0 0 0.3rem 0;">
+              <span>📋</span>
+              <span class="lang-en">Comprehensive Directory of Household Items (24+ Categorized)</span>
+              <span class="lang-te">సమగ్ర గృహోపకరణాల జాబితా (24+ వర్గీకృత వస్తువులు)</span>
+            </h4>
+            <div style="font-size:0.86rem; color:var(--text-muted);">
+              <span class="lang-en">Search or filter by category to view ideal and forbidden placements at a glance.</span>
+              <span class="lang-te">సరైన స్థానాలు మరియు నిషిద్ధ స్థానాలను చూడటానికి వెతకండి లేదా వర్గాన్ని ఎంచుకోండి.</span>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <input type="text" id="itemSearchInput" placeholder="Search item (e.g., Locker, Stove, Fridge, Bed)..." 
+                   style="background:rgba(15,23,42,0.9); border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:0.5rem 0.9rem; color:#fff; font-size:0.9rem; min-width:240px;">
+            <select id="itemCatSelect" class="form-select" style="min-width:180px; padding:0.5rem 0.9rem; font-size:0.9rem;">
+              <option value="all" data-en="All Categories" data-te="అన్ని వర్గాలు" data-dual="All Categories (అన్ని వర్గాలు)">All Categories (అన్ని వర్గాలు)</option>
+              <option value="wealth" data-en="Wealth & Valuables" data-te="సంపద & విలువైనవి" data-dual="Wealth & Valuables (సంపద)">Wealth & Valuables (సంపద)</option>
+              <option value="spiritual" data-en="Spiritual & Sacred" data-te="ఆధ్యాత్మికం & పూజ" data-dual="Spiritual & Sacred (ఆధ్యాత్మికం)">Spiritual & Sacred (ఆధ్యాత్మికం)</option>
+              <option value="kitchen" data-en="Kitchen & Dining" data-te="వంటగది & భోజనం" data-dual="Kitchen & Dining (వంటగది)">Kitchen & Dining (వంటగది)</option>
+              <option value="furniture" data-en="Furniture & Sleep" data-te="ఫర్నిచర్ & శయనం" data-dual="Furniture & Sleep (ఫర్నిచర్)">Furniture & Sleep (ఫర్నిచర్)</option>
+              <option value="appliances" data-en="Electrical & Appliances" data-te="విద్యుత్ పరికరాలు" data-dual="Electrical & Appliances (విద్యుత్)">Electrical & Appliances (విద్యుత్)</option>
+              <option value="water" data-en="Water & Plumbing" data-te="నీరు & ప్లంబింగ్" data-dual="Water & Plumbing (నీరు)">Water & Plumbing (నీరు)</option>
+              <option value="cleaning" data-en="Cleaning & Storage" data-te="శుభ్రత & నిల్వ" data-dual="Cleaning & Storage (శుభ్రత)">Cleaning & Storage (శుభ్రత)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="item-catalog-grid" id="itemCatalogGrid">
+          <!-- Populated dynamically by vaastu.js -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 7: TEMPLE VAASTU ARCHAEOLOGICAL CASE STUDIES -->
+    <section id="temples" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>🛕</span>
+          <span class="lang-en">6. Temple Vaastu Archaeological Case Studies</span>
+          <span class="lang-te">6. ప్రముఖ పుణ్యక్షేత్రాల వాస్తు పరిశోధనలు (పేజీలు 210–243)</span>
+        </h3>
+        <p class="section-sub lang-en">
+          Sri Thirupati Reddy conducted groundbreaking architectural field research across major Indian pilgrimage centres. 
+          He demonstrated that the immense magnetic aura and wealth of world-famous shrines are directly grounded in their 
+          topographic alignment with water bodies in the Northeast and mountain elevation in the Southwest.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);\">
+          భారతదేశంలోని ప్రసిద్ధ పుణ్యక్షేత్రాలపై శ్రీ తిరుపతిరెడ్డి గారు ప్రత్యక్ష వాస్తు పరిశోధనలు చేశారు. 
+          ప్రపంచ ప్రసిద్ధి గాంచిన క్షేత్రాల అనంత సంపద, వైభవం వెనుక ఈశాన్యంలో జలప్రాంతాలు, నైరుతిలో ఎత్తైన పర్వతాలు ఉండటమే కారణమని ఆయన రుజువు చేశారు.
+        </p>
+      </div>
+
+      <div class="temple-tabs-wrap" id="templeTabsWrap"></div>
+
+      <div class="vithi-analysis-box" id="templeDetailContainer" style="background:rgba(15,23,42,0.92); border:1px solid var(--border-cyan); border-radius:14px; padding:1.5rem;">
+        <!-- Populated by vaastu.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 7: LIVING VAASTU & ARCHITECTURAL CONSTRUCTION GUIDELINES -->
+    <section id="living" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>🏡</span>
+          <span class="lang-en">7. Living Vaastu & Architectural Construction Guidelines</span>
+          <span class="lang-te">7. నివాస సూత్రాలు & గృహ నిర్మాణ శాస్త్రీయ నియమావళి (పేజీలు 56, 59, 137–195, 196–209)</span>
+        </h3>
+        <p class="section-sub lang-en">
+          Comprehensive principles covering rented houses, bio-magnetic sleeping orientations, Tulasi altar, 
+          Simhadwaram main entrance in Exalted (Uchha) positions, cash almirah in Southwest facing North, 
+          clockwise staircases, kitchen hearth, deity room facing West, soil testing pit, and housewife prosperity rules.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          అద్దె ఇళ్ల ప్రభావం, ఉత్తరం తలపెట్టని శయన దిశ, తులసికోట, ఉచ్ఛ స్థానాలలో సింహద్వారాలు, నైరుతిలో కుబేర ధన లాకర్, 
+          ప్రదక్షిణ మెట్లు, ఆగ్నేయ వంట పొయ్యి, పడమర ముఖ పూజ, భూమి పరీక్ష (గుంతలో నీరు), మరియు గృహిణులకు సౌభాగ్య వాస్తు సూత్రాల సమగ్ర సమాహారం.
+        </p>
+      </div>
+
+      <div class="proverbs-grid" id="specialLivingContainer">
+        <!-- Rendered by vaastu.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 8: MAGNETIC COMPASS & TILTED PLOTS -->
+    <section id="compass" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>🧭</span>
+          <span class="lang-en">8. Magnetic Compass & Tilted Plot Orientation</span>
+          <span class="lang-te">8. దిక్సూచి ఉపయోగం & విదిశ స్థలాల సవరణ (పేజీలు 286–300)</span>
+        </h3>
+        <p class="section-sub lang-en">
+          When a plot does not align with the true cardinal directions and is tilted by 5°, 10°, or 22.5° (Vidisha / Kona plot), 
+          Sri Thirupati Reddy provides exact rules for using a magnetic compass (Dik-sūchi) and aligning the dwelling inside.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          స్థలం సరైన తూర్పు-పడమర, ఉత్తర-దక్షిణాలకు సరిపోలక 5°, 10°, లేదా 22.5° కోణంలో తిరిగినపుడు (విదిశ స్థలాలు), 
+          దిక్సూచిని ఉపయోగించి ఇంటిని సరైన దిశలకు ఎలా సరిచేయాలో శ్రీ తిరుపతిరెడ్డి గారు వివరించిన సూత్రాలు.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:1rem;" id="compassTiltContainer">
+        <!-- Rendered by vaastu.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 9: INDUSTRIAL & COMMERCIAL VAASTU -->
+    <section id="industrial" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>🏭</span>
+          <span class="lang-en">9. Industrial & Commercial Vaastu Blueprint</span>
+          <span class="lang-te">9. పారిశ్రామిక & వాణిజ్య వాస్తు నమూనా (పేజీలు 249, 346)</span>
+        </h3>
+        <p class="section-sub lang-en">
+          Sri Thirupati Reddy devoted major chapters to industrial layout design, analyzing why sick industrial units fail 
+          and examining historical disasters like the Bhopal Union Carbide gas tragedy. 
+          Below is the canonical zoning blueprint for factories and industrial plants.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          పరిశ్రమలు నష్టాలపాలు కావడం వెనుక గల వాస్తు లోపాలు, మరియు భోపాల్ గ్యాస్ దుర్ఘటన వంటి చారిత్రక విపత్తులపై శ్రీ తిరుపతిరెడ్డి గారు పరిశోధనలు చేసి 
+          రూపొందించిన పరిశ్రమల పరిపూర్ణ వాస్తు నమూనా.
+        </p>
+      </div>
+
+      <div class="factory-blueprint">
+        <div class="factory-grid">
+          <div class="factory-zone" style="border-color: rgba(168,85,247,0.4);">
+            <div>
+              <div style="font-size:0.85rem; color:#c084fc; font-weight:700;">
+                <span class="lang-en">NORTHWEST</span>
+                <span class="lang-te">వాయువ్యం (NW)</span>
+              </div>
+              <h4 style="color:#fff; font-size:1.08rem; margin:0.3rem 0;">
+                <span class="lang-en">Finished Goods & Dispatch</span>
+                <span class="lang-te">తయారైన సరుకు & రవాణా</span>
+              </h4>
+              <p class="lang-en" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+                Warehouse for finished stock, outgoing logistics docks, transport parking, packaging units.
+              </p>
+              <p class="lang-te" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; font-family:var(--font-telugu);">
+                పూర్తయిన వస్తువుల గోడౌన్, ప్యాకింగ్ యూనిట్లు, లోడింగ్ డాక్స్, వాహనాల పార్కింగ్ స్థలం.
+              </p>
+            </div>
+            <div style="font-size:0.84rem; color:var(--gold-bright); margin-top:0.4rem;">
+              <span class="lang-en">⚡ Air Element: Enables rapid stock turnover without stagnation.</span>
+              <span class="lang-te">⚡ వాయు తత్త్వం: సరుకు వేగంగా అమ్ముడై నిల్వలు స్తంభించకుండా కాపాడుతుంది.</span>
+            </div>
+          </div>
+
+          <div class="factory-zone" style="border-color: rgba(6,182,212,0.4);">
+            <div>
+              <div style="font-size:0.85rem; color:#22d3ee; font-weight:700;">
+                <span class="lang-en">NORTH</span>
+                <span class="lang-te">ఉత్తరం (N)</span>
+              </div>
+              <h4 style="color:#fff; font-size:1.08rem; margin:0.3rem 0;">
+                <span class="lang-en">Executive & Finance Block</span>
+                <span class="lang-te">మేనేజింగ్ డైరెక్టర్ & ఆర్థిక విభాగం</span>
+              </h4>
+              <p class="lang-en" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+                Managing Director's office, accounts department, treasury vault, reception hall.
+              </p>
+              <p class="lang-te" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; font-family:var(--font-telugu);">
+                ఎండీ గారి ఛాంబర్, అకౌంట్స్ సెక్షన్, నగదు లాకర్లు, ప్రధాన రిసెప్షన్ హాలు.
+              </p>
+            </div>
+            <div style="font-size:0.84rem; color:var(--emerald-bright); margin-top:0.4rem;">
+              <span class="lang-en">💎 Kubera Sector: Steady financial inflows and transparent books.</span>
+              <span class="lang-te">💎 కుబేర స్థానం: నిరంతర ధనాగమనం మరియు వ్యాపార లాభాలు.</span>
+            </div>
+          </div>
+
+          <div class="factory-zone" style="border-color: rgba(16,185,129,0.4);">
+            <div>
+              <div style="font-size:0.85rem; color:#34d399; font-weight:700;">
+                <span class="lang-en">NORTHEAST</span>
+                <span class="lang-te">ఈశాన్యం (NE)</span>
+              </div>
+              <h4 style="color:#fff; font-size:1.08rem; margin:0.3rem 0;">
+                <span class="lang-en">Water & Environmental Zone</span>
+                <span class="lang-te">జల వనరులు & పచ్చిక బయళ్ళు</span>
+              </h4>
+              <p class="lang-en" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+                Borewells, underground raw water sumps, landscaped lawns, main security gate (in ENE/NNE).
+              </p>
+              <p class="lang-te" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; font-family:var(--font-telugu);">
+                బోరుబావులు, అండర్‌గ్రౌండ్ సంపులు, పచ్చిక బయళ్ళు, ప్రధాన సెక్యూరిటీ గేటు (ఉ.ఈ/తూ.ఈ లో).
+              </p>
+            </div>
+            <div style="font-size:0.84rem; color:#67e8f9; margin-top:0.4rem;">
+              <span class="lang-en">🌊 Water Element: Must remain lowest in topography. Never place scrap here.</span>
+              <span class="lang-te">🌊 జల స్థానం: కర్మాగారంలో అత్యంత పల్లంగా ఉండాలి. బరువులు, స్క్రాప్ పెట్టరాదు.</span>
+            </div>
+          </div>
+
+          <div class="factory-zone" style="border-color: rgba(245,158,11,0.4);">
+            <div>
+              <div style="font-size:0.85rem; color:#fbbf24; font-weight:700;">
+                <span class="lang-en">WEST</span>
+                <span class="lang-te">పడమర (W)</span>
+              </div>
+              <h4 style="color:#fff; font-size:1.08rem; margin:0.3rem 0;">
+                <span class="lang-en">Medium Machinery & Workshop</span>
+                <span class="lang-te">మధ్యస్థ యంత్రాలు & వర్క్‌షాప్</span>
+              </h4>
+              <p class="lang-en" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+                Secondary production lines, machine maintenance shops, heavy tool cribs.
+              </p>
+              <p class="lang-te" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; font-family:var(--font-telugu);">
+                ద్వితీయ ఉత్పత్తి విభాగాలు, మరమ్మతు వర్క్‌షాపులు, టూల్ రూమ్స్.
+              </p>
+            </div>
+            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:0.4rem;">
+              <span class="lang-en">⚙️ Structural Ballast: Keeps operational stability intact.</span>
+              <span class="lang-te">⚙️ స్థిరత్వ స్థానం: కర్మాగార కార్యకలాపాలలో స్థిరత్వాన్ని నిలుపుతుంది.</span>
+            </div>
+          </div>
+
+          <div class="factory-zone" style="border-color: rgba(245,158,11,0.3); background: rgba(0,0,0,0.4);">
+            <div>
+              <div style="font-size:0.85rem; color:var(--gold-bright); font-weight:700;">
+                <span class="lang-en">CENTER</span>
+                <span class="lang-te">బ్రహ్మస్థానము (Center)</span>
+              </div>
+              <h4 style="color:#fff; font-size:1.08rem; margin:0.3rem 0;">
+                <span class="lang-en">Open Factory Atrium / Gangway</span>
+                <span class="lang-te">ప్రధాన రవాణా మార్గం / ఖాళీ హాలు</span>
+              </h4>
+              <p class="lang-en" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+                Central movement corridor, high roof with natural sky-lighting, ventilation monitors.
+              </p>
+              <p class="lang-te" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; font-family:var(--font-telugu);">
+                యంత్రాల మధ్య విశాలమైన నడకదారి, సహజ వెలుతురు వచ్చే పైకప్పు, గాలి వెళ్లే మార్గాలు.
+              </p>
+            </div>
+            <div style="font-size:0.84rem; color:var(--gold-primary); margin-top:0.4rem;">
+              <span class="lang-en">☸️ Ether Element: Free of huge machinery bases and deep sumps.</span>
+              <span class="lang-te">☸️ ఆకాశ తత్త్వం: భారీ యంత్రాలు, పునాదులు మరియు గోతులు లేకుండా తేలికగా ఉండాలి.</span>
+            </div>
+          </div>
+
+          <div class="factory-zone" style="border-color: rgba(6,182,212,0.4);">
+            <div>
+              <div style="font-size:0.85rem; color:#22d3ee; font-weight:700;">
+                <span class="lang-en">EAST</span>
+                <span class="lang-te">తూర్పు (E)</span>
+              </div>
+              <h4 style="color:#fff; font-size:1.08rem; margin:0.3rem 0;">
+                <span class="lang-en">Administrative Hall & R&D</span>
+                <span class="lang-te">అడ్మినిస్ట్రేషన్ & ఆర్ అండ్ డి ల్యాబ్స్</span>
+              </h4>
+              <p class="lang-en" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+                Design studios, quality control labs, staff meeting rooms, wide eastern setback road.
+              </p>
+              <p class="lang-te" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; font-family:var(--font-telugu);">
+                డిజైనింగ్ విభాగాలు, క్వాలిటీ కంట్రోల్ పరీక్షా కేంద్రాలు, ఉద్యోగుల సమావేశ మందిరాలు.
+              </p>
+            </div>
+            <div style="font-size:0.84rem; color:#67e8f9; margin-top:0.4rem;">
+              <span class="lang-en">☀️ Solar Prana: Encourages creative design and innovation.</span>
+              <span class="lang-te">☀️ సౌర ప్రాణశక్తి: సరికొత్త ఆవిష్కరణలు మరియు పరిశోధనలకు ప్రేరణ.</span>
+            </div>
+          </div>
+
+          <div class="factory-zone" style="border-color: rgba(217,119,6,0.5);">
+            <div>
+              <div style="font-size:0.85rem; color:#fbbf24; font-weight:700;">
+                <span class="lang-en">SOUTHWEST</span>
+                <span class="lang-te">నైరుతి (SW)</span>
+              </div>
+              <h4 style="color:#fff; font-size:1.08rem; margin:0.3rem 0;">
+                <span class="lang-en">Heavy Machinery & Raw Stores</span>
+                <span class="lang-te">భారీ యంత్రాలు & ముడిసరుకు గోడౌన్</span>
+              </h4>
+              <p class="lang-en" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+                Heaviest presses, smelting furnaces, steel billet storage, highest roof slab, overhead tank.
+              </p>
+              <p class="lang-te" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; font-family:var(--font-telugu);">
+                అత్యంత భారీ క్రేన్లు, ముడిసరుకు నిల్వలు, ఎత్తైన పైకప్పు మరియు ఓవర్‌హెడ్ వాటర్ ట్యాంక్.
+              </p>
+            </div>
+            <div style="font-size:0.84rem; color:#fbbf24; margin-top:0.4rem;">
+              <span class="lang-en">⛰️ Earth Element: Bears maximum foundation load. Zero pits allowed.</span>
+              <span class="lang-te">⛰️ పృథ్వీ తత్త్వం: కర్మాగారంలో అత్యంత ఎత్తైన, బరువైన ప్రదేశం. ఎలాంటి గుంటలు ఉండరాదు.</span>
+            </div>
+          </div>
+
+          <div class="factory-zone" style="border-color: rgba(249,115,22,0.5);">
+            <div>
+              <div style="font-size:0.85rem; color:#fb923c; font-weight:700;">
+                <span class="lang-en">SOUTH</span>
+                <span class="lang-te">దక్షిణం (S)</span>
+              </div>
+              <h4 style="color:#fff; font-size:1.08rem; margin:0.3rem 0;">
+                <span class="lang-en">Primary Production Line</span>
+                <span class="lang-te">ప్రధాన ఉత్పత్తి విభాగాలు</span>
+              </h4>
+              <p class="lang-en" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+                Assembly lines, stamping machinery, overhead crane gantries, tall boundary wall.
+              </p>
+              <p class="lang-te" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; font-family:var(--font-telugu);">
+                అసెంబ్లీ లైన్లు, స్టాంపింగ్ విభాగాలు, భారీ మోటార్లు మరియు ఎత్తైన దక్షిణ రక్షణ గోడ.
+              </p>
+            </div>
+            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:0.4rem;">
+              <span class="lang-en">🔨 High Density Load: Prevents operational downtime.</span>
+              <span class="lang-te">🔨 ఘనభార విభాగం: యంత్రాలు తరచూ మొరాయించకుండా ఉత్పత్తి సజావుగా సాగుతుంది.</span>
+            </div>
+          </div>
+
+          <div class="factory-zone" style="border-color: rgba(239,68,68,0.5);">
+            <div>
+              <div style="font-size:0.85rem; color:#f87171; font-weight:700;">
+                <span class="lang-en">SOUTHEAST</span>
+                <span class="lang-te">ఆగ్నేయం (SE)</span>
+              </div>
+              <h4 style="color:#fff; font-size:1.08rem; margin:0.3rem 0;">
+                <span class="lang-en">High Tension Substation & Boilers</span>
+                <span class="lang-te">విద్యుత్ సబ్‌స్టేషన్, ట్రాన్స్‌ఫార్మర్ & బాయిలర్లు</span>
+              </h4>
+              <p class="lang-en" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6;">
+                HT transformers, DG sets, steam boilers, furnaces, main electrical distribution panels.
+              </p>
+              <p class="lang-te" style="font-size:0.92rem; color:var(--text-muted); line-height:1.6; font-family:var(--font-telugu);">
+                హై టెన్షన్ విద్యుత్ ట్రాన్స్‌ఫార్మర్లు, జనరేటర్లు, స్టీమ్ బాయిలర్లు, ప్రధాన స్విచ్ గేర్లు.
+              </p>
+            </div>
+            <div style="font-size:0.84rem; color:#fca5a5; margin-top:0.4rem;">
+              <span class="lang-en">🔥 Agni Sector: Guaranteed thermal containment and fire safety compliance.</span>
+              <span class="lang-te">🔥 అగ్ని స్థానం: అగ్ని ప్రమాదాల రక్షణ మరియు నిరంతర విద్యుత్ ప్రసారం.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-World Forensic Disasters & Geopolitical Vaastu Studies -->
+      <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.12);">
+        <div class="section-head" style="margin-bottom: 1.25rem;">
+          <h4 style="font-size: 1.3rem; color: var(--gold-bright); margin-bottom: 0.4rem;">
+            <span>🌐</span>
+            <span class="lang-en">Forensic Industrial Disasters & Global Geopolitical Case Studies</span>
+            <span class="lang-te">చారిత్రక పారిశ్రామిక విపత్తులు & ప్రపంచ దేశాల వాస్తు పరిశోధనలు (పేజీలు 247–285)</span>
+          </h4>
+          <p class="section-sub lang-en">
+            Sri Thirupati Reddy pioneered the forensic application of Vaastu to macro-structures, analyzing the root geometric flaws 
+            behind industrial disasters like the Bhopal gas tragedy, the perpetual magnet pull of the Taj Mahal, and why nations like 
+            Japan and Switzerland thrive while others face invasion.
+          </p>
+          <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+            భోపాల్ గ్యాస్ దుర్ఘటన వెనుక గల వాస్తు లోపాలు, తాజ్ మహల్ అద్భుత అయస్కాంత ఆకర్షణ, మరియు జపాన్, స్విట్జర్లాండ్ వంటి దేశాల అఖండ వైభవం వెనుక గల 
+            సహజ భౌగోళిక వాస్తుపై శ్రీ గౌరు తిరుపతిరెడ్డి గారి పరిశోధనాత్మక విశ్లేషణలు.
+          </p>
+        </div>
+
+        <div class="case-tabs-wrap" id="historicalTabsWrap">
+          <!-- Populated dynamically by renderHistoricalTabs() -->
+        </div>
+
+        <div class="vithi-analysis-box" id="historicalCaseDetailContainer" style="background:rgba(15,23,42,0.92); border:1px solid rgba(245,158,11,0.4); border-radius:14px; padding:1.5rem;">
+          <!-- Populated dynamically by renderHistoricalCase() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: TREASURY OF RHYMING GOLDEN PROVERBS -->
+    <section id="proverbs" class="panel">
+      <div class="section-head">
+        <h3 class="section-title">
+          <span>📜</span>
+          <span class="lang-en">10. Treasury of Thirupati Reddy's Rhyming Golden Proverbs</span>
+          <span class="lang-te">10. గౌరు తిరుపతిరెడ్డి గారి వాస్తు సూక్తులు & సామెతల ఖజానా</span>
+        </h3>
+        <p class="section-sub lang-en">
+          At the foot of nearly every page in his seminal work, Sri Gouru Thirupati Reddy penned unforgettable 
+          rhyming aphorisms encapsulating profound architectural truths. Filter or search the collection below.
+        </p>
+        <p class="section-sub lang-te" style="font-family: var(--font-telugu);">
+          తమ గ్రంథంలోని దాదాపు ప్రతి పేజీ అడుగున శ్రీ గౌరు తిరుపతిరెడ్డి గారు ప్రాసతో కూడిన అద్భుతమైన వాస్తు సామెతలను పొందుపరిచారు. 
+          ఈ సామెతలను క్రింద వెతకండి లేదా వర్గాల వారీగా పరిశీలించండి.
+        </p>
+      </div>
+
+      <div class="proverbs-search-bar">
+        <input type="text" id="proverbSearchInput" class="search-input" placeholder="🔍 Search proverbs by keyword / సామెతలను వెతకండి (e.g., well, gate, బావి, గేటు)...">
+        <select id="proverbCategorySelect" class="form-select" style="max-width:260px;">
+          <option value="all" data-en="All Categories" data-te="అన్ని విభాగాలు" data-dual="All Categories (అన్ని విభాగాలు)">All Categories (అన్ని విభాగాలు)</option>
+          <option value="Water & Wells" data-en="Water & Wells" data-te="జలము & బావులు" data-dual="Water & Wells (జలము & బావులు)">Water & Wells (జలము & బావులు)</option>
+          <option value="Doors & Gates" data-en="Doors & Gates" data-te="ద్వారాలు & గేట్లు" data-dual="Doors & Gates (ద్వారాలు & గేట్లు)">Doors & Gates (ద్వారాలు & గేట్లు)</option>
+          <option value="Foundations & Topography" data-en="Foundations & Topography" data-te="పునాది & వాలు" data-dual="Foundations & Topography (పునాది & వాలు)">Foundations & Topography (పునాది & వాలు)</option>
+          <option value="Kitchen & Health" data-en="Kitchen & Health" data-te="వంటగది & ఆరోగ్యం" data-dual="Kitchen & Health (వంటగది & ఆరోగ్యం)">Kitchen & Health (వంటగది & ఆరోగ్యం)</option>
+          <option value="Bedrooms & Rest" data-en="Bedrooms & Rest" data-te="శయనం & విశ్రాంతి" data-dual="Bedrooms & Rest (శయనం & విశ్రాంతి)">Bedrooms & Rest (శయనం & విశ్రాంతి)</option>
+          <option value="Industrial Vaastu" data-en="Industrial Vaastu" data-te="పరిశ్రమలు & వాణిజ్యం" data-dual="Industrial Vaastu (పరిశ్రమలు)">Industrial Vaastu (పరిశ్రమలు)</option>
+        </select>
+      </div>
+
+      <div class="proverbs-grid" id="proverbsGrid">
+        <!-- Dynamically rendered by vaastu.js -->
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div style="margin-bottom: 1.25rem;">
+      <a href="../index.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; border-color: rgba(245, 158, 11, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(245, 158, 11, 0.1);">
+        <span class="lang-en">← Go to AncientWisdom Portal (प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము)</span>
+        <span class="lang-te">← ప్రాచీన జ్ఞానము పోర్టల్ కు వెళ్ళండి (AncientWisdom Portal)</span> 🏛️
+      </a>
+    </div>
+    <p>
+      <strong>Vāstu-śāstra (వాస్తు శాస్త్రము • वास्तुशास्त्रम्)</strong> — The Architectural Science of Spatial Equilibrium.
+      <br>
+      Created strictly following the authentic 352-page masterwork of <strong>Sri Gouru Thirupati Reddy</strong> (గౌరు తిరుపతిరెడ్డి), Proddatur, A.P.
+      <br>
+      Part of the <a href="../index.html">AncientWisdom</a> Digital Sanctuary. Open-source under the MIT License.
+    </p>
+  </footer>
+
+  <script src="vaastu.js"></script>
+</body>
+</html>
