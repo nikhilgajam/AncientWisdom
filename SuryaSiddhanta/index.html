@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sūrya Siddhānta (सूर्यसिद्धान्त) — The Complete Guide: Beginner to Pro</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="ambient-glow glow-sun"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="sun-icon">☀️</div>
+        <div class="logo-text">
+          <h1>Sūrya Siddhānta</h1>
+          <span>सूर्यसिद्धान्तः • సూర్యసిద్ధాంతః • Classical Astronomy</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#foundations" class="nav-item active">🪐 Foundations</a>
+        <a href="#calculator" class="nav-item">🔢 Calculator</a>
+        <a href="#nakshatra" class="nav-item">✨ Nakshatra</a>
+        <a href="#epicycles" class="nav-item">🔄 Epicycles</a>
+        <a href="#trig" class="nav-item">📐 24 Sines</a>
+        <a href="#sundial" class="nav-item">☀️ Śaṅku</a>
+        <a href="#time-systems" class="nav-item">⏳ 9 Times</a>
+        <a href="#chapters" class="nav-item">📜 14 Adhyāyas</a>
+        <a href="#quiz" class="nav-item">🎯 Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-pill">☀️ Canonical Treatise of Siddhānta Jyotiṣa</div>
+      <h2 class="hero-title">Sūrya Siddhānta Master Guide</h2>
+      <div class="hero-verse">
+        "अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने । समस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥"<br>
+        <span style="display:block; font-size:1.05rem; color:var(--gold-bright); margin-top:0.35rem;">"అచిన్త్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే । సమస్తజగదాధారమూర్తయే బ్రహ్మణే నమః ॥"</span>
+        <span style="font-size:0.92rem; color:var(--text-muted); display:block; margin-top:0.35rem;">— Sūrya Siddhānta 1.1 (Salutation to the Supreme Cosmic Consciousness)</span>
+      </div>
+      <p class="hero-desc">
+        The ultimate, scientifically rigorous, and pedagogically complete guide to ancient India's 
+        foundational astronomical text. From the basic anatomy of the night sky and human breath units 
+        to advanced double-epicycle orbital mechanics, spherical trigonometry, 24-sine finite difference formulas, 
+        and solar parallax calculations.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#calculator" class="btn-primary">
+          <span>Calculate Planetary Longitudes</span> 🚀
+        </a>
+        <a href="#chapters" class="btn-ghost">
+          <span>Explore All 14 Adhyāyas</span> 📜
+        </a>
+      </div>
+    </section>
+
+    <!-- Learning Level Filter -->
+    <div class="level-bar">
+      <button class="level-btn active" data-level="all">🌟 All Levels (Complete View)</button>
+      <button class="level-btn" data-level="beginner">🌱 Beginner: The Cosmos & Units</button>
+      <button class="level-btn" data-level="intermediate">🌿 Intermediate: Math, Time & Sines</button>
+      <button class="level-btn" data-level="pro">🔭 Astronomer / Pro: Epicycles & Parallax</button>
+    </div>
+
+    <!-- Section 1: Foundations & History -->
+    <section id="foundations" data-tier="beginner">
+      <div class="section-head">
+        <h3 class="section-title"><span>🪐</span> 1. The Heritage & Architecture of the Cosmos</h3>
+        <p class="section-sub">
+          Revealed according to tradition by the Sun God to Mayāsura at the end of Satya Yuga, 
+          the Sūrya Siddhānta represents the zenith of classical Indian mathematical astronomy (*Siddhānta Jyotiṣa*).
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-subtitle">Cosmological Geography</div>
+          <h4 class="card-title">Spherical Earth (Bhūgola)</h4>
+          <p>
+            Chapter 12, verse 32 explicitly states that Earth is a spherical ball 
+            (<em>"Kanduka-pratimaḥ"</em>) hanging unsupported in space, sustained by its own 
+            inherent attractive holding power (<em>"Dhāraṇātmikā Śaktiḥ"</em> — ancient Indian formulation of gravity).
+          </p>
+          <div style="font-size:0.82rem; color:var(--gold-bright); font-family:var(--font-mono);">
+            Diameter: 1,600 Yojanas • Circumference: ~5,026 Yojanas
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Zero Calendar Drift</div>
+          <h4 class="card-title">The Continuous Ahargaṇa</h4>
+          <p>
+            Instead of relying on irregular month names or political calendars that accumulate error, 
+            Surya Siddhanta anchors all motion to the <strong>Ahargaṇa</strong> — a strictly continuous 
+            tally of civil days elapsed from the epoch (Feb 18, 3102 BCE).
+          </p>
+          <div style="font-size:0.82rem; color:var(--cyan-accent); font-family:var(--font-mono);">
+            Civil Days in 4.32M Years: 1,577,917,828
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Cosmic Resonance</div>
+          <h4 class="card-title">Human Breath to the Sky</h4>
+          <p>
+            1 <em>Prāṇa</em> (human breath) = 4 sidereal seconds. 
+            There are 21,600 prāṇas in one day, matching exactly the 21,600 arcminutes in the 360° celestial sphere! 
+            One human breath corresponds to one arcminute of the cosmos turning.
+          </p>
+          <div style="font-size:0.82rem; color:var(--purple-nebula); font-family:var(--font-mono);">
+            1 Day = 60 Ghaṭikās = 21,600 Prāṇas
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive Ahargana & Planetary Longitude Calculator -->
+    <section id="calculator" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>🔢</span> 2. Live Ahargaṇa & Mean Planetary Longitude Engine</h3>
+        <p class="section-sub">
+          Enter any Gregorian date. The engine computes the exact Julian Day Number, civil elapsed days from the 
+          Kali Yuga epoch (18 Feb 3102 BCE), and solves the Surya Siddhanta mean celestial coordinates for all planets.
+        </p>
+      </div>
+
+      <div class="calc-panel">
+        <div class="input-row">
+          <div class="input-group">
+            <label for="targetDateInput">Select Date (Gregorian Calendar):</label>
+            <input type="date" id="targetDateInput">
+          </div>
+          <button id="calcBtn" class="btn-primary" style="height:48px;">Compute Astronomical Ephemeris</button>
+          <button id="todayBtn" class="btn-ghost" style="height:48px;">Set to Today</button>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.25rem; margin-bottom:1.5rem;">
+          <div style="background:rgba(255,255,255,0.03); padding:1rem 1.25rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);">
+            <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Ahargaṇa (Elapsed Kali Days)</div>
+            <div id="aharganaDisplay" style="font-size:1.8rem; font-family:var(--font-mono); font-weight:700; color:var(--gold-bright);">--</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); padding:1rem 1.25rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);">
+            <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Julian Day Number (JD)</div>
+            <div id="julianDayDisplay" style="font-size:1.8rem; font-family:var(--font-mono); font-weight:700; color:var(--cyan-accent);">--</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); padding:1rem 1.25rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);">
+            <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Epoch Reference</div>
+            <div style="font-size:1.15rem; font-family:var(--font-body); font-weight:600; color:#fff; margin-top:0.35rem;">Feb 18, 3102 BCE (Midnight)</div>
+          </div>
+        </div>
+
+        <div class="results-table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Celestial Body (Graha)</th>
+                <th>Mean Longitude</th>
+                <th>Zodiac Sign (Rāśi)</th>
+                <th>Lunar Asterism (Nakṣatra)</th>
+                <th>Orbital Class</th>
+              </tr>
+            </thead>
+            <tbody id="planetTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Nakshatra (Lunar Asterism) Visualizer & Daily Ephemeris -->
+    <section id="nakshatra" data-tier="beginner">
+      <div class="section-head">
+        <h3 class="section-title"><span>✨</span> 3. Nakshatra Visualizer & Daily Lunar Ephemeris</h3>
+        <p class="section-sub">
+          The 27 Nakshatras (lunar mansions of $13^\circ 20'$ each) form the celestial backbone of ancient Indian astronomy. 
+          As the Moon travels $\approx 13^\circ 10'$ each day, it visits one Nakshatra per day. 
+          Track which Nakshatra is active on any date, explore auspicious muhūrtas, ruling deities, and uncover your birth star.
+        </p>
+      </div>
+
+      <!-- Date Controller Bar for Nakshatra -->
+      <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); padding:0.85rem 1.25rem; border-radius:14px; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+        <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+          <label for="nakDateInput" style="font-weight:600; color:var(--gold-bright); font-size:0.9rem;">Inspect Day & Moon Transit:</label>
+          <input type="date" id="nakDateInput" style="background:#000; color:#fff; border:1px solid #444; padding:0.4rem 0.8rem; border-radius:8px; font-size:0.9rem;">
+          <button id="nakNowBtn" class="btn-ghost" style="padding:0.4rem 0.9rem; font-size:0.85rem;">Set to Today</button>
+        </div>
+        <div style="font-size:0.82rem; color:var(--text-muted);">
+          Each Nakshatra = 800' ($13^\circ 20'$) • 4 Pādas of 200' ($3^\circ 20'$) each
+        </div>
+      </div>
+
+      <!-- Active Day Nakshatra Hero Card -->
+      <div class="nakshatra-today-card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+          <div>
+            <span class="hero-pill" style="margin-bottom:0.4rem;">Presiding Asterism of the Day</span>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <span id="nakActiveIcon" style="font-size:2.8rem; background:rgba(255,255,255,0.05); padding:0.4rem 0.6rem; border-radius:12px; border:1px solid rgba(255,255,255,0.1);">🐴</span>
+              <div>
+                <h3 id="nakActiveName" style="font-family:var(--font-display); font-size:1.85rem; color:#fff; line-height:1.2;">Ashvini (अश्विनी)</h3>
+                <div id="nakActiveDev" style="color:var(--gold-primary); font-size:0.9rem; font-weight:600;">Horse's Head • 00°00' - 13°20' Mesha</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <div style="background:rgba(0,0,0,0.4); padding:0.6rem 1rem; border-radius:10px; border:1px solid rgba(255,255,255,0.08); text-align:right;">
+              <span style="font-size:0.72rem; color:var(--text-muted); display:block;">True Moon Position</span>
+              <strong id="nakActiveMoonDeg" style="color:var(--cyan-accent); font-family:var(--font-mono); font-size:1rem;">--</strong>
+              <div id="nakActiveRashi" style="font-size:0.75rem; color:#e2e8f0;">--</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Moon Transit Progress Bar & 4 Padas -->
+        <div class="nak-progress-wrap">
+          <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:0.4rem;">
+            <span style="color:var(--text-muted);">Moon Progress in this Nakshatra:</span>
+            <strong id="nakProgressText" style="color:var(--gold-bright); font-family:var(--font-mono);">--</strong>
+          </div>
+          <div class="nak-progress-bar-bg">
+            <div id="nakProgressFill" class="nak-progress-fill" style="width: 50%;"></div>
+          </div>
+          <div class="padas-bar">
+            <div class="pada-seg" id="pada_1">Pāda 1 (0°00' - 3°20')</div>
+            <div class="pada-seg" id="pada_2">Pāda 2 (3°20' - 6°40')</div>
+            <div class="pada-seg" id="pada_3">Pāda 3 (6°40' - 10°00')</div>
+            <div class="pada-seg" id="pada_4">Pāda 4 (10°00' - 13°20')</div>
+          </div>
+        </div>
+
+        <!-- Key Attributes Grid -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0.75rem; margin-bottom:1.25rem;">
+          <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Presiding Deity (Devatā)</span>
+            <strong id="nakActiveDeity" style="color:#fff; font-size:0.88rem;">--</strong>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Ruling Planet Lord</span>
+            <strong id="nakActiveLord" style="color:var(--gold-bright); font-size:0.88rem;">--</strong>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Yogatārā Junction Star</span>
+            <strong id="nakActiveStar" style="color:var(--cyan-accent); font-size:0.85rem;">--</strong>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Temperament (Gana)</span>
+            <strong id="nakActiveGana" style="color:#fff; font-size:0.88rem;">--</strong>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Nature (Kritya)</span>
+            <strong id="nakActiveNature" style="color:#fff; font-size:0.85rem;">--</strong>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Element (Tattva)</span>
+            <strong id="nakActiveElement" style="color:#fff; font-size:0.88rem;">--</strong>
+          </div>
+        </div>
+
+        <!-- Muhurta & Naming sound -->
+        <div style="display:grid; grid-template-columns:1.5fr 1fr; gap:1rem; flex-wrap:wrap;">
+          <div style="background:rgba(245, 185, 66, 0.08); border-left:3px solid var(--gold-primary); padding:0.85rem 1.15rem; border-radius:0 8px 8px 0;">
+            <strong style="color:var(--gold-bright); font-size:0.82rem; display:block; margin-bottom:0.2rem;">TODAY'S AUSPICIOUS ACTIVITIES (MUHŪRTA):</strong>
+            <p id="nakActiveMuhurta" style="font-size:0.86rem; color:#e2e8f0; margin:0; line-height:1.5;">--</p>
+          </div>
+          <div style="background:rgba(168, 85, 247, 0.08); border-left:3px solid var(--purple-nebula); padding:0.85rem 1.15rem; border-radius:0 8px 8px 0;">
+            <strong style="color:var(--purple-nebula); font-size:0.82rem; display:block; margin-bottom:0.2rem;">CHILD NAMING SOUND (NĀMĀKṢARA):</strong>
+            <p id="nakActiveSyllable" style="font-size:0.86rem; color:#e2e8f0; margin:0; line-height:1.5;">--</p>
+          </div>
+        </div>
+
+        <!-- 7-Day Forecast Timeline -->
+        <div style="margin-top:1.75rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:1.25rem;">
+          <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#fff; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+            <span>📅</span> 7-Day Moon Transit Forecast (Click any day to inspect)
+          </h4>
+          <div class="forecast-scroll" id="nakForecastContainer">
+            <!-- Dynamically populated 7 forecast cards -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Birth Star (Janma Nakshatra) Calculator Card -->
+      <div class="card" style="margin-bottom:2.5rem; background:linear-gradient(145deg, rgba(16, 22, 34, 0.85), rgba(26, 18, 36, 0.9));">
+        <div class="card-subtitle">Personal Vedic Astrometry</div>
+        <h4 class="card-title">🌟 Discover Your Janma Nakshatra (Birth Star)</h4>
+        <p>
+          In classical Indian Jyotiṣa, your Janma Nakshatra is the asterism occupied by the Moon at the precise instant of your birth. 
+          It governs your core emotional nature, energetic rhythm, and Vedic naming syllable.
+        </p>
+
+        <div style="display:flex; gap:1rem; align-items:flex-end; flex-wrap:wrap; margin:1.25rem 0;">
+          <div class="input-group">
+            <label for="birthDateInput">Birth Date:</label>
+            <input type="date" id="birthDateInput">
+          </div>
+          <div class="input-group">
+            <label for="birthTimeInput">Birth Time (Local):</label>
+            <input type="time" id="birthTimeInput" value="12:00">
+          </div>
+          <button id="birthNakCalcBtn" class="btn-primary" style="height:44px;">Find My Birth Star 🌟</button>
+        </div>
+
+        <div id="birthNakResultArea" style="display:none;"></div>
+      </div>
+
+      <!-- Master 27 Nakshatras Directory & Interactive Grid -->
+      <div style="margin-bottom:1.5rem;">
+        <h4 style="font-family:var(--font-display); font-size:1.4rem; color:#fff; margin-bottom:0.5rem;">
+          🌌 All 27 Nakshatras Celestial Catalog
+        </h4>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">
+          Click any asterism card below for full astronomical, mythological, and muhūrta insights.
+        </p>
+
+        <div class="nak-filter-bar">
+          <button class="nak-filter-btn active" data-group="all">All (27)</button>
+          <button class="nak-filter-btn" data-group="deva">Deva Gana (Divine)</button>
+          <button class="nak-filter-btn" data-group="manushya">Manushya Gana (Human)</button>
+          <button class="nak-filter-btn" data-group="rakshasa">Rakshasa Gana (Assertive)</button>
+          <button class="nak-filter-btn" data-group="fire">Fire (Agni)</button>
+          <button class="nak-filter-btn" data-group="earth">Earth (Prithvi)</button>
+          <button class="nak-filter-btn" data-group="air">Air & Ether</button>
+          <button class="nak-filter-btn" data-group="water">Water (Jala)</button>
+          <input type="text" id="nakSearchInput" class="nak-search-input" placeholder="🔍 Search star, deity, lord...">
+        </div>
+
+        <div class="nakshatra-grid" id="nakshatraCardsGrid">
+          <!-- Dynamically populated 27 cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Inspection Drawer for Nakshatras -->
+    <div id="nakModalBackdrop" class="nak-modal-backdrop">
+      <div class="nak-modal">
+        <button id="nakModalClose" class="nak-modal-close">&times;</button>
+        <div id="nakModalContent"></div>
+      </div>
+    </div>
+
+    <!-- Section 4: Double Epicycle & Retrograde Motion Simulator -->
+    <section id="epicycles" data-tier="pro">
+      <div class="section-head">
+        <h3 class="section-title"><span>🔄</span> 4. Double Epicycle & Retrograde Motion (Vakragati) Simulator</h3>
+        <p class="section-sub">
+          The Surya Siddhanta resolves irregular planetary motions using two epicycles: 
+          <strong>Manda-phala</strong> (accounting for orbital eccentricity) and 
+          <strong>Śīghra-phala</strong> (accounting for Earth's heliocentric vantage point). 
+          Watch how this naturally reproduces retrograde loops (<em>Vakrī</em>) and stationary points.
+        </p>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="epicycleCanvas"></canvas>
+        <div class="canvas-controls">
+          <div class="control-item">
+            <label for="simPlanet" style="color:#fff; font-weight:600;">Planet:</label>
+            <select id="simPlanet" style="background:#111; color:#fff; border:1px solid #444; padding:0.35rem 0.65rem; border-radius:6px;">
+              <option value="mars" selected>Mars (Maṅgala - High Anomaly)</option>
+              <option value="jupiter">Jupiter (Guru)</option>
+              <option value="saturn">Saturn (Śani)</option>
+              <option value="venus">Venus (Śukra)</option>
+              <option value="mercury">Mercury (Budha)</option>
+            </select>
+          </div>
+
+          <div class="control-item">
+            <label for="simMode" style="color:#fff; font-weight:600;">Epicycle Mode:</label>
+            <select id="simMode" style="background:#111; color:#fff; border:1px solid #444; padding:0.35rem 0.65rem; border-radius:6px;">
+              <option value="sighra" selected>Śīghra Epicycle (Produces Retrograde Loops)</option>
+              <option value="manda">Manda Epicycle (Orbital Eccentricity / Velocity Variation)</option>
+            </select>
+          </div>
+
+          <div class="control-item">
+            <label for="simSpeed" style="color:#fff; font-weight:600;">Simulation Speed:</label>
+            <input type="range" id="simSpeed" min="0.2" max="3" step="0.1" value="1">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Trigonometry & The 24 Jya (Sine) Table -->
+    <section id="trig" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>📐</span> 5. Trigonometry: The 24-Jyā (Sine) Table</h3>
+        <p class="section-sub">
+          In Chapter 2 (verses 15–22), the Surya Siddhanta presents 24 sines in a 90° quadrant at 225' ($3^\circ 45'$) intervals, 
+          computed from radius $R = 3438'$ using an early second-order finite difference equation!
+        </p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:1.5rem;">
+        <div class="card">
+          <div class="card-subtitle">Trigonometric Radius Formulation</div>
+          <h4 class="card-title">Why Radius R = 3438'?</h4>
+          <p>
+            The full circle equals $360^\circ \times 60' = 21,600$ arcminutes. 
+            If Circumference $C = 21,600'$, then Radius $R = C / (2\pi) = 21600 / (2 \times 3.14159265...) \approx 3437.75' \rightarrow 3438'$.
+            At this radius, linear sine length matches angular arc length for small angles ($Jy\bar{a}(\theta) \approx \theta$).
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Second-Order Difference Equation</div>
+          <h4 class="card-title">The Recursive Differential Formula</h4>
+          <p>
+            The difference between consecutive sines decreases by the sine value divided by 225:
+          </p>
+          <div style="background:rgba(0,0,0,0.4); padding:0.75rem 1rem; border-radius:8px; font-family:var(--font-mono); color:var(--gold-bright); font-size:0.88rem;">
+            J(n+1) - J(n) = [J(n) - J(n-1)] - (J(n) / 225)
+          </div>
+          <p style="margin-top:0.75rem; font-size:0.85rem;">
+            This is the earliest recorded finite difference representation of $d^2(\sin \theta)/d\theta^2 = -\sin \theta$.
+          </p>
+        </div>
+      </div>
+
+      <div class="jya-grid" id="jyaGrid">
+        <!-- Dynamically populated 24 values -->
+      </div>
+    </section>
+
+    <!-- Section 6: The 12-Angula Shanku (Sundial) Simulator -->
+    <section id="sundial" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>☀️</span> 6. Practical Astronomy: The 12-Aṅgula Gnomon (Śaṅku)</h3>
+        <p class="section-sub">
+          Chapter 3 (Tripraśnādhikāra) shows how a simple vertical staff of 12 digits (aṅgulas) resolves Direction (Diś), 
+          Place/Latitude (Deśa), and Time (Kāla).
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-subtitle">Interactive Shadow Simulation</div>
+          <h4 class="card-title">Gnomon Shadow & Hypotenuse (Karṇa)</h4>
+          <div style="margin:1.5rem 0;">
+            <label style="display:flex; justify-content:space-between; font-weight:600; color:var(--gold-bright); margin-bottom:0.5rem;">
+              <span>Sun Altitude Angle (&alpha;):</span>
+              <span id="altValueDisplay">45°</span>
+            </label>
+            <input type="range" id="sunAltitude" min="5" max="85" step="1" value="45" style="width:100%; accent-color:var(--gold-primary);">
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div style="background:rgba(0,0,0,0.3); padding:0.75rem; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+              <span style="font-size:0.75rem; color:var(--text-muted); display:block;">Shadow (Chāyā):</span>
+              <strong id="shadowLengthDisplay" style="color:var(--gold-bright); font-size:1.1rem; font-family:var(--font-mono);">--</strong>
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:0.75rem; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+              <span style="font-size:0.75rem; color:var(--text-muted); display:block;">Hypotenuse (Karṇa):</span>
+              <strong id="karnaDisplay" style="color:var(--cyan-accent); font-size:1.1rem; font-family:var(--font-mono);">--</strong>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted);">
+            Formula: Shadow $s = 12 \cot(\alpha)$ aṅgulas; Karṇa $k = \sqrt{12^2 + s^2}$.
+          </p>
+        </div>
+
+        <div class="card" style="padding:1rem;">
+          <canvas id="gnomonCanvas" style="height:260px;"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: The 9 Systems of Time (Nava Manani) -->
+    <section id="time-systems" data-tier="beginner">
+      <div class="section-head">
+        <h3 class="section-title"><span>⏳</span> 7. Chronometry: The Nine Systems of Time (Nava-Mānāni)</h3>
+        <p class="section-sub">
+          Chapter 14 classifies the universe into nine distinct operational time scales, from civil commerce to cosmic cycles.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-subtitle">Civil & Commercial Time</div>
+          <h4 class="card-title">1. Sāvana (सावन • సావన)</h4>
+          <p>Terrestrial day measured from sunrise to the next sunrise. Governs civil affairs, wages, fasting durations, and Ahargaṇa tally.</p>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">Seasonal & Agricultural Time</div>
+          <h4 class="card-title">2. Saura (सौर • సౌర)</h4>
+          <p>Solar time marked by the Sun entering the 12 zodiac signs (Saṅkrāntis). Regulates the 6 Ṛtus (seasons) and solstices (Ayanas).</p>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">Religious & Lunar Time</div>
+          <h4 class="card-title">3. Cāndra (चान्द्र • చాంద్ర)</h4>
+          <p>Measured by Tithis (phases of Moon, 12° elongation intervals) and synodic months. Regulates festivals, vratas, and rituals.</p>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">Sidereal & Rotational Time</div>
+          <h4 class="card-title">4. Nākṣatra (नाक्षत्र • నాక్షత్ర)</h4>
+          <p>Earth's rotation relative to fixed stars (1 rotation = 60 nākṣatra ghaṭīs). Regulates planetary velocities and the ascendant (Lagna).</p>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">Jovian 60-Year Cycle</div>
+          <h4 class="card-title">5. Bārhaspatya (बार्हस्पत्य • బార్హస్పత్య)</h4>
+          <p>Based on Jupiter's transit through the zodiac asterisms, forming the sacred 60-year Jovian calendar (Prabhava to Kṣaya).</p>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">Ancestral Realm Time</div>
+          <h4 class="card-title">6. Paitrya (पैत्र्य • పైత్ర్య)</h4>
+          <p>1 Pitṛ Day = 1 Human Synodic Lunar Month. The dark half (Kṛṣṇapakṣa) is day, and bright half (Śuklapakṣa) is night.</p>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">Divine Celestial Time</div>
+          <h4 class="card-title">7. Daiva (दैव • దైవ)</h4>
+          <p>1 Divine Year = 360 Human Solar Years. The Sun's northern path (Uttarāyaṇa) is the day of the Gods; southern path (Dakṣiṇāyana) is night.</p>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">Epochal Epoch Time</div>
+          <h4 class="card-title">8. Prājāpatya (प्राजापत्य • ప్రాజాపత్య)</h4>
+          <p>Measures Manvantaras (each 71 Mahāyugas = 306,720,000 solar years) governing eras of patriarchs and cosmic regeneration.</p>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">Cosmological Lifespan Time</div>
+          <h4 class="card-title">9. Brāhma (ब्राह्म • బ్రాహ్మ)</h4>
+          <p>1 Kalpa = 1 Day of Brahmā = 4.32 Billion Human Years. Brahmā's lifespan (100 Mahākalpas) = 311.04 Trillion Solar Years!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: The Complete 14 Chapters Syllabus Explorer -->
+    <section id="chapters" data-tier="all">
+      <div class="section-head">
+        <h3 class="section-title"><span>📜</span> 8. The 14 Adhyāyas (Chapters) Comprehensive Explorer</h3>
+        <p class="section-sub">
+          Browse all 14 chapters of the Surya Siddhanta with authentic Sanskrit verses, English translation, 
+          mathematical foundations, and pro insights.
+        </p>
+      </div>
+
+      <div class="chapter-nav" id="chapterTabs">
+        <!-- Dynamically populated 14 tabs -->
+      </div>
+
+      <div class="chapter-viewer" id="chapterContent">
+        <!-- Dynamically rendered active chapter -->
+      </div>
+    </section>
+
+    <!-- Section 9: Knowledge Quiz & Assessment -->
+    <section id="quiz" data-tier="all">
+      <div class="section-head">
+        <h3 class="section-title"><span>🎯</span> 9. Knowledge Mastery Assessment</h3>
+        <p class="section-sub">
+          Test your mastery of Surya Siddhanta concepts across Beginner, Intermediate, and Astronomer/Pro levels.
+        </p>
+      </div>
+
+      <div class="quiz-card" id="quizContainer">
+        <!-- Dynamically populated quiz -->
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div style="margin-bottom: 1.25rem;">
+      <a href="../index.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; border-color: rgba(245, 185, 66, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(245, 185, 66, 0.1);">
+        <span>← Go to AncientWisdom Portal (प्राचीन ज्ञानम्)</span> 🏛️
+      </a>
+    </div>
+    <p>
+      <strong>Sūrya Siddhānta (सूर्यसिद्धान्त)</strong> — Ancient Indian Mathematical Astronomy Laboratory.
+      <br>
+      Part of the <a href="../index.html">AncientWisdom</a> Digital Sanctuary. Open-source under the MIT License.
+    </p>
+  </footer>
+
+  <script src="surya_siddhanta.js"></script>
+</body>
+</html>

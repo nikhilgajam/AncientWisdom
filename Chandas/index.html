@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chandaḥ-śāstra (छन्दःशास्त्रम् • ఛందశ్శాస్త్రము) — Acharya Pingala's Combinatorics & Metre Scanner</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="chandas-icon">📜</div>
+        <div class="logo-text">
+          <h1>Chandaḥ-śāstra</h1>
+          <span>छन्दःशास्त्रम् • ఛందశ్శాస్త్రము • Acharya Pingala</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#scanner" class="nav-item active">🔍 Live Metre Scanner</a>
+        <a href="#ganas" class="nav-item">🪘 8 Gaṇas</a>
+        <a href="#binary" class="nav-item">⚡ Binary System</a>
+        <a href="#meru" class="nav-item">🔺 Meru Prastāra</a>
+        <a href="#neuroscience" class="nav-item">🧠 Mantra Neuroscience</a>
+        <a href="#compendium" class="nav-item">📚 Metre Compendium</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+      <div class="hero-pill">📜 The Vedāṅga of Prosody, Combinatorics & Binary Logic (c. 300–200 BCE)</div>
+      <h2 class="hero-title">Chandaḥ-śāstra & The Science of Metre</h2>
+      <p class="hero-sub">
+        Explore Acharya Pingala's foundational masterwork on poetic chronometry, the world's earliest documented binary numbering system, 
+        the stepped binomial pyramid of <em>Meru Prastāra</em> (Pascal's Triangle), <em>Mātrāvṛtta</em> Fibonacci combinatorics, 
+        and the empirical cognitive neuroscience demonstrating how sacred metric stotras rewire and harmonize the human brain.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#scanner" class="btn-primary">
+          <span>Launch Live Metre Scanner</span> 🔍
+        </a>
+        <a href="#binary" class="btn-ghost">
+          <span>Explore Pingala's Binary System</span> ⚡
+        </a>
+        <a href="#meru" class="btn-ghost">
+          <span>Meru Prastāra (Pascal's Pyramid)</span> 🔺
+        </a>
+        <a href="#neuroscience" class="btn-ghost">
+          <span>Neuroscience of Mantras</span> 🧠
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 1: LIVE METRE SCANNER -->
+    <section id="scanner" class="panel">
+      <div class="section-head">
+        <h3 class="section-title"><span>🔍</span> 1. Real-Time Metre Scanner & Prosody Analyzer (छन्दः स्कैनर् • ఛందస్సు స్కానర్)</h3>
+        <p class="section-sub">
+          Paste or type any Sanskrit, Telugu, or IAST Latin verse. The engine algorithmically segments syllables (*Akṣaras*), 
+          applies classical prosody rules for <strong>Laghu (⏑ • లఘువు • 1 Mātrā)</strong> and <strong>Guru (— • గురువు • 2 Mātrās)</strong>, 
+          groups them into triplets (*Gaṇas*), and identifies the classical metre.
+        </p>
+      </div>
+
+      <!-- Quick Preset Chips -->
+      <div style="margin-bottom: 0.85rem;">
+        <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600; margin-right:0.5rem;">Famous Presets:</span>
+        <div style="display:inline-flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.35rem;">
+          <button class="preset-chip" data-preset="gita1_1">Bhagavad Gītā 1.1 (Anuṣṭubh)</button>
+          <button class="preset-chip" data-preset="gayatri_mantra">Gāyatrī Mantra (Gāyatrī 24)</button>
+          <button class="preset-chip" data-preset="mahamrityunjaya">Mahāmṛtyuñjaya Mantra</button>
+          <button class="preset-chip" data-preset="siva_tandava">Śiva Tāṇḍava (Pañcacāmara)</button>
+          <button class="preset-chip" data-preset="totakashtakam">Toṭakāṣṭakam (Toṭaka)</button>
+          <button class="preset-chip" data-preset="meghadutam">Meghadūtam (Mandākrāntā)</button>
+          <button class="preset-chip" data-preset="soundarya_lahari">Saundarya Laharī (Śikhariṇī)</button>
+          <button class="preset-chip" data-preset="telugu_utpalamala">Telugu Utpalamāla (ఉత్పలమాల)</button>
+        </div>
+      </div>
+
+      <!-- Text Input Area -->
+      <textarea id="scannerInput" class="scanner-input-box" placeholder="Type or paste Sanskrit verse in IAST, Devanagari, or Telugu (e.g. dharmakṣetre kurukṣetre samavetā yuyutsavaḥ or ధర్మక్షేత్రే కురుక్షేత్రే)...">dharmakṣetre kurukṣetre samavetā yuyutsavaḥ
+māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya</textarea>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+        <button id="scanActionBtn" class="btn-primary" style="padding:0.5rem 1.15rem; font-size:0.85rem;">
+          <span>Analyze Metre</span> ⚡
+        </button>
+        <span style="font-size:0.78rem; color:var(--text-muted);">
+          Supports IAST Latin, Devanagari (संस्कृतम्), and Telugu (తెలుగు)
+        </span>
+      </div>
+
+      <!-- Metrics Display -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; margin-top:1.5rem;">
+        <div class="card" style="text-align:center;">
+          <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Total Syllables (అక్షరములు)</div>
+          <div id="statSyllables" style="font-size:1.85rem; font-weight:800; color:var(--rose-bright); font-family:var(--font-mono);">0</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Total Mātrās (మాత్రలు)</div>
+          <div id="statMatras" style="font-size:1.85rem; font-weight:800; color:var(--gold-bright); font-family:var(--font-mono);">0</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Triplets / Gaṇas (గణములు)</div>
+          <div id="statGanas" style="font-size:1.85rem; font-weight:800; color:var(--cyan-accent); font-family:var(--font-mono);">0</div>
+        </div>
+      </div>
+
+      <!-- Matched Metre Banner -->
+      <div style="margin-top:1.25rem; padding:1rem 1.25rem; border-radius:10px; border:1px solid var(--rose-primary); background:rgba(244, 63, 94, 0.12);">
+        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--rose-bright); font-weight:700;">
+          Identified Metre (గుర్తించబడిన ఛందస్సు)
+        </div>
+        <div id="matchedMetreName" style="font-size:1.35rem; font-weight:800; color:#fff; margin:0.25rem 0;">--</div>
+        <div id="matchedMetreDesc" style="font-size:0.88rem; color:#e2e8f0; line-height:1.6;">--</div>
+      </div>
+
+      <!-- Syllable-by-Syllable Breakdown -->
+      <div style="margin-top:1.5rem;">
+        <div style="font-size:0.9rem; font-weight:700; color:var(--gold-bright); margin-bottom:0.5rem;">
+          Syllable Prosody Weight Chain (అక్షర గురు-లఘు శ్రేణి):
+        </div>
+        <div id="syllableChain" class="syllable-badge-chain"></div>
+      </div>
+
+      <!-- Gaṇas Chain -->
+      <div style="margin-top:1rem;">
+        <div style="font-size:0.9rem; font-weight:700; color:var(--cyan-accent); margin-bottom:0.5rem;">
+          Triplets & Metre Gaṇa Structure (గణ విభజన):
+        </div>
+        <div id="ganasChain" style="display:flex; flex-wrap:wrap; gap:0.5rem;"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: THE 8 GAṆAS (TRIKAS) -->
+    <section id="ganas" class="panel">
+      <div class="section-head">
+        <h3 class="section-title"><span>🪘</span> 2. The 8 Canonical Gaṇas & Mnemonic Ring (अष्टगणाः • అష్టగణములు)</h3>
+        <p class="section-sub">
+          Acharya Pingala organized all $2^3 = 8$ three-syllable permutations into the immortal mnemonic ring: 
+          <strong>"ya-mā-tā-rā-ja-bhā-na-sa-la-gāṁ" (यमाता राजभानसलगाम् • యమాతా రాజభానసలగాం)</strong>. 
+          By reading any 3 consecutive syllables from the ring, one instantly derives the exact metric triplet.
+        </p>
+      </div>
+
+      <!-- Mnemonic Banner -->
+      <div style="text-align:center; padding:1.25rem; background:rgba(245, 185, 66, 0.08); border:1px solid var(--border-gold); border-radius:10px; margin-bottom:1.5rem;">
+        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-bright); font-weight:700;">The Immortal Mnemonic Formula</span>
+        <div style="font-size:1.6rem; font-weight:800; color:#fff; letter-spacing:0.08em; margin:0.35rem 0; font-family:var(--font-display);">
+          यमाता राजभानसलगाम् • యమాతా రాజభానసలగాం
+        </div>
+        <div style="font-size:0.85rem; color:var(--text-muted); font-family:var(--font-mono);">
+          ya (⏑) mā (—) tā (—) rā (—) ja (⏑) bhā (—) na (⏑) sa (⏑) la (⏑) gāṁ (—)
+        </div>
+      </div>
+
+      <!-- 8 Ganas Grid -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1rem;">
+        
+        <div class="gana-card">
+          <div style="font-size:0.75rem; color:var(--cyan-accent); font-weight:700;">1. WATER • జలము</div>
+          <h4 style="font-size:1.1rem; color:#fff;">Ya-gaṇa (యగణం • यगण)</h4>
+          <div class="gana-code" style="color:var(--cyan-accent);">⏑ — — (L G G)</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.4rem;">Binary: 011 • 5 Mātrās • Mnemonic: <em>ya-mā-tā</em></p>
+          <div style="font-size:0.8rem; color:#e2e8f0;">Deity: Varuṇa. Invokes life force, emotional flow, and continuous prosperity.</div>
+        </div>
+
+        <div class="gana-card">
+          <div style="font-size:0.75rem; color:var(--gold-bright); font-weight:700;">2. EARTH • భూమి</div>
+          <h4 style="font-size:1.1rem; color:#fff;">Ma-gaṇa (మగణం • मगण)</h4>
+          <div class="gana-code" style="color:var(--gold-bright);">— — — (G G G)</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.4rem;">Binary: 111 • 6 Mātrās • Mnemonic: <em>mā-tā-rā</em></p>
+          <div style="font-size:0.8rem; color:#e2e8f0;">Deity: Pṛthvī. Bestows unwavering stability, supreme wealth, and grounded wisdom.</div>
+        </div>
+
+        <div class="gana-card">
+          <div style="font-size:0.75rem; color:var(--purple-accent); font-weight:700;">3. ETHER • ఆకాశము</div>
+          <h4 style="font-size:1.1rem; color:#fff;">Ta-gaṇa (తగణం • तगण)</h4>
+          <div class="gana-code" style="color:var(--purple-accent);">— — ⏑ (G G L)</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.4rem;">Binary: 110 • 5 Mātrās • Mnemonic: <em>tā-rā-ja</em></p>
+          <div style="font-size:0.8rem; color:#e2e8f0;">Deity: Indra. Bestows cosmic expansion, spiritual victory, and leadership.</div>
+        </div>
+
+        <div class="gana-card">
+          <div style="font-size:0.75rem; color:var(--rose-bright); font-weight:700;">4. FIRE • అగ్ని</div>
+          <h4 style="font-size:1.1rem; color:#fff;">Ra-gaṇa (రగణం • रगण)</h4>
+          <div class="gana-code" style="color:var(--rose-bright);">— ⏑ — (G L G)</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.4rem;">Binary: 101 • 5 Mātrās • Mnemonic: <em>rā-ja-bhā</em></p>
+          <div style="font-size:0.8rem; color:#e2e8f0;">Deity: Agni. Ignites metabolic fire, brilliance, transmutation, and energetic courage.</div>
+        </div>
+
+        <div class="gana-card">
+          <div style="font-size:0.75rem; color:var(--gold-bright); font-weight:700;">5. SUN • సూర్యుడు</div>
+          <h4 style="font-size:1.1rem; color:#fff;">Ja-gaṇa (జగణం • जगण)</h4>
+          <div class="gana-code" style="color:var(--gold-bright);">⏑ — ⏑ (L G L)</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.4rem;">Binary: 010 • 4 Mātrās • Mnemonic: <em>ja-bhā-na</em></p>
+          <div style="font-size:0.8rem; color:#e2e8f0;">Deity: Sūrya. Inspires mental illumination, sharp discrimination, and righteous clarity.</div>
+        </div>
+
+        <div class="gana-card">
+          <div style="font-size:0.75rem; color:var(--cyan-accent); font-weight:700;">6. MOON • చంద్రుడు</div>
+          <h4 style="font-size:1.1rem; color:#fff;">Bha-gaṇa (భగణం • भगण)</h4>
+          <div class="gana-code" style="color:var(--cyan-accent);">— ⏑ ⏑ (G L L)</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.4rem;">Binary: 100 • 4 Mātrās • Mnemonic: <em>bhā-na-sa</em></p>
+          <div style="font-size:0.8rem; color:#e2e8f0;">Deity: Candra. Brings soothing tranquility, poetic eloquence, and devotional sweetness.</div>
+        </div>
+
+        <div class="gana-card">
+          <div style="font-size:0.75rem; color:var(--emerald-bright); font-weight:700;">7. AIR • వాయువు</div>
+          <h4 style="font-size:1.1rem; color:#fff;">Na-gaṇa (నగణం • नगण)</h4>
+          <div class="gana-code" style="color:var(--emerald-bright);">⏑ ⏑ ⏑ (L L L)</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.4rem;">Binary: 000 • 3 Mātrās • Mnemonic: <em>na-sa-la</em></p>
+          <div style="font-size:0.8rem; color:#e2e8f0;">Deity: Vāyu. Lightness, speed, grace, and free unhindered kinetic mobility.</div>
+        </div>
+
+        <div class="gana-card">
+          <div style="font-size:0.75rem; color:var(--rose-bright); font-weight:700;">8. UNDERWORLD • పాతాళము</div>
+          <h4 style="font-size:1.1rem; color:#fff;">Sa-gaṇa (సగణం • सगण)</h4>
+          <div class="gana-code" style="color:var(--rose-bright);">⏑ ⏑ — (L L G)</div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.4rem;">Binary: 001 • 4 Mātrās • Mnemonic: <em>sa-la-gāṁ</em></p>
+          <div style="font-size:0.8rem; color:#e2e8f0;">Deity: Vāsuki. Bestows spiritual foundation, subterranean protection, and occult endurance.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: WORLD'S EARLIEST BINARY SYSTEM -->
+    <section id="binary" class="panel">
+      <div class="section-head">
+        <h3 class="section-title"><span>⚡</span> 3. The World's Earliest Binary System (Pratyayas • పింగళ ప్రత్యయములు)</h3>
+        <p class="section-sub">
+          Acharya Pingala's <em>Chandaḥ-śāstra</em> (Chapter 8) documents the world's first formal binary numbering system, 
+          binary-to-decimal conversion (<em>Uddiṣṭa</em>), decimal-to-binary conversion (<em>Naṣṭa</em>), 
+          and combinatorial expansion (<em>Prastāra</em>) — predating Leibniz by nearly 2,000 years!
+        </p>
+      </div>
+
+      <!-- Binary Prastara Generator -->
+      <div class="card" style="margin-bottom:1.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:1rem;">
+          <div>
+            <h4 style="font-size:1.1rem; color:var(--gold-bright);">Prastāra Matrix Generator (प्रस्तार • ప్రస్తారము)</h4>
+            <div style="font-size:0.82rem; color:var(--text-muted);">
+              Generates all $2^n$ binary combinations of syllables (Laghu = 0, Guru = 1 in Pingala's inverted indexing).
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <label style="font-size:0.85rem; color:#fff;">Syllables (n):</label>
+            <select id="prastaraNSelect" style="background:#000; border:1px solid var(--border-rose); color:#fff; padding:0.35rem 0.65rem; border-radius:6px; font-family:var(--font-mono);">
+              <option value="1">1 Syllable (2^1 = 2)</option>
+              <option value="2">2 Syllables (2^2 = 4)</option>
+              <option value="3" selected>3 Syllables (2^3 = 8)</option>
+              <option value="4">4 Syllables (2^4 = 16)</option>
+              <option value="5">5 Syllables (2^5 = 32)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="max-height:300px; overflow-y:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Index (N)</th>
+                <th>Metric Pattern (Pingala)</th>
+                <th>Binary Value (LSB First)</th>
+                <th>Composition</th>
+              </tr>
+            </thead>
+            <tbody id="prastaraTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Interactive Nasta & Uddista Calculators -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.25rem;">
+        
+        <!-- Nasta: Decimal to Binary Metre -->
+        <div class="card">
+          <div style="font-size:0.75rem; color:var(--rose-bright); font-weight:700; text-transform:uppercase;">
+            Algorithm 1: Decimal → Binary Metre
+          </div>
+          <h4 style="font-size:1.15rem; color:#fff; margin:0.25rem 0 0.5rem;">Naṣṭa (नष्टम् • నష్టము)</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">
+            Given row number $N$, Pingala divides successively by 2. If odd, mark Guru (1); if even, mark Laghu (0).
+          </p>
+
+          <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem;">
+            <input id="nastaIndexInput" type="number" min="1" max="1024" value="6" style="flex:1; background:#000; border:1px solid var(--border-rose); color:#fff; padding:0.5rem; border-radius:6px; font-family:var(--font-mono);" placeholder="Index N (e.g. 6)">
+            <input id="nastaSylInput" type="number" min="1" max="10" value="3" style="width:110px; background:#000; border:1px solid var(--border-rose); color:#fff; padding:0.5rem; border-radius:6px; font-family:var(--font-mono);" placeholder="Syllables (3)">
+            <button id="nastaRunBtn" class="btn-primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Compute</button>
+          </div>
+
+          <div id="nastaOutput" style="background:rgba(0,0,0,0.3); border:1px solid var(--border-subtle); padding:0.85rem; border-radius:8px; min-height:80px;"></div>
+        </div>
+
+        <!-- Uddista: Binary Metre to Decimal -->
+        <div class="card">
+          <div style="font-size:0.75rem; color:var(--gold-bright); font-weight:700; text-transform:uppercase;">
+            Algorithm 2: Binary Metre → Decimal Index
+          </div>
+          <h4 style="font-size:1.15rem; color:#fff; margin:0.25rem 0 0.5rem;">Uddiṣṭa (उद्दिष्टम् • ఉద్దిష్టము)</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">
+            Given a sequence of Laghus & Gurus, place powers of 2 under each syllable ($2^0, 2^1, 2^2\dots$), sum powers of Gurus, and add 1.
+          </p>
+
+          <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem;">
+            <input id="uddistaPatternInput" type="text" value="L G L G" style="flex:1; background:#000; border:1px solid var(--border-gold); color:#fff; padding:0.5rem; border-radius:6px; font-family:var(--font-mono);" placeholder="Pattern (e.g. L G L G or 0 1 0 1)">
+            <button id="uddistaRunBtn" class="btn-primary" style="padding:0.5rem 1rem; font-size:0.82rem; background:linear-gradient(135deg, var(--gold-primary), var(--gold-dim));">Calculate</button>
+          </div>
+
+          <div id="uddistaOutput" style="background:rgba(0,0,0,0.3); border:1px solid var(--border-subtle); padding:0.85rem; border-radius:8px; min-height:80px;"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: MERU PRASTĀRA & FIBONACCI -->
+    <section id="meru" class="panel">
+      <div class="section-head">
+        <h3 class="section-title"><span>🔺</span> 4. Meru Prastāra & Fibonacci Diagonals (मेरुप्रस्तार • మేరు ప్రస్తారము)</h3>
+        <p class="section-sub">
+          Described in Pingala's 8th chapter and detailed by 10th-century mathematician <strong>Halāyudha</strong> in <em>Mṛtasañjīvanī</em>, 
+          the stepped triangular staircase of binomial coefficients—what Western mathematics named "Pascal's Triangle" in 1654 CE—was mapped in India 1,800 years earlier. 
+          Furthermore, the shallow diagonals of <em>Mātrāvṛtta</em> combinatorics revealed the <strong>Fibonacci numbers</strong> ($F_n = F_{n-1} + F_{n-2}$) 
+          via Virahāṅka, Gopāla, and Hemacandra centuries before Leonardo of Pisa!
+        </p>
+      </div>
+
+      <!-- Controls -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.25rem;">
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <label style="font-size:0.9rem; color:#fff; font-weight:600;">Pyramid Rows (n):</label>
+          <input id="meruRowsInput" type="range" min="3" max="12" value="8" style="accent-color:var(--rose-primary);">
+          <span style="font-size:0.85rem; color:var(--gold-bright); font-family:var(--font-mono); font-weight:700;">8 Rows</span>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <input id="meruFibToggle" type="checkbox" id="fibToggle" style="accent-color:var(--rose-primary); width:18px; height:18px; cursor:pointer;">
+          <label for="meruFibToggle" style="font-size:0.88rem; color:#fff; cursor:pointer; font-weight:600;">
+            Highlight Fibonacci Diagonals (Gopāla-Hemacandra Numbers)
+          </label>
+        </div>
+      </div>
+
+      <!-- Pyramid Visualizer -->
+      <div id="meruPyramidContainer" class="meru-container"></div>
+
+      <!-- Mathematical Callout -->
+      <div style="margin-top:1.5rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+        <div class="card">
+          <h4 style="font-size:0.95rem; color:var(--gold-bright); margin-bottom:0.35rem;">Binomial Coefficients $\binom{n}{k}$</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+            Each cell represents the exact number of metres of length $n$ containing exactly $k$ Gurus and $n-k$ Laghus. 
+            The horizontal row sum $\sum_{k=0}^{n} \binom{n}{k} = 2^n$ gives the total permutation space.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 style="font-size:0.95rem; color:var(--rose-bright); margin-bottom:0.35rem;">Mātrāvṛtta & Fibonacci Recurrence</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+            In moraic metres, a line of duration $M$ ending in a 1-beat Laghu has $M-1$ prior morae; ending in a 2-beat Guru has $M-2$ prior morae. 
+            Thus $S_M = S_{M-1} + S_{M-2}$, yielding the exact sequence $1, 1, 2, 3, 5, 8, 13, 21, 34\dots$ along the shallow diagonals!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: NEUROSCIENCE OF MANTRAS & STOTRAS -->
+    <section id="neuroscience" class="panel">
+      <div class="section-head">
+        <h3 class="section-title"><span>🧠</span> 5. Cognitive Neuroscience of Mantras & Stotras (మంత్ర-స్తోత్ర విజ్ఞానము & మెదడు పనితీరు)</h3>
+        <p class="section-sub">
+          How do metered Sanskrit and Telugu stotras affect the human brain? Modern neuroimaging (fMRI, EEG, MEG) and autonomic physiology 
+          have validated ancient claims: rigid metric cadence acts as an acoustic neuromodulator, synchronizing neural oscillations, 
+          stimulating the vagus nerve, inducing profound neuroplasticity in the hippocampus, and downregulating the brain's stress networks.
+        </p>
+      </div>
+
+      <!-- Acoustic Tone Chime Triggers -->
+      <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:10px; padding:1rem 1.25rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <div style="font-size:0.92rem; font-weight:700; color:#fff;">Sacred Acoustic Resonance Simulator</div>
+          <div style="font-size:0.8rem; color:var(--text-muted);">Listen to the pure harmonic frequencies generated by mantra cadences.</div>
+        </div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <button id="play432Btn" class="btn-ghost" style="padding:0.4rem 0.85rem; font-size:0.82rem; border-color:var(--rose-primary);">
+            <span>432 Hz (Alpha Harmonic)</span> 🎵
+          </button>
+          <button id="play108Btn" class="btn-ghost" style="padding:0.4rem 0.85rem; font-size:0.82rem; border-color:var(--cyan-accent);">
+            <span>108 Hz (Deep Theta Ground)</span> 🌊
+          </button>
+          <button id="play528Btn" class="btn-ghost" style="padding:0.4rem 0.85rem; font-size:0.82rem; border-color:var(--gold-bright);">
+            <span>528 Hz (Cellular Harmonic)</span> ✨
+          </button>
+        </div>
+      </div>
+
+      <!-- 5 Cognitive Pillars Grid -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.25rem;">
+        
+        <!-- 1. Brainwave Entrainment -->
+        <div class="neuro-card">
+          <span class="neuro-badge" style="background:rgba(56, 189, 248, 0.2); color:var(--cyan-accent); border:1px solid var(--cyan-accent);">
+            Acoustic Entrainment
+          </span>
+          <h4 style="font-size:1.15rem; color:#fff; margin-bottom:0.25rem;">1. Rhythmic Brainwave Synchronization (EEG Alpha & Theta)</h4>
+          <div class="neuro-freq">Dominant Bands: Theta (4–8 Hz) & Alpha (8–12 Hz)</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.65;">
+            The metric cadence of stotras (such as the 8-syllable Anuṣṭubh or 16-syllable Pañcacāmara) creates a periodic acoustic pulse at 1.5–2.5 Hz. 
+            This matches the natural cardiac and baroreceptor rhythms, driving cortical neurons to fire synchronously. 
+            EEG studies reveal elevated <strong>Alpha waves (8–12 Hz)</strong>—the hallmark of relaxed alert attention—and <strong>Theta waves (4–8 Hz)</strong>, 
+            which bridge subconscious insight, memory consolidation, and deep restorative tranquility.
+          </p>
+        </div>
+
+        <!-- 2. Vagus Nerve CN X -->
+        <div class="neuro-card">
+          <span class="neuro-badge" style="background:rgba(244, 63, 94, 0.2); color:var(--rose-bright); border:1px solid var(--rose-bright);">
+            Autonomic Physiology
+          </span>
+          <h4 style="font-size:1.15rem; color:#fff; margin-bottom:0.25rem;">2. Vagus Nerve Activation & Neurocardiac Coherence (HRV)</h4>
+          <div class="neuro-freq">Cranial Nerve X (Vagus) • Heart Rate Variability (HRV)</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.65;">
+            Chanting with prolonged vocalic exhalations and resonant nasal humming (*Anusvāra* <em>ṁ</em> / <em>Om</em>) creates mechanical vibration in the pharynx, larynx, and thoracic cavity. 
+            This directly stimulates the <strong>auricular and laryngeal branches of the Vagus Nerve (Cranial Nerve X)</strong>. 
+            Vagal tone surges, accelerating acetylcholine release, lowering heart rate and blood pressure, boosting Heart Rate Variability (HRV), 
+            and switching the body from sympathetic fight-or-flight into parasympathetic deep cellular repair.
+          </p>
+        </div>
+
+        <!-- 3. The Sanskrit Effect -->
+        <div class="neuro-card">
+          <span class="neuro-badge" style="background:rgba(52, 211, 153, 0.2); color:var(--emerald-bright); border:1px solid var(--emerald-bright);">
+            Structural Neuroplasticity
+          </span>
+          <h4 style="font-size:1.15rem; color:#fff; margin-bottom:0.25rem;">3. "The Sanskrit Effect" & Hippocampal Density</h4>
+          <div class="neuro-freq">Bilateral Hippocampus & Right Temporal Cortex Expansion</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.65;">
+            Groundbreaking structural MRI research by cognitive neuroscientist <strong>Dr. James Hartzell</strong> (National Brain Research Centre) 
+            comparing professional Vedic chanters to matched control groups revealed substantial, statistically significant increases in grey matter density 
+            across the <strong>bilateral hippocampus</strong> (responsible for short/long-term memory retrieval and spatial orientation) and the <strong>right temporal lobe</strong> 
+            (speech prosody and pitch processing). Rigid metric constraints act as biological error-correcting codes, forging superior verbal memory and cognitive resilience.
+          </p>
+        </div>
+
+        <!-- 4. Palatal Reflexology -->
+        <div class="neuro-card">
+          <span class="neuro-badge" style="background:rgba(245, 185, 66, 0.2); color:var(--gold-bright); border:1px solid var(--gold-bright);">
+            Neuroendocrine Regulation
+          </span>
+          <h4 style="font-size:1.15rem; color:#fff; margin-bottom:0.25rem;">4. Palatal Acupressure & HPA Axis Modulation</h4>
+          <div class="neuro-freq">84 Palatal Reflex Points • Hypothalamic-Pituitary-Adrenal Axis</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.65;">
+            Sanskrit and Telugu phonetics utilize five distinct anatomical points of articulation: <em>Kaṇṭhya</em> (velar/throat), <em>Tālavya</em> (palatal), 
+            <em>Mūrdhanya</em> (retroflex), <em>Dantya</em> (dental), and <em>Oṣṭhya</em> (labial). 
+            The tongue's precise strikes against the 84 meridian reflex points on the hard and soft palate transmit micro-electrical impulses directly into the 
+            <strong>Hypothalamus</strong> and <strong>Pituitary Gland</strong>, modulating the endocrine cascade—elevating serotonin, dopamine, and GABA while dramatically reducing circulating cortisol.
+          </p>
+        </div>
+
+        <!-- 5. DMN Suppression -->
+        <div class="neuro-card">
+          <span class="neuro-badge" style="background:rgba(192, 132, 252, 0.2); color:var(--purple-accent); border:1px solid var(--purple-accent);">
+            fMRI Network Dynamics
+          </span>
+          <h4 style="font-size:1.15rem; color:#fff; margin-bottom:0.25rem;">5. Default Mode Network (DMN) Deactivation</h4>
+          <div class="neuro-freq">Quieting the Mind's Rumination & Ego Narrative Loops</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.65;">
+            Functional magnetic resonance imaging (fMRI) reveals that repetitive mantra recitation and rhythmic chanting quiet hyperactive nodes in the 
+            <strong>Default Mode Network (DMN)</strong>, specifically the posterior cingulate cortex (PCC) and medial prefrontal cortex (mPFC). 
+            Because the DMN mediates repetitive negative thinking, anxiety, rumination, and ego-centric narrative loops, metric chanting induces an instantaneous cognitive clearing, 
+            producing psychological tranquility comparable to decades of intensive mindfulness training.
+          </p>
+        </div>
+
+        <!-- 6. Hemispheric Synchronization -->
+        <div class="neuro-card">
+          <span class="neuro-badge" style="background:rgba(245, 185, 66, 0.2); color:var(--gold-bright); border:1px solid var(--gold-bright);">
+            Bi-Hemispheric Coherence
+          </span>
+          <h4 style="font-size:1.15rem; color:#fff; margin-bottom:0.25rem;">6. Whole-Brain Cross-Hemispheric Integration</h4>
+          <div class="neuro-freq">Corpus Callosum Information Highway Activation</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.65;">
+            Reciting stotras simultaneously engages the <strong>left cerebral hemisphere</strong> (syntactic grammar, semantic meaning, syllabic counting) 
+            and the <strong>right cerebral hemisphere</strong> (musical intonation, tonal melody, visualization, emotional bhāva). 
+            This double-hemispheric demand forces heightened trans-callosal traffic through the corpus callosum, fostering whole-brain synchronization and creative cognitive synthesis.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: MASTER METRE COMPENDIUM -->
+    <section id="compendium" class="panel">
+      <div class="section-head">
+        <h3 class="section-title"><span>📚</span> 6. Canonical Metre Compendium (ఛందో గ్రంథము • छन्दो ग्रन्थः)</h3>
+        <p class="section-sub">
+          A definitive comparative catalog of the major Vedic, classical Sanskrit, and Telugu Mahākāvya metres.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Metre Name</th>
+              <th>Script & Type</th>
+              <th>Syllables per Pāda</th>
+              <th>Gaṇa Structure</th>
+              <th>Iconic Examples</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Anuṣṭubh (अनुष्टुभ् • అనుష్టుప్పు)</strong></td>
+              <td>Vedic & Classical Śloka</td>
+              <td>8 (32 total)</td>
+              <td>5th Laghu, 6th Guru, 7th Alternating</td>
+              <td>Bhagavad Gītā, Rāmāyaṇa, Mahābhārata, Viṣṇu Sahasranāma</td>
+            </tr>
+            <tr>
+              <td><strong>Gāyatrī (गायत्री • గాయత్రి)</strong></td>
+              <td>Vedic Mother Metre</td>
+              <td>8 (3 pādas = 24 total)</td>
+              <td>Rigvedic Tripadā</td>
+              <td>Gāyatrī Mantra (Rigveda 3.62.10)</td>
+            </tr>
+            <tr>
+              <td><strong>Indravajrā (इन्द्रवज्रा • ఇంద్రవజ్ర)</strong></td>
+              <td>Classical Vṛtta</td>
+              <td>11</td>
+              <td>Ta, Ta, Ja, Ga, Ga</td>
+              <td>Kālidāsa's Raghuvaṁśa</td>
+            </tr>
+            <tr>
+              <td><strong>Upendravajrā (उपेन्द्रवज्रा • ఉపేంద్రవజ్ర)</strong></td>
+              <td>Classical Vṛtta</td>
+              <td>11</td>
+              <td>Ja, Ta, Ja, Ga, Ga</td>
+              <td>Saundarananda, Kumārasambhava</td>
+            </tr>
+            <tr>
+              <td><strong>Vaṁśastha (वंशस्थ • వంశస్థము)</strong></td>
+              <td>Classical Vṛtta</td>
+              <td>12</td>
+              <td>Ja, Ta, Ja, Ra</td>
+              <td>Śiśupālavadha, Kirātārjunīya</td>
+            </tr>
+            <tr>
+              <td><strong>Bhujaṅgaprayāta (भुजङ्गप्रयात • భుజంగప్రయాతము)</strong></td>
+              <td>Classical Vṛtta</td>
+              <td>12</td>
+              <td>Ya, Ya, Ya, Ya</td>
+              <td>Adi Shankara's Bhavānyaṣṭakam, Śiva Bhujaṅgam</td>
+            </tr>
+            <tr>
+              <td><strong>Toṭaka (तोटक • తోటకము)</strong></td>
+              <td>Classical Vṛtta</td>
+              <td>12</td>
+              <td>Sa, Sa, Sa, Sa</td>
+              <td>Toṭakācārya's Toṭakāṣṭakam, Madhurāṣṭakam</td>
+            </tr>
+            <tr>
+              <td><strong>Vasantatilakā (वसन्ततिलका • వసంతతిలక)</strong></td>
+              <td>Classical Vṛtta</td>
+              <td>14</td>
+              <td>Ta, Bha, Ja, Ja, Ga, Ga</td>
+              <td>Bhartṛhari's Nītiśataka</td>
+            </tr>
+            <tr>
+              <td><strong>Mālinī (मालिनी • మాలిని)</strong></td>
+              <td>Classical Vṛtta</td>
+              <td>15</td>
+              <td>Na, Na, Ma, Ya, Ya</td>
+              <td>Abhijñānaśākuntalam, Gīta Govinda</td>
+            </tr>
+            <tr>
+              <td><strong>Pañcacāmara (पञ्चचामर • పంచచామరము)</strong></td>
+              <td>Cosmic Dynamic Vṛtta</td>
+              <td>16</td>
+              <td>Ja, Ra, Ja, Ra, Ja, Ga</td>
+              <td>Rāvaṇa's Śiva Tāṇḍava Stotra</td>
+            </tr>
+            <tr>
+              <td><strong>Śikhariṇī (शिखरिणी • శిఖరిణి)</strong></td>
+              <td>Classical Vṛtta</td>
+              <td>17</td>
+              <td>Ya, Ma, Na, Sa, Bha, La, Ga</td>
+              <td>Adi Shankara's Saundarya Laharī</td>
+            </tr>
+            <tr>
+              <td><strong>Mandākrāntā (मन्दाक्रान्ता • మందాక్రాంత)</strong></td>
+              <td>Classical Vṛtta</td>
+              <td>17</td>
+              <td>Ma, Bha, Na, Ta, Ta, Ga, Ga</td>
+              <td>Kālidāsa's Meghadūtam</td>
+            </tr>
+            <tr>
+              <td><strong>Śārdūlavikrīḍita (शार्दूलविक्रीडित • శార్దూలవిక్రీడితము)</strong></td>
+              <td>Majestic Vṛtta</td>
+              <td>19</td>
+              <td>Ma, Sa, Ja, Sa, Ta, Ta, Ga</td>
+              <td>Śrī Rāmāṣṭakam, Surya Śatakam</td>
+            </tr>
+            <tr>
+              <td><strong>Sragdharā (स्रग्धरा • స్రగ్ధర)</strong></td>
+              <td>Grand Classical Vṛtta</td>
+              <td>21</td>
+              <td>Ma, Ra, Bha, Na, Ya, Ya, Ya</td>
+              <td>Bhartṛhari's Vairāgyaśataka</td>
+            </tr>
+            <tr>
+              <td><strong>Utpalamāla (ఉత్పలమాల • उत्पलमाला)</strong></td>
+              <td>Telugu Mahākāvya Vṛtta</td>
+              <td>20</td>
+              <td>Bha, Ra, Na, Bha, Bha, Ra, Va (Yati at 10)</td>
+              <td>Nannaya's Āndhra Mahābhāratamu</td>
+            </tr>
+            <tr>
+              <td><strong>Campakamāla (చంపకమాల • चम्पकमाला)</strong></td>
+              <td>Telugu Mahākāvya Vṛtta</td>
+              <td>21</td>
+              <td>Na, Ja, Bha, Ja, Ja, Ja, Ra (Yati at 11)</td>
+              <td>Tikkana's Mahābhāratamu, Potana's Bhāgavatamu</td>
+            </tr>
+            <tr>
+              <td><strong>Mattebhavikrīḍitamu (మత్తేభవిక్రీడితము • मत्तेभविक्रीडितम्)</strong></td>
+              <td>Telugu Mahākāvya Vṛtta</td>
+              <td>20</td>
+              <td>Sa, Bha, Ra, Na, Ma, Ya, Va (Yati at 14)</td>
+              <td>Śrīnaatha's Harivilāsamu</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div style="margin-bottom: 1.25rem;">
+      <a href="../index.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; border-color: rgba(244, 63, 94, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(244, 63, 94, 0.1);">
+        <span>← Go to AncientWisdom Portal (प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము)</span> 🏛️
+      </a>
+    </div>
+    <p>
+      <strong>Chandaḥ-śāstra (छन्दःशास्त्रम् • ఛందశ్శాస్త్రము)</strong> — Acharya Pingala's Binary Combinatorics & Metre Scanner.
+      <br>
+      Part of the <a href="../index.html">AncientWisdom</a> Digital Sanctuary. Open-source under the MIT License.
+    </p>
+  </footer>
+
+  <script src="chandas.js"></script>
+</body>
+</html>

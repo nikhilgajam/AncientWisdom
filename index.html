@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ancient Wisdom (प्राचीन ज्ञानम्) — Digital Science & Heritage Portal</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0c10;
+      --bg-card: rgba(22, 27, 34, 0.75);
+      --bg-card-hover: rgba(30, 38, 48, 0.9);
+      --border-color: rgba(212, 175, 55, 0.22);
+      --border-hover: rgba(212, 175, 55, 0.6);
+      --gold-primary: #f0c05a;
+      --gold-bright: #ffd700;
+      --gold-dim: #b8933b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #34d399;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 100% 50%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 0% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+    }
+
+    /* Ambient animated orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+    .orb-1 {
+      top: -100px;
+      left: 20%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, #f0c05a 0%, transparent 70%);
+    }
+    .orb-2 {
+      bottom: 10%;
+      right: 10%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #38bdf8 0%, transparent 70%);
+    }
+
+    /* Header */
+    header {
+      padding: 0.65rem 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(10, 12, 16, 0.88);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.05));
+      border: 1px solid var(--gold-primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      color: var(--gold-bright);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+    }
+
+    .brand-text h1 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      background: linear-gradient(120deg, #fff, var(--gold-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 0.65rem;
+      color: var(--gold-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .header-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.35rem 0.8rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .header-links a:hover {
+      color: #fff;
+      border-color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.1);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 5rem;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 2.75rem;
+      padding: 1.5rem 0 1rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-bright);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(135deg, #ffffff 30%, #f0c05a 85%, #b8933b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.65;
+    }
+
+    /* Section Headings */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-badge {
+      font-size: 0.8rem;
+      color: var(--gold-bright);
+      font-family: var(--font-body);
+      font-weight: 500;
+    }
+
+    /* Live Ephemeris Dashboard */
+    .live-dashboard {
+      background: linear-gradient(145deg, rgba(26, 32, 44, 0.9), rgba(15, 20, 28, 0.95));
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .live-dashboard::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.85rem;
+    }
+
+    .dash-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulseLive 2s infinite;
+    }
+
+    @keyframes pulseLive {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .dash-clock {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: var(--gold-bright);
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .dash-tile {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 1rem;
+      transition: all 0.25s ease;
+    }
+
+    .dash-tile:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(212, 175, 55, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .dash-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .dash-val {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+    }
+
+    .dash-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .text-gold { color: var(--gold-bright); }
+    .text-cyan { color: var(--accent-cyan); }
+    .text-purple { color: #c084fc; }
+    .text-emerald { color: #34d399; }
+
+    /* Synthesis & Wisdom Sections */
+    .synthesis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .synthesis-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .synthesis-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .synthesis-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .synthesis-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .synthesis-bridge {
+      font-size: 0.8rem;
+      color: var(--gold-primary);
+      font-weight: 600;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .synthesis-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Wisdom Card */
+    .wisdom-card {
+      background: linear-gradient(145deg, rgba(26, 32, 44, 0.85), rgba(20, 16, 28, 0.95));
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 3.5rem;
+      position: relative;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+    }
+
+    .wisdom-shloka {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--gold-bright);
+      margin: 0.75rem 0 0.5rem;
+      line-height: 1.5;
+    }
+
+    .wisdom-telugu {
+      font-family: 'Noto Sans Telugu', var(--font-body);
+      font-size: 1.15rem;
+      color: #e2e8f0;
+      margin-bottom: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .wisdom-meaning {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-launch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #f0c05a, #b8933b);
+      color: #000;
+      font-weight: 700;
+      padding: 0.85rem 1.75rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-launch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(212, 175, 55, 0.5);
+      filter: brightness(1.1);
+    }
+
+    /* Grid for Upcoming Apps */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 4rem;
+    }
+
+    .app-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .app-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(212, 175, 55, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .app-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .app-icon {
+      font-size: 2rem;
+    }
+
+    .app-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+
+    .app-sub {
+      color: var(--gold-dim);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .app-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .app-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Architecture Callout */
+    .info-box {
+      background: linear-gradient(135deg, rgba(26, 32, 44, 0.7), rgba(15, 23, 42, 0.8));
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .info-box h3 {
+      font-family: var(--font-display);
+      color: var(--accent-cyan);
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info-box p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .info-box code {
+      font-family: var(--font-mono);
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      color: var(--gold-bright);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    footer a {
+      color: var(--gold-primary);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .featured-card {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="./" class="brand">
+        <div class="brand-icon">ॐ</div>
+        <div class="brand-text">
+          <h1>AncientWisdom</h1>
+          <span>प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము</span>
+        </div>
+      </a>
+      <div class="header-links">
+        <a href="https://github.com/nikhilgajam/AncientWisdom" target="_blank" rel="noopener">
+          <span>GitHub Repo</span> ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-badge">⚡ Living Repository of Vedic Science & Mathematics</div>
+      <h2 class="hero-title">Ancient Wisdom Interactive Sanctuary</h2>
+      <p class="hero-subtitle">
+        A collection of interactive, browser-based laboratories reviving ancient Indian 
+        cryptography, combinatorics, astronomy, geometry, and linguistic sciences — hosted 
+        openly on GitHub Pages.
+      </p>
+    </section>
+
+    <!-- Live Sacred Chronometry & Circadian Ephemeris Dashboard -->
+    <div class="live-dashboard">
+      <div class="dashboard-header">
+        <div class="dash-title">
+          <span class="live-dot"></span>
+          <span>Living Vedic Chronometry & Circadian Ephemeris (దిన పంచాంగం & జీవ గడియారం)</span>
+        </div>
+        <div id="liveClock" class="dash-clock">--:--:--</div>
+      </div>
+      <div class="dashboard-grid">
+        <div class="dash-tile">
+          <div class="dash-label">🪐 Bṛhaspati Samvatsara (సంవత్సరం)</div>
+          <div id="dashSamvatsara" class="dash-val text-gold">Loading...</div>
+          <div id="dashYearRange" class="dash-sub">60-Year Jovian Cycle</div>
+        </div>
+        <div class="dash-tile">
+          <div class="dash-label">🌙 Lunar Tithi & Pakṣa (తిథి)</div>
+          <div id="dashTithi" class="dash-val text-cyan">Loading...</div>
+          <div id="dashTithiDetail" class="dash-sub">Sun-Moon Phase</div>
+        </div>
+        <div class="dash-tile">
+          <div class="dash-label">✨ Moon Nakṣatra & Vāra (నక్షత్రం)</div>
+          <div id="dashNakshatra" class="dash-val text-purple">Loading...</div>
+          <div id="dashVara" class="dash-sub">Solar Weekday Lord</div>
+        </div>
+        <div class="dash-tile">
+          <div class="dash-label">🌿 Circadian Bio-Dosha (ఆయుర్వేద జీవ హోర)</div>
+          <div id="dashDosha" class="dash-val text-emerald">Loading...</div>
+          <div id="dashDoshaAdvice" class="dash-sub">Active Metabolic Period</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Interactive Applications Grid -->
+    <div class="section-header">
+      <div class="section-title">
+        <span>⚡</span> Active Interactive Laboratories
+      </div>
+      <div class="section-badge">6 Apps Live & Functional</div>
+    </div>
+
+    <div class="apps-grid">
+
+      <!-- Card 1: Katapayadi -->
+      <div class="app-card" style="border-color: rgba(240, 192, 90, 0.4); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(30, 25, 15, 0.9));">
+        <div>
+          <div class="app-card-header">
+            <span class="app-icon">🔐</span>
+            <span class="tag tag-active">🟢 Active & Live</span>
+          </div>
+          <h4 class="app-name">KaTaPaYadi Master</h4>
+          <div class="app-sub">कटपयादि संख्यापद्धतिः • కటపయాది సంఖ్యాపద్ధతి</div>
+          <p>
+            Ancient Indian cryptographic cipher encoding numbers into Sanskrit & Telugu syllables. 
+            Includes bidirectional encoder/decoder, 32-digit &pi; shloka, Mahābhārata chronograms, and phonetic studio.
+          </p>
+        </div>
+        <div class="app-card-footer">
+          <a href="./Katapayadi/" class="btn-launch" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <span>Launch App</span> 🚀
+          </a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Folder: <code>./Katapayadi/</code></span>
+        </div>
+      </div>
+
+      <!-- Card 2: Surya Siddhanta -->
+      <div class="app-card" style="border-color: rgba(245, 185, 66, 0.45); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(30, 25, 15, 0.9));">
+        <div>
+          <div class="app-card-header">
+            <span class="app-icon">☀️</span>
+            <span class="tag tag-active">🟢 Active & Live</span>
+          </div>
+          <h4 class="app-name">Sūrya Siddhānta</h4>
+          <div class="app-sub">सूर्यसिद्धान्तः • సూర్యసిద్ధాంతః • Master Guide</div>
+          <p>
+            Canonical mathematical astronomy. Live Ahargaṇa Kali day calculator, 
+            interactive Nakshatra visualizer, double epicycle retrograde simulator, 24-Jyā sine table, and all 14 Adhyāyas.
+          </p>
+        </div>
+        <div class="app-card-footer">
+          <a href="./SuryaSiddhanta/" class="btn-launch" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <span>Launch App</span> 🚀
+          </a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Folder: <code>./SuryaSiddhanta/</code></span>
+        </div>
+      </div>
+
+      <!-- Card 3: Vedic Mathematics -->
+      <div class="app-card" style="border-color: rgba(56, 189, 248, 0.45); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(15, 28, 38, 0.9));">
+        <div>
+          <div class="app-card-header">
+            <span class="app-icon">⚡</span>
+            <span class="tag tag-active">🟢 Active & Live</span>
+          </div>
+          <h4 class="app-name">Vedic Mathematics</h4>
+          <div class="app-sub">वैदिकगणितम् • వైదికగణితము • 29 Sūtras Studio</div>
+          <p>
+            Complete 4-tier mental computation suite: Ekādhikena (5s & 10s), Ekanyūnena (9s), Bījaṅka (test of 9), 
+            Ūrdhva-Tiryag cross-multiplication, Dvandva Yoga (universal Duplex squaring), Yāvadūnam, Vinculum, 
+            Dhvajāṅka (single-line Flag division), Vilokanam (instant cube roots in 2s), and all 29 canonical Sūtras.
+          </p>
+        </div>
+        <div class="app-card-footer">
+          <a href="./VedicMath/" class="btn-launch" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <span>Launch App</span> 🚀
+          </a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Folder: <code>./VedicMath/</code></span>
+        </div>
+      </div>
+
+      <!-- Card 4: Ayurveda -->
+      <div class="app-card" style="border-color: rgba(52, 211, 153, 0.45); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(15, 32, 24, 0.9));">
+        <div>
+          <div class="app-card-header">
+            <span class="app-icon">🌿</span>
+            <span class="tag tag-active">🟢 Active & Live</span>
+          </div>
+          <h4 class="app-name">Āyurveda (आयुर्वेदः • ఆయుర్వేదము)</h4>
+          <div class="app-sub">Classical Medicine, Tridoṣa, Pañca-Mahābhūta & Agni</div>
+          <p>
+            Tridoṣa bio-energetics (Vāta, Pitta, Kapha), an interactive 8-dimension Prakṛti diagnostic test, 
+            Pañca-Mahābhūtas (5 elements), Tri-Guṇas (mental humors), Caturvidha Agni, Ṣaḍ-Rasa, Ṛtu-caryā, and Dinacaryā.
+          </p>
+        </div>
+        <div class="app-card-footer">
+          <a href="./Ayurveda/" class="btn-launch" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <span>Launch App</span> 🚀
+          </a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Folder: <code>./Ayurveda/</code></span>
+        </div>
+      </div>
+
+      <!-- Card 5: Panchanga -->
+      <div class="app-card" style="border-color: rgba(167, 139, 250, 0.45); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(26, 18, 38, 0.9));">
+        <div>
+          <div class="app-card-header">
+            <span class="app-icon">🪐</span>
+            <span class="tag tag-active">🟢 Active & Live</span>
+          </div>
+          <h4 class="app-name">Pañcāṅga (पञ्चाङ्गम् • పంచాంగము)</h4>
+          <div class="app-sub">Five Limbs of Time, 60 Jovian Years & Kāla-Māna Units</div>
+          <p>
+            Real-time astronomical ephemeris computing Tithi, Vāra, Nakṣatra, Yoga, Karaṇa, 
+            60 Bṛhaspati Samvatsaras, Ayana, Ṛtu, ancient-to-modern Kāla-Māna time units table, and precision Muhūrtas.
+          </p>
+        </div>
+        <div class="app-card-footer">
+          <a href="./Panchanga/" class="btn-launch" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <span>Launch App</span> 🚀
+          </a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Folder: <code>./Panchanga/</code></span>
+        </div>
+      </div>
+
+      <!-- Card 6: Chandas -->
+      <div class="app-card" style="border-color: rgba(244, 63, 94, 0.45); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(35, 12, 25, 0.9));">
+        <div>
+          <div class="app-card-header">
+            <span class="app-icon">📜</span>
+            <span class="tag tag-active">🟢 Active & Live</span>
+          </div>
+          <h4 class="app-name">Chandaḥ-śāstra (छन्दःशास्त्रम् • ఛందశ్శాస్త్రము)</h4>
+          <div class="app-sub">Acharya Pingala's Binary Combinatorics & Metre Scanner</div>
+          <p>
+            The world's earliest documented binary numbering system, Meru Prastāra (Pascal's Triangle), 
+            and Mātrāvṛtta combinatorics. Real-time metre scanner for Anuṣṭubh, Gāyatrī, and classical meters, 
+            along with cognitive neuroscience of mantras and brain entrainment.
+          </p>
+        </div>
+        <div class="app-card-footer">
+          <a href="./Chandas/" class="btn-launch" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <span>Launch App</span> 🚀
+          </a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Folder: <code>./Chandas/</code></span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Unified Knowledge Synthesis: The Interconnected Universe -->
+    <div class="section-header">
+      <div class="section-title">
+        <span>🌐</span> The Interconnected Sciences Synthesis (షట్-శాస్త్ర సమన్వయం • षड्दर्शन समन्वयः)
+      </div>
+      <div class="section-badge">Holistic Epistemology</div>
+    </div>
+
+    <div class="synthesis-grid">
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🌌</span>
+        <h4 class="synthesis-title">Astronomy ↔ Chronometry</h4>
+        <div class="synthesis-bridge">Sūrya Siddhānta ⟷ Pañcāṅga</div>
+        <p class="synthesis-desc">
+          Planetary motions, solar apogee shifts, and lunar-solar angular separations computed in the Sūrya Siddhānta 
+          mathematically generate the 5 limbs of time (Tithi, Vāra, Nakṣatra, Yoga, Karaṇa) and the 60-year Jovian cycles.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🔐</span>
+        <h4 class="synthesis-title">Linguistics ↔ Mathematics</h4>
+        <div class="synthesis-bridge">KaTaPaYadi Cipher ⟷ Constants & Ragas</div>
+        <p class="synthesis-desc">
+          Letters of the Sanskrit & Telugu alphabet serve as a sophisticated alphanumeric cipher, 
+          encoding 32 decimals of &pi;, astronomical planetary revolutions, and the 72 Melakarta scale indexes into devotional hymns.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🧠</span>
+        <h4 class="synthesis-title">Prosody ↔ Cognitive Neuroscience</h4>
+        <div class="synthesis-bridge">Chandaḥ-śāstra ⟷ Brainwave Entrainment</div>
+        <p class="synthesis-desc">
+          Rigid syllable counts and metric weights act as biological error-correcting codes, 
+          stimulating the vagus nerve (CN X), expanding hippocampal grey matter density, and inducing coherent EEG Alpha/Theta states.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🌿</span>
+        <h4 class="synthesis-title">Cosmic Rhythms ↔ Cellular Biology</h4>
+        <div class="synthesis-bridge">Pañcāṅga Ṛtus ⟷ Āyurvedic Dinacaryā</div>
+        <p class="synthesis-desc">
+          The Sun's northern/southern paths (Ayanas) and the 6 cosmic seasons dictate the biological accumulation, 
+          aggravation, and pacification of bodily doshas (Vāta, Pitta, Kapha) and circadian metabolic fire (Agni).
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">⚡</span>
+        <h4 class="synthesis-title">Combinatorics ↔ Modern Computing</h4>
+        <div class="synthesis-bridge">Pingala's Prastāra ⟷ Binary Boolean Logic</div>
+        <p class="synthesis-desc">
+          Acharya Pingala's binary permutations ($2^n$), decimal-to-binary conversions (Naṣṭa), and the stepped binomial pyramid 
+          (Meru Prastāra / Pascal's Triangle) anticipated modern computer science by two millennia.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🏹</span>
+        <h4 class="synthesis-title">Mental Computation ↔ Mnemonic Memory</h4>
+        <div class="synthesis-bridge">Vedic Mathematics ⟷ Mental Duplex & Roots</div>
+        <p class="synthesis-desc">
+          The 16 Primary Sūtras and 13 Upa-Sūtras synthesize arithmetic, geometry, and algebra into single-line crosswise algorithms, 
+          allowing instant mental squaring, flag division, and observation cube roots.
+        </p>
+      </div>
+    </div>
+
+    <!-- Interactive Ancient Wisdom Spotlight -->
+    <div class="section-header">
+      <div class="section-title">
+        <span>📜</span> Living Wisdom Spotlight (సూక్తి సుధ • सुभाषितम्)
+      </div>
+      <div class="section-badge">Authentic Classical Verses</div>
+    </div>
+
+    <div class="wisdom-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem;">
+        <span id="wisdomField" style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--accent-cyan); font-weight:700;">
+          KaTaPaYadi Master (Cryptography • రహస్య లిపి)
+        </span>
+        <button id="nextWisdomBtn" class="btn-secondary" style="margin:0; padding:0.4rem 0.85rem; font-size:0.8rem; cursor:pointer;">
+          <span>Next Aphorism (తరువాతి సూక్తి)</span> ⚡
+        </button>
+      </div>
+      <h3 id="wisdomTitle" style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.5rem;">
+        Astronomical Chronogram (The Pi Value) • ఖగోళ శాస్త్రం & పై విలువ
+      </h3>
+      <div id="wisdomShloka" class="wisdom-shloka">
+        गोपीभाग्यमधुव्रातः शृङ्गीशोदधिसन्धिगः । खलजीवितखाताव गलहालारसंधरः ॥
+      </div>
+      <div id="wisdomTelugu" class="wisdom-telugu">
+        గోపీభాగ్యమధువ్రాతః శృంగీశోదధిసంధిగః । ఖలజీవితఖాతావ గలహాలారసంధరః ॥
+      </div>
+      <div id="wisdomMeaning" class="wisdom-meaning">
+        Devotional verse dedicated to Krishna/Shiva whose letters decode &pi; / 10 = 0.3141592653589793238462643383279... accurate to 32 decimal places!
+      </div>
+    </div>
+
+    <!-- Architecture Callout -->
+    <div class="info-box">
+      <h3>🌐 Multi-Site GitHub Pages Architecture</h3>
+      <p>
+        All applications in this repository are 100% client-side, self-contained static websites. 
+        GitHub Pages automatically routes each project subfolder (e.g., <code>/Katapayadi/</code>, <code>/Chandas/</code>) 
+        as an independent web application while this landing page unites them under one umbrella.
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>
+      <strong>AncientWisdom (प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము)</strong> — Open-source research & digital preservation.
+      <br>
+      Explore the source code on <a href="https://github.com/nikhilgajam/AncientWisdom" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+    <p style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--gold-primary); font-style: italic;">
+      Made with reverence for ancient rishis, mathematicians, and astronomers. 🌺
+    </p>
+  </footer>
+
+  <script>
+    // --- 1. Wisdom Spotlight Database ---
+    const WISDOM_PRESETS = [
+      {
+        title: "Astronomical Chronogram (The Pi Value) • ఖగోళ శాస్త్రం & పై విలువ",
+        field: "KaTaPaYadi Master (Cryptography • రహస్య లిపి)",
+        shloka: "गोपीभाग्यमधुव्रातः शृङ्गीशोदधिसन्धिगः । खलजीवितखाताव गलहालारसंधरः ॥",
+        telugu: "గోపీభాగ్యమధువ్రాతః శృంగీశోదధిసంధిగః । ఖలజీవితఖాతావ గలహాలారసంధరః ॥",
+        meaning: "Devotional verse dedicated to Krishna/Shiva whose letters decode π / 10 = 0.3141592653589793238462643383279... accurate to 32 decimal places!"
+      },
+      {
+        title: "Earth's Gravity & Spherical Cosmos • భూమి గురుత్వాకర్షణ & గోళాకారం",
+        field: "Sūrya Siddhānta (Astronomy • ఖగోళ విజ్ఞానము)",
+        shloka: "सर्वतः पर्वतारामग्रामवृक्षजनैर्वृतः । कन्दुकप्रतिमो धात्र्याः तिष्ठति व्योम्नि धूर्जटिः ॥",
+        telugu: "సర్వతః పర్వతారామగ్రామవృక్షజనైర్వృతః । కందుకప్రతిమో ధాత్ర్యాః తిష్ఠతి వ్యోమ్ని ధూర్జటిః ॥",
+        meaning: "The spherical Earth, adorned with mountains and beings, hangs suspended in space like a ball, held by its own innate attractive force (Dhāraṇātmikā Śakti)."
+      },
+      {
+        title: "Universal Cross-Multiplication • నిలువు-అడ్డ గుణకార సూత్రం",
+        field: "Vedic Mathematics (Algebra • వైదిక గణితము)",
+        shloka: "ऊर्ध्वतिर्यग्भ्यां च एव सर्वत्र प्रयुज्यते ।",
+        telugu: "ఊర్ధ్వతిర్యగ్భ్యాం చ ఏవ సర్వత్ర ప్రయుజ్యతే ।",
+        meaning: "Vertically and Crosswise: The universal algebraic algorithm multiplying numbers or polynomial terms of any arbitrary size in a single simultaneous mental step."
+      },
+      {
+        title: "The Definition of Complete Health • సంపూర్ణ ఆరోగ్య లక్షణం",
+        field: "Āyurveda (Science of Life • ఆయుర్వేదము)",
+        shloka: "समदोषः समाग्निश्च समधातुमलक्रियः । प्रसन्नात्मेन्द्रियमनाः स्वस्थ इत्यभिधीयते ॥",
+        telugu: "సమదోషః సమాగ్నిశ్చ సమధాతుమలక్రియః । ప్రసన్నాత్మేంద్రియమనాః స్వస్థ ఇత్యభిధీయతే ॥",
+        meaning: "One who has balanced doshas, balanced digestive fire (Agni), healthy bodily tissues (Dhātus), and normal eliminations, with a joyful spirit, calm senses, and peaceful mind is defined as Healthy (Svastha)."
+      },
+      {
+        title: "The Mnemonic Meter Ring • ఛందస్సు సూత్ర వలయం",
+        field: "Chandaḥ-śāstra (Combinatorics • ఛందశ్శాస్త్రము)",
+        shloka: "यमाता राजभानसलगाम् ।",
+        telugu: "యమాతా రాజభానసలగాం ।",
+        meaning: "Acharya Pingala's 10-syllable circular mnemonic generating all 8 metric triplets (Gaṇas), binary permutations, and the foundations of computational prosody."
+      },
+      {
+        title: "The Biological Breath of Time • కాల శ్వాస విభజన",
+        field: "Pañcāṅga (Chronometry • పంచాంగము)",
+        shloka: "प्राणादिः कथितః कालो मूर्तश्चामूर्त एव च । षट् प्राणाः विనాडी स्यात् तत् षष्ट्या नाडिका स्मृता ॥",
+        telugu: "ప్రాణాదిః కథితః కాలో మూర్తశ్చామూర్త ఏవ చ । షట్ ప్రాణాః వినాడీ స్యాత్ తత్ షష్ట్యా నాడికా స్మృతా ॥",
+        meaning: "Time is measured from human breath: 1 Prāṇa = 4 sidereal seconds. 6 Prāṇas = 1 Pala (24s). 60 Palas = 1 Ghaṭikā (24 min). 60 Ghaṭikās = 1 Ahorātra (24 hr)."
+      }
+    ];
+
+    let currentWisdomIdx = 0;
+    const nextBtn = document.getElementById("nextWisdomBtn");
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        currentWisdomIdx = (currentWisdomIdx + 1) % WISDOM_PRESETS.length;
+        const item = WISDOM_PRESETS[currentWisdomIdx];
+        document.getElementById("wisdomField").textContent = item.field;
+        document.getElementById("wisdomTitle").textContent = item.title;
+        document.getElementById("wisdomShloka").textContent = item.shloka;
+        document.getElementById("wisdomTelugu").textContent = item.telugu;
+        document.getElementById("wisdomMeaning").textContent = item.meaning;
+      });
+    }
+
+    // --- 2. Live Ephemeris & Circadian Calculator ---
+    const SAMVATSARAS = [
+      "1. Prabhava (ప్రభవ)", "2. Vibhava (విభవ)", "3. Śukla (శుక్ల)", "4. Pramodadūta (ప్రమోదూత)", "5. Prajāpati (ప్రజాపతి)",
+      "6. Aṅgiras (ఆంగీరస)", "7. Śrīmukha (శ్రీముఖ)", "8. Bhāva (భావ)", "9. Yuva (యువ)", "10. Dhātṛ (ధాత)",
+      "11. Īśvara (ఈశ్వర)", "12. Bahudhānya (బహుధాన్య)", "13. Pramāthin (ప్రమాథి)", "14. Vikrama (విక్రమ)", "15. Vṛṣa (వృష)",
+      "16. Citrabhānu (చిత్రభాను)", "17. Svabhānu (స్వభాను)", "18. Tāraṇa (తారణ)", "19. Pārthiva (పార్థివ)", "20. Vyaya (వ్యయ)",
+      "21. Sarvajit (సర్వజిత్తు)", "22. Sarvadhārin (సర్వధారి)", "23. Virodhin (విరోధి)", "24. Vikṛta (వికృతి)", "25. Khara (ఖర)",
+      "26. Nandana (నందన)", "27. Vijaya (విజయ)", "28. Jaya (జయ)", "29. Manmatha (మన్మథ)", "30. Durmukha (దుర్ముఖి)",
+      "31. Hemalamba (హేవిలంబి)", "32. Vilamba (విలంబి)", "33. Vikārin (వికారి)", "34. Śārvarin (శార్వరి)", "35. Plava (ప్లవ)",
+      "36. Śubhakṛt (శుభకృతు)", "37. Śobhakṛt (శోభకృతు)", "38. Krodhin (క్రోధి)", "39. Viśvāvasu (విశ్వావసు)", "40. Parābhava (పరాభవ)",
+      "41. Plavaṅga (ప్లవంగ)", "42. Kīlaka (కీలక)", "43. Saumya (సౌమ్య)", "44. Sādhāraṇa (సాధారణ)", "45. Virodhakṛt (విరోధకృతు)",
+      "46. Paridhāvin (పరీధావి)", "47. Pramādin (ప్రమాదీచ)", "48. Ānanda (ఆనంద)", "49. Rākṣasa (రాక్షస)", "50. Anala (నల)",
+      "51. Piṅgala (పింగళ)", "52. Kālayukti (కాలయుక్తి)", "53. Siddhārthin (సిద్ధార్థి)", "54. Raudra (రౌద్రి)", "55. Durmati (దుర్మతి)",
+      "56. Dundubhi (దుందుభి)", "57. Rudhirodgārin (రుధిరోద్గారి)", "58. Raktākṣa (రక్తాక్షి)", "59. Krodhana (క్రోధన)", "60. Kṣaya (క్షయ)"
+    ];
+
+    const TITHIS = [
+      "Pratipadā (పాడ్యమి)", "Dvitīyā (విదియ)", "Tṛtīyā (తదియ)", "Caturthī (చవితి)", "Pañcamī (పంచమి)",
+      "Ṣaṣṭhī (షష్ఠి)", "Saptamī (సప్తమి)", "Aṣṭamī (అష్టమి)", "Navamī (నవమి)", "Daśamī (దశమి)",
+      "Ekādaśī (ఏకాదశి)", "Dvādaśī (ద్వాదశి)", "Trayodaśī (త్రయోదశి)", "Caturdaśī (చతుర్దశి)", "Pūrṇimā (పౌర్ణమి)",
+      "Pratipadā (పాడ్యమి)", "Dvitīyā (విదియ)", "Tṛtīyā (తదియ)", "Caturthī (చవితి)", "Pañcamī (పంచమి)",
+      "Ṣaṣṭhī (షష్ఠి)", "Saptamī (సప్తమి)", "Aṣṭamī (అష్టమి)", "Navamī (నవమి)", "Daśamī (దశమి)",
+      "Ekādaśī (ఏకాదశి)", "Dvādaśī (ద్వాదశి)", "Trayodaśī (త్రయోదశి)", "Caturdaśī (చతుర్దశి)", "Amāvāsyā (అమావాస్య)"
+    ];
+
+    const NAKSHATRAS = [
+      "Aśvinī (అశ్విని)", "Bharaṇī (భరణి)", "Kṛttikā (కృత్తిక)", "Rohiṇī (రోహిణి)", "Mṛgaśīrṣā (మృగశిర)",
+      "Ārdrā (ఆర్ద్ర)", "Punarvasu (పునర్వసు)", "Puṣya (పుష్యమి)", "Āśleṣā (ఆశ్లేష)", "Maghā (మఘ)",
+      "Pūrva Phālgunī (పుబ్బ)", "Uttara Phālgunī (ఉత్తర)", "Hasta (హస్త)", "Citrā (చిత్త)", "Svātī (స్వాతి)",
+      "Viśākhā (విశాఖ)", "Anurādhā (అనూరాధ)", "Jyeṣṭhā (జ్యేష్ఠ)", "Mūla (మూల)", "Pūrvāṣāḍhā (పూర్వాషాఢ)",
+      "Uttarāṣāḍhā (ఉత్తరాషాఢ)", "Śravaṇa (శ్రవణం)", "Dhaniṣṭhā (ధనిష్ఠ)", "Śatabhiṣak (శతభిషం)", "Pūrva Bhādrapadā (పూర్వాభాద్ర)",
+      "Uttara Bhādrapadā (ఉత్తరాభాద్ర)", "Revatī (రేవతి)"
+    ];
+
+    const VARAS = [
+      { name: "Ravivāra (ఆదివారం)", lord: "Sūrya (సూర్యుడు)" },
+      { name: "Somavāra (సోమవారం)", lord: "Candra (చంద్రుడు)" },
+      { name: "Maṅgalavāra (మంగళవారం)", lord: "Maṅgala (కుజుడు)" },
+      { name: "Budhavāra (బుధవారం)", lord: "Budha (బుధుడు)" },
+      { name: "Guruvāra (గురువారం)", lord: "Bṛhaspati (గురువు)" },
+      { name: "Śukravāra (శుక్రవారం)", lord: "Śukra (శుక్రుడు)" },
+      { name: "Śanivāra (శనివారం)", lord: "Śani (శని)" }
+    ];
+
+    function updateLiveDashboard() {
+      const now = new Date();
+
+      // Clock
+      const clockEl = document.getElementById("liveClock");
+      if (clockEl) {
+        clockEl.textContent = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+      }
+
+      const y = now.getFullYear();
+      const m = now.getMonth() + 1;
+      const d = now.getDate();
+      const hours = now.getHours() + now.getMinutes() / 60;
+
+      // Samvatsara
+      const effY = (m < 3 || (m === 3 && d < 22)) ? y - 1 : y;
+      const samvatIdx = ((effY - 1987) % 60 + 60) % 60;
+      const endShort = (effY + 1).toString().slice(-2);
+
+      const samvatEl = document.getElementById("dashSamvatsara");
+      const yearRangeEl = document.getElementById("dashYearRange");
+      if (samvatEl) samvatEl.textContent = SAMVATSARAS[samvatIdx];
+      if (yearRangeEl) yearRangeEl.textContent = `Ugadi Year Cycle: ${effY}–${endShort} CE`;
+
+      // Julian Day & Ahargana (from Surya Siddhanta)
+      let jy = y, jm = m;
+      if (jm <= 2) { jy -= 1; jm += 12; }
+      const A = Math.floor(jy / 100);
+      const B = 2 - A + Math.floor(A / 4);
+      const jd = Math.floor(365.25 * (jy + 4716)) + Math.floor(30.6001 * (jm + 1)) + d + B - 1524.5 + (hours / 24.0);
+      const ahargana = jd - 588465.5; // Kali Epoch
+
+      // Sun and Moon
+      const sunRev = (ahargana * 4320000) / 1577917828;
+      const sunLong = (sunRev - Math.floor(sunRev)) * 360;
+      const moonRev = (ahargana * 57753336) / 1577917828;
+      const moonMean = (moonRev - Math.floor(moonRev)) * 360;
+      const apogeeRev = (ahargana * 488203) / 1577917828;
+      const apogeeLong = (apogeeRev - Math.floor(apogeeRev)) * 360;
+      const anomaly = ((moonMean - apogeeLong) % 360 + 360) % 360;
+      const manda = (32.0 / 360.0) * (180.0 / Math.PI) * Math.sin(anomaly * (Math.PI / 180));
+      const moonTrue = ((moonMean - manda) % 360 + 360) % 360;
+
+      // Tithi
+      const sep = ((moonTrue - sunLong) % 360 + 360) % 360;
+      const tithiIdx = Math.floor(sep / 12) % 30;
+      const paksha = tithiIdx < 15 ? "Śukla Pakṣa (శుక్ల పక్షం)" : "Kṛṣṇa Pakṣa (కృష్ణ పక్షం)";
+      const tithiEl = document.getElementById("dashTithi");
+      const tithiDetailEl = document.getElementById("dashTithiDetail");
+      if (tithiEl) tithiEl.textContent = TITHIS[tithiIdx];
+      if (tithiDetailEl) tithiDetailEl.textContent = `${paksha} • ${((sep % 12) / 12 * 100).toFixed(0)}% elapsed`;
+
+      // Nakshatra & Vara
+      const nakIdx = Math.floor((moonTrue * 60) / 800) % 27;
+      const dayOfWeek = now.getDay();
+      const nakEl = document.getElementById("dashNakshatra");
+      const varaEl = document.getElementById("dashVara");
+      if (nakEl) nakEl.textContent = NAKSHATRAS[nakIdx];
+      if (varaEl) varaEl.textContent = `${VARAS[dayOfWeek].name} • Ruler: ${VARAS[dayOfWeek].lord}`;
+
+      // Ayurvedic Circadian Bio-Clock
+      const curHour = now.getHours();
+      let doshaName = "", doshaAdvice = "";
+      if ((curHour >= 6 && curHour < 10) || (curHour >= 18 && curHour < 22)) {
+        doshaName = "Kapha (कफ • కఫము)";
+        doshaAdvice = "Stability & Grounding • Best for exercise & light nourishing meals";
+      } else if ((curHour >= 10 && curHour < 14) || (curHour >= 22 || curHour < 2)) {
+        doshaName = "Pitta (पित्त • పిత్తము)";
+        doshaAdvice = "Peak Digestion & Focus • Optimal for main lunch & mental acuity";
+      } else {
+        doshaName = "Vāta (वात • వాతము)";
+        doshaAdvice = "Movement & Intuition • Ideal for meditation, study & creative thought";
+      }
+
+      const doshaEl = document.getElementById("dashDosha");
+      const doshaAdviceEl = document.getElementById("dashDoshaAdvice");
+      if (doshaEl) doshaEl.textContent = doshaName;
+      if (doshaAdviceEl) doshaAdviceEl.textContent = doshaAdvice;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateLiveDashboard();
+      setInterval(updateLiveDashboard, 1000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KaTaPaYadi Master (कटपयादि) — Ancient Alphanumeric Secret</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+  <!-- Background decorative ambient orbs -->
+  <div class="ambient-glow orb-1"></div>
+  <div class="ambient-glow orb-2"></div>
+  <div class="ambient-glow orb-3"></div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="logo-symbol">क</div>
+        <div class="logo-text">
+          <span class="logo-title">KaTaPaYadi <span class="badge-sanskrit">कटपयादि</span></span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#rules" class="nav-item active"><span class="nav-icon">📜</span> Rules</a>
+        <a href="#matrix" class="nav-item"><span class="nav-icon">🔢</span> Matrix</a>
+        <a href="#varnamala" class="nav-item"><span class="nav-icon">🗣️</span> Varṇamālā</a>
+        <a href="#converter" class="nav-item"><span class="nav-icon">🔄</span> Converter</a>
+        <a href="#remember" class="nav-item highlight"><span class="nav-icon">🧠</span> Memory Studio</a>
+        <a href="#examples" class="nav-item"><span class="nav-icon">✨</span> Examples</a>
+        <a href="#chandas" class="nav-item"><span class="nav-icon">📜</span> Chandas & Math</a>
+        <a href="#quiz" class="nav-item"><span class="nav-icon">🎯</span> Quiz</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="quickHelpBtn" class="btn-icon" title="Quick Formula Cheat Sheet">ℹ️ Guide</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="shloka-banner">
+        <div class="shloka-sanskrit">
+          कादिर्नव टादिर्नव पादिपञ्चक यद्यष्टकम् । ज्ञेया शून्या स्वरास्तद्वत् अक्षरेषु स्वरान्तिकाः ॥
+        </div>
+        <div class="shloka-telugu" style="font-family:'Noto Sans Telugu', var(--font-serif); font-size:1.22rem; font-weight:700; color:var(--accent-gold); line-height:1.6; margin-bottom:8px;">
+          కాదిర్నవ టాదిర్నవ పాదిపంచక యద్యష్టకమ్ । జ్ఞేయా శూన్యా స్వరాస్తద్వత్ అక్షరేషు స్వరాంతికాః ॥
+        </div>
+        <div class="shloka-translation">
+          "Ka begins nine (1-9), Ṭa begins nine (1-9), Pa begins five (1-5), Ya begins eight (1-8). Standalone vowels and ña/na represent Zero. In conjunct letters, only the last consonant counts."
+        </div>
+        <div class="shloka-rule-badge">
+          अङ्कानां वामतो गतिः • అంకానాం వామతో గతిః • "Numbers proceed from right to left" (Traditional chronogram order)
+        </div>
+      </div>
+
+      <h1 class="hero-title">Decode Ancient Wisdom & <br><span class="gradient-text">Remember Any Number Forever</span></h1>
+      <p class="hero-desc">
+        With roots reaching back to ancient Itihasic tradition—where the original title of the <em>Mahābhārata</em>, <strong>Jaya (जय / జయ)</strong>, famously encoded its <strong>18 Parvas</strong>—and formally codified over 1,500 years ago by Indian astronomers and scholars, the <strong>Ka-Ta-Pa-Ya-di</strong> cipher translates numbers into beautiful poetry, musical ragas, and astronomical constants like <span class="math-pi">&pi;</span> (Pi). Use this interactive studio to learn, convert both ways, and turn passwords, PINs, or dates into unforgettable phrases!
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#rules" class="btn btn-outline"><span class="btn-icon">📜</span> 4 Golden Rules</a>
+        <a href="#converter" class="btn btn-outline"><span class="btn-icon">⚡</span> Try Two-Way Converter</a>
+        <a href="#remember" class="btn btn-outline"><span class="btn-icon">💡</span> Create a Memory Mnemonic</a>
+        <a href="#matrix" class="btn btn-outline"><span class="btn-icon">🔍</span> Explore Master Matrix</a>
+      </div>
+    </div>
+
+    <!-- Quick Stat Highlights -->
+    <div class="hero-highlights">
+      <div class="highlight-card">
+        <div class="card-icon">🥧</div>
+        <div class="card-title">&pi; to 32 Decimals</div>
+        <div class="card-desc">Encoded in a single devotional shloka to Lord Krishna!</div>
+      </div>
+      <div class="highlight-card">
+        <div class="card-icon">📜</div>
+        <div class="card-title">Chandas &amp; Binary Prosody</div>
+        <div class="card-desc">Pingala's Laghu-Guru metrics interlock with KaTaPaYadi payloads!</div>
+      </div>
+      <div class="highlight-card">
+        <div class="card-icon">📅</div>
+        <div class="card-title">Kali Day Chronograms</div>
+        <div class="card-desc">Historic book completion dates embedded in final verses.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="card-icon">🧠</div>
+        <div class="card-title">World's 1st Mnemonic Peg</div>
+        <div class="card-desc">Pre-dates modern Western memory techniques by a millennium.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: THE 4 FUNDAMENTAL RULES -->
+  <section id="rules" class="section-container rules-section">
+    <div id="learn" style="position:relative; top:-20px;"></div>
+    <div class="section-header">
+      <div class="section-badge">Core Foundations</div>
+      <h2 class="section-title">
+        The 4 Fundamental Rules of KaTaPaYadi
+      </h2>
+      <p class="section-subtitle">
+        Codified over 1,500 years ago in treatises like <em>Sadratnamala</em> &amp; <em>Aryabhatiya</em>. Master these 4 simple keys to decode any ancient verse, chronogram, or Melakarta raga scale.
+      </p>
+
+      <!-- Language Filter for Rules -->
+      <div class="rules-lang-toggle" style="margin-top:14px; display:inline-flex; background:rgba(0,0,0,0.4); padding:3px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+        <button class="toggle-btn active" id="ruleLangAll" onclick="setRulesLanguage('all')">🌐 Both (English + తెలుగు)</button>
+        <button class="toggle-btn" id="ruleLangTel" onclick="setRulesLanguage('tel')">🌺 తెలుగు (Telugu Only)</button>
+        <button class="toggle-btn" id="ruleLangEng" onclick="setRulesLanguage('eng')">🇬🇧 English Only</button>
+      </div>
+    </div>
+
+    <!-- The 4 Golden Rules Cards with Bilingual Telugu & Sanskrit/English -->
+    <div class="rules-grid">
+      <!-- Rule 1 -->
+      <div class="rule-card">
+        <div class="rule-num">Rule 1 • సూత్రం 1</div>
+        <div class="rule-icon">🔤</div>
+        <h3>
+          The 4 Starting Points
+          <span class="rule-title-tel" style="display:block; font-size:1.02rem; color:#38bdf8; font-family:'Nirmala UI','Gautami',sans-serif; margin-top:2px;">4 ప్రారంభ స్థానాలు (క, ట, ప, య)</span>
+        </h3>
+        <p class="rule-desc-eng">
+          The system gets its name from the first consonant of each of the 4 series: <strong>Ka</strong> (क/క), <strong>Ṭa</strong> (ट/ట), <strong>Pa</strong> (प/ప), and <strong>Ya</strong> (य/య). Each series counts from <strong>1</strong> through 9, and ends in Zero (0).
+        </p>
+        <p class="rule-desc-tel" style="color:#bae6fd; font-family:'Nirmala UI','Gautami',sans-serif; font-size:0.88rem; line-height:1.55; margin-bottom:12px;">
+          ఈ రహస్య సంఖ్యా లిపి నాలుగు శ్రేణులలోని మొదటి హల్లుల ఆధారంగా పేరు పొందింది: <strong>క</strong>, <strong>ట</strong>, <strong>ప</strong>, <strong>య</strong>. ఈ నాలుగు వరుసలు <strong>1</strong> తో ప్రారంభమై 9 వరకు సాగి, సున్నాతో (0) ముగుస్తాయి.
+        </p>
+        <div class="rule-code">
+          <span class="code-eng">Ka=1, Ṭa=1, Pa=1, Ya=1</span>
+          <span class="code-tel" style="color:#38bdf8; display:block; margin-top:3px; font-family:'Nirmala UI','Gautami',sans-serif;">క=1, ట=1, ప=1, య=1 | ఞ, న, జ్ఞ = 0</span>
+        </div>
+      </div>
+
+      <!-- Rule 2 -->
+      <div class="rule-card">
+        <div class="rule-num">Rule 2 • సూత్రం 2</div>
+        <div class="rule-icon">🎯</div>
+        <h3>
+          Vowels Carry Zero Value
+          <span class="rule-title-tel" style="display:block; font-size:1.02rem; color:#38bdf8; font-family:'Nirmala UI','Gautami',sans-serif; margin-top:2px;">అచ్చులకు సంఖ్యా విలువ లేదు (జ్ఞేయా శూన్యా స్వరాః)</span>
+        </h3>
+        <p class="rule-desc-eng">
+          Vowel signs (mātrās: ā, i, ee, u, e, o) merely shape pronunciation and vocabulary. <strong>कि (ki/కి)</strong>, <strong>कु (ku/కు)</strong>, and <strong>को (ko/కో)</strong> all retain the value <strong>1</strong>. Standalone vowels = 0.
+        </p>
+        <p class="rule-desc-tel" style="color:#bae6fd; font-family:'Nirmala UI','Gautami',sans-serif; font-size:0.88rem; line-height:1.55; margin-bottom:12px;">
+          హల్లులకు చేరే గుణింతాలు (ఆ, ఇ, ఈ, ఉ, ఊ, ఎ, ఏ, ఐ, ఒ, ఓ, ఔ, అం) కేవలం ఉచ్చారణ మరియు అందమైన పదాల కోసమే. <strong>కి</strong>, <strong>కు</strong>, <strong>కే</strong>, <strong>కో</strong> అన్నీ <strong>1</strong> నే సూచిస్తాయి. విడిగా ఉండే స్వతంత్ర అచ్చులు = 0.
+        </p>
+        <div class="rule-code">
+          <span class="code-eng">का (kā) = 1, गो (go) = 3, श्री (śrī) = 2</span>
+          <span class="code-tel" style="color:#38bdf8; display:block; margin-top:3px; font-family:'Nirmala UI','Gautami',sans-serif;">కా = 1, గో = 3, శ్రీ = 2 | విడిగా ఉండే అ, ఆ, ఇ = 0</span>
+        </div>
+      </div>
+
+      <!-- Rule 3 -->
+      <div class="rule-card">
+        <div class="rule-num">Rule 3 • సూత్రం 3</div>
+        <div class="rule-icon">🧩</div>
+        <h3>
+          Conjuncts: Last Consonant Counts
+          <span class="rule-title-tel" style="display:block; font-size:1.02rem; color:#38bdf8; font-family:'Nirmala UI','Gautami',sans-serif; margin-top:2px;">సంయుక్తాక్షరాలలో చివరి హల్లే ప్రధానం</span>
+        </h3>
+        <p class="rule-desc-eng">
+          In conjunct consonants (వత్తులు / consonant clusters like <em>'kya'</em>, <em>'ndha'</em>, <em>'stra'</em>), only the <strong>final consonant</strong> determines the numeric cipher value.
+        </p>
+        <p class="rule-desc-tel" style="color:#bae6fd; font-family:'Nirmala UI','Gautami',sans-serif; font-size:0.88rem; line-height:1.55; margin-bottom:12px;">
+          సంయుక్తాక్షరాలు లేదా వత్తులలో (ఉదా: <em>'గ్య'</em>, <em>'న్ధ'</em>, <em>'స్త్ర'</em>), ముందుండే పొల్లు హల్లులు లెక్కలోకి రావు. చివరిగా పలికే వత్తు లేదా హల్లు మాత్రమే సంఖ్యా విలువను నిర్ణయిస్తుంది.
+        </p>
+        <div class="rule-code">
+          <span class="code-eng">ग्य (g+ya) = ya = 1 | न्ध (n+dha) = dha = 9</span>
+          <span class="code-tel" style="color:#38bdf8; display:block; margin-top:3px; font-family:'Nirmala UI','Gautami',sans-serif;">భాగ్య (గ+య) ➔ య = 1 | గంధ (న+ధ) ➔ ధ = 9</span>
+        </div>
+      </div>
+
+      <!-- Rule 4 -->
+      <div class="rule-card">
+        <div class="rule-num">Rule 4 • సూత్రం 4</div>
+        <div class="rule-icon">🔁</div>
+        <h3>
+          Aṅkānāṁ Vāmato Gatiḥ
+          <span class="rule-title-tel" style="display:block; font-size:1.02rem; color:#38bdf8; font-family:'Nirmala UI','Gautami',sans-serif; margin-top:2px;">అంకానాం వామతో గతిః (కుడి నుండి ఎడమకు)</span>
+        </h3>
+        <p class="rule-desc-eng">
+          <em>अङ्कानां वामतो गतिः</em> means <strong>"Numbers proceed leftwards"</strong> (right-to-left: units, tens, hundreds). In classical chronograms &amp; Melakartas, syllables are read backwards to reconstruct the true number!
+        </p>
+        <p class="rule-desc-tel" style="color:#bae6fd; font-family:'Nirmala UI','Gautami',sans-serif; font-size:0.88rem; line-height:1.55; margin-bottom:12px;">
+          <strong>"అంకానాం వామతో గతిః"</strong> అనగా సంఖ్యలు కుడి నుండి ఎడమకు (ఒకట్లు, పదులు, వందలు) లెక్కించబడతాయి. కావ్యాలలో లేదా రాగాల పేర్లలో అక్షరాల విలువలను తిరగవేసి చదివినప్పుడే అసలైన సంఖ్య వస్తుంది.
+        </p>
+        <div class="rule-code">
+          <span class="code-eng">Forward: [1, 5] → Chronogram Value: 51</span>
+          <span class="code-tel" style="color:#38bdf8; display:block; margin-top:3px; font-family:'Nirmala UI','Gautami',sans-serif;">అక్షరాలు: మాయ [మ=5, య=1] ➔ వామతో గతి: 15వ రాగం</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: MASTER MATRIX -->
+  <section id="matrix" class="section-container">
+    <div class="section-header">
+      <div class="section-badge">Visual Reference</div>
+      <h2 class="section-title">The Katapayadi Master Matrix</h2>
+      <p class="section-subtitle">Click on any letter to hear details, view phonetic hints, or insert into your converter.</p>
+    </div>
+
+    <div class="matrix-card">
+      <div class="matrix-controls">
+        <div class="control-group">
+          <label>Display Script:</label>
+          <div class="toggle-buttons" id="scriptToggle">
+            <button class="toggle-btn active" data-script="devanagari">देवनागरी (Devanagari)</button>
+            <button class="toggle-btn" data-script="telugu">తెలుగు (Telugu)</button>
+            <button class="toggle-btn" data-script="english">English (IAST / Phonetic)</button>
+            <button class="toggle-btn" data-script="both">All Scripts Combined</button>
+          </div>
+        </div>
+        <div class="matrix-quick-tip">
+          💡 <em>Tip: Row names come from the 1st letter of each row: <strong>क / క (Ka)</strong>, <strong>ट / ట (Ta)</strong>, <strong>प / ప (Pa)</strong>, <strong>य / య (Ya)</strong>!</em>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="katapayadi-table" id="masterMatrixTable">
+          <thead>
+            <tr>
+              <th class="th-rowheader">Group \ Digit</th>
+              <th class="digit-col" data-digit="1"><div class="digit-box">1</div></th>
+              <th class="digit-col" data-digit="2"><div class="digit-box">2</div></th>
+              <th class="digit-col" data-digit="3"><div class="digit-box">3</div></th>
+              <th class="digit-col" data-digit="4"><div class="digit-box">4</div></th>
+              <th class="digit-col" data-digit="5"><div class="digit-box">5</div></th>
+              <th class="digit-col" data-digit="6"><div class="digit-box">6</div></th>
+              <th class="digit-col" data-digit="7"><div class="digit-box">7</div></th>
+              <th class="digit-col" data-digit="8"><div class="digit-box">8</div></th>
+              <th class="digit-col" data-digit="9"><div class="digit-box">9</div></th>
+              <th class="digit-col" data-digit="0"><div class="digit-box digit-zero">0</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row 1: Ka-adi -->
+            <tr class="row-ka">
+              <td class="row-label">
+                <strong>क-वर्ग / క-వర్గము (Ka-ādi)</strong>
+                <span>कादिर्नव / కాది నవ (1 to 9, 0)</span>
+              </td>
+              <td class="cell" data-digit="1" data-dev="क" data-tel="క" data-eng="ka" data-iast="ka">
+                <span class="char-dev">क</span><span class="char-tel">క</span><span class="char-eng">ka</span>
+              </td>
+              <td class="cell" data-digit="2" data-dev="ख" data-tel="ఖ" data-eng="kha" data-iast="kha">
+                <span class="char-dev">ख</span><span class="char-tel">ఖ</span><span class="char-eng">kha</span>
+              </td>
+              <td class="cell" data-digit="3" data-dev="ग" data-tel="గ" data-eng="ga" data-iast="ga">
+                <span class="char-dev">ग</span><span class="char-tel">గ</span><span class="char-eng">ga</span>
+              </td>
+              <td class="cell" data-digit="4" data-dev="घ" data-tel="ఘ" data-eng="gha" data-iast="gha">
+                <span class="char-dev">घ</span><span class="char-tel">ఘ</span><span class="char-eng">gha</span>
+              </td>
+              <td class="cell" data-digit="5" data-dev="ङ" data-tel="ఙ" data-eng="nga" data-iast="ṅa">
+                <span class="char-dev">ङ</span><span class="char-tel">ఙ</span><span class="char-eng">ṅa</span>
+              </td>
+              <td class="cell" data-digit="6" data-dev="च" data-tel="చ" data-eng="cha/ca" data-iast="ca">
+                <span class="char-dev">च</span><span class="char-tel">చ</span><span class="char-eng">ca</span>
+              </td>
+              <td class="cell" data-digit="7" data-dev="छ" data-tel="ఛ" data-eng="chha" data-iast="cha">
+                <span class="char-dev">छ</span><span class="char-tel">ఛ</span><span class="char-eng">cha</span>
+              </td>
+              <td class="cell" data-digit="8" data-dev="ज" data-tel="జ" data-eng="ja" data-iast="ja">
+                <span class="char-dev">ज</span><span class="char-tel">జ</span><span class="char-eng">ja</span>
+              </td>
+              <td class="cell" data-digit="9" data-dev="झ" data-tel="ఝ" data-eng="jha" data-iast="jha">
+                <span class="char-dev">झ</span><span class="char-tel">ఝ</span><span class="char-eng">jha</span>
+              </td>
+              <td class="cell cell-zero" data-digit="0" data-dev="ञ" data-tel="ఞ" data-eng="nya" data-iast="ña">
+                <span class="char-dev">ञ</span><span class="char-tel">ఞ</span><span class="char-eng">ña</span>
+              </td>
+            </tr>
+
+            <!-- Row 2: Ta-adi -->
+            <tr class="row-ta">
+              <td class="row-label">
+                <strong>ट-वर्ग / ట-వర్గము (Ṭa-ādi)</strong>
+                <span>टादिर्नव / టాది నవ (1 to 9, 0)</span>
+              </td>
+              <td class="cell" data-digit="1" data-dev="ट" data-tel="ట" data-eng="Ta" data-iast="ṭa">
+                <span class="char-dev">ट</span><span class="char-tel">ట</span><span class="char-eng">ṭa</span>
+              </td>
+              <td class="cell" data-digit="2" data-dev="ठ" data-tel="ఠ" data-eng="Tha" data-iast="ṭha">
+                <span class="char-dev">ठ</span><span class="char-tel">ఠ</span><span class="char-eng">ṭha</span>
+              </td>
+              <td class="cell" data-digit="3" data-dev="ड" data-tel="డ" data-eng="Da" data-iast="ḍa">
+                <span class="char-dev">ड</span><span class="char-tel">డ</span><span class="char-eng">ḍa</span>
+              </td>
+              <td class="cell" data-digit="4" data-dev="ढ" data-tel="ఢ" data-eng="Dha" data-iast="ḍha">
+                <span class="char-dev">ढ</span><span class="char-tel">ఢ</span><span class="char-eng">ḍha</span>
+              </td>
+              <td class="cell" data-digit="5" data-dev="ण" data-tel="ణ" data-eng="Na" data-iast="ṇa">
+                <span class="char-dev">ण</span><span class="char-tel">ణ</span><span class="char-eng">ṇa</span>
+              </td>
+              <td class="cell" data-digit="6" data-dev="त" data-tel="త" data-eng="ta" data-iast="ta">
+                <span class="char-dev">त</span><span class="char-tel">త</span><span class="char-eng">ta</span>
+              </td>
+              <td class="cell" data-digit="7" data-dev="थ" data-tel="థ" data-eng="tha" data-iast="tha">
+                <span class="char-dev">थ</span><span class="char-tel">థ</span><span class="char-eng">tha</span>
+              </td>
+              <td class="cell" data-digit="8" data-dev="द" data-tel="ద" data-eng="da" data-iast="da">
+                <span class="char-dev">द</span><span class="char-tel">ద</span><span class="char-eng">da</span>
+              </td>
+              <td class="cell" data-digit="9" data-dev="ध" data-tel="ధ" data-eng="dha" data-iast="dha">
+                <span class="char-dev">ध</span><span class="char-tel">ధ</span><span class="char-eng">dha</span>
+              </td>
+              <td class="cell cell-zero" data-digit="0" data-dev="न" data-tel="న" data-eng="na" data-iast="na">
+                <span class="char-dev">न</span><span class="char-tel">న</span><span class="char-eng">na</span>
+              </td>
+            </tr>
+
+            <!-- Row 3: Pa-adi -->
+            <tr class="row-pa">
+              <td class="row-label">
+                <strong>प-वर्ग / ప-వర్గము (Pa-ādi)</strong>
+                <span>पादिपञ्चक / పాది పంచక (1 to 5)</span>
+              </td>
+              <td class="cell" data-digit="1" data-dev="प" data-tel="ప" data-eng="pa" data-iast="pa">
+                <span class="char-dev">प</span><span class="char-tel">ప</span><span class="char-eng">pa</span>
+              </td>
+              <td class="cell" data-digit="2" data-dev="फ" data-tel="ఫ" data-eng="pha" data-iast="pha">
+                <span class="char-dev">फ</span><span class="char-tel">ఫ</span><span class="char-eng">pha</span>
+              </td>
+              <td class="cell" data-digit="3" data-dev="ब" data-tel="బ" data-eng="ba" data-iast="ba">
+                <span class="char-dev">ब</span><span class="char-tel">బ</span><span class="char-eng">ba</span>
+              </td>
+              <td class="cell" data-digit="4" data-dev="भ" data-tel="భ" data-eng="bha" data-iast="bha">
+                <span class="char-dev">भ</span><span class="char-tel">భ</span><span class="char-eng">bha</span>
+              </td>
+              <td class="cell" data-digit="5" data-dev="म" data-tel="మ" data-eng="ma" data-iast="ma">
+                <span class="char-dev">म</span><span class="char-tel">మ</span><span class="char-eng">ma</span>
+              </td>
+              <td class="cell cell-empty" colspan="5">
+                <span class="empty-note">Pa-group contains 5 labial consonants (ప నుండి మ వరకూ 5 అక్షరాలు)</span>
+              </td>
+            </tr>
+
+            <!-- Row 4: Ya-adi -->
+            <tr class="row-ya">
+              <td class="row-label">
+                <strong>य-वर्ग / య-వర్గము (Ya-ādi)</strong>
+                <span>यद्यष्टकम् / యద్యష్టకమ్ (1 to 8/9, 0)</span>
+              </td>
+              <td class="cell" data-digit="1" data-dev="य" data-tel="య" data-eng="ya" data-iast="ya">
+                <span class="char-dev">य</span><span class="char-tel">య</span><span class="char-eng">ya</span>
+              </td>
+              <td class="cell" data-digit="2" data-dev="र" data-tel="ర" data-eng="ra" data-iast="ra">
+                <span class="char-dev">र</span><span class="char-tel">ర</span><span class="char-eng">ra</span>
+              </td>
+              <td class="cell" data-digit="3" data-dev="ल" data-tel="ల" data-eng="la" data-iast="la">
+                <span class="char-dev">ल</span><span class="char-tel">ల</span><span class="char-eng">la</span>
+              </td>
+              <td class="cell" data-digit="4" data-dev="व" data-tel="వ" data-eng="va" data-iast="va">
+                <span class="char-dev">व</span><span class="char-tel">వ</span><span class="char-eng">va</span>
+              </td>
+              <td class="cell" data-digit="5" data-dev="श" data-tel="శ" data-eng="sha" data-iast="śa">
+                <span class="char-dev">श</span><span class="char-tel">శ</span><span class="char-eng">śa</span>
+              </td>
+              <td class="cell" data-digit="6" data-dev="ष" data-tel="ష" data-eng="sha" data-iast="ṣa">
+                <span class="char-dev">ष</span><span class="char-tel">ష</span><span class="char-eng">ṣa</span>
+              </td>
+              <td class="cell" data-digit="7" data-dev="स" data-tel="స" data-eng="sa" data-iast="sa">
+                <span class="char-dev">स</span><span class="char-tel">స</span><span class="char-eng">sa</span>
+              </td>
+              <td class="cell" data-digit="8" data-dev="ह" data-tel="హ" data-eng="ha" data-iast="ha">
+                <span class="char-dev">ह</span><span class="char-tel">హ</span><span class="char-eng">ha</span>
+              </td>
+              <td class="cell" data-digit="9" data-dev="ळ / क्ष" data-tel="ళ / క్ష" data-eng="La / ksha" data-iast="ḷa">
+                <span class="char-dev">ळ</span><span class="char-tel">ళ</span><span class="char-eng">ḷa / kṣa</span>
+              </td>
+              <td class="cell cell-zero" data-digit="0" data-dev="ज्ञ / क्ष" data-tel="జ్ఞ" data-eng="jnya" data-iast="jña">
+                <span class="char-dev">ज्ञ</span><span class="char-tel">జ్ఞ</span><span class="char-eng">jña</span>
+              </td>
+            </tr>
+
+            <!-- Standalone Vowels Row -->
+            <tr class="row-vowels">
+              <td class="row-label">
+                <strong>स्वराः / అచ్చులు (Vowels)</strong>
+                <span>ज्ञेయా శూన్యా స్వరాః</span>
+              </td>
+              <td class="cell-vowel-note" colspan="9">
+                Consonant-attached vowels / guṇiṁtālu (గుణింతాలు: క, కా, కి, కు, కే... / क, का, कि, कु...) do <strong>NOT</strong> change the digit. Only the consonant counts.
+              </td>
+              <td class="cell cell-zero">
+                <span class="char-dev">अ, आ, इ...</span>
+                <span class="char-tel">అ, ఆ, ఇ...</span>
+                <span class="char-eng">Alone = 0</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Selected Cell Details Modal/Strip -->
+      <div class="matrix-detail-bar" id="matrixDetailBar">
+        <div class="detail-placeholder">👉 Click on any letter in the table above to explore its numeric value, mnemonic synonyms, and examples!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: COMPLETE SANSKRIT VARNAMALA & PRONUNCIATION GUIDE -->
+  <section id="varnamala" class="section-container">
+    <div class="section-header">
+      <div class="section-badge">ध्वनिविज्ञान • Phonetic Architecture</div>
+      <h2 class="section-title">Complete Sanskrit Varṇamālā & Pronunciation Guide</h2>
+      <p class="section-subtitle">
+        Understand every sound of the Sanskrit alphabet, its precise anatomical point of articulation (स्थान), effort (प्रयत्न), correct pronunciation guide, audio playback, and how it aligns with the KaTaPaYadi cipher.
+      </p>
+      <div style="margin-top:8px;">
+        <span style="font-size:0.75rem; color:var(--accent-gold-light); display:inline-block; background:rgba(245,158,11,0.1); padding:3px 12px; border-radius:12px; border:1px solid rgba(245,158,11,0.25);">
+          🎙️ Studio Audio from <a href="https://oursanskrit.com/sanskrit-grammar-reference/pronunciation-of-sanskrit-letters/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-gold-light); text-decoration:underline; font-weight:600;">ourSanskrit.com Grammar Reference</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="varnamala-explorer-card">
+      <!-- Top controls & explanation banner -->
+      <div class="varnamala-top-bar">
+        <div class="vbar-filters" id="varnamalaFilterBar">
+          <button class="vfilter-btn active" data-vgroup="all" onclick="filterVarnamala('all', this)">All (सम्पूर्ण वर्णमाला - 52)</button>
+          <button class="vfilter-btn" data-vgroup="swara" onclick="filterVarnamala('swara', this)">स्वराः (Vowels - 16)</button>
+          <button class="vfilter-btn" data-vgroup="sparsha" onclick="filterVarnamala('sparsha', this)">स्पर्श (Classified Ka-Ma - 25)</button>
+          <button class="vfilter-btn" data-vgroup="antastha" onclick="filterVarnamala('antastha', this)">अन्तःस्थाः (Semi-vowels - 4)</button>
+          <button class="vfilter-btn" data-vgroup="ushman" onclick="filterVarnamala('ushman', this)">ऊष्माणः (Sibilants & H - 4)</button>
+          <button class="vfilter-btn" data-vgroup="vishesha" onclick="filterVarnamala('vishesha', this)">विशेष & संयुक्त (Special - 3)</button>
+        </div>
+
+        <div class="vbar-search">
+          <input type="text" id="varnamalaSearch" placeholder="🔍 Search letter or sound (e.g. क, ṭa, retroflex, nasal, 1)..." oninput="searchVarnamala()">
+        </div>
+      </div>
+
+      <!-- Quick Audio Play All Row Strip -->
+      <div class="vbar-row-player">
+        <span class="vrp-title">🎧 Sequential Audio Audition:</span>
+        <div class="vrp-buttons">
+          <button class="btn-sm" onclick="playVarnaSeries('swara')">▶ Play Vowels (अ to औ)</button>
+          <button class="btn-sm" onclick="playVarnaSeries('kavarga')">▶ Play Ka-varga (क to ङ)</button>
+          <button class="btn-sm" onclick="playVarnaSeries('chavarga')">▶ Play Ca-varga (च to ञ)</button>
+          <button class="btn-sm" onclick="playVarnaSeries('tavarga')">▶ Play Ṭa-varga (ट to ण)</button>
+          <button class="btn-sm" onclick="playVarnaSeries('davarga')">▶ Play Ta-varga (त to न)</button>
+          <button class="btn-sm" onclick="playVarnaSeries('pavarga')">▶ Play Pa-varga (प to म)</button>
+          <button class="btn-sm" onclick="playVarnaSeries('yavarga')">▶ Play Ya to Ha (य to ह)</button>
+          <button class="btn-sm btn-danger" onclick="stopVarnaSeries()">⏹ Stop Audio</button>
+        </div>
+      </div>
+
+      <!-- Dynamic Cards Grid for all Varṇas -->
+      <div class="varnamala-cards-grid" id="varnamalaGrid">
+        <!-- Populated dynamically by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: TWO-WAY CONVERTER -->
+  <section id="converter" class="section-container">
+    <div class="section-header">
+      <div class="section-badge">Live Engine</div>
+      <h2 class="section-title">Two-Way KaTaPaYadi Converter</h2>
+      <p class="section-subtitle">Effortlessly convert text to numbers with step-by-step phonetic breakdown, or turn any number into Katapayadi letters & words.</p>
+    </div>
+
+    <div class="converter-box">
+      <!-- Tabs header -->
+      <div class="converter-tabs">
+        <button class="conv-tab-btn active" id="tabTextToNumBtn" onclick="switchConverterTab('textToNum')">
+          <span class="tab-icon">🔤 ➔ 🔢</span> Text to Number (Decode)
+        </button>
+        <button class="conv-tab-btn" id="tabNumToTextBtn" onclick="switchConverterTab('numToText')">
+          <span class="tab-icon">🔢 ➔ 🔤</span> Number to KataPayadi (Encode)
+        </button>
+      </div>
+
+      <!-- TAB 1: TEXT TO NUMBER -->
+      <div class="tab-content active" id="paneTextToNum">
+        <div class="converter-grid">
+          <div class="conv-input-pane">
+            <div class="pane-label-row">
+              <label for="textInput">Enter Sanskrit / Telugu (తెలుగు) / English (Phonetic):</label>
+              <div class="quick-sample-dropdown">
+                <span>Try preset:</span>
+                <select id="textSampleSelect" onchange="loadTextPreset(this.value)">
+                  <option value="">-- Choose Historic Example --</option>
+                  <option value="जय">जय / జయ (Jaya: Mahabharata's 18 Parvas = 18)</option>
+                  <option value="గోపీభాగ్యమధువ్రాతః">గోపీభాగ్యమధువ్రాతః (Telugu: Pi = 31415926)</option>
+                  <option value="ఆయురారోగ్యసౌఖ్యము">ఆయురారోగ్యసౌఖ్యము (Telugu: Narayaneeyam Kali Day 1712210)</option>
+                  <option value="మాయామాళవగౌళ">మాయామాళవగౌళ (Telugu: 15th Melakarta)</option>
+                  <option value="गोपीभाग्यमधुव्रातः">गोपीभाग्यमधुव्रातः (Devanagari: Pi = 31415926)</option>
+                  <option value="कनक">कनक (Kanakangi = 01)</option>
+                  <option value="माया">माया (Mayamalavagowla = 15)</option>
+                  <option value="धीरसङ्कर">धीरसङ्कर (Dheerasankarabharanam = 29)</option>
+                  <option value="आयुरा॑रोग्यसौख्यम्">आयुरा॑रोग्यसौख्यम् (Narayaneeyam Kali Date)</option>
+                  <option value="नमस्ते">नमस्ते (Namaste = 057)</option>
+                  <option value="gopibhagya">gopibhagya (English phonetic)</option>
+                  <option value="harikambhoji">harikambhoji (Raga 28)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="input-box-container">
+              <textarea id="textInput" rows="3" placeholder="Type Sanskrit (गोपीभाग्य, माया), Telugu (గోపీభాగ్య, ఆయురారోగ్య), or English phonetics (gopi, shiva)..." oninput="runTextToNumber()"></textarea>
+              <div class="input-bottom-bar">
+                <span class="input-char-hint" id="textInputHint">Type Sanskrit, Telugu, or English phonetics</span>
+                <div class="input-btn-group">
+                  <button class="btn-input-action" onclick="speakInputText()" title="Listen to text pronunciation">🔊 Pronounce</button>
+                  <button class="btn-input-action btn-input-clear" onclick="clearTextInput()" title="Clear input text">✕ Clear</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="options-bar">
+              <div class="option-check">
+                <input type="checkbox" id="reverseOrderCheck" onchange="runTextToNumber()">
+                <label for="reverseOrderCheck" title="Traditional rule: reading numbers right-to-left">
+                  Apply <strong>Vāmato Gatiḥ</strong> (Reverse order: అంకానాం వామతో గతిః)
+                </label>
+              </div>
+              <div class="option-check">
+                <input type="checkbox" id="ignoreNonConsonantsCheck" checked onchange="runTextToNumber()">
+                <label for="ignoreNonConsonantsCheck">Skip standalone spaces & punctuation</label>
+              </div>
+            </div>
+
+            <!-- Virtual Katapayadi Keyboard for easy typing -->
+            <div class="virtual-key-strip">
+              <div class="vk-header-row">
+                <div class="vk-title-group">
+                  <span class="vk-title">⌨️ Quick Keys &amp; Syllable Keyboard:</span>
+                  <div class="vk-category-tabs" id="vkCategoryTabs">
+                    <button class="vk-cat-btn active" data-cat="all" onclick="filterVirtualKeyboardCategory('all')">All</button>
+                    <button class="vk-cat-btn" data-cat="consonants" onclick="filterVirtualKeyboardCategory('consonants')">Consonants (హల్లులు)</button>
+                    <button class="vk-cat-btn" data-cat="vowels" onclick="filterVirtualKeyboardCategory('vowels')">Vowels (అచ్చులు)</button>
+                    <button class="vk-cat-btn" data-cat="matras" onclick="filterVirtualKeyboardCategory('matras')">Mātrās (మాత్రలు)</button>
+                  </div>
+                </div>
+                <div class="vk-script-toggle" id="vkScriptToggle">
+                  <button class="btn-sm active" id="vkBtnDev" onclick="setVirtualKeyboardScript('dev')">देवनागरी</button>
+                  <button class="btn-sm" id="vkBtnTel" onclick="setVirtualKeyboardScript('tel')">తెలుగు</button>
+                </div>
+              </div>
+
+              <!-- Container for all keys (Consonants, Vowels, Matras) -->
+              <div class="vk-content-area" id="virtualKeysContainer">
+                <!-- Dynamically populated with all letters & matras by JavaScript -->
+              </div>
+
+              <!-- Utility Action Bar (Backspace, Space, Clear) -->
+              <div class="vk-action-bar">
+                <button class="vk-action-btn" onclick="insertVkChar(' ')">␣ Space</button>
+                <button class="vk-action-btn vk-backspace-btn" onclick="backspaceVkChar()">⌫ Backspace</button>
+                <button class="vk-action-btn vk-clear-btn" onclick="clearTextInput()">✕ Clear All</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Output decomposition pane -->
+          <div class="conv-output-pane">
+            <div class="output-header">
+              <span class="out-title">Extracted Number</span>
+              <div class="copy-actions">
+                <button class="btn-sm" onclick="copyResultNumber()">📋 Copy Number</button>
+                <button class="btn-sm btn-primary-sm" onclick="sendToMemoryStudio()">💡 Use in Memory Studio</button>
+              </div>
+            </div>
+
+            <div class="result-display-card">
+              <div class="result-number" id="resultNumberDisplay">0</div>
+              <div class="result-meta" id="resultMetaDisplay">Enter text to see breakdown</div>
+            </div>
+
+            <div class="step-breakdown-area">
+              <div class="breakdown-title">Letter-by-Letter Analysis:</div>
+              <div class="breakdown-chips" id="breakdownChipsContainer">
+                <div class="empty-state-chip">Type letters in the box on the left to see the step-by-step extraction!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: NUMBER TO TEXT / MNEMONIC ENCODER -->
+      <div class="tab-content" id="paneNumToText">
+        <div class="converter-grid">
+          <div class="conv-input-pane">
+            <div class="pane-label-row">
+              <label for="numInput">Enter Any Number to Encode:</label>
+              <div class="quick-sample-dropdown">
+                <span>Presets:</span>
+                <select id="numSampleSelect" onchange="loadNumPreset(this.value)">
+                  <option value="">-- Choose a Number --</option>
+                  <option value="18">18 (Jaya: Mahabharata's 18 Parvas)</option>
+                  <option value="314159">314159 (Value of Pi)</option>
+                  <option value="2026">2026 (Current Year)</option>
+                  <option value="1947">1947 (Indian Independence)</option>
+                  <option value="15">15 (Mayamalavagowla)</option>
+                  <option value="28">28 (Harikambhoji)</option>
+                  <option value="1729">1729 (Ramanujan-Hardy Number)</option>
+                  <option value="108">108 (Sacred Count)</option>
+                  <option value="4028">4028 (Sample PIN)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="input-box-container">
+              <input type="text" id="numInput" class="large-num-input" placeholder="e.g. 314159, 2026, 98450..." oninput="runNumberToText()">
+              <div class="input-bottom-bar">
+                <span class="input-char-hint">Enter numbers to generate Katapayadi letters &amp; words</span>
+                <div class="input-btn-group">
+                  <button class="btn-input-action btn-input-clear" onclick="clearNumInput()" title="Clear number input">✕ Clear</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="options-bar">
+              <div class="option-check">
+                <input type="checkbox" id="numReverseOrderCheck" onchange="runNumberToText()">
+                <label for="numReverseOrderCheck">
+                  Traditional Reverse Order (Generate for <strong>Vāmato Gatiḥ</strong>)
+                </label>
+              </div>
+            </div>
+
+            <!-- Interactive Consonant Selector Table for each entered digit -->
+            <div class="digit-picker-container">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span class="dp-header" style="margin-bottom:0;">Click letters below to construct your custom word:</span>
+                <span style="font-size:0.75rem; color:var(--accent-gold-light); display:inline-flex; align-items:center; gap:4px;">↔ Scroll digits</span>
+              </div>
+              <div class="dp-digits-row" id="digitPickerColumns">
+                <!-- Dynamically generated columns per digit -->
+              </div>
+            </div>
+          </div>
+
+          <div class="conv-output-pane">
+            <div class="output-header">
+              <span class="out-title">Interactive Mnemonic Composer</span>
+              <button class="btn-sm" onclick="clearCustomPhrase()">Reset</button>
+            </div>
+
+            <div class="composer-card">
+              <label>Your Composed Phrase / Word:</label>
+              <div class="composed-word-box" id="composedWordDisplay">
+                <span class="placeholder-text">Click syllables on the left to build your mnemonic</span>
+              </div>
+
+              <!-- Vowel attachments for custom builder -->
+              <div class="vowel-modifier-bar">
+                <span class="vmod-label">Attach Vowel (Mātrā):</span>
+                <div class="vowel-pills" id="vowelPills">
+                  <button class="vpill active" data-matra="" data-vowel="a">a (अ)</button>
+                  <button class="vpill" data-matra="ा" data-vowel="ā">ā (आ)</button>
+                  <button class="vpill" data-matra="ि" data-vowel="i">i (इ)</button>
+                  <button class="vpill" data-matra="ी" data-vowel="ī">ī (ई)</button>
+                  <button class="vpill" data-matra="ु" data-vowel="u">u (उ)</button>
+                  <button class="vpill" data-matra="ू" data-vowel="ū">ū (ऊ)</button>
+                  <button class="vpill" data-matra="े" data-vowel="e">e (ए)</button>
+                  <button class="vpill" data-matra="ै" data-vowel="ai">ai (ऐ)</button>
+                  <button class="vpill" data-matra="ो" data-vowel="o">o (ओ)</button>
+                  <button class="vpill" data-matra="ौ" data-vowel="au">au (औ)</button>
+                  <button class="vpill" data-matra="ं" data-vowel="am">aṁ (अं)</button>
+                </div>
+              </div>
+
+              <!-- Smart Mnemonic Suggestions & Sentence Generator -->
+              <div class="suggested-words-area">
+                <div class="sugg-header">
+                  <span>✨ Smart Compatible Words &amp; Mnemonic Sentences:</span>
+                </div>
+                
+                <!-- Dynamic Mnemonic Sentences (Sanskrit, Telugu, English) -->
+                <div class="smart-sentence-container" id="smartSentenceContainer">
+                  <div class="empty-sugg">Type any number above to automatically synthesize compatible words &amp; poetic sentences in Sanskrit, Telugu, and English!</div>
+                </div>
+
+                <!-- Dictionary Root Matches & Compound Combinations -->
+                <div style="font-size:0.78rem; font-weight:800; color:var(--text-muted); margin: 16px 0 6px 0; text-transform:uppercase; letter-spacing:0.8px;">
+                  📚 Classical Sanskrit &amp; Telugu Vocabulary Matches:
+                </div>
+                <div class="sugg-list" id="suggestedWordsList">
+                  <div class="empty-sugg">Matching dictionary roots will appear here</div>
+                </div>
+
+                <!-- How It Works Educational Explanation Panel -->
+                <div class="how-it-works-panel" id="howItWorksPanel" style="display:none;">
+                  <!-- Dynamically rendered step-by-step mathematical & linguistic explanation -->
+                </div>
+              </div>
+
+              <div class="composer-footer">
+                <button class="btn btn-primary btn-block" onclick="saveComposedToMemory()">
+                  💾 Save This Mnemonic to Memory Studio
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: REMEMBER ANYTHING (MEMORY STUDIO) -->
+  <section id="remember" class="section-container">
+    <div class="section-header">
+      <div class="section-badge">Mnemonic Architect</div>
+      <h2 class="section-title">"Remember Anything" Memory Studio</h2>
+      <p class="section-subtitle">
+        Have a PIN, phone number, birthday, or formula you need to memorize? <br>Convert it into a vivid Katapayadi poetic story and store it in your personal mental vault!
+      </p>
+    </div>
+
+    <div class="memory-studio-grid">
+      <!-- Left: Memory Crafter Form -->
+      <div class="memory-form-card">
+        <div class="card-headline">
+          <span class="icon">🧠</span>
+          <h3>Step 1: Choose What to Memorize</h3>
+        </div>
+
+        <!-- Category selector -->
+        <div class="preset-category-bar">
+          <button class="cat-pill active" data-cat="pin" onclick="setMemoryCategory('pin')">💳 ATM / Secret PIN</button>
+          <button class="cat-pill" data-cat="date" onclick="setMemoryCategory('date')">📅 Important Date</button>
+          <button class="cat-pill" data-cat="phone" onclick="setMemoryCategory('phone')">📱 Phone / ID</button>
+          <button class="cat-pill" data-cat="constant" onclick="setMemoryCategory('constant')">🔬 Math / Science Constant</button>
+          <button class="cat-pill" data-cat="custom" onclick="setMemoryCategory('custom')">✨ Custom</button>
+        </div>
+
+        <div class="form-group">
+          <label for="memTitle">Title / What is this for?</label>
+          <input type="text" id="memTitle" placeholder="e.g. Bank ATM PIN, Birthday of Mom, WiFi Password, Pi Value">
+        </div>
+
+        <div class="form-group">
+          <label for="memNumber">Number to Remember:</label>
+          <input type="text" id="memNumber" placeholder="e.g. 4028 or 15081947 or 31415" oninput="analyzeMemoryNumber()">
+        </div>
+
+        <div class="card-headline mt-4">
+          <span class="icon">✨</span>
+          <h3>Step 2: Generate & Select Katapayadi Syllables</h3>
+        </div>
+
+        <div class="mem-syllable-palette" id="memSyllablePalette">
+          <div class="palette-hint">Enter your number above to see available Katapayadi consonants and words.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="memWord">Your Mnemonic Word / Phrase:</label>
+          <input type="text" id="memWord" placeholder="e.g. 'माया' (15) or 'गोपीभाग्य' or 'भानुरवि'">
+        </div>
+
+        <div class="card-headline mt-4">
+          <span class="icon">🖼️</span>
+          <h3>Step 3: Create a Vivid Mental Story (The Mind Palace Peg)</h3>
+        </div>
+
+        <div class="form-group">
+          <label for="memStory">Mental Image / Story:</label>
+          <textarea id="memStory" rows="3" placeholder="Describe an absurd or vivid visual image! E.g. 'To remember PIN 4028 (Bhā-Na-Rā-Da), imagine a radiant Sun (Bhānu) driving a chariot (Ratha) giving gifts...'"></textarea>
+        </div>
+
+        <button class="btn btn-primary btn-block" onclick="saveMemoryCard()">
+          <span class="btn-icon">📥</span> Store in My Memory Vault
+        </button>
+      </div>
+
+      <!-- Right: Personal Memory Vault (Saved Cards) -->
+      <div class="memory-vault-card">
+        <div class="vault-header">
+          <div class="vh-title">
+            <span class="icon">🏛️</span>
+            <h3>Your Memory Vault</h3>
+            <span class="vault-count-badge" id="vaultCount">0 Saved</span>
+          </div>
+          <div class="vault-actions">
+            <button class="btn-sm" onclick="exportVaultJSON()">📤 Export</button>
+            <button class="btn-sm" onclick="document.getElementById('importFileInput').click()">📥 Import</button>
+            <input type="file" id="importFileInput" style="display:none;" onchange="importVaultJSON(event)">
+            <button class="btn-sm btn-danger" onclick="clearAllVault()">🗑️ Clear</button>
+          </div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="vault-filter-bar">
+          <input type="text" id="vaultSearchInput" placeholder="🔍 Search your saved mnemonics..." oninput="renderVaultCards()">
+        </div>
+
+        <!-- List of saved memory cards -->
+        <div class="vault-cards-list" id="vaultCardsList">
+          <!-- Populated by JavaScript from localStorage -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: HISTORIC EXAMPLES & PI DEEP DIVE -->
+  <section id="examples" class="section-container">
+    <div class="section-header">
+      <div class="section-badge">Ancient Mastery</div>
+      <h2 class="section-title">Historic Masterpieces Decoded</h2>
+      <p class="section-subtitle">See how Indian mathematicians and poets hid astronomical discoveries in sacred poetry.</p>
+    </div>
+
+    <!-- The Famous Pi Shloka Card -->
+    <div class="classic-example-card featured-pi">
+      <div class="pi-header">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:8px;">
+          <div class="pi-badge">Value of &pi; to 32 Decimal Places!</div>
+          <div class="toggle-buttons" id="piScriptToggle">
+            <button class="toggle-btn btn-sm active" id="piBtnDev" onclick="setPiScriptMode('devanagari')">देवनागरी (Devanagari)</button>
+            <button class="toggle-btn btn-sm" id="piBtnTel" onclick="setPiScriptMode('telugu')">తెలుగు (Telugu)</button>
+            <button class="toggle-btn btn-sm" id="piBtnBoth" onclick="setPiScriptMode('both')">Both Scripts</button>
+          </div>
+        </div>
+        <h3>The Divine &pi; Shloka: <span id="piVerseLine1">गोपीभाग्यमधुव्रातः</span></h3>
+        <p class="pi-sub">Attributed to Kerala astronomical treatises. Read devotional praise, and simultaneously reveal &pi; / 10 = 0.31415926535897932384626433832795...</p>
+      </div>
+
+      <div class="pi-interactive-grid" id="piGridContainer">
+        <!-- Javascript renders every single syllable with letter, value, and explanation -->
+      </div>
+
+      <div class="pi-controls">
+        <button class="btn btn-primary btn-sm" onclick="playPiFullRecitation()">▶ Play Full Sanskrit Verse (Audio)</button>
+        <button class="btn btn-outline btn-sm" id="piSyllableBtn" onclick="togglePiAudio()">🔊 Play Syllable by Syllable</button>
+        <button class="btn btn-outline btn-sm btn-danger" onclick="stopAllAudio()">⏹ Stop Audio</button>
+        <button class="btn btn-outline btn-sm" onclick="copyPiValue()">📋 Copy Pi Decimals</button>
+      </div>
+    </div>
+
+    <!-- More Historic Examples Grid -->
+    <div class="historic-examples-grid">
+      <!-- Example 1: Narayaneeyam Kali Day -->
+      <div class="hexample-card">
+        <div class="hex-badge">Kerala Chronogram (1586 CE)</div>
+        <h4>Narayaneeyam: आयुरा॑रोग्यसौख्यम् / ఆయురారోగ్యసౌఖ్యము</h4>
+        <p class="hex-intro">Melpathur Narayana Bhattathiri concluded his monumental work on Guruvayurappan with this blessing. Using Vāmato Gatiḥ, it secretly encodes the exact Kali day of completion!</p>
+
+        <div class="hex-breakdown">
+          <div class="hex-row">
+            <span class="hex-syl">आ (ā)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">Vowel = ignored</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">यु (yu)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">य = 1</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">रा (rā)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">र = 2</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">रो (ro)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">र = 2</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">ग्य (gya)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">ग + य = 1</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">सौ (sau)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">स = 7</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">ख्य (khya)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">ख + य = 1</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">म् (m)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">म = 0 / 5 (end marker)</span>
+          </div>
+        </div>
+
+        <div class="hex-summary">
+          Reversed (Vāmato Gatiḥ): <strong>1,712,210 Kali Days</strong><br>
+          <small>Corresponds precisely to <strong>December 13, 1586 CE</strong>!</small>
+        </div>
+      </div>
+
+      <!-- Example 2: Madhava's Sine Tables -->
+      <div class="hexample-card">
+        <div class="hex-badge">Madhava of Sangamagrama</div>
+        <h4>Trigonometric Sine Tables (चाप/ज्या)</h4>
+        <p class="hex-intro">Madhava (c. 1340–1425) developed Taylor series 300 years before Newton, encoding sine values in short memorable Sanskrit phrases called <em>Candravākyas</em>.</p>
+        
+        <div class="hex-breakdown">
+          <div class="hex-row">
+            <span class="hex-syl">विद्वान् (vidvān)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">वि(4) + द्वा(4) = 44 arcmin</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">शशिसङ्ख्या (śaśisaṅkhyā)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">Calculates lunar longitude</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">भद्राम्बुधिसिद्धजन्म</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">Astronomical epoch constant</span>
+          </div>
+        </div>
+
+        <div class="hex-summary">
+          Allowed astronomers to carry entire trigonometric logarithm and sine tables in their memory!
+        </div>
+      </div>
+
+      <!-- Example 3: The Mahābhārata Cryptogram (Jaya = 18) -->
+      <div class="hexample-card">
+        <div class="hex-badge">Itihasic Antiquity • మహాభారత రహస్యం</div>
+        <h4>The Epic Cryptogram: "Jaya" (जय / జయ) = 18</h4>
+        <p class="hex-intro">
+          The <em>Mahābhārata</em> opens with the sacred verse: <em>"नारायणं नमस्कृत्य... ततो जयमुदीरयेत्" (tato Jayam udīrayet)</em>. The original epic was titled <strong>Jaya</strong>. Applying Katapayadi with <em>Aṅkānāṃ Vāmato Gatiḥ</em> unlocks the grand sacred geometry of the entire 18-fold epic:
+        </p>
+
+        <div class="hex-breakdown">
+          <div class="hex-row">
+            <span class="hex-syl">ज / జ (Ja)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">8 (8th consonant of Ka-group)</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">य / య (Ya)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">1 (1st consonant of Ya-group)</span>
+          </div>
+          <div class="hex-row">
+            <span class="hex-syl">वामतो गतिः (Reverse)</span>
+            <span class="hex-arrow">➔</span>
+            <span class="hex-val">य(1) + ज(8) = 18!</span>
+          </div>
+        </div>
+
+        <div class="hex-summary">
+          <strong>The Epic's 18-Fold Matrix:</strong> 18 Parvas (Books), 18 Days of the Kurukshetra War, 18 Akṣauhiṇī armies, 18 chapters of the Bhagavad Gītā, and 18 surviving warriors!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CHANDAS (छन्दस्) & KATAPAYADI COMBINATORICS -->
+  <section id="chandas" class="section-container">
+    <div class="section-header">
+      <div class="section-badge">छन्दःशास्त्र • Sanskrit Prosody & Binary Science</div>
+      <h2 class="section-title">Chandas (छन्दस्) & KaTaPaYadi: The Matrix of Rhythm & Numbers</h2>
+      <p class="section-subtitle">
+        Pingala’s <em>Chandaḥ-śāstra</em> (c. 3rd cent. BCE) invented the world’s first binary system, binomial coefficients (Meru Prastāra), and error-detection meters. Discover how ancient Indian poets intertwined <strong>Chandas rhythm</strong> as an oral checksum and <strong>KaTaPaYadi</strong> as a numeric payload!
+      </p>
+    </div>
+
+    <!-- Dual Layer Architecture Explanation -->
+    <div class="chandas-dual-architecture">
+      <div class="cda-card">
+        <div class="cda-badge">Layer 1: Structural Rhythm (The Checksum)</div>
+        <h3>छन्दस् (Chandas Prosody)</h3>
+        <p>Regulates syllabic rhythm via binary weights: <strong>Laghu (| = 1 beat)</strong> and <strong>Guru (ऽ = 2 beats)</strong>. If a single word or syllable is altered in oral transmission, the metrical meter and rhythm immediately break!</p>
+        <div class="cda-tag">Pingala's Binary System (2ⁿ Permutations)</div>
+      </div>
+
+      <div class="cda-arrow">⟷</div>
+
+      <div class="cda-card highlight">
+        <div class="cda-badge">Layer 2: Numerical Payload (The Data)</div>
+        <h3>कटपयादि (KaTaPaYadi Cipher)</h3>
+        <p>Assigns numeric digits (0–9) to consonants without altering poetic rhythm. Allowed astronomers and mathematicians to store astronomical cycles, sine tables, and constants like &pi; inside devotional prayers!</p>
+        <div class="cda-tag">Aṅkānāṁ Vāmato Gatiḥ (Right-to-Left Digits)</div>
+      </div>
+    </div>
+
+    <div class="chandas-studio-card">
+      <!-- 1. The 8 Trika Ganas (यमाताराजभानसलगाः) -->
+      <div class="gana-master-banner">
+        <div class="gmb-header">
+          <span class="icon">🎼</span>
+          <h4>The 8 Master Ganas (अष्टगणाः) — The Mnemonic Formula: <span class="gmb-shloka">यमाताराजभानसलगाः</span></h4>
+        </div>
+        <p class="gmb-desc">Pingala grouped syllables into 3-syllable triplets (Trika Ganas). Click any Gana to inspect its Laghu/Guru pattern and binary code:</p>
+
+        <div class="ganas-ribbon" id="ganasRibbon">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="gana-inspector-bar" id="ganaInspectorBar">
+          <span style="color:var(--text-muted); font-size:0.85rem;">Click on any Gana above to see its syllabic weight, binary value, and example word!</span>
+        </div>
+      </div>
+
+      <!-- 2. Interactive Chandas Scanner & Live Katapayadi Bridge -->
+      <div class="chandas-scanner-box">
+        <div class="csb-header">
+          <span class="csb-title">⚡ Interactive Chandas Syllable Scanner & Katapayadi Bridge</span>
+          <div class="csb-presets">
+            <span>Try sample verse:</span>
+            <select id="chandasPresetSelect" onchange="loadChandasPreset(this.value)">
+              <option value="">-- Choose Sample Verse --</option>
+              <option value="గోపీభాగ్యమధువ్రాతః">గోపీభాగ్యమధువ్రాతః (Telugu: Pi Shloka • Anuṣṭubh • 31415926)</option>
+              <option value="ఆయురారోగ్యసౌఖ్యము">ఆయురారోగ్యసౌఖ్యము (Telugu: Kali Day 1712210)</option>
+              <option value="శ్రీవాణీగిరిజాశ్చిరాయ">శ్రీవాణీగిరిజాశ్చిరాయ (Telugu: Campakamāla Meter • 21 syllables)</option>
+              <option value="యమాతారాజభానసలగాః">యమాతారాజభానసలగాః (Telugu: Pingala Ashta Gana Sutra)</option>
+              <option value="गोपीभाग्यमधुव्रातः">गोपीभाग्यमधुव्रातः (Devanagari: Pi shloka quarter • Anuṣṭubh)</option>
+              <option value="धर्मक्षेत्रे कुरुक्षेत्रे">धर्मक्षेत्रे कुरुक्षेत्रे (Gita 1.1 • Anuṣṭubh)</option>
+              <option value="वागर्थाविव सम्पृक्तौ">वागर्थाविव सम्पृक्तौ (Raghuvamsham • Anuṣṭubh)</option>
+              <option value="शान्ताकारं भुजगशयनं">शान्ताकारं भुजगशयनं (Mālinī Meter • 15 syllables)</option>
+              <option value="नमस्तुङ्गाशिरश्चुम्बि">नमस्तुङ्गाशिरश्चुम्बि (Śikharinī Meter • 17 syllables)</option>
+              <option value="कश्चित्कान्ताविरहगुरुणा">कश्चित्कान्ताविरहगुरुणा (Meghadūta • Mandākrāntā)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="csb-input-row">
+          <input type="text" id="chandasInput" placeholder="Type Sanskrit or Telugu verse line (e.g. గోపీభాగ్యమధువ్రాతః, धर्मक्षेत्रे कुरुक्षेत्रे)..." oninput="runChandasScan()">
+          <button class="btn btn-primary" onclick="runChandasScan()">Scan Chandas &amp; Cipher</button>
+        </div>
+
+        <!-- Scan Output Card -->
+        <div class="csb-results" id="chandasResultsArea">
+          <div class="csb-empty">Enter a Sanskrit verse line above to analyze its Laghu/Guru rhythm, Gana structure, matching metre, and Katapayadi number simultaneously!</div>
+        </div>
+      </div>
+
+      <!-- 3. Vedic & Classical Metres Directory -->
+      <div class="chandas-directory-area">
+        <div class="cd-header">
+          <h4>Vedic & Classical Metres Directory (छन्दो-जाति)</h4>
+          <input type="text" id="metreSearchInput" placeholder="🔍 Search metre (e.g. Gayatri, Anustubh, Mandakranta, 8, 17)..." oninput="filterMetresTable()">
+        </div>
+
+        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+          <table class="mela-table" id="chandasTable">
+            <thead>
+              <tr>
+                <th>Metre Name</th>
+                <th>Syllables / Pāda</th>
+                <th>Total / Verse</th>
+                <th>Pingala Permutations (2ⁿ)</th>
+                <th>Gana Formula</th>
+                <th>Famous Literature</th>
+              </tr>
+            </thead>
+            <tbody id="chandasTableBody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: PRACTICE LAB & FLASHCARD QUIZ -->
+  <section id="quiz" class="section-container">
+    <div class="section-header">
+      <div class="section-badge">Skill Test</div>
+      <h2 class="section-title">KaTaPaYadi Mastery Lab</h2>
+      <p class="section-subtitle">Sharpen your recall with rapid flashcards and test your decoding speed!</p>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <div class="quiz-score-board">
+          <span class="score-item">Score: <strong id="quizScore">0</strong></span>
+          <span class="score-item">Streak: <strong id="quizStreak">0 🔥</strong></span>
+          <span class="score-item">Mode: 
+            <select id="quizModeSelect" onchange="resetQuiz()">
+              <option value="consonant">Single Letter ➔ Number</option>
+              <option value="word">Famous Word ➔ Number</option>
+              <option value="reverse">Number ➔ Valid Consonant</option>
+            </select>
+          </span>
+        </div>
+      </div>
+
+      <div class="flashcard" id="quizCard">
+        <div class="fc-prompt-label">What is the numeric Katapayadi value of:</div>
+        <div class="fc-question" id="quizQuestion">क (Ka)</div>
+        <div class="fc-hint" id="quizHint">Belongs to the Ka-ādi series</div>
+
+        <div class="fc-options-grid" id="quizOptionsGrid">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="fc-feedback" id="quizFeedback"></div>
+      </div>
+
+      <div class="quiz-footer">
+        <button class="btn btn-secondary" onclick="nextQuizQuestion()">Next Question ➔</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>KaTaPaYadi Master</h4>
+        <p>A modern tribute to the ancient Indian mathematical ciphers and Kerala school of mathematics. Created for enthusiasts, linguists, musicians, and memory champions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Key Concepts</h4>
+        <ul>
+          <li><a href="#matrix">Master Matrix</a></li>
+          <li><a href="#converter">Two-Way Converter</a></li>
+          <li><a href="#remember">Memory Studio</a></li>
+          <li><a href="#examples">Pi Shloka</a></li>
+          <li><a href="#chandas">Chandas & Prosody</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Vedic Formula</h4>
+        <p class="footer-shloka">
+          कादिर्नव टादिर्नव पादिपञ्चक यद्यष्टकम्।<br>
+          <span style="font-family:'Noto Sans Telugu', var(--font-serif); font-size:0.95rem; color:var(--accent-gold);">కాదిర్నవ టాదిర్నవ పాదిపంచక యద్యష్టకమ్।</span><br>
+          अङ्कानां वामतो गतिः॥ • అంకానాం వామతో గతిః॥
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="margin-bottom: 1.25rem;">
+        <a href="../index.html" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 0.5rem; border-color: rgba(245, 158, 11, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(245, 158, 11, 0.1);">
+          <span>← Go to AncientWisdom Portal (प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము)</span> 🏛️
+        </a>
+      </div>
+      <span>Built with ❤️ for Indian Knowledge Systems & Memory Science</span>
+    </div>
+  </footer>
+
+  <!-- Quick Cheat Sheet Modal -->
+  <div class="modal-overlay" id="helpModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>KaTaPaYadi Cheat Sheet</h3>
+        <button class="modal-close" onclick="closeHelpModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="cheat-grid">
+          <div class="cg-col"><strong>1:</strong> क, ट, प, य (k, ṭ, p, y)</div>
+          <div class="cg-col"><strong>2:</strong> ख, ठ, फ, र (kh, ṭh, ph, r)</div>
+          <div class="cg-col"><strong>3:</strong> ग, ड, ब, ल (g, ḍ, b, l)</div>
+          <div class="cg-col"><strong>4:</strong> घ, ढ, भ, व (gh, ḍh, bh, v)</div>
+          <div class="cg-col"><strong>5:</strong> ङ, ण, म, श (ṅ, ṇ, m, ś)</div>
+          <div class="cg-col"><strong>6:</strong> च, त, ष (c, t, ṣ)</div>
+          <div class="cg-col"><strong>7:</strong> छ, थ, स (ch, th, s)</div>
+          <div class="cg-col"><strong>8:</strong> ज, द, ह (j, d, h)</div>
+          <div class="cg-col"><strong>9:</strong> झ, ध, ळ (jh, dh, ḷ)</div>
+          <div class="cg-col"><strong>0:</strong> ञ, न, ज्ञ, standalone vowels</div>
+        </div>
+        <p class="modal-note mt-3">
+          <strong>Key Rule:</strong> Consonant clusters take the value of the <em>last</em> consonant. E.g. in <em>"kya"</em>, 'ya'=1. In <em>"saukhyam"</em>, 'sau'=7, 'khya'='ya'=1.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="katapayadi.js"></script>
+</body>
+</html>

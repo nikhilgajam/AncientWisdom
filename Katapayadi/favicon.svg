@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a" />
+      <stop offset="30%" stop-color="#fbbf24" />
+      <stop offset="70%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070913" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#f59e0b" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Outer background rounded rectangle with subtle glowing border -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.8" />
+
+  <!-- Center Golden Emblem Badge matching the website's logo -->
+  <rect x="10" y="10" width="44" height="44" rx="11" fill="url(#goldGrad)" filter="url(#glow)" />
+
+  <!-- Devanagari Ka (क = 1, KaTaPaYadi seed consonant) -->
+  <text x="32" y="34.5" 
+        font-family="system-ui, -apple-system, 'Noto Sans Devanagari', 'Mangal', 'Segoe UI Historic', 'Arial Unicode MS', sans-serif" 
+        font-weight="900" 
+        font-size="28" 
+        text-anchor="middle" 
+        dominant-baseline="central" 
+        fill="#070913">क</text>
+
+  <!-- Golden spark/dot accent at top right representing digit 1 -->
+  <circle cx="48" cy="16" r="3" fill="#ffffff" opacity="0.95" />
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="panchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" />
+      <stop offset="25%" stop-color="#d8b4fe" />
+      <stop offset="70%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#7e22ce" />
+    </linearGradient>
+    <linearGradient id="panchBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e1065" />
+      <stop offset="100%" stop-color="#0f0728" />
+    </linearGradient>
+    <filter id="panchGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#a855f7" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Outer background badge with amethyst glowing border -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#panchBg)" stroke="#c084fc" stroke-width="2" stroke-opacity="0.85" />
+
+  <!-- The 5 Cosmic Limbs (Pentagram/5-spoke sacred wheel) -->
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#e9d5ff" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.5" />
+
+  <!-- Crescent Moon Silhouette wrapping around the badge -->
+  <path d="M46,16 C38,18 32,24 32,32 C32,40 38,46 46,48 C34,48 24,39 24,32 C24,25 34,16 46,16 Z" 
+        fill="#fde047" opacity="0.35" />
+
+  <!-- Center Amethyst Badge -->
+  <circle cx="32" cy="32" r="18" fill="url(#panchGrad)" filter="url(#panchGlow)" />
+
+  <!-- Devanagari Pa (प) for Panchanga -->
+  <text x="32" y="34.5" 
+        font-family="'Noto Sans Devanagari', 'Mangal', 'Segoe UI Historic', 'Arial Unicode MS', sans-serif" 
+        font-weight="900" 
+        font-size="22" 
+        text-anchor="middle" 
+        dominant-baseline="central" 
+        fill="#1e0a45">प</text>
+
+  <!-- Top Right 8-Pointed Asterism Star -->
+  <polygon points="48,10 50,14 54,16 50,18 48,22 46,18 42,16 46,14" fill="#fde047" opacity="0.95" />
+</svg>

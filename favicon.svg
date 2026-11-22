@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="rootGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="25%" stop-color="#fde047" />
+      <stop offset="70%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="rootBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+    <filter id="rootGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#f59e0b" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Outer background rounded container with glowing border -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#rootBg)" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.85" />
+
+  <!-- Inner Golden Mandala Ring -->
+  <circle cx="32" cy="32" r="23" fill="none" stroke="url(#rootGold)" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6" />
+
+  <!-- Center Golden Badge -->
+  <circle cx="32" cy="32" r="19" fill="url(#rootGold)" filter="url(#rootGlow)" />
+
+  <!-- Sacred Om (ॐ) Glyph -->
+  <text x="32" y="34.5" 
+        font-family="'Noto Sans Devanagari', 'Mangal', 'Segoe UI Historic', 'Arial Unicode MS', sans-serif" 
+        font-weight="900" 
+        font-size="24" 
+        text-anchor="middle" 
+        dominant-baseline="central" 
+        fill="#09090b">ॐ</text>
+
+  <!-- Top Right Cosmic Sparkle -->
+  <polygon points="49,11 51,15 55,17 51,19 49,23 47,19 43,17 47,15" fill="#ffffff" opacity="0.95" />
+</svg>
