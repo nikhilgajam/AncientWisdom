@@ -480,6 +480,37 @@ section {
   border: 1px solid rgba(16, 185, 129, 0.4);
   color: #34d399;
 }
+
+/* Crisp Non-Overlapping Vinculum Bar Digit */
+.vinc-bar {
+  display: inline-block;
+  border-top: 2.5px solid currentColor;
+  padding-top: 2px;
+  margin: 0 2px;
+  line-height: 1.05;
+  vertical-align: baseline;
+}
+
+/* Beginner-Friendly Section Guide */
+.section-guide {
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-left: 3px solid var(--cyan-accent);
+  border-radius: 10px;
+  padding: 0.9rem 1.15rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.section-guide strong {
+  color: var(--gold-bright);
+}
+.section-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
 .level-badge.intermediate {
   background: rgba(56, 189, 248, 0.15);
   border: 1px solid rgba(56, 189, 248, 0.4);

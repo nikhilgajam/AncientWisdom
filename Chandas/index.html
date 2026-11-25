@@ -148,7 +148,7 @@ māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya</textarea>
       <div class="section-head">
         <h3 class="section-title"><span>🪘</span> 2. The 8 Canonical Gaṇas & Mnemonic Ring (अष्टगणाः • అష్టగణములు)</h3>
         <p class="section-sub">
-          Acharya Pingala organized all $2^3 = 8$ three-syllable permutations into the immortal mnemonic ring: 
+          Acharya Pingala organized all 2<sup>3</sup> = 8 three-syllable permutations into the immortal mnemonic ring: 
           <strong>"ya-mā-tā-rā-ja-bhā-na-sa-la-gāṁ" (यमाता राजभानसलगाम् • యమాతా రాజభానసలగాం)</strong>. 
           By reading any 3 consecutive syllables from the ring, one instantly derives the exact metric triplet.
         </p>
@@ -252,7 +252,7 @@ māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya</textarea>
           <div>
             <h4 style="font-size:1.1rem; color:var(--gold-bright);">Prastāra Matrix Generator (प्रस्तार • ప్రస్తారము)</h4>
             <div style="font-size:0.82rem; color:var(--text-muted);">
-              Generates all $2^n$ binary combinations of syllables (Laghu = 0, Guru = 1 in Pingala's inverted indexing).
+              Generates all 2<sup>n</sup> binary combinations of syllables (Laghu = 0, Guru = 1 in Pingala's inverted indexing).
             </div>
           </div>
           <div style="display:flex; align-items:center; gap:0.5rem;">
@@ -292,7 +292,7 @@ māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya</textarea>
           </div>
           <h4 style="font-size:1.15rem; color:#fff; margin:0.25rem 0 0.5rem;">Naṣṭa (नष्टम् • నష్టము)</h4>
           <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">
-            Given row number $N$, Pingala divides successively by 2. If odd, mark Guru (1); if even, mark Laghu (0).
+            Given row number N, Pingala divides successively by 2. If odd, mark Guru (1); if even, mark Laghu (0).
           </p>
 
           <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem;">
@@ -311,7 +311,7 @@ māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya</textarea>
           </div>
           <h4 style="font-size:1.15rem; color:#fff; margin:0.25rem 0 0.5rem;">Uddiṣṭa (उद्दिष्टम् • ఉద్దిష్టము)</h4>
           <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;">
-            Given a sequence of Laghus & Gurus, place powers of 2 under each syllable ($2^0, 2^1, 2^2\dots$), sum powers of Gurus, and add 1.
+            Given a sequence of Laghus &amp; Gurus, place powers of 2 under each syllable (2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>…), sum powers of Gurus, and add 1.
           </p>
 
           <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem;">
@@ -332,7 +332,7 @@ māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya</textarea>
         <p class="section-sub">
           Described in Pingala's 8th chapter and detailed by 10th-century mathematician <strong>Halāyudha</strong> in <em>Mṛtasañjīvanī</em>, 
           the stepped triangular staircase of binomial coefficients—what Western mathematics named "Pascal's Triangle" in 1654 CE—was mapped in India 1,800 years earlier. 
-          Furthermore, the shallow diagonals of <em>Mātrāvṛtta</em> combinatorics revealed the <strong>Fibonacci numbers</strong> ($F_n = F_{n-1} + F_{n-2}$) 
+          Furthermore, the shallow diagonals of <em>Mātrāvṛtta</em> combinatorics revealed the <strong>Fibonacci numbers</strong> (F<sub>n</sub> = F<sub>n−1</sub> + F<sub>n−2</sub>) 
           via Virahāṅka, Gopāla, and Hemacandra centuries before Leonardo of Pisa!
         </p>
       </div>
@@ -359,18 +359,18 @@ māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya</textarea>
       <!-- Mathematical Callout -->
       <div style="margin-top:1.5rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
         <div class="card">
-          <h4 style="font-size:0.95rem; color:var(--gold-bright); margin-bottom:0.35rem;">Binomial Coefficients $\binom{n}{k}$</h4>
+          <h4 style="font-size:0.95rem; color:var(--gold-bright); margin-bottom:0.35rem;">Binomial Coefficients C(n, k)</h4>
           <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
-            Each cell represents the exact number of metres of length $n$ containing exactly $k$ Gurus and $n-k$ Laghus. 
-            The horizontal row sum $\sum_{k=0}^{n} \binom{n}{k} = 2^n$ gives the total permutation space.
+            Each cell represents the exact number of metres of length n containing exactly k Gurus and (n − k) Laghus. 
+            The horizontal row sum ∑<sub>k=0..n</sub> C(n, k) = 2<sup>n</sup> gives the total permutation space.
           </p>
         </div>
 
         <div class="card">
           <h4 style="font-size:0.95rem; color:var(--rose-bright); margin-bottom:0.35rem;">Mātrāvṛtta & Fibonacci Recurrence</h4>
           <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
-            In moraic metres, a line of duration $M$ ending in a 1-beat Laghu has $M-1$ prior morae; ending in a 2-beat Guru has $M-2$ prior morae. 
-            Thus $S_M = S_{M-1} + S_{M-2}$, yielding the exact sequence $1, 1, 2, 3, 5, 8, 13, 21, 34\dots$ along the shallow diagonals!
+            In moraic metres, a line of duration M ending in a 1-beat Laghu has (M − 1) prior morae; ending in a 2-beat Guru has (M − 2) prior morae. 
+            Thus S<sub>M</sub> = S<sub>M−1</sub> + S<sub>M−2</sub>, yielding the exact sequence 1, 1, 2, 3, 5, 8, 13, 21, 34… along the shallow diagonals!
           </p>
         </div>
       </div>

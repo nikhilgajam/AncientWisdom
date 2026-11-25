@@ -92,11 +92,19 @@
     <section id="beginner">
       <div class="section-head">
         <span class="level-badge beginner">Level 1 • Beginner Foundations (प्रारम्भिकः • ప్రారంభిక స్థాయి)</span>
-        <h3 class="section-title"><span>🌱</span> 1. Lightning Mental Shortcuts & Arithmetic Proofs</h3>
+        <h3 class="section-title"><span>🌱</span> 1. Lightning Mental Shortcuts &amp; Proofs (వేగవంతమైన మనోగణితం)</h3>
         <p class="section-sub">
           Master the foundational mental math pillars: squaring numbers ending in 5, multiplying by 9s instantly, 
-          and validating every calculation in 1 second using the ancient Bījaṅka (Digital Root) test of 9.
+          and validating every calculation in 1 second using the ancient Bījaṅka (బీజాంకం / Digital Root) test of 9.
         </p>
+      </div>
+
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for (ఉపయోగం):</strong> Builds speed and confidence for everyday mental arithmetic and instant answer verification.</div>
+          <div><strong>How it works (విధానం):</strong> Uses pattern shortcuts for endings in 5 (<em>Ekādhikena</em>), repeated 9s (<em>Ekanyūnena</em>), and modulo-9 checksums (<em>Bījaṅka</em>).</div>
+          <div><strong>Example (ఉదాహరణ):</strong> 75<sup>2</sup> = [7×8] | 25 = 5,625; and 654 × 999 = 653 | (999 − 653) = 653,346.</div>
+        </div>
       </div>
 
       <!-- 1.1 Ekadhikena Purvena -->
@@ -105,7 +113,7 @@
           1.1 Ekādhikena Pūrveṇa (एकाधिकेन पूर्वेण • ఏకాధికేన पूर्వేణ)
         </h4>
         <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">
-          <em>"By one more than the previous one"</em> — Instant mental squaring of any number ending in 5 ($N = a5 \rightarrow [a \times (a+1)] \mid 25$).
+          <em>"By one more than the previous one"</em> — Instant mental squaring of any number ending in 5 (N = a5 → [a × (a + 1)] | 25).
         </p>
 
         <div class="input-row">
@@ -123,7 +131,7 @@
             <div class="result-val" id="ekadhikaResult">--</div>
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); max-width:380px;">
-            Mental shortcut: $75^2 = [7 \times 8] \mid 25 = 56 \mid 25 = 5,625$.
+            Mental shortcut: 75<sup>2</sup> = [7 × 8] | 25 = 56 | 25 = 5,625.
           </div>
         </div>
       </div>
@@ -131,7 +139,7 @@
       <!-- 1.2 Ekanyunena Purvena -->
       <div class="studio-panel" style="margin-bottom: 2rem;">
         <h4 style="font-family:var(--font-display); font-size:1.3rem; color:var(--gold-bright); margin-bottom:0.4rem;">
-          1.2 Ekanyūnena Pūrveṇa (एकन्यूनेन पूर्वेण • ఏకన్యూనేన पूर्वेణ) — Instant Multiplication by 9, 99, 999...
+          1.2 Ekanyūnena Pūrveṇa (एकन्यूनेन पूर्वेण • ఏకన్యూనేన పూర్వేణ) — Instant Multiplication by 9, 99, 999...
         </h4>
         <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">
           <em>"By one less than the previous one"</em> — Effortlessly multiplies any number by repeated 9s across all three cases: 
@@ -157,7 +165,7 @@
             <div class="result-val" id="ekanyunaResult">--</div>
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); max-width:380px;">
-            Notice how $654 \times 999$ becomes $(654 - 1) = 653$ and $(999 - 653) = 346 \rightarrow 653,346$ in one mental breath!
+            Notice how 654 × 999 becomes (654 − 1) = 653 and (999 − 653) = 346 → 653,346 in one mental breath!
           </div>
         </div>
       </div>
@@ -199,7 +207,7 @@
             <div class="result-val" id="beejankResult">--</div>
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); max-width:380px;">
-            The digital root invariance theorem: $\text{DR}(A \times B) \equiv \text{DR}(A) \times \text{DR}(B) \pmod 9$.
+            The digital root invariance theorem: DR(A × B) ≡ DR(A) × DR(B) (mod 9).
           </div>
         </div>
       </div>
@@ -211,10 +219,18 @@
     <section id="intermediate">
       <div class="section-head">
         <span class="level-badge intermediate">Level 2 • Intermediate Computation (मध्यमः • మధ్యమ స్థాయి)</span>
-        <h3 class="section-title"><span>⚡</span> 2. Universal Multiplication, Duplex Squaring & Vinculum</h3>
+        <h3 class="section-title"><span>⚡</span> 2. Universal Multiplication, Duplex Squaring &amp; Vinculum (సార్వత్రిక గుణకారం &amp; రేఖాంకం)</h3>
         <p class="section-sub">
           Moving beyond special cases to universal arithmetic algorithms that work for numbers and polynomials of any length.
         </p>
+      </div>
+
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for (ఉపయోగం):</strong> Multiplies or squares <em>any</em> number in a single line and converts large digits (6–9) into easy bar digits (≤ 5).</div>
+          <div><strong>How it works (విధానం):</strong> <em>Ūrdhva</em> computes vertical/crosswise sums; <em>Nikhila</em> uses base complements; <em>Duplex</em> squares symmetrically; <em>Vinculum</em> replaces digits &gt; 5 with negative complements.</div>
+          <div><strong>Example (ఉదాహరణ):</strong> 289 becomes 3<span class="vinc-bar">1</span><span class="vinc-bar">1</span> (= 300 − 10 − 1), turning heavy 8 &amp; 9 digits into simple 1s!</div>
+        </div>
       </div>
 
       <!-- 2.1 Urdhva-Tiryagbhyam -->
@@ -253,7 +269,7 @@
       <!-- 2.2 Nikhila Base Multiplication -->
       <div class="studio-panel" style="margin-bottom: 2rem;">
         <h4 style="font-family:var(--font-display); font-size:1.3rem; color:var(--cyan-accent); margin-bottom:0.4rem;">
-          2.2 Nikhilaṁ Navataścaramaṁ Daśataḥ (निखिलं नवतश्चरमं दशतः)
+          2.2 Nikhilaṁ Navataścaramaṁ Daśataḥ (निखिलं नवतश्चरमं दशतः • నిఖిలం నవతశ్చరమం దశతః)
         </h4>
         <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">
           <em>"All from 9 and last from 10"</em> — Effortless base multiplication using deviations from powers of 10.
@@ -300,7 +316,7 @@
         <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">
           The fastest algorithm in mathematical history for squaring <strong>any arbitrary number</strong> (2-digit, 3-digit, 4-digit, etc.) 
           without full cross-multiplication:
-          $D(a) = a^2$, $D(ab) = 2ab$, $D(abc) = 2ac + b^2$, $D(abcd) = 2ad + 2bc$.
+          D(a) = a<sup>2</sup>, D(ab) = 2ab, D(abc) = 2ac + b<sup>2</sup>, D(abcd) = 2ad + 2bc.
         </p>
 
         <div class="input-row">
@@ -318,7 +334,7 @@
             <div class="result-val" id="duplexResult">--</div>
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); max-width:380px;">
-            Notice how $345^2$ decomposes into $D(3) \mid D(34) \mid D(345) \mid D(45) \mid D(5) = 9 \mid 24 \mid 46 \mid 40 \mid 25 \rightarrow 119,025$.
+            Notice how 345<sup>2</sup> decomposes into D(3) | D(34) | D(345) | D(45) | D(5) = 9 | 24 | 46 | 40 | 25 → 119,025.
           </div>
         </div>
       </div>
@@ -330,7 +346,7 @@
         </h4>
         <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">
           <em>"Whatever the extent of its deficiency, lessen it further and square the deficiency"</em> 
-          ($(B \pm d)^2 = (B \pm 2d) \mid d^2$).
+          ((B ± d)<sup>2</sup> = (B ± 2d) | d<sup>2</sup>).
         </p>
 
         <div class="input-row">
@@ -356,7 +372,7 @@
             <div class="result-val" id="yavadunamResult">--</div>
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); max-width:380px;">
-            $96^2 = (96 - 4) \mid 4^2 = 92 \mid 16 = 9,216$ in 1 second!
+            96<sup>2</sup> = (96 − 4) | 4<sup>2</sup> = 92 | 16 = 9,216 in 1 second!
           </div>
         </div>
       </div>
@@ -367,7 +383,7 @@
           2.5 Vinculum Algebra (रेखाङ्क • రేఖాంకము / Bar Numbers)
         </h4>
         <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">
-          Converts large friction digits (6, 7, 8, 9) into negative complements $\le 5$ with bar notation ($\bar{d}$), 
+          Converts large friction digits (6, 7, 8, 9) into negative complements ≤ 5 with bar notation (<span style="text-decoration:overline;">d</span>), 
           simplifying difficult multiplications into effortless mental additions.
         </p>
 
@@ -388,11 +404,19 @@
     <section id="advanced">
       <div class="section-head">
         <span class="level-badge advanced">Level 3 • Advanced Mastery (प्रौढः • ప్రౌఢ స్థాయి)</span>
-        <h3 class="section-title"><span>🏹</span> 3. Dhvajāṅka (The Flag Method) Universal Single-Line Division</h3>
+        <h3 class="section-title"><span>🏹</span> 3. Dhvajāṅka (ధ్వజాంక పద్ధతి — Universal Single-Line Division)</h3>
         <p class="section-sub">
           Considered the crown jewel of Vedic arithmetic. While conventional long division requires an entire sheet of paper, 
           Dhvajāṅka yields the exact quotient and remainder for ANY divisor in a single oral line!
         </p>
+      </div>
+
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for (ఉపయోగం):</strong> Divides any large number by any 2+ digit divisor mentally in one line without trial-and-error tables.</div>
+          <div><strong>How it works (విధానం):</strong> Splits the divisor into a small <em>Main Divisor</em> (left) and a <em>Flag Digit</em> (top-right); divides only by the main digit while subtracting flag products at each step.</div>
+          <div><strong>Example (ఉదాహరణ):</strong> For ÷ 73, divide only by 7 (easy!) and adjust each remainder using the flag digit 3 × quotient digit.</div>
+        </div>
       </div>
 
       <div class="studio-panel">
@@ -434,15 +458,23 @@
     <section id="pro">
       <div class="section-head">
         <span class="level-badge pro">Level 4 • Pro Grandmaster (पारङ्गतः • పారంగత స్థాయి)</span>
-        <h3 class="section-title"><span>👑</span> 4. Vilokanam (By Inspection) Instant Roots</h3>
+        <h3 class="section-title"><span>👑</span> 4. Vilokanam (విలోకనము — Instant Cube Roots by Inspection)</h3>
         <p class="section-sub">
           Extract cube roots of exact powers in under 2 seconds by pure observation of endings and bounds.
         </p>
       </div>
 
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for (ఉపయోగం):</strong> Finds the exact cube root (∛N) of any perfect cube up to 1,000,000 in seconds without prime factorization.</div>
+          <div><strong>How it works (విధానం):</strong> The last digit reveals the units digit (1,4,5,6,9,0 stay same; 2↔8, 3↔7); the leading group's nearest lower cube reveals the tens digit.</div>
+          <div><strong>Example (ఉదాహరణ):</strong> 175,616 → 616 ends in 6 (units = 6); 5<sup>3</sup> = 125 ≤ 175 &lt; 216 (tens = 5) → Answer = 56.</div>
+        </div>
+      </div>
+
       <div class="studio-panel">
         <h4 style="font-family:var(--font-display); font-size:1.3rem; color:#c084fc; margin-bottom:0.4rem;">
-          Vilokanam (विलोकनम् • విలోకనము) — Instant Cube Root ($\sqrt[3]{N}$) Extractor
+          Vilokanam (विलोकनम् • విలోకనము) — Instant Cube Root (∛N) Extractor
         </h4>
         <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.25rem;">
           Because digits 1, 4, 5, 6, 9, 0 retain their identity when cubed, while 2 &harr; 8 and 3 &harr; 7 form complementary pairs, 
@@ -464,7 +496,7 @@
             <div class="result-val" id="cubeRootResult" style="color:#c084fc;">--</div>
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); max-width:380px;">
-            $175,616 \rightarrow$ Last three $616$ ends in $6 \Rightarrow$ units digit is $6$. Leading $175 \Rightarrow 5^3=125 \le 175 < 6^3=216 \Rightarrow$ tens digit is $5$. Root = $56$!
+            175,616 → Last three 616 ends in 6 ⇒ units digit is 6. Leading 175 ⇒ 5<sup>3</sup> = 125 ≤ 175 &lt; 6<sup>3</sup> = 216 ⇒ tens digit is 5. Root = 56!
           </div>
         </div>
       </div>
@@ -475,10 +507,18 @@
     <!-- ========================================== -->
     <section id="catalog">
       <div class="section-head">
-        <h3 class="section-title"><span>📚</span> 5. Complete Canonical Catalog: 16 Sūtras & 13 Upa-Sūtras</h3>
+        <h3 class="section-title"><span>📚</span> 5. Complete Canonical Catalog: 16 Sūtras &amp; 13 Upa-Sūtras (16 సూత్రాలు &amp; 13 ఉపసూత్రాలు)</h3>
         <p class="section-sub">
           The full 29 canonical aphorisms of Vedic mathematics forming a complete algebraic and mental computational universe.
         </p>
+      </div>
+
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for (ఉపయోగం):</strong> Provides a searchable reference of all 16 Primary Sūtras and 13 Upa-Sūtras in Sanskrit, Telugu, and English.</div>
+          <div><strong>How it works (విధానం):</strong> Filter between Primary Sūtras (<em>Mūla Sūtras</em>) and Sub-Corollaries (<em>Upa-Sūtras</em>) to see where each rule applies.</div>
+          <div><strong>Example (ఉదాహరణ):</strong> Click <em>16 Primary Sūtras</em> to inspect <em>Ekādhikena Pūrveṇa (ఏకాధికేన పూర్వేణ)</em> and its algebraic formula.</div>
+        </div>
       </div>
 
       <div class="filter-tabs">

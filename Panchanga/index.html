@@ -26,10 +26,12 @@
       <nav class="nav-links">
         <a href="#overview" class="nav-item active">📜 Overview</a>
         <a href="#limbs" class="nav-item">✋ 5 Limbs</a>
-        <a href="#calculator" class="nav-item">📅 Daily Almanac</a>
+        <a href="#calculator" class="nav-item">📅 Ephemeris</a>
         <a href="#kalamana" class="nav-item">⏳ Kāla-Māna</a>
-        <a href="#samvatsara" class="nav-item">🪐 60 Samvatsaras</a>
-        <a href="#muhurta" class="nav-item">⏱️ Muhūrta & Rāhu</a>
+        <a href="#samvatsara" class="nav-item">🪐 Saṃvatsaras</a>
+        <a href="#muhurta" class="nav-item">⏱️ Muhūrta</a>
+        <a href="#tarabala" class="nav-item">⭐ Tārā & Candra</a>
+        <a href="#festivals" class="nav-item">🗓️ Festivals</a>
         <a href="#philosophy" class="nav-item">🌌 Philosophy</a>
       </nav>
     </div>
@@ -73,6 +75,14 @@
         </p>
       </div>
 
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for:</strong> Gives you a quick snapshot of the 5 core Panchangam pillars for the date &amp; time you selected below.</div>
+          <div><strong>How it works:</strong> Uses the angular positions of the Sun and Moon in the sidereal zodiac to identify the active Tithi, Vāra, Nakṣatra, Yoga, and Karaṇa.</div>
+          <div><strong>Example:</strong> On a morning when the Moon is 12°–24° ahead of the Sun in Aśvinī star on a Wednesday, you see <em>Dvitīyā • Budhavāra • Aśvinī</em>.</div>
+        </div>
+      </div>
+
       <div class="panch-limbs-grid">
         <div class="limb-card">
           <div class="limb-icon">🌙</div>
@@ -110,66 +120,115 @@
     <!-- Section 2: Real-Time Calculator -->
     <section id="calculator">
       <div class="section-head">
-        <h3 class="section-title"><span>📅</span> 2. Daily Pañcāṅga & Ephemeris Calculator</h3>
+        <h3 class="section-title"><span>📅</span> 2. Universal Pañcāṅga & Ephemeris Calculator (Any Year, Date & Time)</h3>
         <p class="section-sub">
-          Calculates real-time astronomical positions using canonical Sūrya Siddhānta ephemeris from the Kali Yuga epoch.
+          Computes real-time Sidereal (Lahiri Ayanāṃśa) Tithi, Nakṣatra, Yoga, Karaṇa, Sunrise/Sunset, Amanta Lunar Māsa, and Saṃvatsara for any date, time, and location.
         </p>
       </div>
 
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for:</strong> Acts as the master control panel for the entire page—pick any past, present, or future date, time, and city to inspect full daily Panchangam details.</div>
+          <div><strong>How it works:</strong> Computes true solar/lunar longitudes and local Sunrise/Sunset, then finds the exact clock time when each Tithi, Nakṣatra, Yoga, and Karaṇa ends.</div>
+          <div><strong>Example:</strong> Pick <em>2025-03-30</em> at <em>07:00</em> in <em>Tirupati</em> to see <em>Caitra Śukla Pratipada (Ugādi)</em>, Sunrise <em>06:09 AM</em>, and Tithi end time <em>12:51 PM</em>.</div>
+        </div>
+      </div>
+
       <div class="panch-panel">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
-          <div style="display:flex; align-items:center; gap:0.75rem;">
-            <label for="panchDateInput" style="font-weight:700; color:var(--gold-bright); font-size:0.95rem;">Select Date:</label>
-            <input type="date" id="panchDateInput" style="background:#000; color:#fff; border:1px solid #444; padding:0.5rem 0.85rem; border-radius:8px; font-family:var(--font-mono); font-size:1rem;">
+        <div class="panch-input-row">
+          <div>
+            <label for="panchDateInput" style="display:block; font-size:0.75rem; color:var(--gold-primary); text-transform:uppercase; margin-bottom:0.35rem;">Gregorian Date</label>
+            <input type="date" id="panchDateInput" style="background:#000; color:#fff; border:1px solid var(--border-gold); padding:0.55rem 0.85rem; border-radius:8px; font-family:var(--font-mono); font-size:0.95rem;">
           </div>
-          <button id="panchTodayBtn" class="btn-ghost" style="padding:0.5rem 1rem; font-size:0.88rem;">Set to Today ⏱️</button>
+          <div>
+            <label for="panchTimeInput" style="display:block; font-size:0.75rem; color:var(--gold-primary); text-transform:uppercase; margin-bottom:0.35rem;">Local Time</label>
+            <input type="time" id="panchTimeInput" style="background:#000; color:#fff; border:1px solid var(--border-gold); padding:0.55rem 0.85rem; border-radius:8px; font-family:var(--font-mono); font-size:0.95rem;">
+          </div>
+          <div>
+            <label for="panchLocSelect" style="display:block; font-size:0.75rem; color:var(--gold-primary); text-transform:uppercase; margin-bottom:0.35rem;">Location (Sunrise / Sunset)</label>
+            <select id="panchLocSelect" style="background:#0f172a; color:#fff; border:1px solid var(--border-gold); padding:0.58rem 0.85rem; border-radius:8px; font-family:var(--font-body); font-size:0.92rem;">
+              <option value="tirupati">Tirupati (TTD Standard)</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="vijayawada">Vijayawada</option>
+              <option value="visakhapatnam">Visakhapatnam</option>
+              <option value="bengaluru">Bengaluru</option>
+              <option value="chennai">Chennai</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="delhi">New Delhi</option>
+              <option value="varanasi">Varanasi (Kāśī)</option>
+              <option value="utc">Greenwich (UTC)</option>
+            </select>
+          </div>
+          <button id="panchTodayBtn" class="btn-ghost" style="padding:0.58rem 1rem; font-size:0.88rem;">Set to Now ⏱️</button>
         </div>
 
-        <table style="width:100%; border-collapse:collapse; font-size:0.92rem;">
+        <table class="muhurta-table">
+          <thead>
+            <tr>
+              <th style="width:32%;">Astronomical Attribute</th>
+              <th>Calculated Value & Transition Time</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted); width:28%;">1. Tithi (तिथि • తిథి):</td>
-              <td id="calcTithi" style="padding:0.75rem 0; color:#fff;">--</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted);">2. Vāra (वार • వారము):</td>
-              <td id="calcVara" style="padding:0.75rem 0; color:#fff;">--</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted);">3. Nakṣatra (नक्षत्र • నక్షత్రము):</td>
-              <td id="calcNak" style="padding:0.75rem 0; color:#fff;">--</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted);">4. Yoga (योग • యోగము):</td>
-              <td id="calcYoga" style="padding:0.75rem 0; color:#fff;">--</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted);">5. Karaṇa (करण • కరణము):</td>
-              <td id="calcKarana" style="padding:0.75rem 0; color:#fff;">--</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted);">Jovian Year (संवत्सर • సంవత్సరం):</td>
-              <td id="calcSamvatsara" style="padding:0.75rem 0; color:var(--gold-bright);">--</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted);">Ayana (अयन • అయనము):</td>
-              <td id="calcAyana" style="padding:0.75rem 0; color:var(--cyan-accent);">--</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted);">Ṛtu (ऋतु • ఋతువు):</td>
-              <td id="calcRitu" style="padding:0.75rem 0; color:var(--emerald-bright);">--</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted);">Rāhukāla (राहुकाल • రాహుకాలము):</td>
-              <td id="calcRahu" style="padding:0.75rem 0; color:var(--rose-accent);">--</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:0.75rem 0; color:var(--text-muted);">True Sun Longitude:</td>
-              <td id="calcSunLong" style="padding:0.75rem 0; color:var(--gold-bright); font-family:var(--font-mono);">--</td>
+            <tr>
+              <td style="color:var(--text-muted);">Māsa & Pakṣa (మాసము & పక్షం):</td>
+              <td id="calcMasa" style="color:var(--gold-bright); font-weight:700;">--</td>
             </tr>
             <tr>
-              <td style="padding:0.75rem 0; color:var(--text-muted);">True Moon Longitude:</td>
-              <td id="calcMoonLong" style="padding:0.75rem 0; color:var(--cyan-accent); font-family:var(--font-mono);">--</td>
+              <td style="color:var(--text-muted);">1. Tithi (తిథి):</td>
+              <td id="calcTithi" style="color:#fff; font-weight:700;">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">2. Vāra (వారము):</td>
+              <td id="calcVara" style="color:#fff;">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">3. Nakṣatra & Pāda (నక్షత్రము):</td>
+              <td id="calcNak" style="color:var(--gold-bright); font-weight:700;">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">4. Yoga (యోగము):</td>
+              <td id="calcYoga" style="color:#fff;">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">5. Karaṇa (కరణము):</td>
+              <td id="calcKarana" style="color:#fff;">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">Sūryodaya & Sūryāstamaya:</td>
+              <td id="calcSunTimes" style="color:var(--cyan-accent); font-family:var(--font-mono);">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">Saṃvatsara & Eras (సంవత్సరం):</td>
+              <td id="calcSamvatsara" style="color:var(--gold-bright);">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">Ayana & Ṛtu (ఆయనం & ఋతువు):</td>
+              <td id="calcAyana" style="color:var(--cyan-accent);">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">Sun & Moon Rāśi (రాశి):</td>
+              <td id="calcRashi" style="color:#fff;">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">Lagna / Ascendant (లగ్నం):</td>
+              <td id="calcLagna" style="color:var(--gold-bright); font-weight:700;">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">Sun Nakṣatra / Kārte (సూర్య కాఱ్తె):</td>
+              <td id="calcSunKarte" style="color:#fff;">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">Special Observances (విశేషాలు):</td>
+              <td id="calcObservances" style="color:var(--emerald-accent); font-weight:600;">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">Sidereal Sun Longitude:</td>
+              <td id="calcSunLong" style="color:var(--gold-bright); font-family:var(--font-mono);">--</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text-muted);">Sidereal Moon Longitude:</td>
+              <td id="calcMoonLong" style="color:var(--cyan-accent); font-family:var(--font-mono);">--</td>
             </tr>
           </tbody>
         </table>
@@ -184,6 +243,14 @@
           Classical Indian chronometry organizes time from the infinitesimal atomic vibration (Truṭi) 
           to the cosmic lifespan of the cosmos (Kalpa). Compare ancient time units with modern scientific equivalents:
         </p>
+      </div>
+
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for:</strong> Translates traditional Panchangam time units (like <em>Ghati</em>, <em>Vighaṭi</em>, and <em>Muhūrta</em>) into modern hours, minutes, and seconds.</div>
+          <div><strong>How it works:</strong> Uses the Vedic 60-Ghati day standard where 1 Day = 60 Ghaṭis (1 Ghaṭi = 24 minutes, 1 Muhūrta = 2 Ghaṭis = 48 minutes).</div>
+          <div><strong>Example:</strong> Enter <em>1 Hour</em> to see it equals <em>2.5 Ghaṭis</em> or <em>1.25 Muhūrtas</em>—helpful when reading traditional Panchangam durations.</div>
+        </div>
       </div>
 
       <!-- Interactive Converter Panel -->
@@ -233,7 +300,7 @@
             <tbody>
               <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
                 <td style="padding:0.65rem 0.85rem; color:#fff;"><strong>Truṭi (त्रुटि • త్రుటి)</strong></td>
-                <td style="padding:0.65rem 0.85rem; color:var(--text-muted);">$8/13500$ seconds</td>
+                <td style="padding:0.65rem 0.85rem; color:var(--text-muted);">8/13,500 seconds</td>
                 <td style="padding:0.65rem 0.85rem; color:var(--cyan-accent); font-weight:700;">29.629 microseconds</td>
                 <td style="padding:0.65rem 0.85rem; color:#cbd5e1;">Time to pierce a lotus leaf with a needle (atomic time).</td>
               </tr>
@@ -245,7 +312,7 @@
               </tr>
               <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
                 <td style="padding:0.65rem 0.85rem; color:#fff;"><strong>Nimeṣa (निमेष • నిమేషము)</strong></td>
-                <td style="padding:0.65rem 0.85rem; color:var(--text-muted);">$16/75$ seconds</td>
+                <td style="padding:0.65rem 0.85rem; color:var(--text-muted);">16/75 seconds</td>
                 <td style="padding:0.65rem 0.85rem; color:var(--cyan-accent); font-weight:700;">0.2133 seconds</td>
                 <td style="padding:0.65rem 0.85rem; color:#cbd5e1;">Natural duration of a single human eye blink.</td>
               </tr>
@@ -263,7 +330,7 @@
               </tr>
               <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
                 <td style="padding:0.65rem 0.85rem; color:#fff;"><strong>Pala / Vighaṭikā (पल/विघटिका • పలము)</strong></td>
-                <td style="padding:0.65rem 0.85rem; color:var(--text-muted);">$1/60$ of a Ghaṭikā</td>
+                <td style="padding:0.65rem 0.85rem; color:var(--text-muted);">1/60 of a Ghaṭikā</td>
                 <td style="padding:0.65rem 0.85rem; color:var(--gold-bright); font-weight:700;">24 seconds</td>
                 <td style="padding:0.65rem 0.85rem; color:#cbd5e1;">6 human breaths (Prāṇas) = 1 Pala. 60 Palas = 1 Ghaṭikā.</td>
               </tr>
@@ -338,9 +405,17 @@
       <div class="section-head">
         <h3 class="section-title"><span>🪐</span> 4. The 60-Year Jovian Cycle (Bṛhaspati Samvatsara • బృహస్పతి సంవత్సర చక్రము)</h3>
         <p class="section-sub">
-          Governed by Jupiter's transit through the twelve signs of the zodiac (approx. 5 orbits $\times 12$ years = 60 years). 
+          Governed by Jupiter's transit through the twelve signs of the zodiac (approx. 5 orbits × 12 years = 60 years). 
           Every year carries a unique archetype, elemental resonance, and sociopolitical propensity.
         </p>
+      </div>
+
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for:</strong> Shows which of the 60 named Vedic years (<em>Prabhava</em> to <em>Akṣaya</em>) is active for your selected date, plus that year's 9 planetary rulers (<em>Navanāyaka</em>).</div>
+          <div><strong>How it works:</strong> Each Vedic year transitions on <strong>Ugādi (Caitra Śukla Pratipadā)</strong>, not Jan 1. After year #60 (<em>Akṣaya</em> in 2046–47), the cycle loops back to #1 (<em>Prabhava</em> in 2047–48).</div>
+          <div><strong>Example:</strong> Dates from Mar 30, 2025 to Mar 19, 2026 fall in <em>#39 Viśvāvasu</em> (Epoch 1987–2047); choosing Aug 2047 automatically shifts to <em>#1 Prabhava</em> (Epoch 2047–2107).</div>
+        </div>
       </div>
 
       <div class="panch-panel">
@@ -366,47 +441,200 @@
           <span style="font-size:0.78rem; color:var(--text-muted); background:rgba(0,0,0,0.3); padding:0.3rem 0.6rem; border-radius:4px;">Ugadi Transition (మార్చి / ఏప్రిల్)</span>
         </div>
 
-        <div id="samvatsaraGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:0.65rem; max-height:460px; overflow-y:auto; padding-right:0.5rem;">
+        <div id="samvatsaraGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:0.65rem; max-height:420px; overflow-y:auto; padding-right:0.5rem; margin-bottom:2rem;">
           <!-- Dynamically populated by panchanga.js -->
+        </div>
+
+        <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:1.5rem;">
+          <h4 id="navanayakaTitle" style="font-family:var(--font-display); color:var(--gold-bright); margin-bottom:0.4rem;">Navanāyaka (9 Planetary Rulers)</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Computed dynamically for the active Saṃvatsara from the weekdays of Ugadi and key Solar Saṅkrāntis.</p>
+          <table class="muhurta-table">
+            <thead>
+              <tr>
+                <th>Office (నవనాయక స్థానం)</th>
+                <th>Ruling Graha</th>
+                <th>Astronomical Basis</th>
+              </tr>
+            </thead>
+            <tbody id="navanayakaBody"></tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- Section 5: Muhurta & Rahu Kala -->
+    <!-- Section 5: Muhurta & Rahu Kala (Live Calculated) -->
     <section id="muhurta">
       <div class="section-head">
-        <h3 class="section-title"><span>⏱️</span> 5. Precision Muhūrtas & Rāhukāla Calculations</h3>
+        <h3 class="section-title"><span>⏱️</span> 5. Live Muhūrta & Kaala Windows</h3>
         <p class="section-sub">
-          Auspicious and inauspicious diurnal intervals governing ritual, meditation, and commercial ventures.
+          Auspicious and inauspicious intervals calculated dynamically from your selected location's actual Sunrise, Sunset, and active Nakṣatra span.
         </p>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem;">
-        <div class="card">
-          <div class="card-subtitle">8th Daytime Muhūrta</div>
-          <h4 class="card-title">Abhijit Muhūrta (अभिजीत मुहूर्त • అభిజిత్ ముహూర్తము)</h4>
-          <p>The supreme midday victory window (approx. 11:45 AM - 12:35 PM). Neutralizes negative cosmic energies and blesses enterprise.</p>
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for:</strong> Helps you pick favorable time windows (<em>Brāhma, Abhijit, Amṛta</em>) and avoid unfavorable ones (<em>Rāhu Kālam, Yamagaṇḍam, Durmuhūrtam, Varjyam</em>) for the selected day.</div>
+          <div><strong>How it works:</strong> Divides the actual local Sunrise-to-Sunset span into 8 parts (for Rāhu/Yama/Gulika) and 15 Muhūrtas (for Abhijit/Durmuhūrtam), and computes Varjyam/Amṛta from the Moon's Nakṣatra span.</div>
+          <div><strong>Example:</strong> On a Sunday, Rāhu Kālam is the 8th daytime part before Sunset (~4:50–6:20 PM), shifting slightly each day and city as Sunrise/Sunset changes.</div>
         </div>
-        <div class="card">
-          <div class="card-subtitle">Pre-Dawn Enlightenment</div>
-          <h4 class="card-title">Brāhma Muhūrta (ब्राह्म मुहूर्त • బ్రాహ్మీ ముహూర్తము)</h4>
-          <p>Two Muhūrtas (96 minutes) prior to sunrise (approx. 04:30 AM - 05:15 AM). Sattva is at its peak; optimal for meditation and study.</p>
+      </div>
+
+      <div class="panch-details-grid">
+        <div class="detail-box" style="border-color:rgba(16,185,129,0.35);">
+          <label>Brāhma Muhūrta (బ్రాహ్మ ముహూర్తం)</label>
+          <div id="muhurtaBrahmaTime" class="val-primary" style="color:var(--emerald-accent);">—</div>
+          <p>96 to 48 minutes before local Sunrise. Optimal for meditation, study, and spiritual practice.</p>
         </div>
-        <div class="card">
-          <div class="card-subtitle">Inauspicious Octave</div>
-          <h4 class="card-title">Rāhu Kāla (राहुकाल • రాహుకాలము)</h4>
-          <p>The 90-minute daily phase ruled by the shadow planet Rahu. Traditional wisdom avoids initiating new ventures during this window.</p>
+        <div class="detail-box" style="border-color:rgba(16,185,129,0.35);">
+          <label>Abhijit Muhūrta (అభిజిత్ ముహూర్తం)</label>
+          <div id="muhurtaAbhijitTime" class="val-primary" style="color:var(--emerald-accent);">—</div>
+          <p>8th daytime Muhūrta centered around local solar noon; auspicious for urgent beginnings.</p>
+        </div>
+        <div class="detail-box" style="border-color:rgba(16,185,129,0.35);">
+          <label>Amṛta Kālam (అమృత కాలం)</label>
+          <div id="muhurtaAmritaTime" class="val-primary" style="color:var(--emerald-accent);">—</div>
+          <p>4-ghati nectar window derived from the active Nakṣatra's exact span.</p>
+        </div>
+        <div class="detail-box" style="border-color:rgba(56,189,248,0.35);">
+          <label>Active Planetary Horā (హోరా)</label>
+          <div id="muhurtaHoraTime" class="val-primary" style="color:var(--cyan-accent);">—</div>
+          <p>Current 1/12th day or night planetary hour in the Chaldean sequence from Sunrise.</p>
+        </div>
+        <div class="detail-box" style="border-color:rgba(244,63,94,0.35);">
+          <label>Rāhu Kālam (రాహు కాలం)</label>
+          <div id="muhurtaRahuTime" class="val-primary" style="color:var(--rose-accent);">—</div>
+          <p>Daily 1/8th daytime segment ruled by Rāhu; avoid initiating auspicious works.</p>
+        </div>
+        <div class="detail-box" style="border-color:rgba(244,63,94,0.35);">
+          <label>Yamagaṇḍam (యమగండం)</label>
+          <div id="muhurtaYamaTime" class="val-primary" style="color:var(--rose-accent);">—</div>
+          <p>Daily 1/8th daytime segment; avoided for journeys and new undertakings.</p>
+        </div>
+        <div class="detail-box" style="border-color:rgba(245,185,66,0.35);">
+          <label>Gulika Kālam (గుళిక కాలం)</label>
+          <div id="muhurtaGulikaTime" class="val-primary" style="color:var(--gold-primary);">—</div>
+          <p>Saturn-ruled 1/8th daytime segment; actions begun now tend to repeat.</p>
+        </div>
+        <div class="detail-box" style="border-color:rgba(244,63,94,0.35);">
+          <label>Durmuhūrtam (దుర్ముహూర్తం)</label>
+          <div id="muhurtaDurTime" class="val-primary" style="color:var(--rose-accent);">—</div>
+          <p>Weekday-specific inauspicious Muhūrta(s) out of the 15 daytime divisions.</p>
+        </div>
+        <div class="detail-box" style="border-color:rgba(244,63,94,0.35);">
+          <label>Varjyam (వర్జ్యం)</label>
+          <div id="muhurtaVarjyamTime" class="val-primary" style="color:var(--rose-accent);">—</div>
+          <p>4-ghati sensitive window of the active Nakṣatra; avoided for Śubha Muhūrtas.</p>
         </div>
       </div>
     </section>
 
-    <!-- Section 6: Philosophy & Wisdom -->
+    <!-- Section 6: Personal Tarabala & Chandrabala -->
+    <section id="tarabala">
+      <div class="section-head">
+        <h3 class="section-title"><span>⭐</span> 6. Personal Tārābala & Candrabala Checker</h3>
+        <p class="section-sub">
+          <strong>Day-Specific Check (Not for the Whole Year):</strong> Evaluates how the <strong>selected date &amp; time's</strong> transit Moon (from Section 2) aligns with your personal birth star (<em>Janma Nakṣatra</em>) and birth moon sign (<em>Janma Rāśi</em>).
+        </p>
+      </div>
+
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for:</strong> Checks whether a specific day &amp; time is personally supportive for you (for travel, pūjā, interviews, or starting new work). <em>It changes daily as the Moon moves—it is not a yearly horoscope.</em></div>
+          <div><strong>How it works:</strong> <strong>Tārābala</strong> counts from your Janma Nakṣatra to today's Nakṣatra (modulo 9); <strong>Candrabala</strong> counts from your Janma Rāśi to today's Moon Rāśi (houses 1, 3, 6, 7, 10, 11 are auspicious; 8 is Candraṣṭama).</div>
+          <div><strong>Example:</strong> If your birth star is <em>Aśvinī (#1)</em> and today's Moon is in <em>Ārdrā (#6)</em>, count = 6 (<em>Sādhaka Tārā</em> — Auspicious). Change the date in Section 2 to test any day!</div>
+        </div>
+      </div>
+
+      <div class="panch-panel">
+        <div id="tarabalaContextPill" style="margin-bottom:1rem; padding:0.55rem 0.9rem; border-radius:8px; background:rgba(168,85,247,0.12); border:1px solid rgba(168,85,247,0.35); color:#e9d5ff; font-size:0.84rem; font-weight:600;">
+          Evaluating Selected Moment...
+        </div>
+        <div class="panch-input-row">
+          <div>
+            <label for="janmaNakSelect" style="display:block; font-size:0.75rem; color:var(--gold-primary); text-transform:uppercase; margin-bottom:0.35rem;">Your Janma Nakṣatra</label>
+            <select id="janmaNakSelect" style="background:#0f172a; color:#fff; border:1px solid var(--border-gold); padding:0.58rem 0.9rem; border-radius:8px; font-size:0.9rem;"></select>
+          </div>
+          <div>
+            <label for="janmaRashiSelect" style="display:block; font-size:0.75rem; color:var(--gold-primary); text-transform:uppercase; margin-bottom:0.35rem;">Your Janma Rāśi</label>
+            <select id="janmaRashiSelect" style="background:#0f172a; color:#fff; border:1px solid var(--border-gold); padding:0.58rem 0.9rem; border-radius:8px; font-size:0.9rem;"></select>
+          </div>
+          <div>
+            <label for="tarabalaLocSelect" style="display:block; font-size:0.75rem; color:var(--gold-primary); text-transform:uppercase; margin-bottom:0.35rem;">Location / Timezone</label>
+            <select id="tarabalaLocSelect" style="background:#0f172a; color:#fff; border:1px solid var(--border-gold); padding:0.58rem 0.9rem; border-radius:8px; font-size:0.9rem;"></select>
+          </div>
+        </div>
+        <div id="tarabalaOutput"></div>
+      </div>
+    </section>
+
+    <!-- Section 7: Dynamic Any-Year Festivals & Sankrantis -->
+    <section id="festivals">
+      <div class="section-head">
+        <h3 class="section-title"><span>🗓️</span> 7. Any-Year Festivals, Ekādaśī & Saṅkrānti Finder</h3>
+        <p class="section-sub">
+          Generate major Vedic festivals, Ekādaśīs, Pūrṇimās, Amāvāsyās, and Solar Saṅkrāntis astronomically for any Gregorian year.
+        </p>
+      </div>
+
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for:</strong> Builds a complete annual calendar of festivals, Ekādaśīs, full/new moons, and solar ingresses for <strong>any year</strong> (e.g., 1995, 2026, 2040).</div>
+          <div><strong>How it works:</strong> Scans every sunrise of the chosen year to find each Amanta Lunar Māsa + Tithi (including Adhika Māsa &amp; Kshaya Tithis) and each 30° Solar Saṅkrānti.</div>
+          <div><strong>Example:</strong> Type <em>2026</em> and filter by <em>Major Festivals</em> to see <em>Mahāśivarātri (2026-02-16)</em>, <em>Ugādi (2026-03-20)</em>, and <em>Vijayadaśamī (2026-10-21)</em>.</div>
+        </div>
+      </div>
+
+      <div class="panch-panel">
+        <div class="panch-input-row">
+          <div>
+            <label for="annualYearInput" style="display:block; font-size:0.75rem; color:var(--gold-primary); text-transform:uppercase; margin-bottom:0.35rem;">Gregorian Year</label>
+            <input type="number" id="annualYearInput" min="1900" max="2150" style="background:#000; color:#fff; border:1px solid var(--border-gold); padding:0.55rem 0.85rem; border-radius:8px; font-family:var(--font-mono); font-size:0.95rem; width:130px;">
+          </div>
+          <div>
+            <label for="annualCatSelect" style="display:block; font-size:0.75rem; color:var(--gold-primary); text-transform:uppercase; margin-bottom:0.35rem;">Category Filter</label>
+            <select id="annualCatSelect" style="background:#0f172a; color:#fff; border:1px solid var(--border-gold); padding:0.58rem 0.9rem; border-radius:8px; font-size:0.9rem;">
+              <option value="all">All Events</option>
+              <option value="festival">Major Festivals</option>
+              <option value="ekadashi">Ekādaśī Days</option>
+              <option value="vrata">Pradoṣam & Māsaśivarātri</option>
+              <option value="lunar">Pūrṇimā & Amāvāsyā</option>
+              <option value="sankranti">Solar Saṅkrāntis</option>
+            </select>
+          </div>
+          <button id="annualApplyBtn" type="button" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.9rem;">Apply</button>
+        </div>
+
+        <div style="max-height:420px; overflow-y:auto;">
+          <table class="muhurta-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Vāra</th>
+                <th>Festival / Observance</th>
+                <th>Lunar Māsa</th>
+              </tr>
+            </thead>
+            <tbody id="annualEventsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Philosophy & Wisdom -->
     <section id="philosophy">
       <div class="section-head">
-        <h3 class="section-title"><span>🌌</span> 6. The Philosophy of Sacred Vedic Chronometry</h3>
+        <h3 class="section-title"><span>🌌</span> 8. The Philosophy of Sacred Vedic Chronometry</h3>
         <p class="section-sub">
           Time is not an empty linear container, but a living conscious field (*Kāla-Puruṣa*).
         </p>
+      </div>
+
+      <div class="section-guide">
+        <div class="section-guide-grid">
+          <div><strong>What it is for:</strong> Explains the traditional spiritual and psychological meaning behind each of the 5 limbs of the Panchangam.</div>
+          <div><strong>How it works:</strong> Connects astronomical cycles (Sun, Moon, stars) to human well-being: emotional clarity (<em>Tithi</em>), vitality (<em>Vāra</em>), purpose (<em>Nakṣatra</em>), health (<em>Yoga</em>), and action (<em>Karaṇa</em>).</div>
+          <div><strong>Example:</strong> Reading the Panchangam each morning (<em>Pañcāṅga Śravaṇam</em>) aligns daily intentions with the natural rhythm of the day.</div>
+        </div>
       </div>
 
       <div class="panch-panel">

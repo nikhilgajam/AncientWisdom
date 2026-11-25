@@ -767,38 +767,53 @@ function runVinculum() {
   }
 
   const s = String(num);
-  let vinculumStr = "";
+  let vinculumHtml = "";
   let carry = 0;
   let parts = [];
+  let signedTerms = [];
+  const len = s.length;
 
-  for (let i = s.length - 1; i >= 0; i--) {
-    let digit = parseInt(s[i], 10) + carry;
+  for (let i = len - 1; i >= 0; i--) {
+    const rawDigit = parseInt(s[i], 10);
+    const prevCarry = carry;
+    const digit = rawDigit + prevCarry;
+    const placePow = Math.pow(10, len - 1 - i);
     carry = 0;
+    const prefix = prevCarry > 0 ? `Digit ${rawDigit} + carry ${prevCarry} = ${digit}` : `Digit ${rawDigit}`;
+
     if (digit > 5) {
-      let bar = 10 - digit;
+      const bar = 10 - digit;
       carry = 1;
-      vinculumStr = `${bar}̄` + vinculumStr;
-      parts.unshift(`Digit ${digit} > 5 ⇒ Bar digit -${bar} with carry +1`);
+      vinculumHtml = `<span class="vinc-bar">${bar}</span>` + vinculumHtml;
+      signedTerms.unshift(`− ${bar * placePow}`);
+      parts.unshift(`${prefix} &gt; 5 ⇒ Complement (10 − ${digit}) = <span class="vinc-bar">${bar}</span> (−${bar}), carry +1`);
     } else {
-      vinculumStr = String(digit) + vinculumStr;
-      parts.unshift(`Digit ${digit} ≤ 5 ⇒ Remains ${digit}`);
+      vinculumHtml = `<span>${digit}</span>` + vinculumHtml;
+      if (digit !== 0) signedTerms.unshift(`+ ${digit * placePow}`);
+      parts.unshift(`${prefix} ≤ 5 ⇒ Remains ${digit}`);
     }
   }
   if (carry > 0) {
-    vinculumStr = String(carry) + vinculumStr;
+    const placePow = Math.pow(10, len);
+    vinculumHtml = `<span>${carry}</span>` + vinculumHtml;
+    signedTerms.unshift(`+ ${carry * placePow}`);
+    parts.unshift(`Final carry +${carry} placed at the front`);
   }
+
+  const checkExpr = signedTerms.join(" ").replace(/^\+\s*/, "");
 
   outArea.innerHTML = `
     <div class="result-banner" style="margin-top:0.5rem;">
       <div>
-        <span style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Vinculum Representation:</span>
-        <div class="result-val" style="color:var(--cyan-accent); font-size:2rem;">${vinculumStr}</div>
+        <span style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Vinculum Representation (రేఖాంక రూపం):</span>
+        <div class="result-val" style="color:var(--cyan-accent); font-size:2rem; letter-spacing:2px; padding-top:4px;">${vinculumHtml}</div>
+        <div style="font-size:0.82rem; color:var(--emerald-accent); margin-top:0.3rem; font-family:var(--font-mono);">Check: ${checkExpr} = ${num.toLocaleString("en-US")}</div>
       </div>
       <div style="font-size:0.85rem; color:var(--text-muted); max-width:380px;">
-        All heavy digits (6, 7, 8, 9) replaced by numbers ≤ 5, eliminating multiplication friction.
+        All heavy digits (6, 7, 8, 9) are replaced by bar complements ≤ 5, eliminating carry friction during multiplication.
       </div>
     </div>
-    <div style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted);">
+    <div style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted); line-height:1.7;">
       ${parts.map(p => `<div>✦ ${p}</div>`).join("")}
     </div>
   `;

@@ -2466,6 +2466,140 @@ const HOUSEHOLD_ITEMS_DATA = [
         "textTe": "❌ బ్రహ్మస్థానము (నడిమింట్లో మాపింగ్ సామాగ్రి నిషిద్ధం)"
       }
     }
+  },
+  {
+    "id": "wash_basin",
+    "nameEn": "Wash Basin & Kitchen Sink (Hand Wash & Water Tap)",
+    "nameTe": "వాష్ బేసిన్ & కిచెన్ సింక్ (చేతులు కడుక్కునే బేసిన్ / కుళాయి)",
+    "category": "kitchen",
+    "categoryEn": "Kitchen & Water Utility",
+    "categoryTe": "వంటగది & జల వినియోగం",
+    "page": "Pages 87, 159, 203, 274",
+    "idealLocationEn": "Northeast (Eshanya), North, or East wall. In a Southeast kitchen, keep water/sink drainage flowing toward Northeast, North, or East (Pages 87, 203), separated from the gas stove.",
+    "idealLocationTe": "ఈశాన్యం, ఉత్తరం లేదా తూర్పు గోడ వద్ద. ఆగ్నేయ వంటగదిలో నీరు/సింక్ ప్రవాహం ఈశాన్యం, ఉత్తరం లేదా తూర్పు వైపు సాగేలా (పేజీలు 87, 203) గ్యాస్ స్టవ్‌కు దూరంగా అమర్చాలి.",
+    "forbiddenLocationEn": "Southwest (Nairuthi — financial & health drain), directly adjacent to the Gas Stove in Southeast (Fire–Water clash), South/SSW (Page 274), West (Page 203), Center.",
+    "forbiddenLocationTe": "నైరుతి (తీవ్ర ధన & ఆరోగ్య నష్టం), ఆగ్నేయంలో గ్యాస్ పొయ్యికి ఆనుకుని, దక్షిణం/దక్షిణ నైరుతి (పేజీ 274), పశ్చిమం (పేజీ 203), బ్రహ్మస్థానం.",
+    "whyEn": "Pages 87, 159, 203 & 274: Sri Thirupati Reddy states that waste water from the kitchen or any room should NOT flow toward Southwest, Southeast, South, or West, and must flow toward Northeast, North, or East (Pages 87, 203). Keeping the sink/wash basin in the water zones (NE/N/E) avoids clashing with the Southeast kitchen hearth (Page 159), and avoids SSW drainage defects (Page 274).",
+    "whyTe": "పుస్తకంలో 87, 159, 203, 274 పేజీల ప్రకారం — వంటగది లేదా ఏ గది నుండైనా వ్యర్థ జలం నైరుతి, ఆగ్నేయం, దక్షిణం లేదా పశ్చిమం వైపు ప్రవహించకూడదు; కేవలం ఈశాన్యం, ఉత్తరం లేదా తూర్పు వైపు మాత్రమే ప్రవహించాలి (పేజీలు 87, 203). వాష్ బేసిన్/సింక్‌ను నీటి దిశలలో ఉంచి ఆగ్నేయ పొయ్యికి (పేజీ 159) దూరంగా ఉంచాలి.",
+    "placements": {
+      "ne": {
+        "status": "ideal",
+        "textEn": "✅ Northeast (Eshanya) of Hall / Dining / Kitchen Counter (Supreme Water & Drainage Harmony)",
+        "textTe": "✅ హాలు, డైనింగ్ లేదా వంటగది ఈశాన్య మూలలో (అత్యుత్తమ జల & నీటి పారుదల స్థానం)"
+      },
+      "north": {
+        "status": "ideal",
+        "textEn": "✅ North Wall / Northern Side facing North (Auspicious Kubera Water Flow)",
+        "textTe": "✅ ఉత్తర గోడ వద్ద ఉత్తరం చూస్తూ (శుభప్రదమైన కుబేర జల ప్రవాహం)"
+      },
+      "east": {
+        "status": "ideal",
+        "textEn": "✅ East Wall / Eastern Side facing East (Auspicious Solar Drainage)",
+        "textTe": "✅ తూర్పు గోడ వద్ద తూర్పు చూస్తూ (శుభప్రదమైన సౌర జల పారుదల)"
+      },
+      "nw": {
+        "status": "acceptable",
+        "textEn": "⚠️ Northwest (Vayavya) Dining/Utility Side draining North (Acceptable Secondary)",
+        "textTe": "⚠️ వాయువ్య డైనింగ్/యుటిలిటీ వైపు ఉత్తరానికి వాలుతో (అనుమతించదగిన రెండవ స్థానం)"
+      },
+      "se_separated": {
+        "status": "acceptable",
+        "textEn": "⚠️ Southeast Kitchen — strictly in NE corner of Kitchen separated from Stove (Acceptable)",
+        "textTe": "⚠️ ఆగ్నేయ వంటగదిలో స్టవ్‌కు దూరంగా వంటగది ఈశాన్య మూలలో (అనుమతించదగినది)"
+      },
+      "se_adjacent": {
+        "status": "forbidden",
+        "textEn": "❌ Southeast directly touching / beside Gas Stove (Severe Fire–Water Clash / Agni–Jala Dosha)",
+        "textTe": "❌ ఆగ్నేయంలో గ్యాస్ స్టవ్ పక్కనే ఆనుకుని (తీవ్ర అగ్ని-జల ఘర్షణ దోషం)"
+      },
+      "west": {
+        "status": "forbidden",
+        "textEn": "❌ West Wall (Unfavorable reverse water drainage direction)",
+        "textTe": "❌ పశ్చిమ గోడ వద్ద (వ్యతిరేక దిశ నీటి పారుదల అశుభం)"
+      },
+      "south": {
+        "status": "forbidden",
+        "textEn": "❌ South Wall (Yama direction water drain harms family health)",
+        "textTe": "❌ దక్షిణ గోడ వద్ద (యమ దిశలో నీటి పారుదల ఆరోగ్యానికి హానికరం)"
+      },
+      "sw": {
+        "status": "forbidden",
+        "textEn": "❌ Southwest / SSW (Severe Financial Drain & Female Spouse Health Deterioration — Page 274)",
+        "textTe": "❌ నైరుతి / దక్షిణ నైరుతి (తీవ్ర ధన నష్టం & గృహిణి ఆరోగ్య క్షీణత — పేజీ 274)"
+      },
+      "center": {
+        "status": "forbidden",
+        "textEn": "❌ Center / Brahmasthana (Cosmic Navel must remain completely dry)",
+        "textTe": "❌ బ్రహ్మస్థానము (నడిమి ఇల్లు ఎల్లప్పుడూ పొడిగా, ఖాళీగా ఉండాలి)"
+      }
+    }
+  },
+  {
+    "id": "drain_outlets",
+    "nameEn": "Drain Outlets & Wash-Water Exit Holes (Floor / Wall Drains)",
+    "nameTe": "ఇల్లు కడిగిన నీరు వెళ్ళే తూములు & డ్రైనేజీ పైపులు (అవుట్‌లెట్ రంధ్రాలు)",
+    "category": "misc",
+    "categoryEn": "Sanitary & Drainage",
+    "categoryTe": "శుభ్రత & నీటి పారుదల",
+    "page": "Pages 69, 87, 104, 271–281",
+    "idealLocationEn": "Northeast (ENE / NNE) corner of every room and plot; or North / East if direct NE exit is unavailable (Pages 87, 104).",
+    "idealLocationTe": "ప్రతి గది మరియు ఇంటి ఈశాన్యం (ENE / NNE) మూల నుండి; అది సాధ్యం కాకపోతే ఉత్తరం లేదా తూర్పు వైపు బయటకు వెళ్ళాలి (పేజీలు 87, 104).",
+    "forbiddenLocationEn": "South, Southern Southwest (SSW), West, Eastern Southeast (ESE), Northern Northwest (NNW) (Pages 69, 272–275).",
+    "forbiddenLocationTe": "దక్షిణం, దక్షిణ నైరుతి (SSW), పశ్చిమం, తూర్పు ఆగ్నేయం (ESE), ఉత్తర వాయువ్యం (NNW) (పేజీలు 69, 272–275).",
+    "whyEn": "Pages 69, 87 & 104: Sri Thirupati Reddy states on Page 87 that waste water or wash water should flow out of ANY room strictly from the Northeastern corner, ensuring all-round prosperity and continuance of lineage. If North/East exit is impossible and water must go South (Page 104), route it first to Northeast and then through a covered drain along the eastern compound wall. Roof and floor drains in South or West are prohibited (Page 69).",
+    "whyTe": "పుస్తకంలో 69, 87, 104 పేజీల ప్రకారం — ఏ గదిలోనైనా ఇల్లు కడిగిన నీరు లేదా వ్యర్థ జలం కేవలం ఈశాన్య మూల నుండే బయటకు వెళ్ళాలి (పేజీ 87); ఇది సర్వతోముఖాభివృద్ధిని, వంశాభివృద్ధిని ఇస్తుంది. తూర్పు/ఉత్తర మార్గం లేక దక్షిణానికి పంపాల్సి వస్తే (పేజీ 104), ముందుగా ఈశాన్యానికి చేర్చి తూర్పు ప్రహరీ గోడ వెంట మూసిన డ్రైనేజీ ద్వారా బయటకు పంపాలి.",
+    "placements": {
+      "ene": {
+        "status": "ideal",
+        "textEn": "✅ Eastern Northeast (ENE) — Ushers health and wealth to males foremost (Page 278)",
+        "textTe": "✅ తూర్పు ఈశాన్యం (ENE) — పురుషులకు ఆరోగ్యం, ఐశ్వర్యాన్ని ప్రసాదిస్తుంది (పేజీ 278)"
+      },
+      "nne": {
+        "status": "ideal",
+        "textEn": "✅ Northern Northeast (NNE) — Ensures proper placement of wealth at crest (Page 281)",
+        "textTe": "✅ ఉత్తర ఈశాన్యం (NNE) — సంపదను అత్యున్నత స్థితిలో నిలుపుతుంది (పేజీ 281)"
+      },
+      "north": {
+        "status": "ideal",
+        "textEn": "✅ North — Brings home benign growth (Pages 104, 280)",
+        "textTe": "✅ ఉత్తరం — ఇంటికి శుభ వృద్ధిని తెస్తుంది (పేజీలు 104, 280)"
+      },
+      "east": {
+        "status": "ideal",
+        "textEn": "✅ East — Peace and prosperity to the host; male health & fame (Pages 104, 271)",
+        "textTe": "✅ తూర్పు — యజమానికి శాంతి, సౌభాగ్యం, కీర్తి ప్రతిష్టలు (పేజీలు 104, 271)"
+      },
+      "ne_covered_south": {
+        "status": "acceptable",
+        "textEn": "⚠️ Routed first to Northeast, then covered drain along East compound wall to South (Page 104)",
+        "textTe": "⚠️ ముందుగా ఈశాన్యానికి పంపి, తూర్పు గోడ వెంట మూసిన డ్రైన్‌తో దక్షిణానికి మళ్ళించడం (పేజీ 104)"
+      },
+      "ese": {
+        "status": "forbidden",
+        "textEn": "❌ Eastern Southeast (ESE) — Proves baneful to the children most (Page 272)",
+        "textTe": "❌ తూర్పు ఆగ్నేయం (ESE) — సంతానానికి అత్యంత హానికరం (పేజీ 272)"
+      },
+      "south": {
+        "status": "forbidden",
+        "textEn": "❌ South — Severs peace and pace from house forthwith (Pages 69, 273)",
+        "textTe": "❌ దక్షిణం — ఇంటిలో శాంతిని, పురోగతిని తక్షణమే నాశనం చేస్తుంది (పేజీలు 69, 273)"
+      },
+      "ssw": {
+        "status": "forbidden",
+        "textEn": "❌ Southern Southwest (SSW) — Deteriorates health of female spouse (Page 274)",
+        "textTe": "❌ దక్షిణ నైరుతి (SSW) — గృహిణి ఆరోగ్యాన్ని తీవ్రంగా క్షీణింపజేస్తుంది (పేజీ 274)"
+      },
+      "west": {
+        "status": "forbidden",
+        "textEn": "❌ West — Roof & floor drains in West are prohibited (Page 69)",
+        "textTe": "❌ పశ్చిమం — పశ్చిమ దిశలో నీటి తూములు నిషిద్ధం (పేజీ 69)"
+      },
+      "nnw": {
+        "status": "forbidden",
+        "textEn": "❌ Northern Northwest (NNW) — A perennial source of long litigation (Page 275)",
+        "textTe": "❌ ఉత్తర వాయువ్యం (NNW) — దీర్ఘకాలిక కోర్టు వ్యాజ్యాలకు మూలం (పేజీ 275)"
+      }
+    }
   }
 ];
 
@@ -2481,6 +2615,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
       "Puja Mandir / Deity Shrine & Idols",
       "Underground Water Sump & Borewell / Well",
       "Drinking Water Filter / Dispenser",
+      "Wash Basin & Kitchen Water Sink (Jala Sthana)",
       "Sacred Basil (Tulasi) Altar",
       "Medicines & First Aid Box",
       "Light Meditation Mats & Study Desks",
@@ -2490,6 +2625,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
       "పూజా మందిరం & దేవుని విగ్రహాలు",
       "అండర్‌గ్రౌండ్ నీటి తొట్టి, బోరుబావి & నూయి",
       "తాగునీటి కుండ & వాటర్ ఫిల్టర్",
+      "వాష్ బేసిన్ & కిచెన్ సింక్ (జల స్థానం)",
       "తులసి కోట నిర్మాణం",
       "మందుల పెట్టె & ప్రథమ చికిత్స",
       "ధ్యాన ఆసనాలు & తేలికపాటి చదువుకునే బల్లలు",
@@ -2526,6 +2662,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
     "prescribedEn": [
       "Main Entrance Door (Simhadwaram in ENE)",
       "Spacious Front Verandah & Sun Decks",
+      "East-Facing Hand Wash Basin & Water Tap",
       "Wall Clocks & Mirrors (reflects light)",
       "Study Tables (facing East while reading)",
       "Tulasi Altar & Light Garden",
@@ -2534,6 +2671,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
     "prescribedTe": [
       "సింహద్వారం (తూర్పు ఈశాన్యంలో)",
       "విశాలమైన ముందు వరండా & బాల్కనీలు",
+      "తూర్పు వైపు వాష్ బేసిన్ & నీటి కుళాయి",
       "గోడ గడియారాలు & అద్దాలు (కాంతి ప్రతిబింబం)",
       "చదువుకునే బల్లలు (తూర్పు చూస్తూ చదవాలి)",
       "తులసి కోట & అందమైన పూలతోట",
@@ -2579,6 +2717,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
     ],
     "prohibitedEn": [
       "Underground Water Sump, Borewell or Wells",
+      "Wash Basin / Kitchen Sink touching Gas Stove",
       "Drinking Water Pitchers or Purifiers near Stove",
       "Cash Locker & Jewelry Almirahs",
       "Master Bedroom (causes short temper & high BP)",
@@ -2586,6 +2725,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
     ],
     "prohibitedTe": [
       "భూగర్భ నీటి తొట్టి, బోరుబావి లేదా నూతులు",
+      "గ్యాస్ స్టవ్ పక్కనే ఆనుకుని వాష్ బేసిన్ / సింక్",
       "స్టవ్ పక్కనే తాగునీటి కుండలు లేదా ఫిల్టర్లు",
       "నగదు బీరువా & బంగారు ఆభరణాల లాకర్",
       "మాస్టర్ బెడ్‌రూమ్ (కోపతాపాలు & రక్తపోటు)",
@@ -2653,6 +2793,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
     ],
     "prohibitedEn": [
       "Underground Well, Borewell, Sump or Pit (Fatal)",
+      "Wash Basin, Kitchen Sink or Wastewater Drain",
       "Puja Room / Deity Altars",
       "Main Entrance Gate or Simhadwaram",
       "Kitchen, Stove or Fireplaces",
@@ -2660,6 +2801,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
     ],
     "prohibitedTe": [
       "భూగర్భ బావి, బోరు, సంపు లేదా గుంత (మహా వినాశనం)",
+      "వాష్ బేసిన్, కిచెన్ సింక్ లేదా మురుగు నీటి పైపు",
       "పూజా గది / దేవుని మందిరం",
       "ప్రధాన సింహద్వారం లేదా ప్రహరీ గేటు",
       "వంట పొయ్యి / అగ్ని విభాగాలు",
@@ -2753,6 +2895,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
     "rulerTe": "కుబేరుడు / బుధుడు",
     "prescribedEn": [
       "Main Entrance Door (Simhadwaram in NNE)",
+      "Dining Wash Basin & Water Outlet",
       "Managing Director / Cash Accounts Office",
       "Cash Drawer / Daily Business Safe (facing North)",
       "Wall Clocks, Mirrors & Glass Decor",
@@ -2761,6 +2904,7 @@ const DIRECTIONAL_ITEMS_GUIDE = {
     ],
     "prescribedTe": [
       "సింహద్వారం (ఉత్తర ఈశాన్యంలో)",
+      "భోజనపు గది వాష్ బేసిన్ & నీటి అవుట్‌లెట్",
       "మేనేజింగ్ డైరెక్టర్ ఛాంబర్ / అకౌంట్స్ విభాగం",
       "రోజువారీ క్యాష్ డ్రాయర్ / వ్యాపార గల్లా పెట్టె",
       "గోడ గడియారాలు, అద్దాలు & గాజు అలంకరణలు",
@@ -3290,11 +3434,11 @@ const SPECIAL_LIVING_RULES = [
   },
   {
     id: "understairs",
-    titleEn: "Rooms Under the Staircase",
-    titleTe: "మెట్ల కింద గదుల వాడకం",
-    page: "Page 154",
-    detailsEn: "The triangular hollow space beneath a staircase may be used only for general storage, keeping tools, or lumber. Thirupati Reddy strictly forbids using under-stairs space for a Puja / Deity room, Study table, or Toilet. Trampling overhead while someone sits or prays below damages vitality.",
-    detailsTe: "మెట్ల కింద ఉండే ఖాళీ స్థలాన్ని కేవలం సామాన్లు పెట్టుకునే స్టోర్ రూమ్‌గా మాత్రమే వాడాలి. మెట్ల కింద పూజా గది, చదువుకునే బల్ల లేదా మరుగుదొడ్లు ఎట్టిపరిస్థితుల్లో పెట్టరాదు."
+    titleEn: "Rooms Under the Staircase & Landings",
+    titleTe: "మెట్ల లాండింగ్ క్రింది గదుల నియమాలు",
+    page: "Pages 154–155",
+    detailsEn: "Pages 154–155: Under outside linear stairs reaching the terrace, bathrooms, latrines, stores, or meter rooms must NOT be built in any direction. Rooms under WSW (West-facing) or SSW (South-facing) stair landings are unfavourable and must be completely avoided. Under ESE or NNW landings, abutting rooms must be balanced by an ENE or NNE pillar and wall in line with the house.",
+    detailsTe: "పుస్తకంలో 154–155 పేజీల ప్రకారం — టెర్రస్‌కు వెళ్లే బయటి నిలువు మెట్ల లాండింగ్ క్రింద ఏ దిశలోనూ బాత్రూమ్‌లు, మరుగుదొడ్లు, స్టోర్ రూమ్‌లు లేదా మీటర్ గదులు కట్టకూడదు. WSW (పశ్చిమ) లేదా SSW (దక్షిణ) మెట్ల లాండింగ్ క్రింద గదులు పూర్తిగా నిషిద్ధం. ESE/NNW లో గది ఉంటే ENE/NNE వద్ద పిల్లర్ & గోడతో సరిదిద్దాలి."
   },
   {
     id: "maindoor",
@@ -3314,11 +3458,11 @@ const SPECIAL_LIVING_RULES = [
   },
   {
     id: "staircase",
-    titleEn: "Staircase Construction & Clockwise Ascent",
-    titleTe: "మెట్ల నిర్మాణం & ప్రదక్షిణ దిశ (క్లాక్‌వైజ్) నియమాలు",
-    page: "Pages 151–153",
-    detailsEn: "Staircases represent structural mass and must be anchored in the South, West, or South-West sectors. Ascent must strictly be clockwise (Pradakshinavarta), starting from North/East towards South/West. A staircase in the North-East corner is a catastrophic dosha that suffocates family progress.",
-    detailsTe: "మెట్లు ఎక్కువ బరువును కలిగి ఉంటాయి కాబట్టి వాటిని దక్షిణం, పడమర లేదా నైరుతి వైపు మాత్రమే నిర్మించాలి. మెట్లు ఎక్కేటప్పుడు ఎల్లప్పుడూ ప్రదక్షిణ దిశలో (క్లాక్‌వైజ్) మాత్రమే తిరగాలి. ఈశాన్యంలో మెట్లు కడితే అది వంశాభివృద్ధిని నాశనం చేసే పెనుదోషం."
+    titleEn: "Staircase Construction, Wall Interspace & Ascent",
+    titleTe: "మెట్ల నిర్మాణం, గోడ అంతరం & ఎక్కుడు దిశలు",
+    page: "Pages 151–154",
+    detailsEn: "Internal staircases may be built in any room EXCEPT the Northeastern and Southwestern rooms, leaving at least a 3-inch gap from Eastern and Northern walls. Steps must proceed initially from North-to-South or East-to-West, then turn after the landing to enter the upper floor in an exalted position. External stairs must not be roofed (Page 154).",
+    detailsTe: "ఇంటి లోపలి మెట్లను ఈశాన్యం మరియు నైరుతి గదులలో తప్ప మిగిలిన గదులలో కట్టవచ్చు; తూర్పు, ఉత్తర గోడలను తాకకుండా కనీసం 3 అంగుళాల ఖాళీ వదలాలి. మెట్లు ప్రారంభంలో ఉత్తరం→దక్షిణం లేదా తూర్పు→పశ్చిమం ఎక్కి ఉచ్ఛ స్థానంలోకి తిరగాలి. బయటి మెట్లపై కప్పు వేయకూడదు (పేజీ 154)."
   },
   {
     id: "well_sump",
@@ -3914,6 +4058,12 @@ function setLanguage(lang) {
   if (typeof renderDirectionalGuide === "function") renderDirectionalGuide(selectedDirKey);
   if (typeof renderHouseholdItems === "function") renderHouseholdItems(document.getElementById("itemSearchInput")?.value || "", document.getElementById("itemCatSelect")?.value || "all");
   if (typeof checkItemPlacement === "function" && document.getElementById("checkerResultBox")?.style.display !== "none") checkItemPlacement();
+  if (typeof renderStaircaseCards === "function") renderStaircaseCards();
+  if (typeof checkStaircasePlacement === "function" && document.getElementById("stairResultBox")?.style.display !== "none") checkStaircasePlacement();
+  if (typeof renderMultiStoreyCards === "function") renderMultiStoreyCards();
+  if (typeof checkMultiStoreyLayout === "function" && document.getElementById("multiResultBox")?.style.display !== "none") checkMultiStoreyLayout();
+  if (typeof renderSeparateFloorsCards === "function") renderSeparateFloorsCards();
+  if (typeof checkSeparateFloorLayout === "function" && document.getElementById("sepFloorResultBox")?.style.display !== "none") checkSeparateFloorLayout();
 }
 
 function renderZoneDetail(zoneId) {
@@ -5396,6 +5546,1060 @@ function renderHouseholdItems(filterText = "", category = "all") {
   `).join("");
 }
 
+// --- 10B. Steps & Staircase Placement Guide (Pages 12, 13, 151–154) ---
+const STAIRCASE_GUIDE_DATA = [
+  {
+    id: "straight_stairs",
+    nameEn: "Straight / Linear & Dog-Legged Staircase (Pages 151–153)",
+    nameTe: "సాధారణ / నిలువు & మలుపు మెట్లు (పేజీలు 151–153)",
+    page: "Pages 151–153",
+    whyEn: "Pages 151–153: Steps should proceed initially from North-to-South or East-to-West. Do not let stairs touch the Eastern or Northern wall — maintain a minimum 3-inch interspace. Internal stairs may be built in any room EXCEPT the Northeastern and Southwestern rooms. External stairs built outside the house should not be roofed (Page 154).",
+    whyTe: "పుస్తకంలో 151–153 పేజీల ప్రకారం — మెట్లు ప్రారంభంలో ఉత్తరం నుండి దక్షిణానికి లేదా తూర్పు నుండి పశ్చిమానికి ఎక్కాలి. తూర్పు లేదా ఉత్తర గోడలను మెట్లు తాకకుండా కనీసం 3 అంగుళాల ఖాళీ (ఇంటర్‌స్పేస్) వదలాలి. ఇంటి లోపల మెట్లు ఈశాన్యం మరియు నైరుతి గదులలో తప్ప మిగిలిన గదులలో కట్టవచ్చు. ఇంటి బయట కట్టే మెట్లపై కప్పు వేయకూడదు (పేజీ 154).",
+    options: {
+      south_etow: {
+        status: "ideal",
+        textEn: "✅ Internal along South & West walls: ascend East-to-West, turn North to exalted landing (Page 153)",
+        textTe: "✅ దక్షిణ & పశ్చిమ గోడల వెంట: తూర్పు నుండి పశ్చిమానికి ఎక్కి ఉత్తరానికి తిరిగే మెట్లు (పేజీ 153)"
+      },
+      west_ntos: {
+        status: "ideal",
+        textEn: "✅ Internal along West & South walls: ascend North-to-South, turn East to exalted landing (Page 153)",
+        textTe: "✅ పశ్చిమ & దక్షిణ గోడల వెంట: ఉత్తరం నుండి దక్షిణానికి ఎక్కి తూర్పునకు తిరిగే మెట్లు (పేజీ 153)"
+      },
+      east_south_internal: {
+        status: "acceptable",
+        textEn: "⚠️ Internal along East & South walls (3\" gap from East wall): ascend N→S, turn West (Page 153)",
+        textTe: "⚠️ తూర్పు & దక్షిణ గోడల వెంట (తూర్పు గోడకు 3\" ఖాళీతో): N→S ఎక్కి పశ్చిమానికి తిరిగే మెట్లు (పేజీ 153)"
+      },
+      ese_ntos: {
+        status: "acceptable",
+        textEn: "⚠️ External in ESE (away from East wall): ascend N→S, turn North to ENE balcony (Page 152)",
+        textTe: "⚠️ తూర్పు ఆగ్నేయంలో (తూర్పు గోడకు దూరంగా): N→S ఎక్కి ఉత్తరానికి తిరిగి ENE బాల్కనీలోకి (పేజీ 152)"
+      },
+      ssw_etow: {
+        status: "acceptable",
+        textEn: "⚠️ External in SSW: ascend E→W, turn East after landing to SSE balcony (Page 152)",
+        textTe: "⚠️ దక్షిణ నైరుతిలో: E→W ఎక్కి తూర్పునకు తిరిగి SSE బాల్కనీలోకి చేరే మెట్లు (పేజీ 152)"
+      },
+      wsw_ntos: {
+        status: "acceptable",
+        textEn: "⚠️ External in WSW: ascend N→S, turn North after landing to WNW balcony (Page 152)",
+        textTe: "⚠️ పశ్చిమ నైరుతిలో: N→S ఎక్కి ఉత్తరానికి తిరిగి WNW బాల్కనీలోకి చేరే మెట్లు (పేజీ 152)"
+      },
+      nnw_external: {
+        status: "acceptable",
+        textEn: "⚠️ External in NNW (away from North wall): ascend E→W, turn East to NNE balcony (Page 152)",
+        textTe: "⚠️ ఉత్తర వాయువ్యంలో (ఉత్తర గోడకు దూరంగా): E→W ఎక్కి తూర్పునకు తిరిగి NNE బాల్కనీలోకి (పేజీ 152)"
+      },
+      nnw_internal: {
+        status: "acceptable",
+        textEn: "⚠️ Internal along North & West walls (3\" gap from North wall): ascend E→W, turn South (Page 153)",
+        textTe: "⚠️ ఉత్తర & పశ్చిమ గోడల వెంట (ఉత్తర గోడకు 3\" ఖాళీతో): E→W ఎక్కి దక్షిణానికి తిరిగే మెట్లు (పేజీ 153)"
+      },
+      touch_east_north: {
+        status: "forbidden",
+        textEn: "❌ Touching Eastern or Northern wall without 3-inch interspace (Pages 151–153)",
+        textTe: "❌ తూర్పు లేదా ఉత్తర గోడలను ఆనుకుని 3 అంగుళాల ఖాళీ లేకుండా నిర్మించిన మెట్లు (పేజీ 151)"
+      },
+      internal_sw_ne: {
+        status: "forbidden",
+        textEn: "❌ Internal staircase inside Northeastern or Southwestern room (Pages 151–152)",
+        textTe: "❌ ఇంటి లోపల ఈశాన్యం లేదా నైరుతి గదిలో నిర్మించే మెట్లు (పేజీలు 151–152 నిషిద్ధం)"
+      },
+      ne_eshanya: {
+        status: "forbidden",
+        textEn: "❌ Northeast (Eshanya / NNE / ENE) — Truncates directions & hinders innovation (Page 154)",
+        textTe: "❌ ఈశాన్యం (NNE / ENE) — దిశలను ఖండించి పురోగతిని అడ్డుకునే దోషం (పేజీ 154)"
+      },
+      sw_hollow: {
+        status: "forbidden",
+        textEn: "❌ Southwest creating a hollow/cavity beneath stairs (Page 155)",
+        textTe: "❌ నైరుతిలో మెట్ల క్రింద ఖాళీ గుంత/బోలు ఏర్పడే నిర్మాణం (పేజీ 155 నిషిద్ధం)"
+      }
+    }
+  },
+  {
+    id: "spiral_stairs",
+    nameEn: "Spiral / Circular Staircase (External Metal or Open)",
+    nameTe: "చుట్టు మెట్లు / స్పైరల్ స్టెయిర్‌కేస్",
+    page: "Pages 151–154",
+    whyEn: "Sri Thirupati Reddy specifies distinct quadrants for spiral or circular staircases based on house facing: Southern Southeast (SSE) for East- and West-facing houses, and Western Northwest (WNW) for North- and South-facing houses. They must strictly avoid NNE and ENE under all circumstances, and must never create an underground pit or well cavity in the Southwest.",
+    whyTe: "శ్రీ తిరుపతిరెడ్డి గారి గ్రంథం ప్రకారం — తూర్పు, పశ్చిమ ముఖ ఇళ్లకు చుట్టు మెట్లను దక్షిణ ఆగ్నేయంలో (SSE), ఉత్తర, దక్షిణ ముఖ ఇళ్లకు పశ్చిమ వాయువ్యంలో (WNW) ఏర్పాటు చేయాలి. ఉత్తర ఈశాన్యం, తూర్పు ఈశాన్యాలలో ఎట్టిపరిస్థితుల్లో పెట్టరాదు. నైరుతిలో భూగర్భ గుంతలాగా మారకుండా జాగ్రత్త పడాలి.",
+    options: {
+      sse_ew_facing: {
+        status: "ideal",
+        textEn: "✅ Southern Southeast (SSE) for East- or West-facing house",
+        textTe: "✅ తూర్పు లేదా పశ్చిమ ముఖ ఇంటికి దక్షిణ ఆగ్నేయంలో (SSE) చుట్టు మెట్లు"
+      },
+      wnw_ns_facing: {
+        status: "ideal",
+        textEn: "✅ Western Northwest (WNW) for North- or South-facing house",
+        textTe: "✅ ఉత్తర లేదా దక్షిణ ముఖ ఇంటికి పశ్చిమ వాయువ్యంలో (WNW) చుట్టు మెట్లు"
+      },
+      sw_clearance: {
+        status: "acceptable",
+        textEn: "⚠️ Southwest external open spiral stair shifted 6 inches East/North with NO underground pit",
+        textTe: "⚠️ నైరుతిలో భూగర్భ గుంత లేకుండా తూర్పు/ఉత్తరానికి 6 అంగుళాల అంతరంతో బయటి చుట్టు మెట్లు"
+      },
+      sw_pit: {
+        status: "forbidden",
+        textEn: "❌ Southwest spiral stair creating a pit or well cavity",
+        textTe: "❌ నైరుతిలో గుంత లేదా బావి లాంటి ఖాళీని సృష్టించే చుట్టు మెట్లు"
+      },
+      nne_ene: {
+        status: "forbidden",
+        textEn: "❌ Northern Northeast (NNE) or Eastern Northeast (ENE) — Strictly Forbidden",
+        textTe: "❌ ఉత్తర ఈశాన్యం (NNE) లేదా తూర్పు ఈశాన్యం (ENE) — పూర్తిగా నిషిద్ధం"
+      }
+    }
+  },
+  {
+    id: "under_stairs",
+    nameEn: "Rooms & Space Under Staircase Landings (Pages 154–155)",
+    nameTe: "మెట్ల లాండింగ్ క్రింది గదుల నిర్మాణం (పేజీలు 154–155)",
+    page: "Pages 154–155",
+    whyEn: "Pages 154–155: Under outside linear stairs reaching the terrace, bathrooms, latrines, stores, or meter rooms should NOT be built in any direction. Under WSW (West-facing) or SSW (South-facing) stair landings, rooms are unfavourable and must be completely avoided. Under ESE or NNW landings, abutting rooms extend ESE/NNW badly unless balanced by an ENE/NNE pillar and wall in line with the house.",
+    whyTe: "పుస్తకంలో 154–155 పేజీల ప్రకారం — టెర్రస్‌కు వెళ్లే బయటి మెట్ల లాండింగ్ క్రింద ఏ దిశలోనూ బాత్రూమ్‌లు, మరుగుదొడ్లు, స్టోర్ రూమ్‌లు లేదా మీటర్ రూమ్‌లు కట్టకూడదు. పశ్చిమ ముఖ ఇంటి (WSW) లేదా దక్షిణ ముఖ ఇంటి (SSW) మెట్ల క్రింద గదులు పూర్తిగా నిషిద్ధం. తూర్పు/ఉత్తర ఇళ్లలో (ESE/NNW) గది అనివార్యమైతే ఇంటి వరుసలో ENE/NNE లో పిల్లర్ & గోడతో సరిదిద్దాలి.",
+    options: {
+      keep_open: {
+        status: "ideal",
+        textEn: "✅ Keep space beneath outside stair landings completely open & free of rooms (Page 155)",
+        textTe: "✅ బయటి మెట్ల లాండింగ్ క్రింద బాత్రూమ్/స్టోర్/మీటర్ గదులు లేకుండా ఖాళీగా ఉంచడం (పేజీ 155)"
+      },
+      ese_nnw_remedied: {
+        status: "acceptable",
+        textEn: "⚠️ Under ESE / NNW landing ONLY if balanced with ENE / NNE pillar & wall in line with house (Page 154)",
+        textTe: "⚠️ ESE / NNW లాండింగ్ క్రింద గది ఉంటే, ఇంటి వరుసలో ENE / NNE వద్ద పిల్లర్ & గోడతో సరిదిద్దాలి (పేజీ 154)"
+      },
+      wsw_ssw_room: {
+        status: "forbidden",
+        textEn: "❌ Room / Store / Bathroom under WSW (West-facing) or SSW (South-facing) stair landing (Page 155)",
+        textTe: "❌ WSW (పశ్చిమ) లేదా SSW (దక్షిణ) మెట్ల లాండింగ్ క్రింద గది/స్టోర్/బాత్రూమ్ (పేజీ 155 — పూర్తిగా నిషిద్ధం)"
+      },
+      outside_landing_utilities: {
+        status: "forbidden",
+        textEn: "❌ Bathroom, Latrine, Store, or Meter Room under outside linear stair landing in ANY direction (Page 155)",
+        textTe: "❌ ఏ దిశలోనైనా బయటి నిలువు మెట్ల క్రింద బాత్రూమ్, మరుగుదొడ్డి, స్టోర్ లేదా మీటర్ గది (పేజీ 155 — నిషిద్ధం)"
+      }
+    }
+  }
+];
+
+const STAIRCASE_BOOK_RULES = [
+  {
+    page: "Pages 12, 13, 151–153",
+    badgeEn: "Zone & Mass",
+    badgeTe: "స్థానం & బరువు",
+    titleEn: "South, West & Southwest Load Anchoring",
+    titleTe: "దక్షిణ, పశ్చిమ, నైరుతిలో మెట్ల స్థిరీకరణ",
+    detailsEn: "Staircases represent heavy structural mass and belong strictly in the South, West, or Southwest (Nairuthi). Never construct heavy concrete stairs in the Northeast (Eshanya), NNE, ENE, or Center (Brahmasthana), as doing so suffocates celestial energy flow and causes severe financial and health crises.",
+    detailsTe: "మెట్లు బరువైన నిర్మాణం కాబట్టి దక్షిణం, పశ్చిమం లేదా నైరుతిలో మాత్రమే నిర్మించాలి. ఈశాన్యం (NNE/ENE) లేదా బ్రహ్మస్థానంలో మెట్లు కడితే ప్రాణశక్తి స్తంభించి తీవ్ర ఆర్థిక, ఆరోగ్య సమస్యలు వస్తాయి."
+  },
+  {
+    page: "Pages 151–154",
+    badgeEn: "Ascent & Cantilever",
+    badgeTe: "ఎక్కుడు & బాల్కనీ",
+    titleEn: "N→S / E→W Ascent, Unroofed Stairs & Cantilever Balconies",
+    titleTe: "N→S / E→W ఎక్కుడు, కప్పు లేని మెట్లు & కాంటిలీవర్ బాల్కనీ",
+    detailsEn: "Linear stairs should initially ascend North-to-South or East-to-West, then turn after the landing to enter the first floor/terrace in an exalted position. Balconies serving these stairs must be built on a cantilever beam (NOT on pillars, Page 153). Stairs built outside the house should NOT be roofed (Page 154).",
+    detailsTe: "నిలువు మెట్లు ప్రారంభంలో ఉత్తరం నుండి దక్షిణానికి లేదా తూర్పు నుండి పశ్చిమానికి ఎక్కి, లాండింగ్ తర్వాత ఉచ్ఛ స్థానంలోకి చేరాలి. వీటి బాల్కనీలను పిల్లర్లపై కాకుండా కాంటిలీవర్ బీమ్ పైనే నిర్మించాలి (పేజీ 153). ఇంటి బయట కట్టే మెట్లపై కప్పు వేయరాదు (పేజీ 154)."
+  },
+  {
+    page: "Pages 151–154",
+    badgeEn: "Spiral Stairs",
+    badgeTe: "చుట్టు మెట్లు",
+    titleEn: "Spiral / Circular Staircase Quadrants",
+    titleTe: "చుట్టు మెట్ల దిశా నియమాలు",
+    detailsEn: "For East- and West-facing houses, spiral staircases are prescribed in the Southern Southeast (SSE). For North- and South-facing houses, place them in the Western Northwest (WNW). Avoid NNE/ENE completely, and ensure no pit/well effect is formed in Southwest (shift 6 inches East/North if needed).",
+    detailsTe: "తూర్పు, పశ్చిమ ముఖ ఇళ్లకు దక్షిణ ఆగ్నేయంలో (SSE), ఉత్తర, దక్షిణ ముఖ ఇళ్లకు పశ్చిమ వాయువ్యంలో (WNW) చుట్టు మెట్లు ఉంచాలి. NNE/ENE లలో పెట్టరాదు; నైరుతిలో గుంత ప్రభావం రాకుండా జాగ్రత్తపడాలి."
+  },
+  {
+    page: "Page 154",
+    badgeEn: "Under-Stairs",
+    badgeTe: "మెట్ల క్రింది భాగం",
+    titleEn: "Strict Under-Stairs Usage Rule",
+    titleTe: "మెట్ల క్రింది స్థల వినియోగ నియమం",
+    detailsEn: "The space underneath a staircase is strictly for storage, lumber, or tools. Never install a Puja room, study desk, kitchen stove, or toilet beneath the stairs — walking overhead above a sacred or living function violates Vaastu equilibrium.",
+    detailsTe: "మెట్ల కింది స్థలాన్ని కేవలం స్టోర్ రూమ్ (సామాన్లు, కలప) కొరకు మాత్రమే వాడాలి. పూజా గది, స్టడీ టేబుల్, వంటగది లేదా టాయిలెట్ ఎట్టిపరిస్థితుల్లో మెట్ల కింద పెట్టకూడదు."
+  }
+];
+
+function renderStaircaseValidator() {
+  const typeSelect = document.getElementById("stairTypeSelect");
+  const posSelect = document.getElementById("stairPosSelect");
+  if (!typeSelect || !posSelect) return;
+
+  typeSelect.innerHTML = STAIRCASE_GUIDE_DATA.map(item => {
+    const text = currentLang === "english" ? item.nameEn : (currentLang === "telugu" ? item.nameTe : `${item.nameEn} (${item.nameTe})`);
+    return `<option value="${item.id}" data-en="${item.nameEn}" data-te="${item.nameTe}" data-dual="${item.nameEn} (${item.nameTe})">${text}</option>`;
+  }).join("");
+
+  updateStairPosOptions();
+
+  typeSelect.addEventListener("change", () => {
+    updateStairPosOptions();
+    checkStaircasePlacement();
+  });
+
+  posSelect.addEventListener("change", checkStaircasePlacement);
+
+  const btn = document.getElementById("btnCheckStair");
+  if (btn) btn.addEventListener("click", checkStaircasePlacement);
+
+  // Render initial visualizer & result immediately
+  checkStaircasePlacement();
+}
+
+function updateStairPosOptions() {
+  const typeSelect = document.getElementById("stairTypeSelect");
+  const posSelect = document.getElementById("stairPosSelect");
+  if (!typeSelect || !posSelect) return;
+
+  const current = STAIRCASE_GUIDE_DATA.find(s => s.id === typeSelect.value) || STAIRCASE_GUIDE_DATA[0];
+  const keys = Object.keys(current.options);
+
+  posSelect.innerHTML = keys.map(k => {
+    const opt = current.options[k];
+    const text = currentLang === "english" ? opt.textEn : (currentLang === "telugu" ? opt.textTe : `${opt.textEn} (${opt.textTe})`);
+    return `<option value="${k}" data-en="${opt.textEn}" data-te="${opt.textTe}" data-dual="${opt.textEn} (${opt.textTe})">${text}</option>`;
+  }).join("");
+}
+
+function checkStaircasePlacement() {
+  const typeSelect = document.getElementById("stairTypeSelect");
+  const posSelect = document.getElementById("stairPosSelect");
+  const resultBox = document.getElementById("stairResultBox");
+  if (!typeSelect || !posSelect || !resultBox) return;
+
+  const entry = STAIRCASE_GUIDE_DATA.find(s => s.id === typeSelect.value) || STAIRCASE_GUIDE_DATA[0];
+  const opt = entry.options[posSelect.value] || Object.values(entry.options)[0];
+  const status = opt.status;
+
+  let badgeClass = "ideal";
+  let statusBadgeEn = "✅ Prescribed / Exalted Placement";
+  let statusBadgeTe = "✅ శాస్త్ర సమ్మతమైన ఉత్తమ స్థానం";
+
+  if (status === "acceptable") {
+    badgeClass = "acceptable";
+    statusBadgeEn = "⚠️ Secondary / Conditional Placement";
+    statusBadgeTe = "⚠️ షరతులతో అనుమతించదగిన స్థానం";
+  } else if (status === "forbidden") {
+    badgeClass = "forbidden";
+    statusBadgeEn = "❌ Prohibited / Vaastu Dosha";
+    statusBadgeTe = "❌ నిషిద్ధం / తీవ్ర వాస్తు దోషం";
+  }
+
+  resultBox.style.display = "block";
+  resultBox.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.85rem; padding-bottom:0.75rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div class="item-badge-status ${badgeClass}">
+        <span class="lang-en">${statusBadgeEn}</span>
+        <span class="lang-te">${statusBadgeTe}</span>
+      </div>
+      <span style="font-size:0.78rem; text-transform:uppercase; color:var(--gold-bright); font-weight:700;">
+        📖 Book Reference: ${entry.page}
+      </span>
+    </div>
+
+    <h4 class="lang-en" style="color:#fff; font-size:1.12rem; margin:0 0 0.25rem 0;">${entry.nameEn}</h4>
+    <h4 class="lang-te" style="font-family:var(--font-telugu); color:var(--gold-bright); font-size:1.08rem; margin:0 0 0.5rem 0;">${entry.nameTe}</h4>
+
+    <div style="background:rgba(30,41,59,0.55); padding:0.75rem 1rem; border-radius:8px; margin-bottom:0.75rem; border-left:3px solid ${status === "ideal" ? "#10b981" : (status === "acceptable" ? "#f59e0b" : "#ef4444")};">
+      <div class="lang-en" style="font-weight:600; color:#e2e8f0;">Selected: ${opt.textEn}</div>
+      <div class="lang-te" style="font-weight:600; font-family:var(--font-telugu); color:#fef08a;">ఎంచుకున్నది: ${opt.textTe}</div>
+    </div>
+
+    <div class="detail-label" style="margin-bottom:0.3rem;">
+      <span class="lang-en">Book Principle (${entry.page}):</span>
+      <span class="lang-te">గ్రంథ శాస్త్రీయ వివరణ (${entry.page}):</span>
+    </div>
+    <p class="lang-en" style="font-size:0.94rem; color:#cbd5e1; line-height:1.65; margin:0 0 0.45rem 0;">${entry.whyEn}</p>
+    <p class="lang-te" style="font-size:0.94rem; font-family:var(--font-telugu); color:#cbd5e1; line-height:1.75; margin:0;">${entry.whyTe}</p>
+  `;
+
+  renderStaircaseSvg(entry.id, posSelect.value, status);
+}
+
+function renderStaircaseSvg(typeId, posKey, status) {
+  const svg = document.getElementById("stairVisualizerSvg");
+  if (!svg) return;
+
+  const palette = status === "ideal"
+    ? { stroke: "#10b981", fill: "rgba(16,185,129,0.22)", text: "#34d399", badge: "IDEAL / ఉత్తమం" }
+    : (status === "acceptable"
+      ? { stroke: "#f59e0b", fill: "rgba(245,158,11,0.22)", text: "#fbbf24", badge: "CONDITIONAL / షరతులతో" }
+      : { stroke: "#ef4444", fill: "rgba(239,68,68,0.22)", text: "#f87171", badge: "FORBIDDEN / నిషిద్ధం" });
+
+  // Side-elevation view for Under-Stairs usage
+  if (typeId === "under_stairs") {
+    const iconMap = {
+      keep_open: "✅",
+      ese_nnw_remedied: "🧱",
+      wsw_ssw_room: "🚫",
+      outside_landing_utilities: "🚽"
+    };
+    const labelMap = {
+      keep_open: { en: "Open Under-Landing OK", te: "లాండింగ్ క్రింద ఖాళీ శుభం" },
+      ese_nnw_remedied: { en: "Balance w/ ENE/NNE Pillar", te: "ENE/NNE పిల్లర్ & గోడతో సరిదిద్దాలి" },
+      wsw_ssw_room: { en: "NO Room Under WSW/SSW", te: "WSW/SSW క్రింద గది నిషిద్ధం" },
+      outside_landing_utilities: { en: "NO Bath/Store/Meter", te: "బాత్రూమ్/స్టోర్/మీటర్ నిషిద్ధం" }
+    };
+    const lbl = labelMap[posKey] || labelMap.keep_open;
+    const icon = iconMap[posKey] || "✅";
+
+    svg.innerHTML = `
+      <rect x="0" y="0" width="320" height="320" fill="#080c14" rx="14"/>
+      <text x="160" y="24" font-size="11" font-weight="700" fill="${palette.text}" text-anchor="middle">${palette.badge}</text>
+      <text x="160" y="42" font-size="9.5" fill="#94a3b8" text-anchor="middle">Cross-Section Elevation (Pages 154–155)</text>
+
+      <!-- Ground & Floor -->
+      <line x1="25" y1="255" x2="295" y2="255" stroke="#475569" stroke-width="2"/>
+      <!-- Stepped Staircase Slope -->
+      <polyline points="40,255 75,255 75,225 110,225 110,195 145,195 145,165 180,165 180,135 215,135 215,105 265,105 265,255"
+                fill="rgba(148,163,184,0.1)" stroke="#cbd5e1" stroke-width="2"/>
+      <!-- Under-stairs triangular zone -->
+      <polygon points="82,253 262,253 262,112" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2" stroke-dasharray="4,3"/>
+
+      <!-- Walking/trampling figure indicator overhead -->
+      <text x="155" y="132" font-size="16" text-anchor="middle">🚶</text>
+      <text x="155" y="148" font-size="8.5" fill="#94a3b8" text-anchor="middle">Landing / Steps</text>
+
+      <!-- Usage icon inside under-stairs -->
+      <text x="200" y="205" font-size="28" text-anchor="middle">${icon}</text>
+      <text x="200" y="228" font-size="10.2" font-weight="700" fill="${palette.text}" text-anchor="middle">${lbl.en}</text>
+      <text x="200" y="244" font-size="9.2" font-family="'Noto Sans Telugu', sans-serif" fill="#fef08a" text-anchor="middle">${lbl.te}</text>
+
+      <text x="160" y="286" font-size="9.2" fill="#cbd5e1" text-anchor="middle">Pages 154–155: Avoid bath/latrine/store under outside landings</text>
+      <text x="160" y="302" font-size="9" font-family="'Noto Sans Telugu', sans-serif" fill="#fef08a" text-anchor="middle">పేజీలు 154–155: బయటి లాండింగ్ క్రింద గదులు/బాత్రూమ్ కట్టరాదు</text>
+    `;
+    return;
+  }
+
+  // Top-down Plan View for Straight & Spiral Staircases
+  // Plot box: x=45..275 (w=230), y=45..275 (h=230), center=(160,160)
+  const zoneCoords = {
+    // Straight stairs (Pages 151-155)
+    south_etow: { x: 120, y: 215, w: 80, h: 50, dir: "South: E → W (Page 152)", ax1: 192, ay1: 240, ax2: 128, ay2: 240 },
+    west_ntos: { x: 55, y: 120, w: 50, h: 80, dir: "West: N → S (Page 152)", ax1: 80, ay1: 128, ax2: 80, ay2: 192 },
+    east_south_internal: { x: 205, y: 155, w: 48, h: 65, dir: "E/S (3\" gap): N→S→W (P.153)", ax1: 229, ay1: 162, ax2: 229, ay2: 212 },
+    ese_ntos: { x: 210, y: 185, w: 48, h: 65, dir: "ESE (Away E): N→S→N (P.152)", ax1: 234, ay1: 192, ax2: 234, ay2: 242 },
+    ssw_etow: { x: 95, y: 215, w: 65, h: 48, dir: "SSW: E→W→E to SSE (P.152)", ax1: 152, ay1: 239, ax2: 103, ay2: 239 },
+    wsw_ntos: { x: 55, y: 155, w: 48, h: 65, dir: "WSW: N→S→N to WNW (P.152)", ax1: 79, ay1: 162, ax2: 79, ay2: 212 },
+    nnw_external: { x: 95, y: 58, w: 65, h: 48, dir: "NNW (Away N): E→W→E (P.152)", ax1: 152, ay1: 82, ax2: 103, ay2: 82 },
+    nnw_internal: { x: 95, y: 58, w: 65, h: 48, dir: "N/W (3\" gap): E→W→S (P.153)", ax1: 152, ay1: 82, ax2: 103, ay2: 82 },
+    touch_east_north: { x: 222, y: 80, w: 53, h: 75, dir: "NO 3\" GAP ON E/N WALL!", ax1: 248, ay1: 145, ax2: 248, ay2: 90 },
+    internal_sw_ne: { x: 55, y: 205, w: 65, h: 60, dir: "INTERNAL SW/NE FORBIDDEN", ax1: 112, ay1: 250, ax2: 65, ay2: 215 },
+    ne_eshanya: { x: 200, y: 55, w: 65, h: 60, dir: "NE TRUNCATED (PAGE 154)", ax1: 255, ay1: 65, ax2: 210, ay2: 105 },
+    sw_hollow: { x: 55, y: 205, w: 65, h: 60, dir: "SW HOLLOW DOSHA (P.155)", ax1: 65, ay1: 252, ax2: 112, ay2: 215 },
+    // Spiral stairs
+    sse_ew_facing: { cx: 215, cy: 240, r: 24, dir: "SSE Spiral (E/W House)" },
+    wnw_ns_facing: { cx: 80, cy: 95, r: 24, dir: "WNW Spiral (N/S House)" },
+    sw_clearance: { cx: 85, cy: 235, r: 22, dir: "SW + 6\" E/N Shift (No Pit)" },
+    sw_pit: { cx: 78, cy: 242, r: 25, dir: "SW PIT / WELL DOSHA!" },
+    nne_ene: { cx: 235, cy: 82, r: 25, dir: "NNE / ENE FORBIDDEN!" }
+  };
+
+  let stairShape = "";
+  if (typeId === "spiral_stairs") {
+    const z = zoneCoords[posKey] || zoneCoords.sse_ew_facing;
+    stairShape = `
+      <circle cx="${z.cx}" cy="${z.cy}" r="${z.r}" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2.5"/>
+      <circle cx="${z.cx}" cy="${z.cy}" r="5" fill="${palette.stroke}"/>
+      <line x1="${z.cx - z.r}" y1="${z.cy}" x2="${z.cx + z.r}" y2="${z.cy}" stroke="${palette.stroke}" stroke-width="1"/>
+      <line x1="${z.cx}" y1="${z.cy - z.r}" x2="${z.cx}" y2="${z.cy + z.r}" stroke="${palette.stroke}" stroke-width="1"/>
+      <line x1="${z.cx - z.r*0.7}" y1="${z.cy - z.r*0.7}" x2="${z.cx + z.r*0.7}" y2="${z.cy + z.r*0.7}" stroke="${palette.stroke}" stroke-width="1"/>
+      <line x1="${z.cx - z.r*0.7}" y1="${z.cy + z.r*0.7}" x2="${z.cx + z.r*0.7}" y2="${z.cy - z.r*0.7}" stroke="${palette.stroke}" stroke-width="1"/>
+      <text x="160" y="302" font-size="10" font-weight="700" fill="${palette.text}" text-anchor="middle">${z.dir}</text>
+    `;
+  } else {
+    const z = zoneCoords[posKey] || zoneCoords.sw_clockwise;
+    // Draw tread lines inside rectangle
+    let treads = "";
+    if (z.w >= z.h) {
+      for (let tx = z.x + 10; tx < z.x + z.w - 4; tx += 10) {
+        treads += `<line x1="${tx}" y1="${z.y}" x2="${tx}" y2="${z.y + z.h}" stroke="${palette.stroke}" stroke-width="1" opacity="0.65"/>`;
+      }
+    } else {
+      for (let ty = z.y + 10; ty < z.y + z.h - 4; ty += 10) {
+        treads += `<line x1="${z.x}" y1="${ty}" x2="${z.x + z.w}" y2="${ty}" stroke="${palette.stroke}" stroke-width="1" opacity="0.65"/>`;
+      }
+    }
+    stairShape = `
+      <rect x="${z.x}" y="${z.y}" width="${z.w}" height="${z.h}" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2.2" rx="4"/>
+      ${treads}
+      <line x1="${z.ax1}" y1="${z.ay1}" x2="${z.ax2}" y2="${z.ay2}" stroke="#ffffff" stroke-width="2.2" marker-end="url(#stairArrow)"/>
+      <text x="160" y="302" font-size="10" font-weight="700" fill="${palette.text}" text-anchor="middle">${z.dir}</text>
+    `;
+  }
+
+  svg.innerHTML = `
+    <defs>
+      <marker id="stairArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff"/>
+      </marker>
+    </defs>
+    <rect x="0" y="0" width="320" height="320" fill="#080c14" rx="14"/>
+    <text x="160" y="22" font-size="10.5" font-weight="700" fill="${palette.text}" text-anchor="middle">${palette.badge}</text>
+
+    <!-- House Perimeter -->
+    <rect x="45" y="45" width="230" height="230" fill="rgba(15,23,42,0.5)" stroke="rgba(245,158,11,0.45)" stroke-width="2" rx="4"/>
+    <!-- 3x3 Grid -->
+    <line x1="121.6" y1="45" x2="121.6" y2="275" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3,3"/>
+    <line x1="198.3" y1="45" x2="198.3" y2="275" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3,3"/>
+    <line x1="45" y1="121.6" x2="275" y2="121.6" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3,3"/>
+    <line x1="45" y1="198.3" x2="275" y2="198.3" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3,3"/>
+
+    <!-- Cardinal & Corner Labels -->
+    <text x="160" y="38" font-size="9.5" font-weight="700" fill="#38bdf8" text-anchor="middle">N • ఉత్తరం</text>
+    <text x="160" y="288" font-size="9.5" font-weight="700" fill="#fb923c" text-anchor="middle">S • దక్షిణం</text>
+    <text x="296" y="162" font-size="9" font-weight="700" fill="#fbbf24" text-anchor="middle">E</text>
+    <text x="24" y="162" font-size="9" font-weight="700" fill="#c084fc" text-anchor="middle">W</text>
+
+    <text x="268" y="57" font-size="8.5" fill="#67e8f9" text-anchor="end">NE (ఈశాన్యం)</text>
+    <text x="268" y="269" font-size="8.5" fill="#fb923c" text-anchor="end">SE (ఆగ్నేయం)</text>
+    <text x="52" y="269" font-size="8.5" fill="#34d399" text-anchor="start">SW (నైరుతి)</text>
+    <text x="52" y="57" font-size="8.5" fill="#c084fc" text-anchor="start">NW (వాయువ్యం)</text>
+    <text x="160" y="163" font-size="8" fill="rgba(255,255,255,0.28)" text-anchor="middle">BRAHMASTHANA</text>
+
+    ${stairShape}
+  `;
+}
+
+function renderStaircaseCards() {
+  const container = document.getElementById("staircaseRulesGrid");
+  if (!container) return;
+
+  container.innerHTML = STAIRCASE_BOOK_RULES.map(rule => `
+    <div class="proverb-card" style="border-color: rgba(245,158,11,0.3); background: rgba(17,24,39,0.88);">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem; gap:0.75rem; flex-wrap:wrap;">
+          <span style="font-size:0.75rem; color:var(--gold-bright); font-weight:700; text-transform:uppercase;">📖 ${rule.page}</span>
+          <span style="font-size:0.75rem; background:rgba(245,158,11,0.15); color:var(--gold-bright); padding:0.15rem 0.5rem; border-radius:4px; font-weight:600;">
+            <span class="lang-en">${rule.badgeEn}</span>
+            <span class="lang-te" style="font-family:var(--font-telugu);">${rule.badgeTe}</span>
+          </span>
+        </div>
+        <h4 class="lang-en" style="color:#fff; font-size:1.12rem; margin-bottom:0.25rem;">${rule.titleEn}</h4>
+        <h4 class="lang-te" style="font-family:var(--font-telugu); color:var(--gold-bright); font-size:1.08rem; margin-bottom:0.35rem;">${rule.titleTe}</h4>
+        <p class="lang-en" style="font-size:0.94rem; color:#e2e8f0; line-height:1.65; margin-bottom:0.55rem;">${rule.detailsEn}</p>
+        <p class="lang-te" style="font-size:0.94rem; color:#cbd5e1; font-family:var(--font-telugu); line-height:1.7; margin:0;">${rule.detailsTe}</p>
+      </div>
+    </div>
+  `).join("");
+}
+
+// --- 10C. Duplex & Triplex (Multi-Storey / Upper Floors) Guide (Pages 69, 124–127, 153, 165, 180, 202–203, 310–312, 329) ---
+const MULTISTOREY_GUIDE_DATA = [
+  {
+    id: "upper_coverage",
+    nameEn: "Upper-Floor Coverage & Open Terrace (Pages 202–203)",
+    nameTe: "పై అంతస్తుల నిర్మాణం & ఖాళీ టెర్రస్ (పేజీలు 202–203)",
+    page: "Pages 202–203",
+    whyEn: "Pages 202–203: Constructing the first/upper floor in the Western (or Southwestern) part of the terrace reduces the workload of the family head and improves career advancement. Conversely, vacant open terrace space MUST be left on the first/upper floors in the Eastern/Northeastern part to protect the head of the family from cardiac problems.",
+    whyTe: "పుస్తకంలో 202–203 పేజీల ప్రకారం — టెర్రస్‌లో పశ్చిమ (లేదా నైరుతి) భాగంలో మొదటి/పై అంతస్తు నిర్మించడం వల్ల కుటుంబ యజమానికి వృత్తిలో భారం తగ్గి పురోగతి లభిస్తుంది. యజమాని ఆరోగ్యానికి, గుండె సంబంధిత సమస్యలు రాకుండా ఉండాలంటే పై అంతస్తులో తూర్పు/ఈశాన్య భాగంలో తప్పనిసరిగా ఖాళీ టెర్రస్ స్థలం వదలాలి.",
+    options: {
+      west_sw_upper: {
+        status: "ideal",
+        textEn: "✅ Build 1st/2nd floor rooms in West / South / SW; leave East & NE terrace open (Pages 202–203)",
+        textTe: "✅ పై అంతస్తు గదులను పశ్చిమం/దక్షిణం/నైరుతిలో కట్టి, తూర్పు & ఈశాన్యం ఖాళీగా ఉంచడం (పేజీలు 202–203)"
+      },
+      full_equal_cantilever: {
+        status: "acceptable",
+        textEn: "⚠️ Full-floor Duplex/Triplex footprint with wider balconies in East & North (Pages 127, 310)",
+        textTe: "⚠️ పూర్తి అంతస్తు నిర్మాణంలో తూర్పు, ఉత్తర దిశలలో విశాలమైన బాల్కనీలు వదలడం (పేజీలు 127, 310)"
+      },
+      east_ne_upper_heavy: {
+        status: "forbidden",
+        textEn: "❌ Heavy upper floor built ONLY in East or Northeast while West/SW is left open (Pages 202–203)",
+        textTe: "❌ పశ్చిమం/నైరుతి ఖాళీగా వదిలి తూర్పు లేదా ఈశాన్యంలోనే పై అంతస్తు కట్టడం (పేజీలు 202–203 — తీవ్ర దోషం)"
+      }
+    }
+  },
+  {
+    id: "balconies",
+    nameEn: "Upper-Floor Balconies & Truncations (Pages 127, 153, 310–312)",
+    nameTe: "పై అంతస్తు బాల్కనీలు & మూలల నియమాలు (పేజీలు 127, 153, 310–312)",
+    page: "Pages 127, 153, 310–312",
+    whyEn: "Pages 127 & 310–312: Upper-floor balconies in East and North are a MUST (2–3 ft or wider than South/West). If there is a balcony in South or West, there must be one in East or North. Balconies in ENE, ESE, NNW, and NNE must NEVER be truncated; SSE, SSW, WSW, and WNW balconies may be truncated if needed. Staircase balconies must rest on cantilever beams, NOT pillars (Page 153).",
+    whyTe: "పుస్తకంలో 127, 153, 310–312 పేజీల ప్రకారం — పై అంతస్తులలో తూర్పు, ఉత్తరం వైపు బాల్కనీలు తప్పనిసరి (దక్షిణం, పశ్చిమం కంటే వెడల్పుగా ఉండాలి). ENE, ESE, NNW, NNE బాల్కనీలను ఎట్టిపరిస్థితుల్లో కట్ (ట్రంకేట్) చేయకూడదు. మెట్ల బాల్కనీలను పిల్లర్లపై కాకుండా కాంటిలీవర్ బీమ్‌పై మాత్రమే నిర్మించాలి (పేజీ 153).",
+    options: {
+      east_north_wider: {
+        status: "ideal",
+        textEn: "✅ Balconies in East & North wider than South/West, untruncated in ENE/ESE/NNE/NNW (Pages 310–312)",
+        textTe: "✅ తూర్పు, ఉత్తర బాల్కనీలు దక్షిణం/పశ్చిమం కంటే వెడల్పుగా & ENE/ESE/NNE/NNW లో కట్ లేకుండా (పేజీ 310)"
+      },
+      cantilever_balcony: {
+        status: "ideal",
+        textEn: "✅ Upper stair landing balcony built on cantilever beam without pillars (Page 153)",
+        textTe: "✅ పై అంతస్తు మెట్ల బాల్కనీని పిల్లర్లు లేకుండా కాంటిలీవర్ బీమ్‌పై నిర్మించడం (పేజీ 153)"
+      },
+      ene_nne_truncated: {
+        status: "forbidden",
+        textEn: "❌ Truncated / cut balcony in ENE, ESE, NNE, or NNW (Page 310 — NOT SUITABLE)",
+        textTe: "❌ ENE, ESE, NNE లేదా NNW బాల్కనీలను కట్ (ట్రంకేట్) చేయడం (పేజీ 310 — తీవ్ర అశుభం)"
+      },
+      sw_only_balcony: {
+        status: "forbidden",
+        textEn: "❌ Balcony only in South/West with zero balcony in East or North (Page 310)",
+        textTe: "❌ తూర్పు/ఉత్తరాలలో బాల్కనీ లేకుండా కేవలం దక్షిణం/పశ్చిమంలోనే బాల్కనీ ఉండటం (పేజీ 310)"
+      }
+    }
+  },
+  {
+    id: "floor_levels",
+    nameEn: "Floor Levels, Roof Slant & Overhead Tank (Pages 69, 124, 126, 171, 180, 203)",
+    nameTe: "పై అంతస్తు నేల మట్టాలు, కప్పు వాలు & వాటర్ ట్యాంక్ (పేజీలు 69, 124, 126, 171, 180, 203)",
+    page: "Pages 69, 124, 126, 171, 180, 203",
+    whyEn: "Pages 69, 124, 126, 171, 180 & 203: Floor levels in Northern & Eastern parts must be lower on BOTH Ground and First/Upper Floors. Roof slant drains towards East or North (never West or South across Ground & 1st floor, Page 124). Overhead Tank belongs in Southwest (or in NW/SE ONLY if a higher small room is built in Southwest, Page 171) — never East (Page 180).",
+    whyTe: "పుస్తకంలో 69, 124, 126, 171, 180, 203 పేజీల ప్రకారం — గ్రౌండ్ & పై అంతస్తులలో ఉత్తరం, తూర్పు భాగాలు తక్కువ ఎత్తులో ఉండాలి. టెర్రస్ వాలు తూర్పు/ఉత్తరం వైపు మాత్రమే ఉండాలి (పేజీ 124). ఓవర్‌హెడ్ ట్యాంక్ నైరుతిలో ఉంచాలి (లేదా నైరుతిలో దానికంటే ఎత్తైన చిన్న గది కడితే NW/SE లో ఉంచవచ్చు — పేజీ 171); తూర్పులో నిషిద్ధం (పేజీ 180).",
+    options: {
+      low_ne_high_sw: {
+        status: "ideal",
+        textEn: "✅ North & East floors lower; SW roof highest with Overhead Tank in SW (or NW/SE w/ higher SW room, P.171)",
+        textTe: "✅ ఉత్తరం, తూర్పు మట్టాలు తక్కువగా; నైరుతిలో ఓవర్‌హెడ్ ట్యాంక్ (లేదా NW/SE లో ట్యాంక్ + ఎత్తైన నైరుతి గది, పేజీ 171)"
+      },
+      slant_west_south: {
+        status: "forbidden",
+        textEn: "❌ Slanting terrace towards West or South across Ground & First Floor (Page 124 — Severe Health Risk)",
+        textTe: "❌ గ్రౌండ్ & ఫస్ట్ ఫ్లోర్ టెర్రస్ పశ్చిమం లేదా దక్షిణం వైపు వాలి ఉండటం (పేజీ 124 — తీవ్ర ఆరోగ్య ముప్పు)"
+      },
+      oht_east: {
+        status: "forbidden",
+        textEn: "❌ Overhead water tank on East roof of Duplex/Triplex (Page 180 — Harms Male Power)",
+        textTe: "❌ డ్యూప్లెక్స్/ట్రిప్లెక్స్ తూర్పు పైకప్పుపై ఓవర్‌హెడ్ ట్యాంక్ (పేజీ 180 — పురుషుల శక్తికి హానికరం)"
+      }
+    }
+  },
+  {
+    id: "load_walls",
+    nameEn: "Load-Bearing Wall Alignment & Portioning (Pages 127, 165, 329)",
+    nameTe: "పై అంతస్తు గోడల బరువు అమరిక & భాగాలు (పేజీలు 127, 165, 329)",
+    page: "Pages 127, 165, 329",
+    whyEn: "Page 165: When building upstairs on load-bearing walls, first/upper-floor walls should maintain equal thickness (18\", 14\", or 9\") or rest strictly on the CENTER of the lower load-bearing walls for uniform weight distribution; internal walls must run continuously without bends/curves. Also, if a ground-floor separation wall/shop blocks a street focus, carry it up to the first floor too (Page 329).",
+    whyTe: "పుస్తకంలో 165వ పేజీ ప్రకారం — లోడ్-బేరింగ్ గోడలపై పై అంతస్తు కట్టేటప్పుడు, పై గోడలు సమాన మందంతో (18\", 14\", 9\") ఉండాలి లేదా తగ్గిస్తే క్రింది గోడల సరిగ్గా మధ్యభాగంలో ఆనాలి; లోపలి గోడలు వంకర్లు లేకుండా తిన్నగా సాగాలి. వీధిశూల నివారణ గోడ/గదిని గ్రౌండ్ ఫ్లోర్ నుండి ఫస్ట్ ఫ్లోర్ వరకు కొనసాగించాలి (పేజీ 329).",
+    options: {
+      centered_walls: {
+        status: "ideal",
+        textEn: "✅ Upper walls continuous & centered on lower load-bearing walls (Page 165)",
+        textTe: "✅ పై అంతస్తు గోడలు వంకర్లు లేకుండా క్రింది గోడల మధ్యభాగంపై సరిగ్గా అమర్చడం (పేజీ 165)"
+      },
+      street_focus_carried: {
+        status: "acceptable",
+        textEn: "⚠️ Street-focus blocking room/wall carried onto First Floor as well (Page 329)",
+        textTe: "⚠️ వీధిశూల నివారణ గది/గోడను మొదటి అంతస్తుకు కూడా కొనసాగించడం (పేజీ 329)"
+      },
+      offset_curved_walls: {
+        status: "forbidden",
+        textEn: "❌ Internal walls with bends, curves, cuts, or off-center load transfer (Page 165)",
+        textTe: "❌ లోపలి గోడలలో వంపులు, కట్‌లు లేదా క్రింది గోడల మధ్యలో కాకుండా పక్కకు వేసిన బరువు (పేజీ 165)"
+      }
+    }
+  }
+];
+
+const MULTISTOREY_BOOK_RULES = [
+  {
+    page: "Pages 202–203",
+    badgeEn: "Terrace Mass",
+    badgeTe: "పై అంతస్తు భారం",
+    titleEn: "Build Upper Rooms in West; Keep East Open",
+    titleTe: "పశ్చిమంలో పై అంతస్తు; తూర్పులో ఖాళీ టెర్రస్",
+    detailsEn: "Building the first floor in the Western part of the terrace reduces the family head's work stress and boosts career advancement (Page 202). Leaving vacant open space on the first floor in the Eastern part protects the family head from cardiac problems (Page 203).",
+    detailsTe: "టెర్రస్ పశ్చిమ భాగంలో పై అంతస్తు నిర్మిస్తే యజమానికి పనిభారం తగ్గి వృత్తి పురోగతి కలుగుతుంది (పేజీ 202). తూర్పు భాగంలో ఖాళీ స్థలం వదిలితే గుండెజబ్బుల నుండి రక్షణ లభిస్తుంది (పేజీ 203)."
+  },
+  {
+    page: "Pages 127, 153, 310–312",
+    badgeEn: "Balconies",
+    badgeTe: "బాల్కనీలు",
+    titleEn: "Mandatory East/North Balconies & Cantilever Rule",
+    titleTe: "తూర్పు/ఉత్తర బాల్కనీలు & కాంటిలీవర్ నియమం",
+    detailsEn: "East and North balconies (2–3 ft or wider than South/West) are a must on upper floors. NEVER truncate balconies in ENE, ESE, NNW, or NNE (Page 310). Staircase balconies must use cantilever beams, not pillars (Page 153).",
+    detailsTe: "పై అంతస్తులలో తూర్పు, ఉత్తర బాల్కనీలు తప్పనిసరి. ENE, ESE, NNW, NNE బాల్కనీలను ఎప్పుడూ కట్ చేయకూడదు (పేజీ 310). మెట్ల బాల్కనీలకు పిల్లర్లు కాకుండా కాంటిలీవర్ బీమ్ వాడాలి (పేజీ 153)."
+  },
+  {
+    page: "Pages 69, 124, 126, 171, 180",
+    badgeEn: "Levels & Slopes",
+    badgeTe: "మట్టాలు & వాలు",
+    titleEn: "Consistent Floor Levels, Terrace Slant & Roof Tank",
+    titleTe: "అంతస్తుల మట్టాలు, కప్పు వాలు & ఓవర్‌హెడ్ ట్యాంక్",
+    detailsEn: "Keep Northern and Eastern floor levels lower across BOTH Ground and First/Upper floors (Pages 126, 203). Slant roofs toward East/North (never West/South, Page 124). Place the Overhead Tank in Southwest, or in NW/SE only if a taller room exists in SW (Page 171) — never East (Page 180).",
+    detailsTe: "గ్రౌండ్ మరియు పై అంతస్తులు రెండింటిలోనూ ఉత్తరం, తూర్పు మట్టాలు తక్కువగా ఉండాలి. కప్పు వాలు తూర్పు/ఉత్తరానికి ఉండాలి. ఓవర్‌హెడ్ ట్యాంక్ నైరుతిలో (లేదా ఎత్తైన నైరుతి గది ఉంటే NW/SE లో — పేజీ 171) ఉంచాలి; తూర్పున పెట్టరాదు (పేజీ 180)."
+  },
+  {
+    page: "Pages 127, 165, 329",
+    badgeEn: "Structural Load",
+    badgeTe: "గోడల అమరిక",
+    titleEn: "Centered Upper Walls & Street-Focus Continuity",
+    titleTe: "గోడల మధ్యస్థ అమరిక & వీధిశూల నివారణ",
+    detailsEn: "Upper-floor walls must be continuous and rest on the center of lower load-bearing walls without bends or cuts (Page 165). If a ground-floor shop/wall blocks a baneful street focus, extend it to the first floor too (Page 329).",
+    detailsTe: "పై అంతస్తు గోడలు వంకర్లు లేకుండా క్రింది గోడల మధ్యభాగంపై ఆనాలి (పేజీ 165). వీధిశూల నివారణ గోడను మొదటి అంతస్తుకు కూడా కొనసాగించాలి (పేజీ 329)."
+  }
+];
+
+function renderMultiStoreyValidator() {
+  const featSelect = document.getElementById("multiFeatureSelect");
+  const optSelect = document.getElementById("multiOptionSelect");
+  if (!featSelect || !optSelect) return;
+
+  featSelect.innerHTML = MULTISTOREY_GUIDE_DATA.map(item => {
+    const text = currentLang === "english" ? item.nameEn : (currentLang === "telugu" ? item.nameTe : `${item.nameEn} (${item.nameTe})`);
+    return `<option value="${item.id}" data-en="${item.nameEn}" data-te="${item.nameTe}" data-dual="${item.nameEn} (${item.nameTe})">${text}</option>`;
+  }).join("");
+
+  updateMultiOptionOptions();
+
+  featSelect.addEventListener("change", () => {
+    updateMultiOptionOptions();
+    checkMultiStoreyLayout();
+  });
+
+  optSelect.addEventListener("change", checkMultiStoreyLayout);
+
+  const btn = document.getElementById("btnCheckMulti");
+  if (btn) btn.addEventListener("click", checkMultiStoreyLayout);
+
+  checkMultiStoreyLayout();
+}
+
+function updateMultiOptionOptions() {
+  const featSelect = document.getElementById("multiFeatureSelect");
+  const optSelect = document.getElementById("multiOptionSelect");
+  if (!featSelect || !optSelect) return;
+
+  const current = MULTISTOREY_GUIDE_DATA.find(s => s.id === featSelect.value) || MULTISTOREY_GUIDE_DATA[0];
+  const keys = Object.keys(current.options);
+
+  optSelect.innerHTML = keys.map(k => {
+    const opt = current.options[k];
+    const text = currentLang === "english" ? opt.textEn : (currentLang === "telugu" ? opt.textTe : `${opt.textEn} (${opt.textTe})`);
+    return `<option value="${k}" data-en="${opt.textEn}" data-te="${opt.textTe}" data-dual="${opt.textEn} (${opt.textTe})">${text}</option>`;
+  }).join("");
+}
+
+function checkMultiStoreyLayout() {
+  const featSelect = document.getElementById("multiFeatureSelect");
+  const optSelect = document.getElementById("multiOptionSelect");
+  const resultBox = document.getElementById("multiResultBox");
+  if (!featSelect || !optSelect || !resultBox) return;
+
+  const entry = MULTISTOREY_GUIDE_DATA.find(s => s.id === featSelect.value) || MULTISTOREY_GUIDE_DATA[0];
+  const opt = entry.options[optSelect.value] || Object.values(entry.options)[0];
+  const status = opt.status;
+
+  let badgeClass = "ideal";
+  let statusBadgeEn = "✅ Prescribed / Auspicious Multi-Floor Rule";
+  let statusBadgeTe = "✅ శాస్త్ర సమ్మతమైన ఉత్తమ అంతస్తుల విధానం";
+
+  if (status === "acceptable") {
+    badgeClass = "acceptable";
+    statusBadgeEn = "⚠️ Conditional / Secondary Option";
+    statusBadgeTe = "⚠️ షరతులతో అనుమతించదగినది";
+  } else if (status === "forbidden") {
+    badgeClass = "forbidden";
+    statusBadgeEn = "❌ Prohibited / Multi-Floor Vaastu Dosha";
+    statusBadgeTe = "❌ నిషిద్ధం / తీవ్ర అంతస్తుల వాస్తు దోషం";
+  }
+
+  resultBox.style.display = "block";
+  resultBox.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.85rem; padding-bottom:0.75rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div class="item-badge-status ${badgeClass}">
+        <span class="lang-en">${statusBadgeEn}</span>
+        <span class="lang-te">${statusBadgeTe}</span>
+      </div>
+      <span style="font-size:0.78rem; text-transform:uppercase; color:var(--gold-bright); font-weight:700;">
+        📖 Book Reference: ${entry.page}
+      </span>
+    </div>
+
+    <h4 class="lang-en" style="color:#fff; font-size:1.12rem; margin:0 0 0.25rem 0;">${entry.nameEn}</h4>
+    <h4 class="lang-te" style="font-family:var(--font-telugu); color:var(--gold-bright); font-size:1.08rem; margin:0 0 0.5rem 0;">${entry.nameTe}</h4>
+
+    <div style="background:rgba(30,41,59,0.55); padding:0.75rem 1rem; border-radius:8px; margin-bottom:0.75rem; border-left:3px solid ${status === "ideal" ? "#10b981" : (status === "acceptable" ? "#f59e0b" : "#ef4444")};">
+      <div class="lang-en" style="font-weight:600; color:#e2e8f0;">Selected: ${opt.textEn}</div>
+      <div class="lang-te" style="font-weight:600; font-family:var(--font-telugu); color:#fef08a;">ఎంచుకున్నది: ${opt.textTe}</div>
+    </div>
+
+    <div class="detail-label" style="margin-bottom:0.3rem;">
+      <span class="lang-en">Book Principle (${entry.page}):</span>
+      <span class="lang-te">గ్రంథ శాస్త్రీయ వివరణ (${entry.page}):</span>
+    </div>
+    <p class="lang-en" style="font-size:0.94rem; color:#cbd5e1; line-height:1.65; margin:0 0 0.45rem 0;">${entry.whyEn}</p>
+    <p class="lang-te" style="font-size:0.94rem; font-family:var(--font-telugu); color:#cbd5e1; line-height:1.75; margin:0;">${entry.whyTe}</p>
+  `;
+
+  renderMultiFloorSvg(entry.id, optSelect.value, status);
+}
+
+function renderMultiFloorSvg(featId, optKey, status) {
+  const svg = document.getElementById("multiFloorSvg");
+  if (!svg) return;
+
+  const palette = status === "ideal"
+    ? { stroke: "#10b981", fill: "rgba(16,185,129,0.22)", text: "#34d399", badge: "IDEAL / ఉత్తమం" }
+    : (status === "acceptable"
+      ? { stroke: "#f59e0b", fill: "rgba(245,158,11,0.22)", text: "#fbbf24", badge: "CONDITIONAL / షరతులతో" }
+      : { stroke: "#ef4444", fill: "rgba(239,68,68,0.22)", text: "#f87171", badge: "FORBIDDEN / నిషిద్ధం" });
+
+  // Elevation view (W/SW on left, E/NE on right)
+  let detailSvg = "";
+  if (featId === "upper_coverage") {
+    if (optKey === "west_sw_upper") {
+      detailSvg = `
+        <rect x="45" y="130" width="120" height="55" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2"/>
+        <rect x="45" y="75" width="95" height="55" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2"/>
+        <text x="92" y="106" font-size="9.5" font-weight="700" fill="${palette.text}" text-anchor="middle">2nd Floor (W/SW)</text>
+        <text x="105" y="162" font-size="9.5" font-weight="700" fill="${palette.text}" text-anchor="middle">1st Floor (W/SW)</text>
+        <text x="220" y="170" font-size="9.5" font-weight="700" fill="#34d399" text-anchor="middle">Open East/NE Terrace</text>
+        <text x="160" y="295" font-size="9.5" fill="${palette.text}" text-anchor="middle">West/SW Upper Mass + Open East Terrace (P.202–203)</text>
+      `;
+    } else if (optKey === "east_ne_upper_heavy") {
+      detailSvg = `
+        <rect x="155" y="130" width="120" height="55" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2"/>
+        <rect x="180" y="75" width="95" height="55" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2"/>
+        <text x="227" y="106" font-size="9.5" font-weight="700" fill="${palette.text}" text-anchor="middle">Heavy East/NE</text>
+        <text x="95" y="170" font-size="9.5" fill="#f87171" text-anchor="middle">West Left Low/Open</text>
+        <text x="160" y="295" font-size="9.5" fill="${palette.text}" text-anchor="middle">DOSHA: Heavy East/NE Upper Floor (P.202–203)</text>
+      `;
+    } else {
+      detailSvg = `
+        <rect x="45" y="130" width="215" height="55" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2"/>
+        <rect x="45" y="75" width="205" height="55" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2"/>
+        <rect x="260" y="145" width="22" height="40" fill="rgba(56,189,248,0.25)" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="152" y="160" font-size="9.5" font-weight="700" fill="${palette.text}" text-anchor="middle">1st Floor + Wider E/N Balcony</text>
+        <text x="147" y="106" font-size="9.5" font-weight="700" fill="${palette.text}" text-anchor="middle">2nd Floor (Triplex)</text>
+        <text x="160" y="295" font-size="9.5" fill="${palette.text}" text-anchor="middle">Full Duplex/Triplex w/ E & N Balconies (P.127, 310)</text>
+      `;
+    }
+  } else if (featId === "balconies") {
+    detailSvg = `
+      <rect x="55" y="115" width="190" height="70" fill="rgba(148,163,184,0.12)" stroke="#94a3b8" stroke-width="1.5"/>
+      <rect x="245" y="135" width="38" height="50" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2"/>
+      <line x1="245" y1="185" x2="283" y2="185" stroke="${palette.stroke}" stroke-width="3"/>
+      <text x="150" y="152" font-size="10" font-weight="700" fill="#cbd5e1" text-anchor="middle">Upper Floor Block</text>
+      <text x="264" y="162" font-size="8.5" font-weight="700" fill="${palette.text}" text-anchor="middle">Balcony</text>
+      <text x="160" y="295" font-size="9.5" fill="${palette.text}" text-anchor="middle">${optKey === "ene_nne_truncated" ? "NEVER Truncate ENE/ESE/NNE/NNW (P.310)" : (optKey === "cantilever_balcony" ? "Cantilever Beam — NO Pillars (P.153)" : "E & N Balconies Must Be Wider (P.310)")}</text>
+    `;
+  } else if (featId === "floor_levels") {
+    const tankX = optKey === "oht_east" ? 235 : 55;
+    const slopeRight = optKey !== "slant_west_south";
+    detailSvg = `
+      <rect x="45" y="125" width="230" height="60" fill="rgba(148,163,184,0.1)" stroke="#94a3b8" stroke-width="1.5"/>
+      <line x1="45" y1="${slopeRight ? 118 : 132}" x2="275" y2="${slopeRight ? 132 : 118}" stroke="${palette.stroke}" stroke-width="3"/>
+      <rect x="${tankX}" y="82" width="34" height="32" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2" rx="3"/>
+      <text x="${tankX + 17}" y="102" font-size="8.5" font-weight="700" fill="${palette.text}" text-anchor="middle">OHT</text>
+      <text x="160" y="158" font-size="9.5" fill="#cbd5e1" text-anchor="middle">${slopeRight ? "Slope Drains East / North ↘" : "WRONG: Slopes West / South ↙"}</text>
+      <text x="160" y="295" font-size="9.5" fill="${palette.text}" text-anchor="middle">${optKey === "oht_east" ? "OHT on East Roof Prohibited (P.180)" : (optKey === "slant_west_south" ? "Terrace Slant to W/S Prohibited (P.124)" : "Lower N/E + SW Overhead Tank (P.126, 180)")}</text>
+    `;
+  } else {
+    const offset = optKey === "offset_curved_walls" ? 16 : 0;
+    detailSvg = `
+      <rect x="90" y="185" width="16" height="55" fill="rgba(148,163,184,0.35)" stroke="#cbd5e1" stroke-width="1.5"/>
+      <rect x="${92 + offset}" y="125" width="12" height="60" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2"/>
+      <rect x="210" y="185" width="16" height="55" fill="rgba(148,163,184,0.35)" stroke="#cbd5e1" stroke-width="1.5"/>
+      <rect x="${212 + offset}" y="125" width="12" height="60" fill="${palette.fill}" stroke="${palette.stroke}" stroke-width="2"/>
+      <text x="160" y="160" font-size="9.5" font-weight="700" fill="${palette.text}" text-anchor="middle">${offset ? "Off-Center / Curved Load!" : "Centered Wall Load ↓"}</text>
+      <text x="160" y="295" font-size="9.5" fill="${palette.text}" text-anchor="middle">Upper Walls Centered on Load-Bearing Base (P.165)</text>
+    `;
+  }
+
+  svg.innerHTML = `
+    <rect x="0" y="0" width="320" height="320" fill="#080c14" rx="14"/>
+    <text x="160" y="24" font-size="10.5" font-weight="700" fill="${palette.text}" text-anchor="middle">${palette.badge}</text>
+    <text x="55" y="54" font-size="9" font-weight="700" fill="#fbbf24" text-anchor="middle">W / SW (పశ్చిమ/నైరుతి)</text>
+    <text x="265" y="54" font-size="9" font-weight="700" fill="#67e8f9" text-anchor="middle">E / NE (తూర్పు/ఈశాన్యం)</text>
+
+    <!-- Ground Floor Base -->
+    <rect x="45" y="185" width="230" height="55" fill="rgba(30,41,59,0.75)" stroke="rgba(245,158,11,0.5)" stroke-width="2"/>
+    <text x="160" y="216" font-size="10" font-weight="700" fill="#e2e8f0" text-anchor="middle">Ground Floor (గ్రౌండ్ ఫ్లోర్)</text>
+    <line x1="25" y1="242" x2="295" y2="242" stroke="#475569" stroke-width="2"/>
+
+    ${detailSvg}
+  `;
+}
+
+function renderMultiStoreyCards() {
+  const container = document.getElementById("multiStoreyRulesGrid");
+  if (!container) return;
+
+  container.innerHTML = MULTISTOREY_BOOK_RULES.map(rule => `
+    <div class="proverb-card" style="border-color: rgba(56,189,248,0.3); background: rgba(17,24,39,0.88);">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem; gap:0.75rem; flex-wrap:wrap;">
+          <span style="font-size:0.75rem; color:var(--cyan-bright); font-weight:700; text-transform:uppercase;">📖 ${rule.page}</span>
+          <span style="font-size:0.75rem; background:rgba(56,189,248,0.15); color:var(--cyan-bright); padding:0.15rem 0.5rem; border-radius:4px; font-weight:600;">
+            <span class="lang-en">${rule.badgeEn}</span>
+            <span class="lang-te" style="font-family:var(--font-telugu);">${rule.badgeTe}</span>
+          </span>
+        </div>
+        <h4 class="lang-en" style="color:#fff; font-size:1.12rem; margin-bottom:0.25rem;">${rule.titleEn}</h4>
+        <h4 class="lang-te" style="font-family:var(--font-telugu); color:var(--gold-bright); font-size:1.08rem; margin-bottom:0.35rem;">${rule.titleTe}</h4>
+        <p class="lang-en" style="font-size:0.94rem; color:#e2e8f0; line-height:1.65; margin-bottom:0.55rem;">${rule.detailsEn}</p>
+        <p class="lang-te" style="font-size:0.94rem; color:#cbd5e1; font-family:var(--font-telugu); line-height:1.7; margin:0;">${rule.detailsTe}</p>
+      </div>
+    </div>
+  `).join("");
+}
+
+// --- 10D. Separate Floors, Portions & Multi-Storied Housing Blocks (Pages 126–127, 152–155, 163–165, 180, 203, 310) ---
+const SEPARATE_FLOORS_GUIDE_DATA = [
+  {
+    id: "housing_blocks",
+    nameEn: "Multi-Storied Apartment / Housing-Block Gates (Page 180)",
+    nameTe: "బహుళ అంతస్తుల అపార్ట్‌మెంట్ / హౌసింగ్-బ్లాక్ గేట్లు (పేజీ 180)",
+    page: "Page 180",
+    whyEn: "Page 180: In multi-storied apartments, a gate placed in an exalted spot for an individual flat/block may become exiguous (ESE, SSW, WSW, NNW) when the whole building is viewed together. Sri Thirupati Reddy prescribes exact counter-gates for each block orientation.",
+    whyTe: "పుస్తకంలో 180వ పేజీ ప్రకారం — నగరాలలో నిర్మించే బహుళ అంతస్తుల అపార్ట్‌మెంట్లలో ఒక బ్లాకుకు ఉచ్ఛ స్థానంలో పెట్టిన గేటు మొత్తం భవనానికి నీచ స్థానంగా మారవచ్చు. దీనిని సరిదిద్దడానికి ప్రతి బ్లాకు దిశకు తగిన ప్రత్యామ్నాయ గేట్లను తప్పనిసరిగా ఏర్పాటు చేయాలి.",
+    options: {
+      se_block: {
+        status: "ideal",
+        textEn: "✅ Southeastern Block (East road): Add a second gate in Southern Southeast (SSE) (Page 180)",
+        textTe: "✅ ఆగ్నేయ బ్లాకు (తూర్పు రోడ్డు): దక్షిణ ఆగ్నేయంలో (SSE) మరో గేటు తప్పనిసరిగా పెట్టాలి (పేజీ 180)"
+      },
+      ne_block: {
+        status: "ideal",
+        textEn: "✅ Northeastern Block: Provide gates in Northern Northeast (NNE) and Eastern Northeast (ENE) (Page 180)",
+        textTe: "✅ ఈశాన్య బ్లాకు: ఉత్తర ఈశాన్యం (NNE) & తూర్పు ఈశాన్యంలో (ENE) గేట్లు ఏర్పాటు చేయాలి (పేజీ 180)"
+      },
+      nw_block: {
+        status: "ideal",
+        textEn: "✅ Northwestern Block (North road): Main gate in NNE + second gate in WNW without fail (Page 180)",
+        textTe: "✅ వాయువ్య బ్లాకు (ఉత్తర రోడ్డు): NNE లో ప్రధాన గేటు + WNW లో మరో గేటు తప్పనిసరి (పేజీ 180)"
+      },
+      south_road_block: {
+        status: "acceptable",
+        textEn: "⚠️ Block with main road in South: Provide gate in South + another gate toward East road (Page 180)",
+        textTe: "⚠️ దక్షిణాన ప్రధాన రోడ్డు ఉన్న బ్లాకు: దక్షిణంలో గేటుతో పాటు తూర్పు రోడ్డు వైపు గేటు కూడా ఉండాలి (పేజీ 180)"
+      },
+      sw_block_single: {
+        status: "acceptable",
+        textEn: "⚠️ Southwestern Block (South or West road): Gate in SSE or WNW (NOT on both South & West sides, Page 180)",
+        textTe: "⚠️ నైరుతి బ్లాకు: దక్షిణం లేదా పశ్చిమ రోడ్డు ఉన్నప్పుడు SSE లేదా WNW లో ఒకే గేటు (రెండు వైపులా పెట్టరాదు — పేజీ 180)"
+      },
+      sw_both_gates: {
+        status: "forbidden",
+        textEn: "❌ Southwestern Block with gates on BOTH South and West roads (Page 180 — Prohibited)",
+        textTe: "❌ నైరుతి బ్లాకుకు దక్షిణం మరియు పశ్చిమం రెండు వైపులా గేట్లు పెట్టడం (పేజీ 180 — నిషిద్ధం)"
+      }
+    }
+  },
+  {
+    id: "separate_access",
+    nameEn: "Separate Floor / Portion Entry & Apportioning (Pages 127, 163–165)",
+    nameTe: "వేర్వేరు అంతస్తులు / పోర్షన్ల విభజన & ప్రవేశం (పేజీలు 127, 163–165)",
+    page: "Pages 127, 163–165",
+    whyEn: "Pages 127 & 163–165: Separate portions for letting out must have entry doorways strictly from OUTSIDE (no internal access between portions, Page 164). Let out only the exiguous portion while the owner occupies the exalted portion; never leave the let-out portion vacant for long (Page 127). Never apportion a house after completion (Page 165).",
+    whyTe: "పుస్తకంలో 127, 163–165 పేజీల ప్రకారం — అద్దెకు ఇచ్చే వేర్వేరు పోర్షన్లకు ప్రవేశ ద్వారాలు బయటి నుండి మాత్రమే ఉండాలి (లోపలి నుండి రాకపోకలు ఉండకూడదు — పేజీ 164). యజమాని ఉచ్ఛ భాగంలో ఉండి, తక్కువ ప్రాధాన్య భాగాన్ని అద్దెకు ఇవ్వాలి; అది ఖాళీ అయితే వెంటనే భర్తీ చేయాలి (పేజీ 127).",
+    options: {
+      outside_only_exiguous: {
+        status: "ideal",
+        textEn: "✅ Separate outer-only doorway + owner in exalted portion, tenant in exiguous portion (Pages 127, 164)",
+        textTe: "✅ బయటి నుండి మాత్రమే ప్రవేశం + యజమాని ఉచ్ఛ భాగంలో, అద్దెవారు నీచ/ప్రత్యామ్నాయ భాగంలో (పేజీలు 127, 164)"
+      },
+      east_facing_portion: {
+        status: "ideal",
+        textEn: "✅ East-facing house portion in Southeast with entrance in Northeast (Pages 163–164)",
+        textTe: "✅ తూర్పు ముఖ ఇంట్లో ఆగ్నేయంలో పోర్షన్, ఈశాన్యంలో ప్రవేశ ద్వారం (పేజీలు 163–164)"
+      },
+      north_facing_portion: {
+        status: "ideal",
+        textEn: "✅ North-facing house portion in Northwest with entrance in NNE (Page 164)",
+        textTe: "✅ ఉత్తర ముఖ ఇంట్లో వాయువ్యంలో పోర్షన్, ఉత్తర ఈశాన్యంలో (NNE) ప్రవేశ ద్వారం (పేజీ 164)"
+      },
+      internal_access_between: {
+        status: "forbidden",
+        textEn: "❌ Internal connecting door between two separate/rented portions (Page 164 — Strictly Prohibited)",
+        textTe: "❌ వేర్వేరుగా అద్దెకు ఇచ్చిన రెండు పోర్షన్ల మధ్య లోపలి నుండి కనెక్టింగ్ తలుపు (పేజీ 164 — నిషిద్ధం)"
+      },
+      apportion_after_completion: {
+        status: "forbidden",
+        textEn: "❌ Apportioning / dividing a floor into separate units AFTER construction is complete (Page 165)",
+        textTe: "❌ ఇంటి నిర్మాణం పూర్తయిన తర్వాత దానిని వేర్వేరు పోర్షన్లుగా విభజించడం (పేజీ 165 — నిషిద్ధం)"
+      }
+    }
+  },
+  {
+    id: "floor_independence",
+    nameEn: "Independent Upper-Floor Flats: Stairs, Balconies & Levels (Pages 126, 152–155, 310)",
+    nameTe: "పై అంతస్తు ప్రత్యేక ఫ్లాట్లు: మెట్లు, బాల్కనీలు & మట్టాలు (పేజీలు 126, 152–155, 310)",
+    page: "Pages 126, 152–155, 203, 310",
+    whyEn: "Pages 126, 152–155, 203 & 310: When separate floors are accessed via outside stairs, keep outside stairs unroofed (Page 154) and never build bathrooms, latrines, stores, or meter rooms under outside landings (Page 155). Every upper floor must maintain lower Northern/Eastern floor levels (Page 126) and wider untruncated East/North balconies (Page 310).",
+    whyTe: "పుస్తకంలో 126, 152–155, 203, 310 పేజీల ప్రకారం — బయటి మెట్లతో వేర్వేరు అంతస్తులకు వెళ్ళేటప్పుడు, మెట్లపై కప్పు వేయరాదు (పేజీ 154) మరియు లాండింగ్ క్రింద బాత్రూమ్, టాయిలెట్, స్టోర్ లేదా మీటర్ గది కట్టరాదు (పేజీ 155). ప్రతి అంతస్తులో ఉత్తరం/తూర్పు పల్లంగా, తూర్పు/ఉత్తర బాల్కనీలు విశాలంగా ఉండాలి (పేజీ 310).",
+    options: {
+      external_exalted_balcony: {
+        status: "ideal",
+        textEn: "✅ Unroofed outside stairs entering exalted cantilever balcony + wider E/N balconies on every floor (Pages 152–154, 310)",
+        textTe: "✅ కప్పు లేని బయటి మెట్లతో కాంటిలీవర్ బాల్కనీలోకి ప్రవేశం + ప్రతి అంతస్తులో విశాల E/N బాల్కనీలు (పేజీలు 152–154, 310)"
+      },
+      under_landing_utilities: {
+        status: "forbidden",
+        textEn: "❌ Meter room, store, bathroom, or toilet under outside stair landing serving separate floors (Page 155)",
+        textTe: "❌ వేర్వేరు అంతస్తుల బయటి మెట్ల లాండింగ్ క్రింద మీటర్ గది, స్టోర్ లేదా బాత్రూమ్ కట్టడం (పేజీ 155 — నిషిద్ధం)"
+      },
+      truncated_ene_balcony: {
+        status: "forbidden",
+        textEn: "❌ Upper-floor flat with truncated ENE, ESE, NNE, or NNW balcony (Page 310)",
+        textTe: "❌ పై అంతస్తు ఫ్లాట్‌లో ENE, ESE, NNE లేదా NNW బాల్కనీని కట్ చేయడం (పేజీ 310 — అశుభం)"
+      }
+    }
+  }
+];
+
+const SEPARATE_FLOORS_BOOK_RULES = [
+  {
+    page: "Page 180",
+    badgeEn: "Apartment Blocks",
+    badgeTe: "అపార్ట్‌మెంట్ బ్లాకులు",
+    titleEn: "Gates for Multi-Storied Housing Blocks",
+    titleTe: "బహుళ అంతస్తుల అపార్ట్‌మెంట్ బ్లాకుల గేట్లు",
+    detailsEn: "A gate exalted for one flat may be exiguous for the whole block. SE block (East road) needs another gate in SSE; NW block (North road) needs NNE + WNW gates; NE block needs NNE & ENE gates; SW block gets SSE or WNW (never both S & W).",
+    detailsTe: "ఒక ఫ్లాట్‌కు ఉచ్ఛమైన గేటు మొత్తం బ్లాకుకు నీచంగా మారవచ్చు. అందుకే SE బ్లాకుకు SSE లో మరో గేటు, NW బ్లాకుకు NNE+WNW గేట్లు, NE బ్లాకుకు NNE & ENE గేట్లు పెట్టాలి; SW బ్లాకుకు S, W రెండు వైపులా గేట్లు పెట్టకూడదు."
+  },
+  {
+    page: "Pages 163–165",
+    badgeEn: "Outside-Only Entry",
+    badgeTe: "బయటి ప్రవేశం",
+    titleEn: "Apportioning Portions & No Internal Access",
+    titleTe: "పోర్షన్ల విభజన & అంతర్గత ద్వార నిషేధం",
+    detailsEn: "Separate portions for letting out must have entry doorways strictly from OUTSIDE, with NO internal access from the main house (Page 164). East-facing: portion in SE (entry NE); South: SW (entry SSE); West: SW (entry WNW); North: NW (entry NNE). Never apportion after completion (Page 165).",
+    detailsTe: "అద్దెకు ఇచ్చే వేర్వేరు పోర్షన్లకు బయటి నుండి మాత్రమే ద్వారాలు ఉండాలి — లోపలి నుండి ప్రవేశం ఉండరాదు (పేజీ 164). నిర్మాణం పూర్తయిన తర్వాత ఇల్లును పోర్షన్లుగా విభజించరాదు (పేజీ 165)."
+  },
+  {
+    page: "Page 127",
+    badgeEn: "Owner vs. Tenant",
+    badgeTe: "యజమాని & అద్దెవారు",
+    titleEn: "Let Out Exiguous Portion; Keep Occupied",
+    titleTe: "అద్దె భాగం ఖాళీగా ఉంచరాదు",
+    detailsEn: "Owners letting out separate floors or portions should let out the exiguous portion while occupying the exalted portion. If the tenant vacates, find another tenant promptly or occupy it yourself — leaving it vacant makes the owner's portion heavy and brings misfortune.",
+    detailsTe: "యజమాని ఉచ్ఛ భాగంలో ఉండి, తక్కువ ప్రాధాన్య పోర్షన్/అంతస్తును అద్దెకు ఇవ్వాలి. అద్దెవారు ఖాళీ చేస్తే వెంటనే మరొకరిని ఉంచాలి లేదా యజమానే వాడుకోవాలి; ఖాళీగా ఉంచితే ఇబ్బందులు వస్తాయి."
+  },
+  {
+    page: "Pages 126, 152–155, 310",
+    badgeEn: "Every Floor",
+    badgeTe: "ప్రతి అంతస్తులో",
+    titleEn: "Consistent Floor Levels, Unroofed Stairs & Balconies",
+    titleTe: "ప్రతి అంతస్తులో మట్టాలు, మెట్లు & బాల్కనీలు",
+    detailsEn: "Keep North/East floor levels lower on BOTH Ground and Upper floors (Page 126). Upper flats MUST have wider East & North balconies (never truncate ENE/ESE/NNE/NNW, Page 310). Keep outside stairs unroofed (Page 154) and free of meter/bath/store rooms under landings (Page 155).",
+    detailsTe: "గ్రౌండ్ & పై అంతస్తులు అన్నింటిలోనూ ఉత్తరం, తూర్పు మట్టాలు తక్కువగా ఉంచి (పేజీ 126), విశాల E/N బాల్కనీలు ఇవ్వాలి (పేజీ 310). బయటి మెట్లపై కప్పు వేయరాదు & క్రింద మీటర్/బాత్రూమ్ గదులు కట్టరాదు."
+  }
+];
+
+function renderSeparateFloorsValidator() {
+  const featSelect = document.getElementById("sepFloorFeatureSelect");
+  const optSelect = document.getElementById("sepFloorOptionSelect");
+  if (!featSelect || !optSelect) return;
+
+  featSelect.innerHTML = SEPARATE_FLOORS_GUIDE_DATA.map(item => {
+    const text = currentLang === "english" ? item.nameEn : (currentLang === "telugu" ? item.nameTe : `${item.nameEn} (${item.nameTe})`);
+    return `<option value="${item.id}" data-en="${item.nameEn}" data-te="${item.nameTe}" data-dual="${item.nameEn} (${item.nameTe})">${text}</option>`;
+  }).join("");
+
+  updateSepFloorOptionOptions();
+
+  featSelect.addEventListener("change", () => {
+    updateSepFloorOptionOptions();
+    checkSeparateFloorLayout();
+  });
+
+  optSelect.addEventListener("change", checkSeparateFloorLayout);
+
+  const btn = document.getElementById("btnCheckSepFloor");
+  if (btn) btn.addEventListener("click", checkSeparateFloorLayout);
+
+  checkSeparateFloorLayout();
+}
+
+function updateSepFloorOptionOptions() {
+  const featSelect = document.getElementById("sepFloorFeatureSelect");
+  const optSelect = document.getElementById("sepFloorOptionSelect");
+  if (!featSelect || !optSelect) return;
+
+  const current = SEPARATE_FLOORS_GUIDE_DATA.find(s => s.id === featSelect.value) || SEPARATE_FLOORS_GUIDE_DATA[0];
+  const keys = Object.keys(current.options);
+
+  optSelect.innerHTML = keys.map(k => {
+    const opt = current.options[k];
+    const text = currentLang === "english" ? opt.textEn : (currentLang === "telugu" ? opt.textTe : `${opt.textEn} (${opt.textTe})`);
+    return `<option value="${k}" data-en="${opt.textEn}" data-te="${opt.textTe}" data-dual="${opt.textEn} (${opt.textTe})">${text}</option>`;
+  }).join("");
+}
+
+function checkSeparateFloorLayout() {
+  const featSelect = document.getElementById("sepFloorFeatureSelect");
+  const optSelect = document.getElementById("sepFloorOptionSelect");
+  const resultBox = document.getElementById("sepFloorResultBox");
+  if (!featSelect || !optSelect || !resultBox) return;
+
+  const entry = SEPARATE_FLOORS_GUIDE_DATA.find(s => s.id === featSelect.value) || SEPARATE_FLOORS_GUIDE_DATA[0];
+  const opt = entry.options[optSelect.value] || Object.values(entry.options)[0];
+  const status = opt.status;
+
+  let badgeClass = "ideal";
+  let statusBadgeEn = "✅ Prescribed / Auspicious Configuration";
+  let statusBadgeTe = "✅ శాస్త్ర సమ్మతమైన ఉత్తమ విధానం";
+
+  if (status === "acceptable") {
+    badgeClass = "acceptable";
+    statusBadgeEn = "⚠️ Conditional / Specific Requirement";
+    statusBadgeTe = "⚠️ షరతులతో కూడిన నియమం";
+  } else if (status === "forbidden") {
+    badgeClass = "forbidden";
+    statusBadgeEn = "❌ Prohibited / Block or Floor Dosha";
+    statusBadgeTe = "❌ నిషిద్ధం / తీవ్ర వాస్తు దోషం";
+  }
+
+  resultBox.style.display = "block";
+  resultBox.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.85rem; padding-bottom:0.75rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div class="item-badge-status ${badgeClass}">
+        <span class="lang-en">${statusBadgeEn}</span>
+        <span class="lang-te">${statusBadgeTe}</span>
+      </div>
+      <span style="font-size:0.78rem; text-transform:uppercase; color:var(--gold-bright); font-weight:700;">
+        📖 Book Reference: ${entry.page}
+      </span>
+    </div>
+
+    <h4 class="lang-en" style="color:#fff; font-size:1.12rem; margin:0 0 0.25rem 0;">${entry.nameEn}</h4>
+    <h4 class="lang-te" style="font-family:var(--font-telugu); color:var(--gold-bright); font-size:1.08rem; margin:0 0 0.5rem 0;">${entry.nameTe}</h4>
+
+    <div style="background:rgba(30,41,59,0.55); padding:0.75rem 1rem; border-radius:8px; margin-bottom:0.75rem; border-left:3px solid ${status === "ideal" ? "#10b981" : (status === "acceptable" ? "#f59e0b" : "#ef4444")};">
+      <div class="lang-en" style="font-weight:600; color:#e2e8f0;">Selected: ${opt.textEn}</div>
+      <div class="lang-te" style="font-weight:600; font-family:var(--font-telugu); color:#fef08a;">ఎంచుకున్నది: ${opt.textTe}</div>
+    </div>
+
+    <div class="detail-label" style="margin-bottom:0.3rem;">
+      <span class="lang-en">Book Principle (${entry.page}):</span>
+      <span class="lang-te">గ్రంథ శాస్త్రీయ వివరణ (${entry.page}):</span>
+    </div>
+    <p class="lang-en" style="font-size:0.94rem; color:#cbd5e1; line-height:1.65; margin:0 0 0.45rem 0;">${entry.whyEn}</p>
+    <p class="lang-te" style="font-size:0.94rem; font-family:var(--font-telugu); color:#cbd5e1; line-height:1.75; margin:0;">${entry.whyTe}</p>
+  `;
+}
+
+function renderSeparateFloorsCards() {
+  const container = document.getElementById("separateFloorsRulesGrid");
+  if (!container) return;
+
+  container.innerHTML = SEPARATE_FLOORS_BOOK_RULES.map(rule => `
+    <div class="proverb-card" style="border-color: rgba(245,158,11,0.3); background: rgba(17,24,39,0.88);">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem; gap:0.75rem; flex-wrap:wrap;">
+          <span style="font-size:0.75rem; color:var(--gold-bright); font-weight:700; text-transform:uppercase;">📖 ${rule.page}</span>
+          <span style="font-size:0.75rem; background:rgba(245,158,11,0.15); color:var(--gold-bright); padding:0.15rem 0.5rem; border-radius:4px; font-weight:600;">
+            <span class="lang-en">${rule.badgeEn}</span>
+            <span class="lang-te" style="font-family:var(--font-telugu);">${rule.badgeTe}</span>
+          </span>
+        </div>
+        <h4 class="lang-en" style="color:#fff; font-size:1.12rem; margin-bottom:0.25rem;">${rule.titleEn}</h4>
+        <h4 class="lang-te" style="font-family:var(--font-telugu); color:var(--gold-bright); font-size:1.08rem; margin-bottom:0.35rem;">${rule.titleTe}</h4>
+        <p class="lang-en" style="font-size:0.94rem; color:#e2e8f0; line-height:1.65; margin-bottom:0.55rem;">${rule.detailsEn}</p>
+        <p class="lang-te" style="font-size:0.94rem; color:#cbd5e1; font-family:var(--font-telugu); line-height:1.7; margin:0;">${rule.detailsTe}</p>
+      </div>
+    </div>
+  `).join("");
+}
+
 // --- 11. Navigation Drawer & Hamburger Menu (Works for Mobile & Desktop) ---
 function initNavDrawer() {
   const menuToggle = document.getElementById("menuToggle");
@@ -5619,6 +6823,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof renderItemChecker === "function") renderItemChecker();
   if (typeof renderDirectionalGuide === "function") renderDirectionalGuide("ne");
   if (typeof renderHouseholdItems === "function") renderHouseholdItems();
+  if (typeof renderStaircaseValidator === "function") renderStaircaseValidator();
+  if (typeof renderStaircaseCards === "function") renderStaircaseCards();
+  if (typeof renderMultiStoreyValidator === "function") renderMultiStoreyValidator();
+  if (typeof renderMultiStoreyCards === "function") renderMultiStoreyCards();
+  if (typeof renderSeparateFloorsValidator === "function") renderSeparateFloorsValidator();
+  if (typeof renderSeparateFloorsCards === "function") renderSeparateFloorsCards();
 
   const itemSearchInput = document.getElementById("itemSearchInput");
   const itemCatSelect = document.getElementById("itemCatSelect");

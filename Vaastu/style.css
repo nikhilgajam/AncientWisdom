@@ -1537,3 +1537,18 @@ body[data-lang="dual"] .item-category-pill .lang-en {
   margin-left: auto;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
+
+/* Staircase Visualizer + Result Layout */
+.stair-viz-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 1.15rem;
+}
+
+@media (max-width: 880px) {
+  .stair-viz-layout {
+    grid-template-columns: 1fr;
+  }
+}

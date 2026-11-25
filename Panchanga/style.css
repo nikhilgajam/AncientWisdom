@@ -428,6 +428,27 @@ footer a {
   text-decoration: none;
 }
 
+/* Section Guide Box (What it is for, How it works, Example) */
+.section-guide {
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-left: 3px solid var(--cyan-accent);
+  border-radius: 10px;
+  padding: 0.9rem 1.15rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.section-guide strong {
+  color: var(--gold-bright);
+}
+.section-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
 @media (max-width: 900px) {
   .panch-limbs-grid {
     grid-template-columns: repeat(2, 1fr);
