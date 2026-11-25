@@ -3,140 +3,477 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sūrya Siddhānta (सूर्यसिद्धान्त) — The Complete Guide: Beginner to Pro</title>
+  <title>Sūrya Siddhānta (सूर्यसिद्धान्त) — The Complete Guide: Beginner to Pro | Burgess (1860) & Gangooly (1935)</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-lang="dual">
 
   <div class="ambient-glow glow-sun"></div>
 
-  <!-- Header -->
+  <!-- Sticky Header with Hamburger Navigation (Vaastu Project Standard) -->
   <header class="site-header">
     <div class="header-container">
       <div class="logo-area">
-        <div class="sun-icon">☀️</div>
+        <div class="sun-icon">
+          <img src="favicon.svg" alt="Sūrya Siddhānta" width="24" height="24" style="display:block;">
+        </div>
         <div class="logo-text">
           <h1>Sūrya Siddhānta</h1>
-          <span>सूर्यसिद्धान्तः • సూర్యసిద్ధాంతః • Classical Astronomy</span>
+          <span id="headerLogoSubtitle">సూర్య సిద్ధాంతము • Classical Astronomy</span>
         </div>
       </div>
 
-      <nav class="nav-links">
-        <a href="#foundations" class="nav-item active">🪐 Foundations</a>
-        <a href="#calculator" class="nav-item">🔢 Calculator</a>
-        <a href="#nakshatra" class="nav-item">✨ Nakshatra</a>
-        <a href="#epicycles" class="nav-item">🔄 Epicycles</a>
-        <a href="#trig" class="nav-item">📐 24 Sines</a>
-        <a href="#sundial" class="nav-item">☀️ Śaṅku</a>
-        <a href="#time-systems" class="nav-item">⏳ 9 Times</a>
-        <a href="#chapters" class="nav-item">📜 14 Adhyāyas</a>
-        <a href="#quiz" class="nav-item">🎯 Quiz</a>
-      </nav>
+      <div class="header-controls">
+        <div class="lang-segmented" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-opt active" data-lang-val="dual" title="Bilingual View (English + తెలుగు)">
+            <span class="lang-full">🌐 Dual</span>
+            <span class="lang-short">Dual</span>
+          </button>
+          <button type="button" class="lang-opt" data-lang-val="telugu" title="తెలుగు మాత్రమే">
+            <span class="lang-full">తెలుగు</span>
+            <span class="lang-short">తెలుగు</span>
+          </button>
+          <button type="button" class="lang-opt" data-lang-val="english" title="English Only">
+            <span class="lang-full">English</span>
+            <span class="lang-short">Eng</span>
+          </button>
+        </div>
+
+        <!-- Hamburger Menu Button (Vaastu Standard) -->
+        <button id="menuToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" title="Menu / మెనూ / सूची">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Navigation Drawer Overlay -->
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- Slide-out Navigation Drawer Menu (Vaastu Architecture) -->
+  <aside id="navDrawer" class="nav-drawer" aria-label="Main Navigation Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <div class="sun-icon" style="width:34px; height:34px; font-size:1.1rem; box-shadow:none;">
+          <img src="favicon.svg" alt="Sun" width="22" height="22" style="display:block;">
+        </div>
+        <div>
+          <div class="lang-en" style="font-weight: 700; color: #fff; font-size: 1.05rem;">Sūrya Siddhānta Portal</div>
+          <div class="lang-te" style="font-weight: 700; color: var(--gold-bright); font-size: 0.95rem; font-family: var(--font-telugu);">సూర్య సిద్ధాంత విషయ సూచిక</div>
+        </div>
+      </div>
+        <div>
+          <div class="lang-en" style="font-weight: 700; color: #fff; font-size: 1.05rem;">Sūrya Siddhānta Portal</div>
+          <div class="lang-te" style="font-weight: 700; color: var(--gold-bright); font-size: 0.95rem; font-family: var(--font-telugu);">సూర్య సిద్ధాంత విషయ సూచిక</div>
+          <div class="lang-sa" style="font-weight: 700; color: var(--gold-bright); font-size: 0.95rem;">सूर्यसिद्धान्त विषय-सूची</div>
+        </div>
+      </div>
+      <button id="closeDrawer" class="drawer-close-btn" aria-label="Close Navigation Menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav-list">
+      <a href="#foundations" class="drawer-nav-item active">
+        <span class="drawer-item-icon">🪐</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">1. Cosmos, Epochs & Units</span>
+          <span class="lang-te">1. సృష్టి క్రమం, కాలమానం & యుగములు</span>
+          <span class="lang-sa">१. सृष्टि-कालमान-विभागः (Ch. 1)</span>
+        </span>
+      </a>
+      <a href="#calculator" class="drawer-nav-item">
+        <span class="drawer-item-icon">🔢</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">2. Live Ahargaṇa & Mean Motions</span>
+          <span class="lang-te">2. అహర్గణ సాధన & మధ్యమ గ్రహగతులు</span>
+          <span class="lang-sa">२. अहर्गण-ग्रह-मध्यमानयनम् (Ch. 1)</span>
+        </span>
+      </a>
+      <a href="#time-lords" class="drawer-nav-item">
+        <span class="drawer-item-icon">👑</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">3. Lords of Time & Jovian Cycle</span>
+          <span class="lang-te">3. హోరా-వారాధిపతులు & 60 సంవత్సర చక్రం</span>
+          <span class="lang-sa">३. वाराधिप-बार्हस्पत्य-संवत्सरः (Ch. 1, 14)</span>
+        </span>
+      </a>
+      <a href="#trig" class="drawer-nav-item">
+        <span class="drawer-item-icon">📐</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">4. 24-Jyā Trigonometry Lab</span>
+          <span class="lang-te">4. 24-జ్యాల త్రికోణమితి ప్రయోగశాల</span>
+          <span class="lang-sa">४. ज्या-कोटिज्या-उत्क्रमज्या सारिणी (Ch. 2)</span>
+        </span>
+      </a>
+      <a href="#epicycles" class="drawer-nav-item">
+        <span class="drawer-item-icon">🔄</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">5. 4-Step True Places & Retrograde</span>
+          <span class="lang-te">5. 4-దశల స్ఫుటీకరణ & వక్రగతి</span>
+          <span class="lang-sa">५. मन्द-शीघ्र-स्फुटीकरणम् वक्रगतिः (Ch. 2)</span>
+        </span>
+      </a>
+      <a href="#sundial" class="drawer-nav-item">
+        <span class="drawer-item-icon">☀️</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">6. 12-Aṅgula Śaṅku & Latitude</span>
+          <span class="lang-te">6. 12-అంగుళ శంకుచ్ఛాయ & అక్షాంశం</span>
+          <span class="lang-sa">६. द्वादशाङ्गुल-शङ्कुच्छाया-साधनम् (Ch. 3)</span>
+        </span>
+      </a>
+      <a href="#matsya-meridian" class="drawer-nav-item">
+        <span class="drawer-item-icon">🧭</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">7. Matsya Circle & Prime Meridian</span>
+          <span class="lang-te">7. తిమి-మత్స్య దిక్సాధన & దేశాంతర రేఖ</span>
+          <span class="lang-sa">७. मत्स्य-दिग्ज्ञानम् देशान्तर-योजनानि (Ch. 1, 3)</span>
+        </span>
+      </a>
+      <a href="#lunar-eclipse" class="drawer-nav-item">
+        <span class="drawer-item-icon">🌑</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">8. Lunar Eclipse & Earth Shadow</span>
+          <span class="lang-te">8. చంద్రగ్రహణము & భూచ్ఛాయా గణన</span>
+          <span class="lang-sa">८. चन्द्रग्रहणम् भूच्छाया-परिमाणम् (Ch. 4)</span>
+        </span>
+      </a>
+      <a href="#solar-eclipse" class="drawer-nav-item">
+        <span class="drawer-item-icon">☀️</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">9. Solar Eclipse Parallax (Lambana)</span>
+          <span class="lang-te">9. సూర్యగ్రహణము & లంబన-నతి సాధన</span>
+          <span class="lang-sa">९. सूर्यग्रहणम् लम्बन-नति-दृक्क्षेपः (Ch. 5)</span>
+        </span>
+      </a>
+      <a href="#chedyaka" class="drawer-nav-item">
+        <span class="drawer-item-icon">📊</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">10. Chedyaka Eclipse Projection</span>
+          <span class="lang-te">10. ఛేద్యక గ్రహణ రేఖాచిత్రం & వలనం</span>
+          <span class="lang-sa">१०. छेद्यक-ग्रहण-लेखनम् वलनम् (Ch. 6)</span>
+        </span>
+      </a>
+      <a href="#conjunctions" class="drawer-nav-item">
+        <span class="drawer-item-icon">⚔️</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">11. Planetary Conjunctions & Wars</span>
+          <span class="lang-te">11. గ్రహయుతి & గ్రహ యుద్ధ విశ్లేషణ</span>
+          <span class="lang-sa">११. ग्रहयुत्यधिकारः ग्रहयुद्धम् (Ch. 7)</span>
+        </span>
+      </a>
+      <a href="#nakshatra" class="drawer-nav-item">
+        <span class="drawer-item-icon">✨</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">12. 28 Nakshatras & Yogatārā Catalog</span>
+          <span class="lang-te">12. 28 నక్షత్ర యోగతారల పట్టిక</span>
+          <span class="lang-sa">१२. भग्रहयुतिः योगतारा-ध्रुवकाः (Ch. 8)</span>
+        </span>
+      </a>
+      <a href="#udayasta" class="drawer-nav-item">
+        <span class="drawer-item-icon">🌅</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">13. Heliacal Risings & Combustion</span>
+          <span class="lang-te">13. గ్రహోదయాస్తమయాలు & కాలాంశాలు</span>
+          <span class="lang-sa">१३. उदयास्ताधिकारः कालांशाः (Ch. 9)</span>
+        </span>
+      </a>
+      <a href="#moon-cusp" class="drawer-nav-item">
+        <span class="drawer-item-icon">🌙</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">14. Moon Crescent & Cusp Elevation</span>
+          <span class="lang-te">14. చంద్రకళలు & చంద్రశృంగోన్నతి</span>
+          <span class="lang-sa">१४. चन्द्रदर्शनाधिकारः शृङ्गोन्नतिः (Ch. 10)</span>
+        </span>
+      </a>
+      <a href="#mahapata" class="drawer-nav-item">
+        <span class="drawer-item-icon">⚡</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">15. Mahāpāta: Vaidhṛti & Vyatīpāta</span>
+          <span class="lang-te">15. మహాపాతములు (వైధృతి & వ్యతీపాత)</span>
+          <span class="lang-sa">१५. पाताधिकारः क्रान्तिसाम्यम् (Ch. 11)</span>
+        </span>
+      </a>
+      <a href="#bhugola" class="drawer-nav-item">
+        <span class="drawer-item-icon">🌍</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">16. Bhūgola & 4 Equatorial Cities</span>
+          <span class="lang-te">16. భూగోళ వర్ణన & చతుర్మహాపురములు</span>
+          <span class="lang-sa">१६. भूगोलाध्यायः चतुष्पुरी-भ्रमणम् (Ch. 12)</span>
+        </span>
+      </a>
+      <a href="#instruments" class="drawer-nav-item">
+        <span class="drawer-item-icon">⚙️</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">17. Armillary Sphere & Instruments</span>
+          <span class="lang-te">17. యంత్రాధ్యాయము & ఖగోళ సాధనములు</span>
+          <span class="lang-sa">१७. यन्त्राध्यायः गोलयन्त्रम् घटिकायन्त्रम् (Ch. 13)</span>
+        </span>
+      </a>
+      <a href="#time-systems" class="drawer-nav-item">
+        <span class="drawer-item-icon">⏳</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">18. Nine Time Systems (Nava Mānāni)</span>
+          <span class="lang-te">18. నవవిధ కాలమానముల సమగ్ర దర్శనం</span>
+          <span class="lang-sa">१८. मानाध्यायः नवमानानि (Ch. 14)</span>
+        </span>
+      </a>
+      <a href="#chapters" class="drawer-nav-item">
+        <span class="drawer-item-icon">📜</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">19. 14 Adhyāyas Syllabus & Reader</span>
+          <span class="lang-te">19. 14 అధ్యాయముల శ్లోక సూచిక</span>
+          <span class="lang-sa">१९. चतुर्दशाध्यायाः श्लोकार्थ-भाष्यम्</span>
+        </span>
+      </a>
+      <a href="#quiz" class="drawer-nav-item">
+        <span class="drawer-item-icon">🎯</span>
+        <span class="drawer-item-text">
+          <span class="lang-en">20. Knowledge Mastery Assessment</span>
+          <span class="lang-te">20. సూర్య సిద్ధాంత ఖగోళ జ్ఞాన పరీక్ష</span>
+          <span class="lang-sa">२०. सूर्यसिद्धान्त ज्ञान-परीक्षा</span>
+        </span>
+      </a>
+    </nav>
+
+    <div class="drawer-footer">
+      <a href="../index.html" class="btn-ghost" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; text-decoration: none;">
+        ← AncientWisdom Portal
+      </a>
+      <span style="font-size: 0.72rem; color: var(--gold-dim);">Burgess 1860 Ed.</span>
+    </div>
+  </aside>
 
   <div class="container">
 
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-pill">☀️ Canonical Treatise of Siddhānta Jyotiṣa</div>
-      <h2 class="hero-title">Sūrya Siddhānta Master Guide</h2>
+      <div class="hero-pill">
+        <span class="lang-en">☀️ Canonical Treatise of Classical Indian Astronomy (Siddhānta Jyotiṣa)</span>
+        <span class="lang-te">☀️ ప్రాచీన భారతీయ సిద్ధాంత ఖగోళ శాస్త్రం (సూర్య సిద్ధాంతము)</span>
+        <span class="lang-sa">☀️ सिद्धान्तज्योतिषस्य परमप्रमाणभूतः ग्रन्थः (सूर्यसिद्धान्तः)</span>
+      </div>
+      <h2 class="hero-title">
+        <span class="lang-en">Sūrya Siddhānta Master Guide</span>
+        <span class="lang-te">సూర్య సిద్ధాంత సమగ్ర బోధిని</span>
+        <span class="lang-sa">सूर्यसिद्धान्त महाग्रन्थः</span>
+      </h2>
       <div class="hero-verse">
         "अचिन्त्याव्यक्तरूपाय निर्गुणाय गुणात्मने । समस्तजगदाधारमूर्तये ब्रह्मणे नमः ॥"<br>
-        <span style="display:block; font-size:1.05rem; color:var(--gold-bright); margin-top:0.35rem;">"అచిన్త్యావ్యక్తరూపాయ నిర్గుణాయ గుణాత్మనే । సమస్తజగదాధారమూర్తయే బ్రహ్మణే నమః ॥"</span>
-        <span style="font-size:0.92rem; color:var(--text-muted); display:block; margin-top:0.35rem;">— Sūrya Siddhānta 1.1 (Salutation to the Supreme Cosmic Consciousness)</span>
+        <span class="lang-en" style="font-size:0.92rem; color:var(--text-muted); display:block; margin-top:0.35rem;">
+          "To Him whose shape is inconceivable and unmanifested, who is unaffected by qualities, whose nature is quality, whose form is the support of the entire creation — to Brahma be homage!" (SS 1.1)
+        </span>
+        <span class="lang-te" style="font-size:0.92rem; color:var(--gold-bright); display:block; margin-top:0.35rem; font-family:var(--font-telugu);">
+          "ఊహాతీతమైనవాడు, అవ్యక్తుడు, త్రిగుణాతీతుడు, గుణస్వరూపుడు, సమస్త జగత్తునకు ఆధారభూతుడైన పరబ్రహ్మమునకు ప్రణామములు!" (సూర్య సిద్ధాంతము 1.1)
+        </span>
       </div>
       <p class="hero-desc">
-        The ultimate, scientifically rigorous, and pedagogically complete guide to ancient India's 
-        foundational astronomical text. From the basic anatomy of the night sky and human breath units 
-        to advanced double-epicycle orbital mechanics, spherical trigonometry, 24-sine finite difference formulas, 
-        and solar parallax calculations.
+        <span class="lang-en">
+          The ultimate, scientifically rigorous, and mathematically faithful exploration of the canonical 
+          <em>Sūrya Siddhānta</em>, based on the authoritative translation of <strong>Rev. Ebenezer Burgess</strong> 
+          (1860) and the Calcutta University critical edition of <strong>Phanindralal Gangooly</strong> &amp; 
+          <strong>Prabodh Chandra Sengupta</strong> (1935). Features interactive real-time calculation engines and visualizations 
+          for every single chapter of the treatise.
+        </span>
+        <span class="lang-te" style="font-family:var(--font-telugu);">
+          రెవరెండ్ <strong>ఎబెనెజర్ బర్గెస్</strong> (1860) ఆంగ్లానువాదము మరియు కలకత్తా విశ్వవిద్యాలయ <strong>ఫణీంద్రలాల్ గంగూలీ</strong> &amp; <strong>ప్రబోధ్ చంద్ర సేన్‌గుప్త</strong> (1935) ప్రామాణిక పరిశోధన గ్రంథము ఆధారంగా రూపొందించబడిన <em>సూర్య సిద్ధాంతము</em> సమగ్ర గణిత-ఖగోళ దర్శనం. 14 అధ్యాయాల ప్రతి సూత్రమునకు లైవ్ కాలిక్యులేటర్లు మరియు ఇంటరాక్టివ్ యానిమేషన్లతో సంపూర్ణంగా అందించబడినది.
+        </span>
       </p>
 
       <div class="hero-actions">
         <a href="#calculator" class="btn-primary">
-          <span>Calculate Planetary Longitudes</span> 🚀
+          <span class="lang-en">Compute Live Planetary Ephemeris 🚀</span>
+          <span class="lang-te">ప్రత్యక్ష గ్రహగతులు & అహర్గణము 🚀</span>
+        </a>
+        <a href="#epicycles" class="btn-ghost">
+          <span class="lang-en">4-Step Planetary Solver 🔄</span>
+          <span class="lang-te">4-దశల స్ఫుటీకరణ సాధన 🔄</span>
         </a>
         <a href="#chapters" class="btn-ghost">
-          <span>Explore All 14 Adhyāyas</span> 📜
+          <span class="lang-en">Explore All 14 Adhyāyas 📜</span>
+          <span class="lang-te">14 అధ్యాయముల సమగ్ర పఠనం 📜</span>
         </a>
       </div>
     </section>
 
     <!-- Learning Level Filter -->
     <div class="level-bar">
-      <button class="level-btn active" data-level="all">🌟 All Levels (Complete View)</button>
-      <button class="level-btn" data-level="beginner">🌱 Beginner: The Cosmos & Units</button>
-      <button class="level-btn" data-level="intermediate">🌿 Intermediate: Math, Time & Sines</button>
-      <button class="level-btn" data-level="pro">🔭 Astronomer / Pro: Epicycles & Parallax</button>
+      <button class="level-btn active" data-level="all">🌟 All Levels (Complete Treatise)</button>
+      <button class="level-btn" data-level="beginner">🌱 Beginner: Cosmos, Units & Nakshatras</button>
+      <button class="level-btn" data-level="intermediate">🌿 Intermediate: Sines, Gnomon & Eclipses</button>
+      <button class="level-btn" data-level="pro">🔭 Astronomer / Pro: Epicycles, Parallax & Chedyaka</button>
     </div>
 
-    <!-- Section 1: Foundations & History -->
+    <!-- Section 1: Foundations & Cosmic Epochs (Ch. 1 & 12) -->
     <section id="foundations" data-tier="beginner">
       <div class="section-head">
-        <h3 class="section-title"><span>🪐</span> 1. The Heritage & Architecture of the Cosmos</h3>
+        <h3 class="section-title"><span>🪐</span> <span class="lang-en">1. The Heritage, Cosmic Epochs & Units of Time (Madhyamādhikāra & Bhūgola)</span><span class="lang-te">1. సృష్టి క్రమము, కాలమానములు & మహాయుగ విభాగములు</span><span class="lang-sa">१. सृष्टि-कालमान-विभागः</span></h3>
         <p class="section-sub">
-          Revealed according to tradition by the Sun God to Mayāsura at the end of Satya Yuga, 
-          the Sūrya Siddhānta represents the zenith of classical Indian mathematical astronomy (*Siddhānta Jyotiṣa*).
+          Revealed according to tradition by the Sun God through his solar manifestation to the Asura Maya at Romaka-city at the close of the Kṛta (Golden) Age.
+          Grounded in the unbroken civil tally of the Ahargaṇa and the organic resonance between human respiration and celestial arc.
         </p>
       </div>
 
-      <div class="grid-3">
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 1 & 12 Reader's Guide • Core Concepts</span>
+          <span class="lang-te">అధ్యాయము 1 & 12 మార్గదర్శి • మౌలిక సిద్ధాంతాలు</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Understanding Mahāyuga, Spherical Earth & Ahargaṇa</span>
+          <span class="lang-te">మహాయుగం, భూగోళం & అహర్గణం అంటే ఏమిటి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">This opening section introduces the three foundational pillars of the <em>Sūrya Siddhānta</em>:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Mahāyuga (4,320,000 Solar Years):</strong> A giant cosmic cycle in which all planets complete an exact integer number of revolutions, returning to 0° Meṣa together.</li>
+            <li><strong>Bhūgola (Spherical Earth):</strong> Chapter 12 explicitly states Earth is a free-floating sphere (1,600 Yojanas wide) held in space by its own attractive force (<em>Dhāraṇātmikā Śaktiḥ</em>).</li>
+            <li><strong>Ahargaṇa ("Heap of Days"):</strong> A continuous integer day count starting from the Kaliyuga epoch (Midnight, Feb 17/18, 3102 BCE) so calendars never drift across centuries.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Read the constants below—they power every planetary, eclipse, and Nakshatra calculation in the following sections.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">ఈ విభాగం <em>సూర్య సిద్ధాంతం</em>లోని మూడు ముఖ్య మౌలిక సిద్ధాంతాలను పరిచయం చేస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>మహాయుగం (43,20,000 సౌర సంవత్సరాలు):</strong> సమస్త గ్రహాలు పూర్ణాంక భ్రమణాలను పూర్తి చేసి తిరిగి 0° మేష రాశి వద్ద కలిసే మహా చక్రం.</li>
+            <li><strong>భూగోళం:</strong> భూమి అంతరిక్షంలో ఆధారం లేకుండా తన ఆకర్షణ శక్తితో నిలబడి ఉన్న గోళం (వ్యాసం 1,600 యోజనాలు) అని 12వ అధ్యాయం వివరిస్తుంది.</li>
+            <li><strong>అహర్గణం (దిన సమూహం):</strong> కలియుగ ప్రారంభం (క్రీ.పూ. 3102 ఫిబ్రవరి 17/18 అర్ధరాత్రి) నుండి లెక్కించే నిరంతర దిన సంఖ్య.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> ఈ విలువలే మిగిలిన అన్ని విభాగాలలోని గ్రహ, గ్రహణ, నక్షత్ర గణనలకు ఆధారం.</p>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-bottom:1.5rem;">
         <div class="card">
-          <div class="card-subtitle">Cosmological Geography</div>
+          <div class="card-subtitle">Organic Celestial Resonance</div>
+          <h4 class="card-title">Respiration (Prāṇa) to the Sky</h4>
+          <p>
+            1 <em>Gurvakṣara</em> (long syllable) = standard phonetic unit.<br>
+            10 long syllables = 1 <em>Prāṇa</em> (respiration) = 4 sidereal seconds.<br>
+            6 Prāṇas = 1 <em>Vināḍī / Pala</em> = 24 seconds.<br>
+            60 Vināḍīs = 1 <em>Nāḍī / Ghaṭikā</em> = 24 minutes.<br>
+            60 Nāḍīs = 1 Sidereal Day (Ahorātra) = 21,600 Prāṇas.<br>
+            <strong>21,600 Prāṇas in a day = 21,600 arcminutes in the 360° celestial sphere!</strong> 
+            One breath of a healthy human corresponds precisely to one arcminute of the cosmos turning.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Cosmological Geography (Ch. 12, v. 32)</div>
           <h4 class="card-title">Spherical Earth (Bhūgola)</h4>
           <p>
-            Chapter 12, verse 32 explicitly states that Earth is a spherical ball 
-            (<em>"Kanduka-pratimaḥ"</em>) hanging unsupported in space, sustained by its own 
-            inherent attractive holding power (<em>"Dhāraṇātmikā Śaktiḥ"</em> — ancient Indian formulation of gravity).
+            <em>"Kanduka-pratimaḥ sthitaḥ sarvataḥ parvatākāraḥ..."</em> (Earth is spherical like a round ball, hanging unsupported in space).<br>
+            It is held by its own intrinsic attractive power (<em>Dhāraṇātmikā Śaktiḥ</em>).<br>
+            <strong>Diameter:</strong> 1,600 Yojanas.<br>
+            <strong>Circumference:</strong> √10 × 1600 ≈ 5,059.6 Yojanas (or 5,026.5 Yojanas at 3927/1250).
           </p>
-          <div style="font-size:0.82rem; color:var(--gold-bright); font-family:var(--font-mono);">
-            Diameter: 1,600 Yojanas • Circumference: ~5,026 Yojanas
-          </div>
         </div>
 
         <div class="card">
           <div class="card-subtitle">Zero Calendar Drift</div>
           <h4 class="card-title">The Continuous Ahargaṇa</h4>
           <p>
-            Instead of relying on irregular month names or political calendars that accumulate error, 
-            Surya Siddhanta anchors all motion to the <strong>Ahargaṇa</strong> — a strictly continuous 
-            tally of civil days elapsed from the epoch (Feb 18, 3102 BCE).
+            Instead of arbitrary intercalation rules or political calendar corrections, all planetary motions 
+            are anchored to the <strong>Ahargaṇa</strong> — a strictly continuous tally of civil terrestrial days 
+            elapsed from the epoch of midnight, Feb 18, 3102 BCE at the prime meridian of Ujjayinī.
           </p>
-          <div style="font-size:0.82rem; color:var(--cyan-accent); font-family:var(--font-mono);">
-            Civil Days in 4.32M Years: 1,577,917,828
+          <div style="font-family:var(--font-mono); font-size:0.85rem; color:var(--cyan-accent); margin-top:0.5rem;">
+            Mahāyuga Civil Days: 1,577,917,828
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Cosmic Epoch Explorer -->
+      <div class="calc-panel">
+        <h4 style="font-family:var(--font-display); font-size:1.25rem; color:#fff; margin-bottom:0.75rem;">
+          🌌 Interactive Cosmic Timeline: From Creation to Current Kali Yuga
+        </h4>
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.25rem;">
+          In Chapter 1, verses 15–24 &amp; 45–47, the Sūrya Siddhānta establishes the grand cosmic chronogram of Brahmā's lifespan:
+        </p>
+
+        <div class="grid-4" style="margin-bottom:1.25rem;">
+          <div style="background:rgba(0,0,0,0.35); padding:1rem; border-radius:10px; border-left:3px solid var(--gold-bright);">
+            <span style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">Current Kalpa</span>
+            <strong style="display:block; font-size:1.05rem; color:#fff;">Śveta-Vārāha Kalpa</strong>
+            <span style="font-size:0.78rem; color:var(--gold-dim);">1st Day of 51st Year of Brahmā</span>
+          </div>
+          <div style="background:rgba(0,0,0,0.35); padding:1rem; border-radius:10px; border-left:3px solid var(--cyan-accent);">
+            <span style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">Current Manvantara</span>
+            <strong style="display:block; font-size:1.05rem; color:#fff;">Vaivasvata (7th of 14)</strong>
+            <span style="font-size:0.78rem; color:var(--cyan-accent);">6 Manvantaras &amp; 7 Sandhis elapsed</span>
+          </div>
+          <div style="background:rgba(0,0,0,0.35); padding:1rem; border-radius:10px; border-left:3px solid var(--purple-nebula);">
+            <span style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">Current Mahāyuga</span>
+            <strong style="display:block; font-size:1.05rem; color:#fff;">28th of 71 in Age</strong>
+            <span style="font-size:0.78rem; color:var(--purple-nebula);">Kṛta, Tretā, Dvāpara passed</span>
+          </div>
+          <div style="background:rgba(0,0,0,0.35); padding:1rem; border-radius:10px; border-left:3px solid var(--emerald-accent);">
+            <span style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">Current Era</span>
+            <strong style="display:block; font-size:1.05rem; color:#fff;">Kali Yuga (कलियुग)</strong>
+            <span style="font-size:0.78rem; color:var(--emerald-accent);">Began 3102 BCE (432,000 yrs total)</span>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-subtitle">Cosmic Resonance</div>
-          <h4 class="card-title">Human Breath to the Sky</h4>
-          <p>
-            1 <em>Prāṇa</em> (human breath) = 4 sidereal seconds. 
-            There are 21,600 prāṇas in one day, matching exactly the 21,600 arcminutes in the 360° celestial sphere! 
-            One human breath corresponds to one arcminute of the cosmos turning.
-          </p>
-          <div style="font-size:0.82rem; color:var(--purple-nebula); font-family:var(--font-mono);">
-            1 Day = 60 Ghaṭikās = 21,600 Prāṇas
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); padding:1.25rem; border-radius:12px;">
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-family:var(--font-mono); font-size:0.88rem;">
+            <div>
+              <span style="color:var(--text-muted);">Total Solar Years Elapsed Since Planetary Motion Began:</span>
+              <strong style="color:var(--gold-bright); display:block; font-size:1.2rem; margin-top:0.25rem;">1,955,885,127 Solar Years</strong>
+            </div>
+            <div>
+              <span style="color:var(--text-muted);">Kali Yuga Elapsed Years (in 2026 CE):</span>
+              <strong style="color:var(--cyan-accent); display:block; font-size:1.2rem; margin-top:0.25rem;">5,127 Years (426,873 Remaining)</strong>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Interactive Ahargana & Planetary Longitude Calculator -->
+    <!-- Section 2: Live Ahargana & Complete Mean Planetary Longitudes Engine (Ch. 1) -->
     <section id="calculator" data-tier="intermediate">
       <div class="section-head">
-        <h3 class="section-title"><span>🔢</span> 2. Live Ahargaṇa & Mean Planetary Longitude Engine</h3>
+        <h3 class="section-title"><span>🔢</span> <span class="lang-en">2. Live Ahargaṇa & Planetary Mean Longitude Engine (Madhyamādhikāra)</span><span class="lang-te">2. అహర్గణ సాధన & మధ్యమ గ్రహగణిత యంత్రము</span><span class="lang-sa">२. अहर्गण-ग्रह-मध्यमानयनम्</span></h3>
         <p class="section-sub">
-          Enter any Gregorian date. The engine computes the exact Julian Day Number, civil elapsed days from the 
-          Kali Yuga epoch (18 Feb 3102 BCE), and solves the Surya Siddhanta mean celestial coordinates for all planets.
+          Enter any Gregorian date. Computes exact Julian Day Number, civil elapsed days from the Kali Yuga epoch 
+          (Feb 18, 3102 BCE midnight Ujjayinī), and solves the canonical mean positions for all 9 celestial bodies 
+          using the exact revolutions specified in Chapter 1, verses 29–44.
         </p>
       </div>
 
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 1 Reader's Guide • Mean Motion Engine</span>
+          <span class="lang-te">అధ్యాయము 1 మార్గదర్శి • మధ్యమ గ్రహ గణన</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">What Is Ahargaṇa & Mean Planetary Longitude (Madhyama Graha)?</span>
+          <span class="lang-te">అహర్గణం మరియు మధ్యమ గ్రహ స్థితి అంటే ఏమిటి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">In Chapter 1 (<em>Madhyamādhikāra</em>), planets are first located assuming uniform circular motion:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Mean Longitude:</strong> Found by multiplying <em>Ahargaṇa</em> (elapsed days since Kaliyuga) by the planet's Mahāyuga revolutions and dividing by 1,577,917,828 civil days.</li>
+            <li><strong>12 Rāśis (30° each):</strong> The 360° ecliptic is divided into 12 signs from <em>Meṣa</em> (Aries) to <em>Mīna</em> (Pisces).</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use as per the book:</strong> Pick any date and click <strong>Compute Mean Positions</strong> (or <strong>Set to Today</strong>) to compute the exact Kaliyuga Ahargaṇa and every planet's mean zodiacal position.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">మొదటి అధ్యాయం (<em>మధ్యమాధికారం</em>) ప్రకారం గ్రహాల సగటు స్థితిని ఇలా లెక్కిస్తారు:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>మధ్యమ రేఖాంశము:</strong> కలియుగ ఆరంభం నుండి గడిచిన <em>అహర్గణం</em> రోజులను ఆయా గ్రహ భ్రమణాలతో గుణించి, మహాయుగ సావన దినాలతో (1,577,917,828) భాగిస్తారు.</li>
+            <li><strong>12 రాశులు (ఒక్కొక్కటి 30°):</strong> 360° రాశిచక్రాన్ని మేషం నుండి మీనం వరకు 12 రాశులుగా విభజిస్తారు.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> ఏదైనా తేదీని ఎంచుకుని <strong>Compute Mean Positions</strong> నొక్కండి — అహర్గణం మరియు మధ్యమ గ్రహ స్థితులు వెంటనే వస్తాయి.</p>
+        </div>
+      </div>
       <div class="calc-panel">
         <div class="input-row">
           <div class="input-group">
@@ -158,7 +495,7 @@
           </div>
           <div style="background:rgba(255,255,255,0.03); padding:1rem 1.25rem; border-radius:12px; border:1px solid rgba(255,255,255,0.08);">
             <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Epoch Reference</div>
-            <div style="font-size:1.15rem; font-family:var(--font-body); font-weight:600; color:#fff; margin-top:0.35rem;">Feb 18, 3102 BCE (Midnight)</div>
+            <div style="font-size:1.15rem; font-family:var(--font-body); font-weight:600; color:#fff; margin-top:0.35rem;">Feb 18, 3102 BCE (Midnight Ujjayinī)</div>
           </div>
         </div>
 
@@ -170,37 +507,895 @@
                 <th>Mean Longitude</th>
                 <th>Zodiac Sign (Rāśi)</th>
                 <th>Lunar Asterism (Nakṣatra)</th>
-                <th>Orbital Class</th>
+                <th>Orbital Class &amp; Revolutions / Mahāyuga</th>
               </tr>
             </thead>
             <tbody id="planetTableBody">
-              <!-- Dynamically populated -->
+              <!-- Populated via JavaScript -->
             </tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- Section 3: Interactive Nakshatra (Lunar Asterism) Visualizer & Daily Ephemeris -->
-    <section id="nakshatra" data-tier="beginner">
+    <!-- Section 3: Lords of Time & Jovian 60-Year Cycle (Ch. 1 & 14) -->
+    <section id="time-lords" data-tier="intermediate">
       <div class="section-head">
-        <h3 class="section-title"><span>✨</span> 3. Nakshatra Visualizer & Daily Lunar Ephemeris</h3>
+        <h3 class="section-title"><span>👑</span> <span class="lang-en">3. Lords of Time (Adhipatis) & The 60-Year Jovian Cycle</span><span class="lang-te">3. హోరా-వారాధిపతులు & బార్హస్పత్య షష్టి సంవత్సర చక్రము</span><span class="lang-sa">३. वाराधिप-बार्हस्पत्य-संवत्सरः</span></h3>
         <p class="section-sub">
-          The 27 Nakshatras (lunar mansions of $13^\circ 20'$ each) form the celestial backbone of ancient Indian astronomy. 
-          As the Moon travels $\approx 13^\circ 10'$ each day, it visits one Nakshatra per day. 
-          Track which Nakshatra is active on any date, explore auspicious muhūrtas, ruling deities, and uncover your birth star.
+          In Chapter 1, verses 51–52 &amp; 55, the Sūrya Siddhānta specifies how time rulers are determined:
+          The Lord of the Day (Vārapati), Lord of the Month (Māsapati), Lord of the Year (Varṣapati), Lord of the Hour (Horāpati), 
+          and the Jovian 60-Year Saṁvatsara cycle (Bārhaspatya-māna).
         </p>
       </div>
 
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 1 & 14 Reader's Guide • Chronology Lords</span>
+          <span class="lang-te">అధ్యాయము 1 & 14 మార్గదర్శి • కాలాధిపతులు</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Understanding Varṣeśa, Māseśa, Dineśa, Horā & the 60-Year Cycle</span>
+          <span class="lang-te">వర్షేశ, మాసేశ, దినేశ, హోరా & 60-సంవత్సర చక్రం</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 1 (vv. 51–55) assigns planetary rulers to every scale of time in descending orbital order (Saturn → Jupiter → Mars → Sun → Venus → Mercury → Moon):</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Dineśa (Day Lord) &amp; Horā (Hour Lord):</strong> Every 24-hour day is divided into 24 <em>Horās</em>; the ruler of the 1st Horā at sunrise names the weekday (e.g., Sunday = Sun).</li>
+            <li><strong>Varṣeśa / Māseśa:</strong> The planetary lords governing the solar year and 30-day civil month.</li>
+            <li><strong>Bārhaspatya 60-Year Cycle:</strong> Traditional 60-year names (<em>Prabhava</em> to <em>Akṣaya</em>) derived from Jupiter's mean motion.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Adjust the <strong>Hour of Day</strong> slider or enter a year in the Jovian calculator to see the active Horā ruler and Samvatsara name.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">మొదటి అధ్యాయం (శ్లో. 51–55) ప్రకారం కాలానికి అధిపతులైన గ్రహాలను శని నుండి చంద్రుని వరకు క్రమంలో నిర్ణయిస్తారు:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>దినేశ &amp; హోరాధిపతి:</strong> సూర్యోదయం నుండి ప్రతి గంటకు ఒక <em>హోరా</em> అధిపతి ఉంటారు. మొదటి హోరా అధిపతే ఆ వారపు నామకరణ గ్రహం.</li>
+            <li><strong>వర్షేశ / మాసేశ:</strong> సౌర సంవత్సరానికి మరియు 30 రోజుల మాసానికి అధిపతులైన గ్రహాలు.</li>
+            <li><strong>బార్హస్పత్య 60-సంవత్సర చక్రం:</strong> గురు గ్రహ గమనం ఆధారంగా లెక్కించే ప్రభవ నుండి అక్షయ వరకు గల 60 తెలుగు సంవత్సరాలు.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> సమయపు స్లైడర్‌ను కదిపి హోరాధిపతిని చూడండి లేదా సంవత్సరాన్ని ఇచ్చి బార్హస్పత్య సంవత్సర నామాన్ని తెలుసుకోండి.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-subtitle">Chapter 1, Verses 51–52</div>
+          <h4 class="card-title">Chronocratic Regents (Kāla-Adhipati)</h4>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1rem;">
+            Found from the Ahargaṇa: Days advance by 1 in week order; Months advance by 30 days (every 30 days ruled by the 4th successive planet);
+            Years advance by 360 days (every year ruled by the 3rd successive planet); Hours (Horā) advance consecutively through the 7 planetary rulers in descending order of orbit.
+          </p>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem 1rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:0.72rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Lord of the Day (Vārapati)</span>
+              <strong id="lordDayDisplay" style="color:#fff; font-size:1.05rem;">--</strong>
+            </div>
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem 1rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:0.72rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Lord of the Month (Māsapati)</span>
+              <strong id="lordMonthDisplay" style="color:var(--gold-bright); font-size:1.05rem;">--</strong>
+            </div>
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem 1rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:0.72rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Lord of the Year (Varṣapati)</span>
+              <strong id="lordYearDisplay" style="color:var(--cyan-accent); font-size:1.05rem;">--</strong>
+            </div>
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem 1rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+              <span style="font-size:0.72rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Current Hour Ruler (Horāpati)</span>
+              <strong id="lordHoraDisplay" style="color:var(--purple-nebula); font-size:1.05rem;">--</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Chapter 1, Verse 55 &amp; Chapter 14, Verse 17</div>
+          <h4 class="card-title">Jovian 60-Year Cycle (Bārhaspatya Saṁvatsara)</h4>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1rem;">
+            Calculated from Jupiter's mean motion: Multiply elapsed solar years by Jupiter revolutions in a Mahāyuga (364,220), divide by solar years (4,320,000), add elapsed Jovian years, and divide by 60.
+          </p>
+
+          <div style="background:rgba(245, 185, 66, 0.08); border-left:3px solid var(--gold-primary); padding:1rem; border-radius:0 10px 10px 0; margin-bottom:1rem;">
+            <span style="font-size:0.75rem; color:var(--gold-dim); text-transform:uppercase; display:block;">Active Jovian Year</span>
+            <strong id="jovianYearDisplay" style="font-size:1.4rem; color:var(--gold-bright); font-family:var(--font-display);">--</strong>
+            <div id="jovianMeaningDisplay" style="font-size:0.85rem; color:#e2e8f0; margin-top:0.25rem;">Cycle: Prabhava to Kṣaya</div>
+          </div>
+          <div style="font-size:0.82rem; color:var(--text-muted); font-family:var(--font-mono);">
+            Formula: Year = (Ahargaṇa × Jupiter Rev / Savana Days) mod 60
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Trigonometry & The 24 Jya (Sine) Table (Ch. 2) -->
+    <section id="trig" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>📐</span> <span class="lang-en">4. Trigonometry: The 24-Jyā (Sine) Table & Arbitrary Angle Converter</span><span class="lang-te">4. త్రికోణమితి: 24-జ్యాల పట్టిక & కోణ పరివర్తన ప్రయోగశాల</span><span class="lang-sa">४. ज्या-कोटिज्या-उत्क्रमज्या सारिणी</span></h3>
+        <p class="section-sub">
+          In Chapter 2 (verses 15–22), the Sūrya Siddhānta develops 24 sines in a 90° quadrant at 225' (3° 45') intervals, 
+          computed from radius <em>R</em> = 3438' using an early second-order finite difference equation!
+        </p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:1.5rem;">
+        <div class="card">
+          <div class="card-subtitle">Trigonometric Radius Formulation</div>
+          <h4 class="card-title">Why Radius R = 3438'?</h4>
+          <p>
+            The full circle equals 360° × 60' = 21,600 arcminutes. 
+            If Circumference <em>C</em> = 21,600', then Radius <em>R</em> = <em>C</em> / (2π) = 21,600 / (2 × 3.14159265…) ≈ 3437.75' → 3438'.
+            At this radius, linear sine length equals angular arc length for small angles (Jyā(θ) ≈ θ in minutes).
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Second-Order Difference Equation</div>
+          <h4 class="card-title">The Recursive Differential Formula</h4>
+          <p>
+            The difference between consecutive sines decreases by the sine value divided by 225:
+          </p>
+          <div style="background:rgba(0,0,0,0.4); padding:0.75rem 1rem; border-radius:8px; font-family:var(--font-mono); color:var(--gold-bright); font-size:0.88rem;">
+            J(n+1) - J(n) = [J(n) - J(n-1)] - (J(n) / 225)
+          </div>
+          <p style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-muted);">
+            This is the earliest recorded finite difference representation of <em>d</em><sup>2</sup>(sin θ)/<em>d</em>θ<sup>2</sup> = −sin θ.
+          </p>
+        </div>
+      </div>
+
+      <!-- How to Understand & Use This Section (Book Guide) -->
+      <div class="card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 2 Reader's Guide • How It Works &amp; How to Use</span>
+          <span class="lang-te">అధ్యాయము 2 మార్గదర్శి • ఇది ఏమిటి &amp; గ్రంథం ప్రకారం ఎలా ఉపయోగించాలి</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Understanding Jyā, Koṭijyā &amp; the 24-Step Lookup Table</span>
+          <span class="lang-te">జ్యా, కోటిజ్యా &amp; 24-దశల పట్టికను అర్థం చేసుకోవడం ఎలా?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.9rem; color:#cbd5e1; line-height:1.65;">
+          <p style="margin-bottom:0.65rem;">
+            Instead of modern decimals (<em>R</em> = 1), the <em>Sūrya Siddhānta</em> measures sine lengths in <strong>arcminutes (`'`)</strong> on a circle of radius <strong><em>R</em> = 3438'</strong>, and stores <strong>24 exact values</strong> spaced every <strong>225' (3° 45')</strong> from 0° to 90° (cards below).
+          </p>
+          <ul style="margin:0 0 0.65rem 1.25rem; padding:0;">
+            <li><strong>Jyā (<em>R</em> sin θ):</strong> The Hindu half-chord (Sine) in arcminutes. Dividing by 3438' gives the modern decimal sin(θ).</li>
+            <li><strong>Koṭijyā (<em>R</em> cos θ):</strong> Simply the <em>Jyā</em> of the complementary angle (90° − θ).</li>
+            <li><strong>Utkramajyā (Versine):</strong> <em>R</em> − Koṭijyā = <em>R</em>(1 − cos θ), used in gnomon shadow &amp; declination math.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.85rem;">
+            <strong>How to use as per the book:</strong> Enter any angle (0°–90°) below (or click any <strong>Jyā #1–#24</strong> card) to watch the treatise convert the angle into arcminutes, locate the nearest 225' step, and linearly interpolate the result.
+          </p>
+        </div>
+        <div class="lang-te" style="font-size:0.92rem; color:#e2e8f0; line-height:1.7; font-family:var(--font-telugu); margin-top:0.5rem;">
+          <p style="margin-bottom:0.65rem;">
+            ఆధునిక గణితంలో వృత్త వ్యాసార్థం <em>R</em> = 1 గా తీసుకుంటారు; కానీ <em>సూర్య సిద్ధాంతం</em>లో కోణాలు మరియు జ్యా విలువలు రెండింటినీ <strong>ఆర్క్-నిమిషాలలో (`'`)</strong>, వ్యాసార్థం <strong><em>R</em> = 3438'</strong> పై కొలుస్తారు. 0° నుండి 90° వరకు ప్రతి <strong>225' (3° 45')</strong> కు ఒక విలువ చొప్పున <strong>24 జ్యా విలువలను</strong> పట్టికలో ఇచ్చారు.
+          </p>
+          <ul style="margin:0 0 0.65rem 1.25rem; padding:0;">
+            <li><strong>జ్యా (Jyā):</strong> కోణానికి సంబంధించిన సైన్ (<em>R</em> sin θ) విలువ (నిమిషాలలో). దీనిని 3438' తో భాగిస్తే ఆధునిక sin(θ) వస్తుంది.</li>
+            <li><strong>కోటిజ్యా (Koṭijyā):</strong> పూరక కోణం (90° − θ) యొక్క జ్యా విలువ (<em>R</em> cos θ).</li>
+            <li><strong>ఉత్క్రమజ్యా (Utkramajyā):</strong> 3438' − కోటిజ్యా = <em>R</em>(1 − cos θ). శంకు ఛాయ, క్రాంతి గణనలలో ఉపయోగిస్తారు.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.86rem;">
+            <strong>ఉపయోగించే విధానం:</strong> క్రింద ఉన్న బాక్స్‌లో 0°–90° మధ్య ఏదైనా కోణాన్ని నమోదు చేయండి (లేదా క్రింది <strong>Jyā #1–#24</strong> కార్డులలో దేనినైనా క్లిక్ చేయండి) — గ్రంథ పద్ధతి ప్రకారం అంచెలంచెలుగా గణన వెంటనే కనిపిస్తుంది.
+          </p>
+        </div>
+      </div>
+
+      <!-- Arbitrary Angle Trigonometric Calculator -->
+      <div class="calc-panel" style="margin-bottom:1.5rem;">
+        <h4 style="font-family:var(--font-display); font-size:1.15rem; color:#fff; margin-bottom:1rem;">
+          🧮 Arbitrary Angle Converter: Sūrya Siddhānta Interpolation vs. Modern Float
+        </h4>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="trigAngleInput">Enter Angle (0° to 90°):</label>
+            <input type="number" id="trigAngleInput" min="0" max="90" step="0.1" value="30.0">
+          </div>
+          <button id="trigComputeBtn" class="btn-primary" style="height:44px;">Compute Sines</button>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+          <div style="background:rgba(0,0,0,0.3); padding:0.85rem; border-radius:10px; border-left:3px solid var(--gold-bright);">
+            <span style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">Jyā (Sine in arcmin)</span>
+            <strong id="trigJyaDisplay" style="color:var(--gold-bright); font-size:1.2rem; font-family:var(--font-mono); display:block;">1719'</strong>
+            <span id="trigJyaNorm" style="font-size:0.78rem; color:#e2e8f0;">0.500000</span>
+          </div>
+          <div style="background:rgba(0,0,0,0.3); padding:0.85rem; border-radius:10px; border-left:3px solid var(--cyan-accent);">
+            <span style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">Koṭijyā (Cosine in arcmin)</span>
+            <strong id="trigKotiDisplay" style="color:var(--cyan-accent); font-size:1.2rem; font-family:var(--font-mono); display:block;">2978'</strong>
+            <span id="trigKotiNorm" style="font-size:0.78rem; color:#e2e8f0;">0.866201</span>
+          </div>
+          <div style="background:rgba(0,0,0,0.3); padding:0.85rem; border-radius:10px; border-left:3px solid var(--purple-nebula);">
+            <span style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">Utkramajyā (Versine: R - Cos)</span>
+            <strong id="trigVersDisplay" style="color:var(--purple-nebula); font-size:1.2rem; font-family:var(--font-mono); display:block;">460'</strong>
+            <span style="font-size:0.78rem; color:#e2e8f0;">R(1 - cos θ)</span>
+          </div>
+          <div style="background:rgba(0,0,0,0.3); padding:0.85rem; border-radius:10px; border-left:3px solid var(--emerald-accent);">
+            <span style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">Modern sin(θ) Comparison</span>
+            <strong id="trigModernDisplay" style="color:var(--emerald-accent); font-size:1.2rem; font-family:var(--font-mono); display:block;">0.500000</strong>
+            <span id="trigDiffDisplay" style="font-size:0.78rem; color:var(--text-muted);">Diff: 0.000000 (100% accuracy)</span>
+          </div>
+        </div>
+
+        <!-- Live Step-by-Step Book Interpolation Breakdown -->
+        <div id="trigBookSteps" style="margin-top:1.1rem; background:rgba(0,0,0,0.35); border:1px solid rgba(245, 185, 66, 0.25); border-radius:10px; padding:0.95rem 1.15rem; font-size:0.86rem; line-height:1.6;">
+        </div>
+      </div>
+
+      <!-- 24 Jyā Table Grid -->
+      <div class="jya-grid" id="jyaGrid">
+        <!-- Populated via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Section 5: 4-Step True Places & Double Epicycle Simulator (Ch. 2) -->
+    <section id="epicycles" data-tier="pro">
+      <div class="section-head">
+        <h3 class="section-title"><span>🔄</span> <span class="lang-en">5. True Planetary Places: 4-Step Correction & Retrograde Simulator (Spaṣṭādhikāra)</span><span class="lang-te">5. గ్రహ స్ఫుటీకరణము: 4-దశల మంద-శీఘ్ర సంస్కారములు & వక్రగతి</span><span class="lang-sa">५. मन्द-शीघ्र-स्फुटीकरणम् वक्रगतिः</span></h3>
+        <p class="section-sub">
+          The Sūrya Siddhānta computes true geocentric longitudes through a rigorous four-step iterative sequence 
+          (<em>Caturguṇa-saṁskāra</em>) employing the <strong>Manda Epicycle</strong> (orbital eccentricity) and the 
+          <strong>Śīghra Epicycle</strong> (heliocentric earth-motion reflection). Watch how retrograde loops (<em>Vakragati</em>) naturally arise!
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 2 Reader's Guide • True Planetary Positions</span>
+          <span class="lang-te">అధ్యాయము 2 మార్గదర్శి • స్పష్ట గ్రహ గణన</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Why Manda & Śīghra Epicycles Are Needed (And How Retrograde Works)</span>
+          <span class="lang-te">మంద & శీఘ్ర పరిధులు ఎందుకు? వక్రగతి ఎలా వస్తుంది?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Mean positions assume circular, uniform speed, which does not match real observations. Chapter 2 (vv. 43–45) applies two epicyclic corrections in 4 steps:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Manda Epicycle:</strong> Accounts for elliptical orbital eccentricity (Kepler's 1st/2nd law equivalent), speeding planets up near perigee and slowing them near apogee.</li>
+            <li><strong>Śīghra Epicycle:</strong> Accounts for Earth's own orbital motion around the Sun relative to the planet—this naturally produces <strong>Retrograde loops (Vakragati)</strong>!</li>
+            <li><strong>Why Only 5 Planets Here?</strong> As per the <em>Sūrya Siddhānta</em>, only the 5 <em>Tārāgrahas</em> (Mars, Mercury, Jupiter, Venus, Saturn) have a Śīghra epicycle and undergo retrograde motion. The Sun and Moon have Śīghra = 0 (only 1 Manda step), and Rāhu/Ketu have no epicycles.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Select a planet, adjust its <strong>Mean Longitude</strong> and the <strong>Sun's Longitude</strong>, then click <strong>Run 4-Step Solver</strong> to watch each correction step and see the animated epicycle orbit.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">మధ్యమ గతి వృత్తాకార సమవేగాన్ని మాత్రమే సూచిస్తుంది. వాస్తవ గ్రహ స్థితి (<em>స్పష్ట గ్రహం</em>) కోసం 2వ అధ్యాయం 4 దశల సంస్కారాన్ని వివరిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>మంద పరిధి (Manda Epicycle):</strong> గ్రహ కక్ష్య యొక్క దీర్ఘవృత్తాకార వైవిధ్యాన్ని సరిచేస్తుంది.</li>
+            <li><strong>శీఘ్ర పరిధి (Śīghra Epicycle):</strong> సూర్యుని చుట్టూ భూమి తిరగడం వల్ల గ్రహాలు వెనుకకు వెళ్ళినట్లు కనిపించే <strong>వక్రగతి (Retrograde)</strong> ని గణిస్తుంది.</li>
+            <li><strong>ఇక్కడ 5 గ్రహాలే ఎందుకు?</strong> <em>సూర్య సిద్ధాంతం</em> ప్రకారం పంచ తారాగ్రహాలకు (కుజ, బుధ, గురు, శుక్ర, శని) మాత్రమే శీఘ్ర పరిధి &amp; వక్రగతి ఉంటాయి. సూర్య-చంద్రులకు శీఘ్ర పరిధి ఉండదు (ఒక్క మంద సంస్కారం మాత్రమే); రాహు-కేతువులకు పరిధులు లేవు.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> గ్రహాన్ని ఎంచుకుని, మధ్యమ రేఖాంశం &amp; సూర్య రేఖాంశాలను మార్చి <strong>Run 4-Step Solver</strong> నొక్కండి.</p>
+        </div>
+      </div>
+      <!-- Interactive 4-Step Planetary Solver -->
+      <div class="calc-panel" style="margin-bottom:2rem;">
+        <h4 style="font-family:var(--font-display); font-size:1.25rem; color:#fff; margin-bottom:0.75rem;">
+          ⚙️ 4-Step Planetary Correction Engine (Spaṣṭīkaraṇa Algorithm)
+        </h4>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="stepPlanetSelect">Select Planet:</label>
+            <select id="stepPlanetSelect">
+              <option value="mars" selected>Mars (Maṅgala - Large Epicycle)</option>
+              <option value="mercury">Mercury (Budha - Inner Planet)</option>
+              <option value="jupiter">Jupiter (Guru - Outer Giant)</option>
+              <option value="venus">Venus (Śukra - Bright Inner Planet)</option>
+              <option value="saturn">Saturn (Śani - Slow Outer Planet)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="meanAnomalyInput">Mean Longitude (°):</label>
+            <input type="number" id="meanAnomalyInput" value="120" min="0" max="360" step="1">
+          </div>
+          <div class="input-group">
+            <label for="sunLongInput">Sun's Longitude (°):</label>
+            <input type="number" id="sunLongInput" value="280" min="0" max="360" step="1">
+          </div>
+          <button id="run4StepBtn" class="btn-primary" style="height:44px;">Compute True Longitude</button>
+        </div>
+
+        <div class="step-flow" id="stepFlowContainer">
+          <!-- Step 1, 2, 3, 4 dynamically rendered -->
+        </div>
+
+        <div style="background:rgba(0,0,0,0.4); padding:1rem 1.25rem; border-radius:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <span style="font-size:0.75rem; color:var(--gold-dim); text-transform:uppercase;">Final True Geocentric Longitude (Spaṣṭa Graha):</span>
+            <strong id="finalTrueLongDisplay" style="font-size:1.5rem; color:var(--gold-bright); font-family:var(--font-mono); display:block;">--</strong>
+          </div>
+          <div>
+            <span style="font-size:0.75rem; color:var(--gold-dim); text-transform:uppercase;">Planetary State of Motion:</span>
+            <strong id="motionStateDisplay" style="font-size:1.2rem; color:var(--cyan-accent); font-family:var(--font-mono); display:block;">Direct (Ṛju)</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Canvas Simulator -->
+      <div class="canvas-wrap">
+        <canvas id="epicycleCanvas"></canvas>
+        <div class="canvas-controls">
+          <div class="control-item">
+            <label for="simPlanet" style="color:#fff; font-weight:600;">Planet:</label>
+            <select id="simPlanet" style="background:#111; color:#fff; border:1px solid #444; padding:0.35rem 0.65rem; border-radius:6px;">
+              <option value="mars" selected>Mars (Maṅgala - High Anomaly)</option>
+              <option value="jupiter">Jupiter (Guru)</option>
+              <option value="saturn">Saturn (Śani)</option>
+              <option value="venus">Venus (Śukra)</option>
+              <option value="mercury">Mercury (Budha)</option>
+            </select>
+          </div>
+
+          <div class="control-item">
+            <label for="simMode" style="color:#fff; font-weight:600;">Epicycle Mode:</label>
+            <select id="simMode" style="background:#111; color:#fff; border:1px solid #444; padding:0.35rem 0.65rem; border-radius:6px;">
+              <option value="sighra" selected>Śīghra Epicycle (Produces Retrograde Loops)</option>
+              <option value="manda">Manda Epicycle (Orbital Eccentricity)</option>
+            </select>
+          </div>
+
+          <div class="control-item">
+            <label for="simSpeed" style="color:#fff; font-weight:600;">Speed:</label>
+            <input type="range" id="simSpeed" min="0.2" max="3" step="0.1" value="1">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 12-Angula Shanku (Sundial) Lab (Ch. 3) -->
+    <section id="sundial" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>☀️</span> <span class="lang-en">6. Practical Astronomy: The 12-Aṅgula Gnomon (Śaṅku) & Latitude Lab</span><span class="lang-te">6. ద్వాదశాంగుల శంకుచ్ఛాయా సాధన & స్థానిక అక్షాంశ ప్రయోగశాల</span><span class="lang-sa">६. द्वादशाङ्गुल-शङ्कुच्छाया-साधनम्</span></h3>
+        <p class="section-sub">
+          Chapter 3 (Tripraśnādhikāra) demonstrates how a simple vertical staff of 12 digits (aṅgulas) resolves Direction (Diś), 
+          Place/Latitude (Deśa), and Time (Kāla).
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 3 Reader's Guide • The 12-Aṅgula Gnomon</span>
+          <span class="lang-te">అధ్యాయము 3 మార్గదర్శి • ద్వాదశాంగుళ శంకువు</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Measuring Latitude, Noon Shadow & Daylight Using a Vertical Stick</span>
+          <span class="lang-te">శంకు ఛాయతో అక్షాంశము & దివస ప్రమాణము కనుగొనడం ఎలా?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 3 (<em>Tripraśnādhikāra</em>) solves Direction, Place, and Time using a vertical 12-digit rod (<strong>Śaṅku</strong>) on a leveled stone:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Palabhā (Equinoctial Shadow):</strong> The noon shadow on the Equinox (0° declination). From it, local latitude φ is simply <em>tan φ = Palabhā / 12</em>.</li>
+            <li><strong>Chāyā &amp; Karṇa:</strong> The shadow length on the ground and the hypotenuse from the gnomon tip to the shadow tip.</li>
+            <li><strong>Cara (Ascensional Difference):</strong> Explains why summer days are longer than 12 hours and winter days are shorter.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Set your <strong>Latitude</strong> and the <strong>Sun's Longitude</strong> (e.g., 90° for Summer Solstice) to see the live noon shadow triangle and exact daylight duration.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">3వ అధ్యాయం (<em>త్రిప్రశ్నాధికారం</em>) సమతల భూమిపై నిలబెట్టిన 12 అంగుళాల కర్ర (<strong>శంకువు</strong>) నీడతో దిక్కు, స్థలం, కాలాన్ని కొలుస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>పలభా (విషువత్ ఛాయ):</strong> విషువత్ దినాన మధ్యాహ్నపు నీడ. దీనితో స్థానిక అక్షాంశం (Latitude) ను <em>tan φ = పలభా / 12</em> ద్వారా కనుగొంటారు.</li>
+            <li><strong>ఛాయ &amp; కర్ణము:</strong> భూమిపై పడే నీడ పొడవు మరియు శంకు శిఖరం నుండి నీడ చివరి వరకు ఉన్న కర్ణము.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> మీ ప్రాంతపు అక్షాంశం మరియు సూర్య రేఖాంశాన్ని మార్చి మధ్యాహ్న నీడను, పగటి సమయాన్ని ప్రత్యక్షంగా చూడండి.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-subtitle">Interactive Shadow Simulation</div>
+          <h4 class="card-title">Gnomon Shadow &amp; Hypotenuse (Karṇa)</h4>
+          <div style="margin:1.5rem 0;">
+            <label style="display:flex; justify-content:space-between; font-weight:600; color:var(--gold-bright); margin-bottom:0.5rem;">
+              <span>Sun Altitude Angle (&alpha;):</span>
+              <span id="altValueDisplay">45°</span>
+            </label>
+            <input type="range" id="sunAltitude" min="5" max="85" step="1" value="45" style="width:100%; accent-color:var(--gold-primary);">
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div style="background:rgba(0,0,0,0.3); padding:0.75rem; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+              <span style="font-size:0.75rem; color:var(--text-muted); display:block;">Shadow (Chāyā):</span>
+              <strong id="shadowLengthDisplay" style="color:var(--gold-bright); font-size:1.1rem; font-family:var(--font-mono);">--</strong>
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:0.75rem; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+              <span style="font-size:0.75rem; color:var(--text-muted); display:block;">Hypotenuse (Karṇa):</span>
+              <strong id="karnaDisplay" style="color:var(--cyan-accent); font-size:1.1rem; font-family:var(--font-mono);">--</strong>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted);">
+            Canonical Formula: Shadow <em>s</em> = 12 cot(α) aṅgulas; Karṇa <em>k</em> = √(12² + <em>s</em>²).<br>
+            Equinoctial midday shadow (<em>s</em><sub>0</sub>) yields latitude: tan φ = <em>s</em><sub>0</sub> / 12.
+          </p>
+        </div>
+
+        <div class="card" style="padding:1rem;">
+          <canvas id="gnomonCanvas" style="height:260px;"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Matsya Circle & Prime Meridian / Desantara Lab (Ch. 1 & 3) -->
+    <section id="matsya-meridian" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>🧭</span> <span class="lang-en">7. The Indian Circle (Matsya) Method & Prime Meridian / Deśāntara Lab</span><span class="lang-te">7. తిమి-మత్స్య దిక్సాధన పద్ధతి & ఉజ్జయిని దేశాంతర రేఖ</span><span class="lang-sa">७. मत्स्य-दिग्ज्ञानम् देशान्तर-योजनानि</span></h3>
+        <p class="section-sub">
+          In Chapter 3 (verses 1–6), the Sūrya Siddhānta describes how to establish True East-West and True North-South 
+          by drawing a circle around the gnomon and noting the morning/evening shadow endpoints, creating intersecting fish-shaped arcs (<em>Matsya</em>).
+          Chapter 1 (verses 60–65) details terrestrial longitude corrections (<em>Deśāntara</em>) relative to the prime meridian of Ujjayinī.
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 3 & 1 Reader's Guide • Surveying & Prime Meridian</span>
+          <span class="lang-te">అధ్యాయము 3 & 1 మార్గదర్శి • దిక్సాధన & దేశాంతర సంస్కారం</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">How the Matsya (Fish) Method & Deśāntara Correction Work</span>
+          <span class="lang-te">మత్స్య విధానం మరియు దేశాంతర సంస్కారం అంటే ఏమిటి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Before magnetic compasses were used in astronomy, surveyors drew True North–South–East–West lines geometrically and corrected planetary tables for local longitude:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Matsya (Fish) Diagram (Ch. 3, vv. 1–5):</strong> Mark where the morning and evening gnomon shadow tips touch a circle; drawing intersecting arcs creates a "fish" whose spine points due North–South!</li>
+            <li><strong>Deśāntara (Ch. 1, vv. 60–62):</strong> All calculations in the treatise use <strong>Ujjain (Avanti, 75°46' E)</strong> as the Prime Meridian. Cities east or west must adjust planetary longitudes for their time difference.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Drag the <strong>Solar Declination</strong> slider to animate the morning/evening shadow circle, or enter your city's longitude to see the Ujjain time offset.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">దిక్సూచి లేని కాలంలో సూర్య నీడతో ఖచ్చితమైన దిక్కులను, ఉజ్జయిని ప్రామాణిక రేఖాంశాన్ని ఎలా లెక్కించారో ఈ విభాగం చూపుతుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>మత్స్య విధానం (అధ్యాయం 3):</strong> వృత్తం మధ్యలో శంకువును ఉంచి, ఉదయం &amp; సాయంత్రం నీడలు తాకే బిందువుల నుండి చాపాలు గీస్తే ఏర్పడే "చేప" ఆకారం ఖచ్చితమైన ఉత్తర-దక్షిణ దిక్కులను చూపుతుంది.</li>
+            <li><strong>దేశాంతర సంస్కారం (అధ్యాయం 1):</strong> సూర్య సిద్ధాంత గణనలన్నీ <strong>ఉజ్జయిని (75°46' తూర్పు)</strong> ని ప్రామాణికంగా తీసుకుంటాయి; ఇతర నగరాల సమయ వ్యత్యాసాన్ని ఇక్కడ సరిచేస్తారు.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> క్రాంతి స్లైడర్‌ను కదిపి మత్స్య చిత్రాన్ని చూడండి లేదా మీ నగర రేఖాంశాన్ని ఇచ్చి ఉజ్జయిని సమయ వ్యత్యాసాన్ని తెలుసుకోండి.</p>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-bottom:1.5rem;">
+        <!-- Matsya Interactive Canvas -->
+        <div class="card">
+          <div class="card-subtitle">Chapter 3, Verses 1–6</div>
+          <h4 class="card-title">🐟 The Indian Circle Method (Matsya-Vṛtta)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1rem;">
+            Watch the shadow sweep across the dial. The intersection points with the circle give East-West points (Timin / Fish points), 
+            and intersecting arcs construct the North-South meridian!
+          </p>
+          <canvas id="matsyaCanvas" class="matsya-canvas"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.75rem;">
+            <label style="font-size:0.82rem; color:var(--gold-bright);">Sun Shadow Azimuth:</label>
+            <input type="range" id="matsyaAngleInput" min="0" max="360" value="70" style="width:60%; accent-color:var(--gold-primary);">
+          </div>
+        </div>
+
+        <!-- Desantara Longitude Calculator -->
+        <div class="card">
+          <div class="card-subtitle">Chapter 1, Verses 60–65</div>
+          <h4 class="card-title">🌐 Prime Meridian &amp; Deśāntara Engine</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1rem;">
+            The canonical prime meridian passes through <strong>Laṅkā</strong> (equator), <strong>Ujjayinī</strong> (Avanti, 75° 46' E), 
+            <strong>Rohītaka</strong>, <strong>Kurukṣetra</strong>, and <strong>Mount Meru</strong> (North Pole).
+          </p>
+
+          <div class="input-group" style="margin-bottom:1rem;">
+            <label for="desantaraCitySelect">Select Reference City:</label>
+            <select id="desantaraCitySelect">
+              <option value="ujjain" selected>Ujjain (Avanti - Prime Meridian: 75.76° E)</option>
+              <option value="varanasi">Varanasi (Kashi: 82.97° E)</option>
+              <option value="delhi">Delhi (Indraprastha: 77.20° E)</option>
+              <option value="london">London (Greenwich: 0.00° E)</option>
+              <option value="tokyo">Tokyo (139.69° E)</option>
+              <option value="newyork">New York (-74.00° W)</option>
+              <option value="alexandria">Alexandria / Romaka (29.91° E)</option>
+            </select>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem; border-radius:8px;">
+              <span style="font-size:0.72rem; color:var(--text-muted); display:block;">Distance from Meridian:</span>
+              <strong id="desDistYojanas" style="color:var(--gold-bright); font-family:var(--font-mono);">0 Yojanas</strong>
+            </div>
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem; border-radius:8px;">
+              <span style="font-size:0.72rem; color:var(--text-muted); display:block;">Time Difference:</span>
+              <strong id="desTimePalas" style="color:var(--cyan-accent); font-family:var(--font-mono);">0 Palas (0 min)</strong>
+            </div>
+          </div>
+          <p style="font-size:0.82rem; color:var(--text-muted);">
+            Correction in arcmin: Δλ = Ahargaṇa-Gati × (Deśāntara-Palas / 60).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Lunar Eclipse & Earth's Shadow Cone Predictor (Ch. 4) -->
+    <section id="lunar-eclipse" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>🌑</span> <span class="lang-en">8. Lunar Eclipses & Earth's Shadow Cone Predictor (Candragrahaṇa)</span><span class="lang-te">8. చంద్రగ్రహణము & భూచ్ఛాయా శంకువు గ్రాస గణన యంత్రము</span><span class="lang-sa">८. चन्द्रग्रहणम् भूच्छाया-परिमाणम्</span></h3>
+        <p class="section-sub">
+          Chapter 4 establishes the true physical geometry of lunar eclipses: the Sun illuminates the Earth, casting a tapering shadow cone (<em>Bhūchāyā / Tamomāna</em>) into space. 
+          When the Full Moon crosses this shadow near the lunar nodes (Rāhu/Ketu), an eclipse is inevitable.
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 4 Reader's Guide • Lunar Eclipse Geometry</span>
+          <span class="lang-te">అధ్యాయము 4 మార్గదర్శి • చంద్రగ్రహణ గణితం</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Understanding Earth's Shadow Cone (Bhūchāyā) & Eclipse Contacts</span>
+          <span class="lang-te">భూచ్ఛాయా శంకువు మరియు గ్రహణ స్పర్శాది కాలాలు</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 4 (<em>Candragrahaṇādhikāra</em>) computes lunar eclipses from physical 3D shadow geometry:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Tamomāna / Bhūchāyā:</strong> Because Earth (1,600 Yojanas) is smaller than the Sun (6,500 Yojanas), its shadow tapers into a cone (~80' wide at the Moon's distance—over 2.5× the Moon's disc).</li>
+            <li><strong>Rāhu / Ketu Proximity:</strong> An eclipse happens at Full Moon only when the Moon's celestial latitude (<em>Vikṣepa</em>) is smaller than the combined radii of Moon + Shadow.</li>
+            <li><strong>Sthiti &amp; Marda:</strong> Half-duration of the whole eclipse and half-duration of totality.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Adjust the <strong>Moon's Node Distance / Latitude</strong> to test whether a Full Moon passes through the shadow cone (Total, Partial, or No Eclipse).</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">4వ అధ్యాయం (<em>చంద్రగ్రహణాధికారం</em>) భూమి నీడ ఆధారంగా చంద్రగ్రహణాన్ని ఇలా గణిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>భూచ్ఛాయ / తమోమానం:</strong> సూర్యుని కంటే భూమి చిన్నది కావడంతో భూమి నీడ శంకువు ఆకారంలో చంద్రుని కక్ష్య వద్ద ~80' వెడల్పుతో ఉంటుంది.</li>
+            <li><strong>రాహు-కేతు సామీప్యం:</strong> పౌర్ణమి నాడు చంద్రుని విక్షేపం (Latitude) నీడ పరిధిలో ఉన్నప్పుడే గ్రహణం సంభవిస్తుంది.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> విక్షేపం / పాత దూరం విలువలను మార్చి సంపూర్ణ, పాక్షిక లేదా అగ్రహణ స్థితిని పరిశీలించండి.</p>
+        </div>
+      </div>
+      <div class="calc-panel">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem; margin-bottom:1.5rem;">
+          <div class="card" style="padding:1.25rem;">
+            <div class="card-subtitle">Physical Constants (Ch. 4, v. 1)</div>
+            <h4 class="card-title" style="font-size:1.1rem;">Celestial Diameters</h4>
+            <div style="font-size:0.9rem; line-height:1.7;">
+              • Sun Diameter: <strong>6,500 Yojanas</strong><br>
+              • Moon Diameter: <strong>480 Yojanas</strong><br>
+              • Earth Diameter: <strong>1,600 Yojanas</strong><br>
+              • Mean Sun Apparent Disc: <strong>32' 30"</strong><br>
+              • Mean Moon Apparent Disc: <strong>32' 00"</strong>
+            </div>
+          </div>
+
+          <div class="card" style="padding:1.25rem;">
+            <div class="card-subtitle">Shadow Cone Computation</div>
+            <h4 class="card-title" style="font-size:1.1rem;">Earth Shadow Diameter (Tamomāna)</h4>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:0.75rem;">
+              Calculated taking into account the tapering cone of darkness at the Moon's orbital distance:
+            </p>
+            <div style="font-family:var(--font-mono); font-size:1.1rem; color:var(--gold-bright);">
+              Tamomāna ≈ 80' (arcminutes)
+            </div>
+            <span style="font-size:0.8rem; color:var(--text-muted);">Over 2.5 times the Moon's apparent diameter!</span>
+          </div>
+
+          <div class="card" style="padding:1.25rem;">
+            <div class="card-subtitle">Eclipse Predictor Form</div>
+            <h4 class="card-title" style="font-size:1.1rem;">Full Moon Eclipse Test</h4>
+            <div class="input-group" style="margin-bottom:0.75rem;">
+              <label for="lunarNodeDistInput">Moon Separation from Node (Rāhu) (°):</label>
+              <input type="number" id="lunarNodeDistInput" min="0" max="30" step="0.5" value="4.5">
+            </div>
+            <button id="calcLunarEclipseBtn" class="btn-primary" style="width:100%; padding:0.5rem;">Evaluate Eclipse</button>
+          </div>
+        </div>
+
+        <div id="lunarEclipseResultBox" style="background:rgba(0,0,0,0.4); padding:1.25rem; border-radius:12px; border:1px solid var(--border-gold);">
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; align-items:center;">
+            <div>
+              <span style="font-size:0.75rem; color:var(--gold-dim); text-transform:uppercase;">Eclipse Status:</span>
+              <strong id="lunarStatusDisplay" style="display:block; font-size:1.3rem; color:var(--gold-bright);">Partial Lunar Eclipse</strong>
+            </div>
+            <div>
+              <span style="font-size:0.75rem; color:var(--gold-dim); text-transform:uppercase;">Magnitude (Grāsa):</span>
+              <strong id="lunarGrasaDisplay" style="display:block; font-size:1.3rem; color:var(--cyan-accent); font-family:var(--font-mono);">18.4 digits (Total)</strong>
+            </div>
+            <div>
+              <span style="font-size:0.75rem; color:var(--gold-dim); text-transform:uppercase;">Half Duration (Sthiti):</span>
+              <strong id="lunarSthitiDisplay" style="display:block; font-size:1.3rem; color:#fff; font-family:var(--font-mono);">3.8 Ghaṭikās (91 min)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Solar Eclipse Parallax (Lambana & Nati) Engine (Ch. 5) -->
+    <section id="solar-eclipse" data-tier="pro">
+      <div class="section-head">
+        <h3 class="section-title"><span>☀️</span> <span class="lang-en">9. Solar Eclipse Parallax: Lambana & Nati Engine (Sūryagrahaṇa)</span><span class="lang-te">9. సూర్యగ్రహణము & లంబన-నతి దృక్కర్మ సంస్కార యంత్రము</span><span class="lang-sa">९. सूर्यग्रहणम् लम्बन-नति-दृक्क्षेपः</span></h3>
+        <p class="section-sub">
+          Chapter 5 tackles the most complex problem of ancient astronomy: why a solar eclipse is not visible globally.
+          Because the Moon is relatively close to Earth, observer position on Earth creates a parallax shift:
+          <strong>Lambana</strong> (parallax in longitude / time) and <strong>Nati</strong> (parallax in latitude).
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 5 Reader's Guide • Solar Eclipse Parallax</span>
+          <span class="lang-te">అధ్యాయము 5 మార్గదర్శి • సూర్యగ్రహణ లంబన-నతి గణితం</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Why Solar Eclipses Depend on Your City (Lambana & Nati)</span>
+          <span class="lang-te">లంబన (Lambana) మరియు నతి (Nati) అంటే ఏమిటి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Unlike a lunar eclipse (seen identically everywhere on Earth), a solar eclipse depends on where the observer stands on Earth's curved surface. Chapter 5 solves this topocentric shift:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Lambana (Parallax in Longitude):</strong> Shifts the apparent <em>time</em> of Sun–Moon conjunction (measured in Nāḍīs / minutes) for a local observer.</li>
+            <li><strong>Nati (Parallax in Latitude):</strong> Shifts the Moon's apparent north–south <em>position</em> (in arcminutes), determining how much of the Sun's disc is covered at your city.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Adjust the <strong>Hour Angle from Noon</strong> and <strong>Observer Latitude</strong> to see how Lambana and Nati shift the apparent eclipse path.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">చంద్రగ్రహణం భూమిపై అందరికీ ఒకేలా కనిపిస్తుంది; కానీ సూర్యగ్రహణం చూసే నగరాన్ని బట్టి మారుతుంది. దీనిని 5వ అధ్యాయం లంబన-నతి ద్వారా గణిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>లంబన (Lambana):</strong> భూ వ్యాసార్థం వల్ల గ్రహణ <em>సమయంలో</em> వచ్చే మార్పు (నాడి/నిమిషాలలో).</li>
+            <li><strong>నతి (Nati):</strong> చంద్రుని ఉత్తర-దక్షిణ <em>స్థానంలో</em> కనిపించే మార్పు — దీని వల్లే ఒక నగరంలో సంపూర్ణ గ్రహణం, మరో నగరంలో పాక్షిక గ్రహణం కనిపిస్తుంది.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> మధ్యాహ్న సమయ దూరం మరియు అక్షాంశ విలువలను మార్చి లంబన-నతి ప్రభావాన్ని చూడండి.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-subtitle">Spherical Trigonometry of Parallax</div>
+          <h4 class="card-title">Tribhonalagna &amp; Dṛkkṣepa</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1rem;">
+            Parallax in longitude vanishes when the Sun is at the Nonagesimal (<em>Tribhonalagna</em> = Ascendant - 90°).
+            The zenith distance of the nonagesimal gives the central parallax factor (<em>Dṛkkṣepa</em>).
+          </p>
+
+          <div class="input-row" style="margin-bottom:1rem;">
+            <div class="input-group">
+              <label for="solarZenithAngle">Observer Zenith Distance (°):</label>
+              <input type="range" id="solarZenithAngle" min="0" max="80" value="35" style="accent-color:var(--gold-primary);">
+              <span id="solarZenithValDisplay" style="color:var(--gold-bright); font-family:var(--font-mono); font-size:0.85rem;">35°</span>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem; border-radius:8px;">
+              <span style="font-size:0.72rem; color:var(--text-muted); display:block;">Parallax in Longitude (Lambana):</span>
+              <strong id="lambanaDisplay" style="color:var(--gold-bright); font-family:var(--font-mono);">1.82 Ghaṭikās (43m)</strong>
+            </div>
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem; border-radius:8px;">
+              <span style="font-size:0.72rem; color:var(--text-muted); display:block;">Parallax in Latitude (Nati):</span>
+              <strong id="natiDisplay" style="color:var(--cyan-accent); font-family:var(--font-mono);">24.5' (arcmin)</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:1.25rem;">
+          <div class="card-subtitle">Visual Geocentric Parallax Vector</div>
+          <h4 class="card-title">Apparent Moon-Sun Displacement</h4>
+          <canvas id="parallaxCanvas" style="width:100%; height:220px; background:#020408; border-radius:10px; border:1px solid rgba(255,255,255,0.08);"></canvas>
+          <p style="font-size:0.78rem; color:var(--text-muted); margin-top:0.5rem;">
+            Golden disc = Sun; Blue disc = True Moon; Dashed ring = Parallax-shifted apparent Moon disc as seen by observer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Chedyaka Eclipse Graphical Projection Canvas (Ch. 6) -->
+    <section id="chedyaka" data-tier="pro">
+      <div class="section-head">
+        <h3 class="section-title"><span>📊</span> <span class="lang-en">10. Chedyaka: Graphical Projection of Eclipses (Chedyakādhikāra)</span><span class="lang-te">10. ఛేద్యక గ్రహణ పరిలేఖనము & వలన రేఖాచిత్ర ప్రదర్శన</span><span class="lang-sa">१०. छेद्यक-ग्रहण-लेखनम् वलनम्</span></h3>
+        <p class="section-sub">
+          Chapter 6 presents ancient India's graphical drafting method for eclipses:
+          drawing the <strong>Valana-maṇḍala</strong> (deflection circle), <strong>Māna-maṇḍala</strong> (size circle), 
+          and laying off the path of contact (<em>Sparśa</em>), greatest obscuration (<em>Madhya</em>), and release (<em>Mokṣa</em>).
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 6 Reader's Guide • Eclipse Diagramming</span>
+          <span class="lang-te">అధ్యాయము 6 మార్గదర్శి • ఛేద్యక రేఖాచిత్రం</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">How to Read the Geometric Eclipse Projection (Valana)</span>
+          <span class="lang-te">గ్రహణ ఛేద్యక పటం & వలన (Valana) అంటే ఏమిటి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 6 (<em>Chedyakādhikāra</em>) teaches astronomers how to draw a scale diagram of an eclipse on a leveled board before it happens:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Valana (Deflection Angle):</strong> Combines <em>Akṣa-valana</em> (latitude tilt) and <em>Ayana-valana</em> (ecliptic tilt) so you know the exact compass direction on the disc where the shadow first touches (<em>Sparśa</em>) and leaves (<em>Mokṣa</em>).</li>
+            <li><strong>Māna-maṇḍala:</strong> The concentric circles representing the eclipsed body, shadow disc, and contact trajectory.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Change the <strong>Eclipse Progress</strong> slider or <strong>Valana</strong> parameters to watch the shadow cross the disc along the calculated deflection angle.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">6వ అధ్యాయం (<em>ఛేద్యకాధికారం</em>) గ్రహణం జరగడానికి ముందే దాని జ్యామితీయ చిత్రాన్ని గీసే విధానాన్ని బోధిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>వలన కోణం (Valana):</strong> అక్ష-వలన మరియు అయన-వలనల కలయిక. దీని వల్ల గ్రహణ స్పర్శ (ప్రారంభం) మరియు మోక్షం (విడుపు) ఏ దిక్కులో జరుగుతాయో ఖచ్చితంగా తెలుస్తుంది.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> గ్రహణ ప్రగతి మరియు వలన విలువలను మార్చి స్పర్శ, మధ్య, మోక్ష బిందువులను పటంలో చూడండి.</p>
+        </div>
+      </div>
+      <div class="chedyaka-wrap">
+        <div class="card" style="padding:1rem;">
+          <canvas id="chedyakaCanvas" class="chedyaka-canvas"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.75rem; font-size:0.85rem;">
+            <span style="color:var(--gold-bright);">Interactive Eclipse Phase Slider:</span>
+            <input type="range" id="chedyakaPhaseInput" min="0" max="100" value="50" style="width:55%; accent-color:var(--gold-primary);">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Chapter 6 Geometry</div>
+          <h4 class="card-title">Deflection Circles &amp; Points</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1rem;">
+            • <strong>Valana (Deflection Angle):</strong> Sum of <em>Akṣa-valana</em> (latitude deflection) and <em>Ayana-valana</em> (solstitial ecliptic deflection).<br>
+            • <strong>Sparśa (Contact):</strong> Occurs in the East for Lunar eclipse, West for Solar eclipse.<br>
+            • <strong>Mokṣa (Release):</strong> Occurs in the West for Lunar eclipse, East for Solar eclipse.<br>
+            • <strong>Color of Eclipsed Disc:</strong> Smoky gray for partial, coppery red for total obscuration (v. 23).
+          </p>
+          <div style="background:rgba(245, 185, 66, 0.08); padding:0.75rem; border-radius:8px; border:1px solid var(--border-gold);">
+            <span style="font-size:0.75rem; color:var(--gold-bright); font-weight:700;">CHEDYAKA FORMULA:</span>
+            <div style="font-family:var(--font-mono); font-size:0.82rem; color:#fff; margin-top:0.25rem;">
+              Total Valana = Akṣa-valana + Ayana-valana
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 11: Planetary Conjunctions & Wars (Ch. 7) -->
+    <section id="conjunctions" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>⚔️</span> <span class="lang-en">11. Planetary Conjunctions & Planetary War (Grahayutyadhikāra)</span><span class="lang-te">11. గ్రహయుతి & గ్రహ యుద్ధ విశ్లేషణ ప్రయోగశాల</span><span class="lang-sa">११. ग्रहयुत्यधिकारः ग्रहयुद्धम्</span></h3>
+        <p class="section-sub">
+          When two planets reach the same longitude, they form a conjunction. Chapter 7 classifies four types of encounters 
+          (<em>Bheda, Ullekha, Aṁśuvimarda, Apasavya</em>) and details the rules for determining the victor in a Planetary War (<em>Graha-Yuddha</em>).
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 7 Reader's Guide • Planetary Encounters</span>
+          <span class="lang-te">అధ్యాయము 7 మార్గదర్శి • గ్రహయుతి & గ్రహయుద్ధం</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Understanding Conjunctions (Yuti) & the 4 Types of Graha-Yuddha</span>
+          <span class="lang-te">గ్రహయుతి మరియు 4 రకాల గ్రహయుద్ధాలు అంటే ఏమిటి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 7 (<em>Grahayutyadhikāra</em>) computes when two planets reach the exact same celestial longitude and classifies how closely they pass:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>4 Forms of Planetary Combat (Graha-Yuddha):</strong> <em>Bheda</em> (occultation, closest), <em>Ullekha</em> (grazing rims), <em>Aṁśuvimarda</em> (mingling rays), and <em>Apasavya</em> (near transit).</li>
+            <li><strong>Determining the Victor:</strong> The brighter, larger, or more northerly planet is traditionally declared the victor.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Select two planets and adjust their separation/latitude to see the exact encounter classification and angular gap.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">7వ అధ్యాయం (<em>గ్రహయుత్యధికారం</em>) రెండు గ్రహాలు ఒకే రేఖాంశంలో కలిసే సమయాన్ని మరియు వాటి మధ్య దూరాన్ని బట్టి 4 రకాల యుద్ధాలను వివరిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>4 రకాల గ్రహయుద్ధాలు:</strong> <em>భేద</em> (ఒకదానినొకటి కప్పడం), <em>ఉల్లేఖ</em> (అంచులు తాకడం), <em>అంశువిమర్ద</em> (కిరణాల కలయిక), <em>అపసవ్య</em> (సమీప ప్రయాణం).</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> రెండు గ్రహాలను ఎంచుకుని వాటి మధ్య కోణీయ దూరాన్ని మార్చి యుద్ధ రకాన్ని చూడండి.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-subtitle">The 4 Types of Graha-Yuddha</div>
+          <h4 class="card-title">Classifying Encounters (Ch. 7, vv. 1–6)</h4>
+          <div style="display:flex; flex-direction:column; gap:0.75rem; font-size:0.88rem;">
+            <div style="background:rgba(255,255,255,0.03); padding:0.6rem 0.85rem; border-radius:8px; border-left:3px solid var(--cyan-accent);">
+              <strong style="color:var(--cyan-accent);">1. Bheda (Occultation / Cleaving):</strong> Discs directly overlap.
+            </div>
+            <div style="background:rgba(255,255,255,0.03); padding:0.6rem 0.85rem; border-radius:8px; border-left:3px solid var(--gold-bright);">
+              <strong style="color:var(--gold-bright);">2. Ullekha (Grazing / Touching):</strong> Disc edges graze each other.
+            </div>
+            <div style="background:rgba(255,255,255,0.03); padding:0.6rem 0.85rem; border-radius:8px; border-left:3px solid var(--purple-nebula);">
+              <strong style="color:var(--purple-nebula);">3. Aṁśuvimarda (Ray Mingling):</strong> Light rays intermingle within 1°.
+            </div>
+            <div style="background:rgba(255,255,255,0.03); padding:0.6rem 0.85rem; border-radius:8px; border-left:3px solid var(--emerald-accent);">
+              <strong style="color:var(--emerald-accent);">4. Apasavya (Passing Near):</strong> Separation is less than 5°.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Interactive Encounter Analyzer</div>
+          <h4 class="card-title">Evaluate Planetary War (Graha-Yuddha)</h4>
+          <div class="input-row" style="margin-bottom:1rem;">
+            <div class="input-group">
+              <label for="yuddhaP1">Planet 1:</label>
+              <select id="yuddhaP1">
+                <option value="jupiter" selected>Jupiter (Guru)</option>
+                <option value="mars">Mars (Maṅgala)</option>
+                <option value="venus">Venus (Śukra)</option>
+                <option value="saturn">Saturn (Śani)</option>
+                <option value="mercury">Mercury (Budha)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="yuddhaP2">Planet 2:</label>
+              <select id="yuddhaP2">
+                <option value="mars" selected>Mars (Maṅgala)</option>
+                <option value="venus">Venus (Śukra)</option>
+                <option value="jupiter">Jupiter (Guru)</option>
+                <option value="saturn">Saturn (Śani)</option>
+                <option value="mercury">Mercury (Budha)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="yuddhaResultArea" style="background:rgba(0,0,0,0.4); padding:1rem; border-radius:10px; border:1px solid var(--border-gold);">
+            <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Victor of the Planetary War:</div>
+            <strong id="yuddhaVictorDisplay" style="font-size:1.25rem; color:var(--gold-bright); font-family:var(--font-display);">Jupiter Prevails (Jaya)</strong>
+            <p id="yuddhaReasonDisplay" style="font-size:0.82rem; color:#e2e8f0; margin-top:0.35rem;">
+              Jupiter is larger, more luminous, and situated further to the North, defeating the smaller reddish Mars according to Verse 21.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 12: 28 Nakshatras & Yogatara Star Catalog (Ch. 8) -->
+    <section id="nakshatra" data-tier="beginner">
+      <div class="section-head">
+        <h3 class="section-title"><span>✨</span> <span class="lang-en">12. 28 Nakshatras & Yogatārā Celestial Astrometric Catalog (Bhayutyadhikāra)</span><span class="lang-te">12. 28 నక్షత్రములు & యోగతారల ఖగోళ ధ్రువాంశ-విక్షేప పట్టిక</span><span class="lang-sa">१२. भग्रहयुतिः योगतारा-ध्रुवकाः</span></h3>
+        <p class="section-sub">
+          Chapter 8 provides the complete astrometric catalog of junction stars (<em>Yogatārā</em>) for all 27/28 Nakshatras 
+          along with non-zodiacal landmarks like Agastya (Canopus), Lubdhaka (Sirius), and Brahmāhṛdaya (Capella).
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 8 Reader's Guide • Star Catalog & Birth Star</span>
+          <span class="lang-te">అధ్యాయము 8 మార్గదర్శి • నక్షత్రమండలం & జన్మ నక్షత్రం</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">How Dhruvaka, Vikṣepa, 27 Nakshatras & Pādas Work</span>
+          <span class="lang-te">ధ్రువక-విక్షేపాలు, 27 నక్షత్రాలు & జన్మ నక్షత్ర గణన</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 8 (<em>Bhayutyadhikāra</em>) maps the 27/28 lunar asterisms and bright stars like Agastya (Canopus) and Lubdhaka (Sirius) using polar coordinates:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>27 Nakshatras × 4 Pādas:</strong> Each Nakshatra spans <strong>800' (13° 20')</strong>, divided into 4 <em>Pādas</em> of <strong>200' (3° 20')</strong> each, with a specific Vedic naming syllable (<em>Nāmākṣara</em>).</li>
+            <li><strong>Yogatārā:</strong> The primary junction star marking each asterism via <em>Dhruvaka</em> (polar longitude) and <em>Vikṣepa</em> (polar latitude).</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Pick any date in the top inspector to see the Moon's live transit, or enter your <strong>Birth Date &amp; Time</strong> below to find your Janma Nakshatra, Pāda, Rāśi, and naming sound.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">8వ అధ్యాయం (<em>భయుత్యధికారం</em>) 27/28 నక్షత్రాల యోగతారల స్థానాలను ధ్రువక-విక్షేపాల ద్వారా నిర్ధారిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>27 నక్షత్రాలు × 4 పాదాలు:</strong> ప్రతి నక్షత్రం <strong>800' (13° 20')</strong> ఉంటుంది; అందులో 4 పాదాలు (ఒక్కొక్కటి <strong>200' / 3° 20'</strong>) మరియు వాటికి నామకరణ అక్షరాలు ఉంటాయి.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> పైన తేదీని మార్చి ఆనాటి చంద్ర నక్షత్రాన్ని చూడండి, లేదా క్రింద మీ <strong>పుట్టిన తేదీ &amp; సమయం</strong> ఇచ్చి మీ జన్మ నక్షత్ర ఫలితాలను పొందండి.</p>
+        </div>
+      </div>
       <!-- Date Controller Bar for Nakshatra -->
       <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); padding:0.85rem 1.25rem; border-radius:14px; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
         <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-          <label for="nakDateInput" style="font-weight:600; color:var(--gold-bright); font-size:0.9rem;">Inspect Day & Moon Transit:</label>
-          <input type="date" id="nakDateInput" style="background:#000; color:#fff; border:1px solid #444; padding:0.4rem 0.8rem; border-radius:8px; font-size:0.9rem;">
-          <button id="nakNowBtn" class="btn-ghost" style="padding:0.4rem 0.9rem; font-size:0.85rem;">Set to Today</button>
+          <label for="nakDateInput" style="font-weight:600; color:var(--gold-bright); font-size:0.9rem;">
+            <span class="lang-en">Inspect Day &amp; Moon Transit:</span>
+            <span class="lang-te" style="font-family:var(--font-telugu);">దిన నక్షత్ర &amp; చంద్ర సంచార శోధన:</span>
+          </label>
+          <input type="date" id="nakDateInput" style="background:#090d16; color:#fff; border:1px solid var(--border-gold); padding:0.45rem 0.85rem; border-radius:8px; font-size:0.92rem; font-family:var(--font-mono); cursor:pointer;">
+          <button id="nakNowBtn" class="btn-ghost" style="padding:0.4rem 0.9rem; font-size:0.85rem;">
+            <span class="lang-en">Set to Today</span>
+            <span class="lang-te" style="font-family:var(--font-telugu);">నేటి తేది</span>
+          </button>
         </div>
         <div style="font-size:0.82rem; color:var(--text-muted);">
-          Each Nakshatra = 800' ($13^\circ 20'$) • 4 Pādas of 200' ($3^\circ 20'$) each
+          Each Nakshatra = 800' (13° 20') • 4 Pādas of 200' (3° 20') each
         </div>
       </div>
 
@@ -208,7 +1403,10 @@
       <div class="nakshatra-today-card">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
           <div>
-            <span class="hero-pill" style="margin-bottom:0.4rem;">Presiding Asterism of the Day</span>
+            <span class="hero-pill" style="margin-bottom:0.4rem;">
+              <span class="lang-en">Presiding Asterism of the Day</span>
+              <span class="lang-te" style="font-family:var(--font-telugu);">ఈనాటి దిన నక్షత్రము</span>
+            </span>
             <div style="display:flex; align-items:center; gap:0.75rem;">
               <span id="nakActiveIcon" style="font-size:2.8rem; background:rgba(255,255,255,0.05); padding:0.4rem 0.6rem; border-radius:12px; border:1px solid rgba(255,255,255,0.1);">🐴</span>
               <div>
@@ -247,28 +1445,46 @@
         <!-- Key Attributes Grid -->
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0.75rem; margin-bottom:1.25rem;">
           <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
-            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Presiding Deity (Devatā)</span>
-            <strong id="nakActiveDeity" style="color:#fff; font-size:0.88rem;">--</strong>
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">
+              <span class="lang-en">Presiding Deity (Devatā)</span>
+              <span class="lang-te" style="font-family:var(--font-telugu);">అధిష్టాన దేవత</span>
+            </span>
+            <strong id="nakActiveDeity" style="color:#fff; font-size:0.88rem; display:block;">--</strong>
           </div>
           <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
-            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Ruling Planet Lord</span>
-            <strong id="nakActiveLord" style="color:var(--gold-bright); font-size:0.88rem;">--</strong>
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">
+              <span class="lang-en">Ruling Planet Lord</span>
+              <span class="lang-te" style="font-family:var(--font-telugu);">దశాధిపతి గ్రహము</span>
+            </span>
+            <strong id="nakActiveLord" style="color:var(--gold-bright); font-size:0.88rem; display:block;">--</strong>
           </div>
           <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
-            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Yogatārā Junction Star</span>
-            <strong id="nakActiveStar" style="color:var(--cyan-accent); font-size:0.85rem;">--</strong>
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">
+              <span class="lang-en">Yogatārā Junction Star</span>
+              <span class="lang-te" style="font-family:var(--font-telugu);">యోగతార నక్షత్రము</span>
+            </span>
+            <strong id="nakActiveStar" style="color:var(--cyan-accent); font-size:0.85rem; word-break:break-word; display:block; line-height:1.3;">--</strong>
           </div>
           <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
-            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Temperament (Gana)</span>
-            <strong id="nakActiveGana" style="color:#fff; font-size:0.88rem;">--</strong>
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">
+              <span class="lang-en">Temperament (Gana)</span>
+              <span class="lang-te" style="font-family:var(--font-telugu);">నక్షత్ర గణము</span>
+            </span>
+            <strong id="nakActiveGana" style="color:#fff; font-size:0.88rem; display:block;">--</strong>
           </div>
           <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
-            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Nature (Kritya)</span>
-            <strong id="nakActiveNature" style="color:#fff; font-size:0.85rem;">--</strong>
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">
+              <span class="lang-en">Nature (Kritya)</span>
+              <span class="lang-te" style="font-family:var(--font-telugu);">నక్షత్ర స్వభావము</span>
+            </span>
+            <strong id="nakActiveNature" style="color:#fff; font-size:0.85rem; display:block;">--</strong>
           </div>
           <div style="background:rgba(255,255,255,0.03); padding:0.65rem 0.85rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
-            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">Element (Tattva)</span>
-            <strong id="nakActiveElement" style="color:#fff; font-size:0.88rem;">--</strong>
+            <span style="font-size:0.7rem; color:var(--gold-dim); display:block; text-transform:uppercase;">
+              <span class="lang-en">Element (Tattva)</span>
+              <span class="lang-te" style="font-family:var(--font-telugu);">పంచభూత తత్వము</span>
+            </span>
+            <strong id="nakActiveElement" style="color:#fff; font-size:0.88rem; display:block;">--</strong>
           </div>
         </div>
 
@@ -287,11 +1503,9 @@
         <!-- 7-Day Forecast Timeline -->
         <div style="margin-top:1.75rem; border-top:1px solid rgba(255,255,255,0.08); padding-top:1.25rem;">
           <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#fff; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
-            <span>📅</span> 7-Day Moon Transit Forecast (Click any day to inspect)
+            <span>📅</span> <span class="lang-en">7-Day Moon Transit Forecast (Click any day to inspect)</span><span class="lang-te" style="font-family:var(--font-telugu);">7 రోజుల చంద్ర సంచార సూచిక (ఏ రోజైనా వీక్షించుటకు క్లిక్ చేయండి)</span>
           </h4>
-          <div class="forecast-scroll" id="nakForecastContainer">
-            <!-- Dynamically populated 7 forecast cards -->
-          </div>
+          <div class="forecast-scroll" id="nakForecastContainer"></div>
         </div>
       </div>
 
@@ -306,47 +1520,53 @@
 
         <div style="display:flex; gap:1rem; align-items:flex-end; flex-wrap:wrap; margin:1.25rem 0;">
           <div class="input-group">
-            <label for="birthDateInput">Birth Date:</label>
-            <input type="date" id="birthDateInput">
+            <label for="birthDateInput">
+              <span class="lang-en">Birth Date:</span>
+              <span class="lang-te" style="font-family:var(--font-telugu);">పుట్టిన తేది:</span>
+            </label>
+            <input type="date" id="birthDateInput" style="background:#090d16; color:#fff; border:1px solid var(--border-gold); padding:0.45rem 0.85rem; border-radius:8px; font-size:0.92rem; font-family:var(--font-mono); cursor:pointer;">
           </div>
           <div class="input-group">
-            <label for="birthTimeInput">Birth Time (Local):</label>
-            <input type="time" id="birthTimeInput" value="12:00">
+            <label for="birthTimeInput">
+              <span class="lang-en">Birth Time (Local):</span>
+              <span class="lang-te" style="font-family:var(--font-telugu);">పుట్టిన సమయము:</span>
+            </label>
+            <input type="time" id="birthTimeInput" value="12:00" style="background:#090d16; color:#fff; border:1px solid var(--border-gold); padding:0.45rem 0.85rem; border-radius:8px; font-size:0.92rem; font-family:var(--font-mono); cursor:pointer;">
           </div>
-          <button id="birthNakCalcBtn" class="btn-primary" style="height:44px;">Find My Birth Star 🌟</button>
+          <button id="birthNakCalcBtn" class="btn-primary" style="height:44px;">
+            <span class="lang-en">Find My Birth Star 🌟</span>
+            <span class="lang-te" style="font-family:var(--font-telugu);">నా జన్మ నక్షత్రమును కనుగొనండి 🌟</span>
+          </button>
         </div>
 
         <div id="birthNakResultArea" style="display:none;"></div>
       </div>
 
-      <!-- Master 27 Nakshatras Directory & Interactive Grid -->
-      <div style="margin-bottom:1.5rem;">
-        <h4 style="font-family:var(--font-display); font-size:1.4rem; color:#fff; margin-bottom:0.5rem;">
-          🌌 All 27 Nakshatras Celestial Catalog
-        </h4>
-        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">
-          Click any asterism card below for full astronomical, mythological, and muhūrta insights.
-        </p>
-
-        <div class="nak-filter-bar">
-          <button class="nak-filter-btn active" data-group="all">All (27)</button>
-          <button class="nak-filter-btn" data-group="deva">Deva Gana (Divine)</button>
-          <button class="nak-filter-btn" data-group="manushya">Manushya Gana (Human)</button>
-          <button class="nak-filter-btn" data-group="rakshasa">Rakshasa Gana (Assertive)</button>
-          <button class="nak-filter-btn" data-group="fire">Fire (Agni)</button>
-          <button class="nak-filter-btn" data-group="earth">Earth (Prithvi)</button>
-          <button class="nak-filter-btn" data-group="air">Air & Ether</button>
-          <button class="nak-filter-btn" data-group="water">Water (Jala)</button>
-          <input type="text" id="nakSearchInput" class="nak-search-input" placeholder="🔍 Search star, deity, lord...">
-        </div>
-
-        <div class="nakshatra-grid" id="nakshatraCardsGrid">
-          <!-- Dynamically populated 27 cards -->
+      <!-- Complete 28 Yogatara Astrometric Table from Burgess Book -->
+      <div class="card">
+        <div class="card-subtitle">Chapter 8 Canonical Table</div>
+        <h4 class="card-title">🌌 Polar Coordinates of the 28 Yogatārās (Dhruvaka &amp; Vikṣepa)</h4>
+        <div class="astro-table-wrap">
+          <table class="astro-table">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Asterism (Nakṣatra)</th>
+                <th>Presiding Deity</th>
+                <th>Polar Longitude (Dhruvaka)</th>
+                <th>Polar Latitude (Vikṣepa)</th>
+                <th>Modern Star Identification</th>
+              </tr>
+            </thead>
+            <tbody id="yogataraTableBody">
+              <!-- Populated via JS -->
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- Modal Inspection Drawer for Nakshatras -->
+    <!-- Modal for Nakshatras -->
     <div id="nakModalBackdrop" class="nak-modal-backdrop">
       <div class="nak-modal">
         <button id="nakModalClose" class="nak-modal-close">&times;</button>
@@ -354,220 +1574,530 @@
       </div>
     </div>
 
-    <!-- Section 4: Double Epicycle & Retrograde Motion Simulator -->
-    <section id="epicycles" data-tier="pro">
+    <!-- Section 13: Heliacal Risings & Combustion (Ch. 9) -->
+    <section id="udayasta" data-tier="intermediate">
       <div class="section-head">
-        <h3 class="section-title"><span>🔄</span> 4. Double Epicycle & Retrograde Motion (Vakragati) Simulator</h3>
+        <h3 class="section-title"><span>🌅</span> <span class="lang-en">13. Heliacal Risings & Settings: Combustion Limits (Udayāstādhikāra)</span><span class="lang-te">13. గ్రహోదయాస్తమయములు & మౌఢ్య కాలాంశ భాగములు</span><span class="lang-sa">१३. उदयास्ताधिकारः कालांशाः</span></h3>
         <p class="section-sub">
-          The Surya Siddhanta resolves irregular planetary motions using two epicycles: 
-          <strong>Manda-phala</strong> (accounting for orbital eccentricity) and 
-          <strong>Śīghra-phala</strong> (accounting for Earth's heliocentric vantage point). 
-          Watch how this naturally reproduces retrograde loops (<em>Vakrī</em>) and stationary points.
+          Chapter 9 defines when planets disappear into the blinding rays of the Sun (<em>Asta / Combustion</em>) 
+          and when they re-emerge into visibility as morning or evening stars (<em>Udaya</em>).
         </p>
       </div>
 
-      <div class="canvas-wrap">
-        <canvas id="epicycleCanvas"></canvas>
-        <div class="canvas-controls">
-          <div class="control-item">
-            <label for="simPlanet" style="color:#fff; font-weight:600;">Planet:</label>
-            <select id="simPlanet" style="background:#111; color:#fff; border:1px solid #444; padding:0.35rem 0.65rem; border-radius:6px;">
-              <option value="mars" selected>Mars (Maṅgala - High Anomaly)</option>
-              <option value="jupiter">Jupiter (Guru)</option>
-              <option value="saturn">Saturn (Śani)</option>
-              <option value="venus">Venus (Śukra)</option>
-              <option value="mercury">Mercury (Budha)</option>
-            </select>
-          </div>
 
-          <div class="control-item">
-            <label for="simMode" style="color:#fff; font-weight:600;">Epicycle Mode:</label>
-            <select id="simMode" style="background:#111; color:#fff; border:1px solid #444; padding:0.35rem 0.65rem; border-radius:6px;">
-              <option value="sighra" selected>Śīghra Epicycle (Produces Retrograde Loops)</option>
-              <option value="manda">Manda Epicycle (Orbital Eccentricity / Velocity Variation)</option>
-            </select>
-          </div>
-
-          <div class="control-item">
-            <label for="simSpeed" style="color:#fff; font-weight:600;">Simulation Speed:</label>
-            <input type="range" id="simSpeed" min="0.2" max="3" step="0.1" value="1">
-          </div>
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 9 Reader's Guide • Heliacal Visibility</span>
+          <span class="lang-te">అధ్యాయము 9 మార్గదర్శి • ఉదయాస్తమయాలు (మౌఢ్యమి)</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Understanding Kālāṁśa (Combustion / Planetary Invisibility Near Sun)</span>
+          <span class="lang-te">కాలాంశ & గ్రహ మౌఢ్యమి (అస్తమయం) అంటే ఏమిటి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 9 (<em>Udayāstādhikāra</em>) explains why planets disappear in solar glare (<strong>Combustion / Mauḍhyami</strong>) and reappear days later:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Kālāṁśa:</strong> The minimum angular distance from the Sun required to see a planet in twilight (e.g., Moon 12°, Jupiter 11°, Venus 10°/8°, Saturn 15°, Mars 17°).</li>
+            <li><strong>East vs. West Visibility:</strong> Planets ahead of the Sun rise in the East before dawn; planets behind set in the West after sunset.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Select a planet and adjust its elongation from the Sun to see whether it is visible or invisible (combust).</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">9వ అధ్యాయం (<em>ఉదయాస్తాధికారం</em>) సూర్యునికి దగ్గరగా వెళ్ళినప్పుడు గ్రహాలు కంటికి కనిపించకుండా పోవడాన్ని (<strong>మౌఢ్యమి / అస్తమయం</strong>) వివరిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>కాలాంశ (Kālāṁśa):</strong> సూర్యకాంతిలో గ్రహం అదృశ్యమయ్యే కనీస కోణీయ దూరం (ఉదా: చంద్రుడు 12°, గురుడు 11°, శుక్రుడు 10°/8°, శని 15°, కుజుడు 17°).</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> గ్రహాన్ని ఎంచుకుని సూర్యుని నుండి దూరాన్ని మార్చి అది ఉదయ స్థితిలో ఉందో లేక అస్తమయ (మౌఢ్యమి) స్థితిలో ఉందో చూడండి.</p>
         </div>
       </div>
-    </section>
-
-    <!-- Section 5: Trigonometry & The 24 Jya (Sine) Table -->
-    <section id="trig" data-tier="intermediate">
-      <div class="section-head">
-        <h3 class="section-title"><span>📐</span> 5. Trigonometry: The 24-Jyā (Sine) Table</h3>
-        <p class="section-sub">
-          In Chapter 2 (verses 15–22), the Surya Siddhanta presents 24 sines in a 90° quadrant at 225' ($3^\circ 45'$) intervals, 
-          computed from radius $R = 3438'$ using an early second-order finite difference equation!
-        </p>
-      </div>
-
-      <div class="grid-2" style="margin-bottom:1.5rem;">
-        <div class="card">
-          <div class="card-subtitle">Trigonometric Radius Formulation</div>
-          <h4 class="card-title">Why Radius R = 3438'?</h4>
-          <p>
-            The full circle equals $360^\circ \times 60' = 21,600$ arcminutes. 
-            If Circumference $C = 21,600'$, then Radius $R = C / (2\pi) = 21600 / (2 \times 3.14159265...) \approx 3437.75' \rightarrow 3438'$.
-            At this radius, linear sine length matches angular arc length for small angles ($Jy\bar{a}(\theta) \approx \theta$).
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-subtitle">Second-Order Difference Equation</div>
-          <h4 class="card-title">The Recursive Differential Formula</h4>
-          <p>
-            The difference between consecutive sines decreases by the sine value divided by 225:
-          </p>
-          <div style="background:rgba(0,0,0,0.4); padding:0.75rem 1rem; border-radius:8px; font-family:var(--font-mono); color:var(--gold-bright); font-size:0.88rem;">
-            J(n+1) - J(n) = [J(n) - J(n-1)] - (J(n) / 225)
-          </div>
-          <p style="margin-top:0.75rem; font-size:0.85rem;">
-            This is the earliest recorded finite difference representation of $d^2(\sin \theta)/d\theta^2 = -\sin \theta$.
-          </p>
-        </div>
-      </div>
-
-      <div class="jya-grid" id="jyaGrid">
-        <!-- Dynamically populated 24 values -->
-      </div>
-    </section>
-
-    <!-- Section 6: The 12-Angula Shanku (Sundial) Simulator -->
-    <section id="sundial" data-tier="intermediate">
-      <div class="section-head">
-        <h3 class="section-title"><span>☀️</span> 6. Practical Astronomy: The 12-Aṅgula Gnomon (Śaṅku)</h3>
-        <p class="section-sub">
-          Chapter 3 (Tripraśnādhikāra) shows how a simple vertical staff of 12 digits (aṅgulas) resolves Direction (Diś), 
-          Place/Latitude (Deśa), and Time (Kāla).
-        </p>
-      </div>
-
       <div class="grid-2">
         <div class="card">
-          <div class="card-subtitle">Interactive Shadow Simulation</div>
-          <h4 class="card-title">Gnomon Shadow & Hypotenuse (Karṇa)</h4>
-          <div style="margin:1.5rem 0;">
-            <label style="display:flex; justify-content:space-between; font-weight:600; color:var(--gold-bright); margin-bottom:0.5rem;">
-              <span>Sun Altitude Angle (&alpha;):</span>
-              <span id="altValueDisplay">45°</span>
-            </label>
-            <input type="range" id="sunAltitude" min="5" max="85" step="1" value="45" style="width:100%; accent-color:var(--gold-primary);">
+          <div class="card-subtitle">Canonical Degrees of Combustion (Kālāṁśa)</div>
+          <h4 class="card-title">Threshold Elongations (vv. 6–9)</h4>
+          <div style="font-size:0.9rem; line-height:1.8;">
+            • <strong>Moon (Candra):</strong> 12° from the Sun.<br>
+            • <strong>Mars (Maṅgala):</strong> 17° from the Sun.<br>
+            • <strong>Mercury (Budha):</strong> 14° (Direct) / 12° (Retrograde).<br>
+            • <strong>Jupiter (Guru):</strong> 11° from the Sun.<br>
+            • <strong>Venus (Śukra):</strong> 10° (Direct) / 8° (Retrograde).<br>
+            • <strong>Saturn (Śani):</strong> 15° from the Sun.
           </div>
-
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
-            <div style="background:rgba(0,0,0,0.3); padding:0.75rem; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
-              <span style="font-size:0.75rem; color:var(--text-muted); display:block;">Shadow (Chāyā):</span>
-              <strong id="shadowLengthDisplay" style="color:var(--gold-bright); font-size:1.1rem; font-family:var(--font-mono);">--</strong>
-            </div>
-            <div style="background:rgba(0,0,0,0.3); padding:0.75rem; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
-              <span style="font-size:0.75rem; color:var(--text-muted); display:block;">Hypotenuse (Karṇa):</span>
-              <strong id="karnaDisplay" style="color:var(--cyan-accent); font-size:1.1rem; font-family:var(--font-mono);">--</strong>
-            </div>
-          </div>
-          <p style="font-size:0.85rem; color:var(--text-muted);">
-            Formula: Shadow $s = 12 \cot(\alpha)$ aṅgulas; Karṇa $k = \sqrt{12^2 + s^2}$.
-          </p>
         </div>
 
-        <div class="card" style="padding:1rem;">
-          <canvas id="gnomonCanvas" style="height:260px;"></canvas>
+        <div class="card">
+          <div class="card-subtitle">Interactive Combustion Checker</div>
+          <h4 class="card-title">Test Planetary Visibility</h4>
+          <div class="input-row" style="margin-bottom:1rem;">
+            <div class="input-group">
+              <label for="combustPlanetSelect">Planet:</label>
+              <select id="combustPlanetSelect">
+                <option value="jupiter">Jupiter (Limit 11°)</option>
+                <option value="mars">Mars (Limit 17°)</option>
+                <option value="venus">Venus (Limit 10°)</option>
+                <option value="saturn">Saturn (Limit 15°)</option>
+                <option value="mercury">Mercury (Limit 14°)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="combustElongInput">Elongation from Sun (°):</label>
+              <input type="number" id="combustElongInput" min="0" max="180" value="8" step="1">
+            </div>
+          </div>
+          <div id="combustResultBox" style="background:rgba(0,0,0,0.4); padding:1rem; border-radius:10px; border:1px solid var(--border-gold);">
+            <span style="font-size:0.75rem; color:var(--gold-dim); text-transform:uppercase;">Visibility Status:</span>
+            <strong id="combustStatusDisplay" style="display:block; font-size:1.25rem; color:#ef4444;">Combust (Asta) — Invisible</strong>
+            <p id="combustDescDisplay" style="font-size:0.82rem; color:#e2e8f0; margin-top:0.35rem;">
+              The planet is within 11° of the Sun, obscured by atmospheric twilight glare.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 7: The 9 Systems of Time (Nava Manani) -->
-    <section id="time-systems" data-tier="beginner">
+    <!-- Section 14: Moon Crescent & Cusp Elevation (Ch. 10) -->
+    <section id="moon-cusp" data-tier="intermediate">
       <div class="section-head">
-        <h3 class="section-title"><span>⏳</span> 7. Chronometry: The Nine Systems of Time (Nava-Mānāni)</h3>
+        <h3 class="section-title"><span>🌙</span> <span class="lang-en">14. Moon Phase & Elevation of Cusps (Candrodayādhikāra / Śṛṅgonnati)</span><span class="lang-te">14. చంద్రకళలు & చంద్రశృంగోన్నతి దశల దర్శనము</span><span class="lang-sa">१४. चन्द्रदर्शनाधिकारः शृङ्गोन्नतिः</span></h3>
         <p class="section-sub">
-          Chapter 14 classifies the universe into nine distinct operational time scales, from civil commerce to cosmic cycles.
+          Chapter 10 solves the exact geometric illumination of the lunar crescent and computes the elevation of the Moon's horns 
+          (<em>Śṛṅgonnati</em>) — which horn points higher and the exact slant of the crescent after sunset or before sunrise.
         </p>
       </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-subtitle">Civil & Commercial Time</div>
-          <h4 class="card-title">1. Sāvana (सावन • సావన)</h4>
-          <p>Terrestrial day measured from sunrise to the next sunrise. Governs civil affairs, wages, fasting durations, and Ahargaṇa tally.</p>
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 10 Reader's Guide • Lunar Crescent & Horn Tilt</span>
+          <span class="lang-te">అధ్యాయము 10 మార్గదర్శి • చంద్రశృంగోన్నతి</span>
         </div>
-        <div class="card">
-          <div class="card-subtitle">Seasonal & Agricultural Time</div>
-          <h4 class="card-title">2. Saura (सौर • సౌర)</h4>
-          <p>Solar time marked by the Sun entering the 12 zodiac signs (Saṅkrāntis). Regulates the 6 Ṛtus (seasons) and solstices (Ayanas).</p>
+        <h4 class="card-title">
+          <span class="lang-en">Understanding Śukla (Aṅgulas) & Elevation of the Moon's Horns (Śṛṅgonnati)</span>
+          <span class="lang-te">శుక్ల అంగుళాలు మరియు చంద్రుని కొమ్ముల వంపు (శృంగోన్నతి)</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 10 (<em>Candrodayādhikāra</em>) computes how much of the Moon is illuminated and which horn tilts higher at sunset/sunrise:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Illuminated Digits (Aṅgulas):</strong> The Moon's full disc width is <strong>12 Aṅgulas</strong> (0 = New Moon, 6 = Half Moon, 12 = Full Moon).</li>
+            <li><strong>Śṛṅgonnati (Horn Elevation):</strong> The lit crescent always faces the Sun; the relative north–south latitude of the Moon tilts one horn higher than the other.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Slide the <strong>Elongation</strong> and <strong>Moon Latitude</strong> controls to see the crescent grow from 0 to 12 Aṅgulas and watch the horns tilt dynamically.</p>
         </div>
-        <div class="card">
-          <div class="card-subtitle">Religious & Lunar Time</div>
-          <h4 class="card-title">3. Cāndra (चान्द्र • చాంద్ర)</h4>
-          <p>Measured by Tithis (phases of Moon, 12° elongation intervals) and synodic months. Regulates festivals, vratas, and rituals.</p>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">10వ అధ్యాయం (<em>చంద్రోదయాధికారం</em>) చంద్రబింబంలోని ప్రకాశవంతమైన భాగాన్ని మరియు చంద్రవంక కొమ్ముల ఎత్తును గణిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>అంగుళాలు (12 భాగాలు):</strong> చంద్రబింబాన్ని 12 అంగుళాలుగా కొలుస్తారు (0 = అమావాస్య, 6 = అర్ధచంద్రుడు, 12 = పౌర్ణమి).</li>
+            <li><strong>శృంగోన్నతి:</strong> చంద్రుని విక్షేపం ఆధారంగా ఉత్తర లేదా దక్షిణ కొమ్ము పైకి వంగి ఉంటుంది.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> ఎలోంగేషన్ మరియు విక్షేప స్లైడర్‌లను కదిపి చంద్రకళలు మరియు కొమ్ముల వంపును ప్రత్యక్షంగా చూడండి.</p>
         </div>
-        <div class="card">
-          <div class="card-subtitle">Sidereal & Rotational Time</div>
-          <h4 class="card-title">4. Nākṣatra (नाक्षत्र • నాక్షత్ర)</h4>
-          <p>Earth's rotation relative to fixed stars (1 rotation = 60 nākṣatra ghaṭīs). Regulates planetary velocities and the ascendant (Lagna).</p>
+      </div>
+      <div class="moon-cusp-wrap">
+        <div class="card" style="padding:1rem;">
+          <canvas id="moonCuspCanvas" class="moon-cusp-canvas"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.75rem; font-size:0.85rem;">
+            <span style="color:var(--gold-bright);">Lunar Phase Elongation:</span>
+            <input type="range" id="moonElongSlider" min="12" max="180" value="45" style="width:60%; accent-color:var(--gold-primary);">
+          </div>
         </div>
+
         <div class="card">
-          <div class="card-subtitle">Jovian 60-Year Cycle</div>
-          <h4 class="card-title">5. Bārhaspatya (बार्हस्पत्य • బార్హస్పత్య)</h4>
-          <p>Based on Jupiter's transit through the zodiac asterisms, forming the sacred 60-year Jovian calendar (Prabhava to Kṣaya).</p>
-        </div>
-        <div class="card">
-          <div class="card-subtitle">Ancestral Realm Time</div>
-          <h4 class="card-title">6. Paitrya (पैत्र्य • పైత్ర్య)</h4>
-          <p>1 Pitṛ Day = 1 Human Synodic Lunar Month. The dark half (Kṛṣṇapakṣa) is day, and bright half (Śuklapakṣa) is night.</p>
-        </div>
-        <div class="card">
-          <div class="card-subtitle">Divine Celestial Time</div>
-          <h4 class="card-title">7. Daiva (दैव • దైవ)</h4>
-          <p>1 Divine Year = 360 Human Solar Years. The Sun's northern path (Uttarāyaṇa) is the day of the Gods; southern path (Dakṣiṇāyana) is night.</p>
-        </div>
-        <div class="card">
-          <div class="card-subtitle">Epochal Epoch Time</div>
-          <h4 class="card-title">8. Prājāpatya (प्राजापत्य • ప్రాజాపత్య)</h4>
-          <p>Measures Manvantaras (each 71 Mahāyugas = 306,720,000 solar years) governing eras of patriarchs and cosmic regeneration.</p>
-        </div>
-        <div class="card">
-          <div class="card-subtitle">Cosmological Lifespan Time</div>
-          <h4 class="card-title">9. Brāhma (ब्राह्म • బ్రాహ్మ)</h4>
-          <p>1 Kalpa = 1 Day of Brahmā = 4.32 Billion Human Years. Brahmā's lifespan (100 Mahākalpas) = 311.04 Trillion Solar Years!</p>
+          <div class="card-subtitle">Chapter 10, Verses 6–10</div>
+          <h4 class="card-title">Cusp Tilt &amp; Illumination Formula</h4>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem; border-radius:8px;">
+              <span style="font-size:0.72rem; color:var(--text-muted); display:block;">Illuminated Portion (Śukla in Aṅgulas):</span>
+              <strong id="moonAngulaDisplay" style="color:var(--gold-bright); font-size:1.2rem; font-family:var(--font-mono);">3.5 Aṅgulas / 12</strong>
+            </div>
+            <div style="background:rgba(0,0,0,0.35); padding:0.75rem; border-radius:8px;">
+              <span style="font-size:0.72rem; color:var(--text-muted); display:block;">Cusp Elevation Angle:</span>
+              <strong id="moonTiltDisplay" style="color:var(--cyan-accent); font-size:1.1rem; font-family:var(--font-mono);">Northern Horn Elevated by 14°</strong>
+            </div>
+          </div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.75rem;">
+            Canonical rule: In the bright half (Śuklapakṣa), the illuminated part increases from west to east; the horn towards the Sun's hemisphere tilts lower.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Section 8: The Complete 14 Chapters Syllabus Explorer -->
+    <!-- Section 15: Mahapata: Vaidhriti & Vyatipata (Ch. 11) -->
+    <section id="mahapata" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>⚡</span> <span class="lang-en">15. Astronomical Pāta: Vaidhṛti & Vyatīpāta (Pātādhikāra)</span><span class="lang-te">15. మహాపాతములు (వైధృతి & వ్యతీపాత క్రాంతిసామ్య యంత్రము)</span><span class="lang-sa">१५. पाताधिकारः क्रान्तिसाम्यम्</span></h3>
+        <p class="section-sub">
+          Chapter 11 analyzes catastrophic celestial aspects where the Sun and Moon attain equal declination (<em>Krānti-sāmya</em>).
+          These moments are considered intensely sensitive due to concentrated gravitational-tidal alignments.
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 11 Reader's Guide • Equal Declination Aspects</span>
+          <span class="lang-te">అధ్యాయము 11 మార్గదర్శి • మహాపాత యోగాలు</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">What Are Vyatīpāta & Vaidhṛti (Krānti-Sāmya)?</span>
+          <span class="lang-te">వ్యతీపాత మరియు వైధృతి (క్రాంతి సామ్యం) అంటే ఏమిటి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 11 (<em>Pātādhikāra</em>) tracks rare moments when the Sun and Moon have <strong>equal magnitude of declination</strong> (<em>Krānti-sāmya</em>):</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Vyatīpāta:</strong> Occurs when Sun and Moon are in opposite solstitial halves (<em>Ayana</em>) with equal declination magnitude (sum of longitudes ≈ 180°).</li>
+            <li><strong>Vaidhṛti:</strong> Occurs when both are in the same <em>Ayana</em> with equal declination (sum of longitudes ≈ 360°).</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Adjust the Sun and Moon longitudes to check if their declinations match within 0.5° and trigger a Pāta alert.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">11వ అధ్యాయం (<em>పాతాధికారం</em>) సూర్య-చంద్రుల క్రాంతులు (Declinations) సమానమయ్యే అరుదైన స్థితులను వివరిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>వ్యతీపాత:</strong> సూర్య-చంద్రులు వేర్వేరు అయనాలలో ఉండి క్రాంతి సమానమైనప్పుడు (రేఖాంశాల మొత్తం ≈ 180°).</li>
+            <li><strong>వైధృతి:</strong> ఇద్దరూ ఒకే అయనంలో ఉండి క్రాంతి సమానమైనప్పుడు (రేఖాంశాల మొత్తం ≈ 360°).</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> సూర్య-చంద్ర రేఖాంశాలను మార్చి మహాపాత స్థితి ఏర్పడుతుందో లేదో పరీక్షించండి.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-subtitle">Equal Declination Definitions</div>
+          <h4 class="card-title">The Two Grand Pātas (vv. 1–3)</h4>
+          <div style="display:flex; flex-direction:column; gap:0.75rem; font-size:0.88rem;">
+            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:8px; border-left:3px solid var(--rose-accent);">
+              <strong style="color:var(--rose-accent); display:block; margin-bottom:0.2rem;">Vyatīpāta (व्यतीपात):</strong>
+              Sun and Moon are in opposite solstitial courses (one northward, one southward) and their declinations become numerically equal. Longitude sum = 180°.
+            </div>
+            <div style="background:rgba(255,255,255,0.03); padding:0.75rem; border-radius:8px; border-left:3px solid var(--gold-bright);">
+              <strong style="color:var(--gold-bright); display:block; margin-bottom:0.2rem;">Vaidhṛti (वैधृति):</strong>
+              Sun and Moon are in the same solstitial course and have identical north or south declinations. Longitude sum = 360°.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Real-Time Pāta Detector</div>
+          <h4 class="card-title">Active Aspect Status</h4>
+          <div style="background:rgba(0,0,0,0.4); padding:1rem; border-radius:10px; border:1px solid var(--border-gold); margin-bottom:1rem;">
+            <span style="font-size:0.75rem; color:var(--gold-dim); text-transform:uppercase;">Aspect Condition:</span>
+            <strong id="pataStatusDisplay" style="display:block; font-size:1.25rem; color:#10b981;">No Malignant Pāta Active</strong>
+            <p id="pataDiffDisplay" style="font-size:0.82rem; color:#e2e8f0; margin-top:0.35rem;">
+              Declination difference |δ<sub>☉</sub> − δ<sub>☽</sub>| = 8° 14' (Tolerance ≤ 0.5°).
+            </p>
+          </div>
+          <p style="font-size:0.82rem; color:var(--text-muted);">
+            Verses 14–18 prescribe that the duration of Pāta is proportional to the rate of declination change per nāḍī.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 16: Bhugola & 4 Equatorial Cities (Ch. 12) -->
+    <section id="bhugola" data-tier="beginner">
+      <div class="section-head">
+        <h3 class="section-title"><span>🌍</span> <span class="lang-en">16. Bhūgola (Cosmic Geography) & The 4 Equatorial Cardinal Cities</span><span class="lang-te">16. భూగోళ వర్ణనము & భూమధ్యరేఖా చతుర్మహాపురములు</span><span class="lang-sa">१६. भूगोलाध्यायः चतुष्पुरी-भ्रमणम्</span></h3>
+        <p class="section-sub">
+          Chapter 12, verses 37–44 establishes four grand equatorial cities spaced exactly 90° apart around the spherical Earth, 
+          along with Meru at the North Pole and Vaḍavāmukha at the South Pole.
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 12 Reader's Guide • Ancient Earth & Sky Cosmography</span>
+          <span class="lang-te">అధ్యాయము 12 మార్గదర్శి • భూగోళ & ఖగోళ నిర్మాణం</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Understanding Laṅkā, Yamakoṭi, Romaka, Siddhāpura & Mount Meru</span>
+          <span class="lang-te">నాలుగు భూమధ్యరేఖా నగరాలు & మేరు పర్వతం అంటే ఏమిటి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 12 (<em>Bhūgolādhyāya</em>) maps Earth's spherical geography and planetary orbit dimensions:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>4 Cardinal Equatorial Cities (90° apart):</strong> <em>Laṅkā</em> (0° meridian), <em>Yamakoṭi</em> (90° E), <em>Siddhāpura</em> (180°), and <em>Romaka</em> (90° W)—when it is noon in Laṅkā, it is sunset in Yamakoṭi, midnight in Siddhāpura, and sunrise in Romaka!</li>
+            <li><strong>Meru &amp; Vaḍavāmukha:</strong> The North Pole (where Gods experience 6-month days) and South Pole.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Explore the interactive 3D/spherical Earth diagram and orbital scale values to see how sunrise/noon shift across the globe.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">12వ అధ్యాయం (<em>భూగోళాధ్యాయం</em>) గోళాకార భూమి యొక్క భౌగోళిక విభజనను వివరిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>4 భూమధ్యరేఖా నగరాలు (90° దూరంలో):</strong> <em>లంక</em> (0°), <em>యమకోటి</em> (90° తూర్పు), <em>సిద్ధాపురం</em> (180°), <em>రోమక</em> (90° పడమర) — లంకలో మధ్యాహ్నం అయితే యమకోటిలో సూర్యాస్తమయం, సిద్ధాపురంలో అర్ధరాత్రి, రోమకలో సూర్యోదయం అవుతాయి!</li>
+            <li><strong>మేరు &amp; వడవాముఖం:</strong> ఉత్తర ధ్రువం మరియు దక్షిణ ధ్రువం (ఆరు నెలల పగలు/రాత్రి ఉండే ప్రాంతాలు).</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> భూగోళ పటంలో ఈ నాలుగు నగరాలు మరియు ధ్రువాల స్థానాలను గమనించండి.</p>
+        </div>
+      </div>
+      <div class="calc-panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+          <div>
+            <h4 style="font-family:var(--font-display); font-size:1.2rem; color:#fff;">Interactive Earth Rotation &amp; Antipodal Clock</h4>
+            <span style="font-size:0.85rem; color:var(--text-muted);">Move time slider to simulate simultaneous worldwide celestial moments:</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <label for="earthHourSlider" style="color:var(--gold-bright); font-weight:600; font-size:0.9rem;">Sun Meridian Hour:</label>
+            <input type="range" id="earthHourSlider" min="0" max="24" step="0.5" value="6" style="accent-color:var(--gold-primary);">
+            <strong id="earthHourValDisplay" style="color:#fff; font-family:var(--font-mono);">06:00 (Sunrise Laṅkā)</strong>
+          </div>
+        </div>
+
+        <div class="cities-grid">
+          <div class="city-card" id="cityLanka">
+            <div class="city-icon">🌅</div>
+            <div class="city-name">1. Laṅkā (Equator / 0° Lon)</div>
+            <div class="city-coord">0° N, 0° E (Prime Meridian)</div>
+            <div class="city-status-badge" style="background:rgba(255,123,37,0.2); color:#ff7b25;">Sunrise (Prabhāta)</div>
+            <p style="font-size:0.8rem; color:#e2e8f0; margin-top:0.5rem;">Center of the world. Abode of Rākṣasas.</p>
+          </div>
+
+          <div class="city-card" id="cityYamakoti">
+            <div class="city-icon">☀️</div>
+            <div class="city-name">2. Yamakoṭi (East / 90° E)</div>
+            <div class="city-coord">0° N, 90° E (East of Bhārata)</div>
+            <div class="city-status-badge" style="background:rgba(255,215,0,0.2); color:#ffd700;">Noon (Madhyāhna)</div>
+            <p style="font-size:0.8rem; color:#e2e8f0; margin-top:0.5rem;">Abode of Bhadrāśva. Sun overhead.</p>
+          </div>
+
+          <div class="city-card" id="citySiddhapura">
+            <div class="city-icon">🌇</div>
+            <div class="city-name">3. Siddhāpura (Antipodal / 180°)</div>
+            <div class="city-coord">0° N, 180° (Opposite Laṅkā)</div>
+            <div class="city-status-badge" style="background:rgba(56,189,248,0.2); color:#38bdf8;">Sunset (Asta)</div>
+            <p style="font-size:0.8rem; color:#e2e8f0; margin-top:0.5rem;">Abode of Siddhas. Sun sinking.</p>
+          </div>
+
+          <div class="city-card" id="cityRomaka">
+            <div class="city-icon">🌙</div>
+            <div class="city-name">4. Romaka (West / 270°)</div>
+            <div class="city-coord">0° N, 90° W / 270° E</div>
+            <div class="city-status-badge" style="background:rgba(168,85,247,0.2); color:#a855f7;">Midnight (Ardharātra)</div>
+            <p style="font-size:0.8rem; color:#e2e8f0; margin-top:0.5rem;">Great Western metropolis. Deep night.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem; background:rgba(255,255,255,0.03); padding:1rem; border-radius:10px; font-size:0.88rem; color:var(--text-muted);">
+          <strong>Pole Phenomena:</strong> At Mount Meru (North Pole, 90° N), the Sun is seen circling above the horizon continuously for 6 months (Devānāmahorātram — Day of the Gods). 
+          At Vaḍavāmukha (South Pole, 90° S), the Asuras experience the reverse 6-month cycle.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 17: Armillary Sphere & Ancient Instruments (Ch. 13) -->
+    <section id="instruments" data-tier="intermediate">
+      <div class="section-head">
+        <h3 class="section-title"><span>⚙️</span> <span class="lang-en">17. The Armillary Sphere (Gola-Yantra) & Ancient Instruments (Yantrādhyāya)</span><span class="lang-te">17. గోలయంత్రము & ప్రాచీన భారతీయ ఖగోళ సాధనములు</span><span class="lang-sa">१७. यन्त्राध्यायः गोलयन्त्रम् घटिकायन्त्रम्</span></h3>
+        <p class="section-sub">
+          Chapter 13 details experimental observational instruments: the wooden Armillary Sphere (<em>Gola-yantra</em>), 
+          the copper Clepsydra water-clock (<em>Ghaṭī-yantra</em>), and self-rotating perpetual machines powered by mercury and water.
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 13 Reader's Guide • Observational Instruments</span>
+          <span class="lang-te">అధ్యాయము 13 మార్గదర్శి • ఖగోళ యంత్రాలు</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">How Gola-Yantra (Armillary Sphere) & Ghaṭī-Yantra (Water Clock) Work</span>
+          <span class="lang-te">గోళయంత్రం మరియు ఘటీయంత్రం ఎలా పనిచేస్తాయి?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 13 (<em>Yantrādhyāya</em>) proves that Siddhāntic astronomy was hands-on and experimental:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Gola-Yantra (Armillary Sphere):</strong> Nested wooden rings representing the Horizon, Meridian, Equator, and tilted Ecliptic, rotated to track rising signs and planetary positions.</li>
+            <li><strong>Ghaṭī-Yantra (Clepsydra):</strong> A perforated copper bowl floating in water that fills and sinks in exactly <strong>1 Ghaṭikā (24 minutes)</strong>—60 sinkings equal 1 full 24-hour day.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Interact with the Armillary Sphere / instrument controls to inspect the celestial rings and ancient timekeeping.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">13వ అధ్యాయం (<em>యంత్రాధ్యాయం</em>) ప్రాచీన ఖగోళ పరిశీలనా పరికరాల నిర్మాణాన్ని వివరిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>గోళయంత్రం (Armillary Sphere):</strong> క్షితిజ, యామ్యోత్తర, నాడీవలయ, క్రాంతివృత్తాలను కలిగిన కొయ్య గోళం.</li>
+            <li><strong>ఘటీయంత్రం (జల గడియారం):</strong> నీటిపై తేలే రంధ్రమున్న రాగి పాత్ర సరిగ్గా <strong>1 ఘటిక (24 నిమిషాలు)</strong> లో మునిగి సమయాన్ని కొలుస్తుంది.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> యంత్ర నియంత్రణలను మార్చి ఆకాశ వలయాలను మరియు ప్రాచీన కాలమాన విధానాన్ని పరిశీలించండి.</p>
+        </div>
+      </div>
+      <div class="armillary-wrap">
+        <div class="card" style="padding:1rem;">
+          <canvas id="armillaryCanvas" class="armillary-canvas"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.75rem; font-size:0.85rem;">
+            <span style="color:var(--gold-bright);">Rotate Sphere View:</span>
+            <input type="range" id="armillaryRotSlider" min="0" max="360" value="45" style="width:60%; accent-color:var(--gold-primary);">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-subtitle">Chapter 13 Classical Apparatus</div>
+          <h4 class="card-title">Astronomical Rings &amp; Circles</h4>
+          <div style="font-size:0.88rem; line-height:1.7; color:#e2e8f0;">
+            • <strong>Kṣitija (Horizon Circle):</strong> Dividing visible and invisible hemispheres.<br>
+            • <strong>Nāḍīvalaya (Celestial Equator):</strong> Graduated into 60 nāḍīs and 360 degrees.<br>
+            • <strong>Krāntivṛtta (Ecliptic Ring):</strong> Tilted by 24° obliquity, carrying the 12 signs.<br>
+            • <strong>Samamaṇḍala (Prime Vertical):</strong> Passing through Zenith and East-West points.<br>
+            • <strong>Yāmyottara (Meridian Circle):</strong> Passing through celestial poles and Zenith.
+          </div>
+        </div>
+      </div>
+
+      <div class="instrument-gallery">
+        <div class="instrument-card">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">🏺</div>
+          <h4 style="color:#fff; font-family:var(--font-display); font-size:1.1rem; margin-bottom:0.35rem;">Clepsydra (Ghaṭī-Yantra)</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted);">
+            A copper bowl of 10 palas weight and 6 aṅgulas height, perforated at the base with a calibrated gold needle, 
+            which fills and sinks exactly in one Ghaṭikā (24 minutes).
+          </p>
+        </div>
+
+        <div class="instrument-card">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">🔄</div>
+          <h4 style="color:#fff; font-family:var(--font-display); font-size:1.1rem; margin-bottom:0.35rem;">Mercury Perpetual Wheel (Svayaṁvaha)</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted);">
+            A wheel fitted with hollow angled spokes half-filled with mercury or water, self-revolving through asymmetric weight displacement (vv. 16–21).
+          </p>
+        </div>
+
+        <div class="instrument-card">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">📐</div>
+          <h4 style="color:#fff; font-family:var(--font-display); font-size:1.1rem; margin-bottom:0.35rem;">Narayantra &amp; Staff (Yaṣṭi)</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted);">
+            Human-scale sighting shadow gnomons, semicircular protractors (Dhanus), and circular graduated plates (Cakra) used for stellar sightings.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 18: Nine Time Systems (Nava Manani) (Ch. 14) -->
+    <section id="time-systems" data-tier="beginner">
+      <div class="section-head">
+        <h3 class="section-title"><span>⏳</span> <span class="lang-en">18. Chronometry: The Nine Systems of Time (Nava-Mānāni)</span><span class="lang-te">18. నవవిధ కాలమానముల సమగ్ర శాస్త్రీయ దర్శనము</span><span class="lang-sa">१८. मानाध्यायः नवमानानि</span></h3>
+        <p class="section-sub">
+          Chapter 14 classifies universal reality into nine distinct operational time scales, from civil commerce to cosmic cycles.
+        </p>
+      </div>
+
+
+      <!-- Reader's Guide: What This Is & How to Use -->
+      <div class="card book-guide-card" style="margin-bottom:1.5rem; border-left:3px solid var(--gold-bright);">
+        <div class="card-subtitle">
+          <span class="lang-en">Chapter 14 Reader's Guide • Nava Mānāni (9 Time Scales)</span>
+          <span class="lang-te">అధ్యాయము 14 మార్గదర్శి • నవమానములు (9 కాల విధానాలు)</span>
+        </div>
+        <h4 class="card-title">
+          <span class="lang-en">Why Indian Astronomy Uses 9 Different Clocks Simultaneously</span>
+          <span class="lang-te">9 రకాల కాలమానాలను ఎందుకు ఉపయోగిస్తారు?</span>
+        </h4>
+        <div class="lang-en" style="font-size:0.89rem; color:#cbd5e1; line-height:1.62;">
+<p style="margin-bottom:0.5rem;">Chapter 14 (<em>Mānādhyāya</em>) defines nine distinct ways to measure a "day" or "year" depending on the purpose:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>Saura (Solar), Sāvana (Civil Sunrise-to-Sunrise), Cāndra (Lunar Tithi), &amp; Nākṣatra (Sidereal):</strong> Used for daily Pañcāṅga calendars, festivals, and planetary speeds.</li>
+            <li><strong>Bārhaspatya, Prājāpatya, Paitrya, Daiva, &amp; Brāhma:</strong> Used for historical eras, ancestral rites, and cosmic Yuga/Kalpa scales.</li>
+          </ul>
+          <p style="margin:0; color:var(--text-muted); font-size:0.84rem;"><strong>How to use:</strong> Compare the cards below to see how each time system converts to human days and years.</p>
+        </div>
+        <div class="lang-te" style="font-size:0.91rem; color:#e2e8f0; line-height:1.68; font-family:var(--font-telugu); margin-top:0.45rem;">
+<p style="margin-bottom:0.5rem;">14వ అధ్యాయం (<em>మానాధ్యాయం</em>) వివిధ అవసరాల కోసం ఉపయోగించే 9 రకాల కాలమానాలను వివరిస్తుంది:</p>
+          <ul style="margin:0 0 0.5rem 1.25rem; padding:0;">
+            <li><strong>సౌర, సావన, చాంద్ర, నాక్షత్ర మానములు:</strong> నిత్య పంచాంగం, తిథులు, పండుగలు మరియు గ్రహ గణనలకు ఉపయోగిస్తారు.</li>
+            <li><strong>బార్హస్పత్య, ప్రాజాపత్య, పితృ, దైవ, బ్రహ్మ మానములు:</strong> పితృకార్యాలు, దేవతల కాలం మరియు యుగ-కల్ప పరిమాణాలకు ఉపయోగిస్తారు.</li>
+          </ul>
+          <p style="margin:0; color:var(--gold-dim); font-size:0.84rem;"><strong>ఉపయోగించే విధానం:</strong> క్రింది కార్డులలో ప్రతి కాలమానం మానవ దినాలు మరియు సంవత్సరాలతో ఎలా సరిపోలుతుందో చూడండి.</p>
+        </div>
+      </div>
+      <div class="time-scales-grid">
+        <div class="time-scale-card">
+          <div class="card-subtitle">1. Civil &amp; Commercial Time</div>
+          <h4 class="card-title">Sāvana (सावन)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted);">Measured sunrise to sunrise. Governs daily wages, civil law, fasting durations, medical dosages, and the unbroken Ahargaṇa tally.</p>
+        </div>
+
+        <div class="time-scale-card">
+          <div class="card-subtitle">2. Seasonal &amp; Agricultural Time</div>
+          <h4 class="card-title">Saura (सौर)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted);">Solar transit through 12 signs (Saṅkrāntis). Regulates the 6 Ṛtus (seasons: Śiśira, Vasanta, Grīṣma, Varṣā, Śarad, Hemanta) and solstices.</p>
+        </div>
+
+        <div class="time-scale-card">
+          <div class="card-subtitle">3. Religious &amp; Lunar Time</div>
+          <h4 class="card-title">Cāndra (चान्द्र)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted);">Measured by Tithis (12° Moon-Sun elongation). Regulates vratas, sacred festivals, auspicious muhūrtas, and intercalary leap months (Adhimāsa).</p>
+        </div>
+
+        <div class="time-scale-card">
+          <div class="card-subtitle">4. Sidereal &amp; Rotational Time</div>
+          <h4 class="card-title">Nākṣatra (नाक्षत्र)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted);">Earth's complete 360° axial rotation relative to fixed asterisms (60 nākṣatra ghaṭīs). Governs planetary daily motions and ascendants (Lagna).</p>
+        </div>
+
+        <div class="time-scale-card">
+          <div class="card-subtitle">5. Jovian 60-Year Cycle</div>
+          <h4 class="card-title">Bārhaspatya (बार्हस्पत्य)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted);">Marked by Jupiter's mean transit across the asterisms. Forms the sacred 60-year Jovian calendar (Prabhava to Kṣaya).</p>
+        </div>
+
+        <div class="time-scale-card">
+          <div class="card-subtitle">6. Ancestral Realm Time</div>
+          <h4 class="card-title">Paitrya (पैत्र्य)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted);">1 Pitṛ Day = 1 Human Synodic Lunar Month. The dark half (Kṛṣṇapakṣa) is their day; the bright half (Śuklapakṣa) is their night.</p>
+        </div>
+
+        <div class="time-scale-card">
+          <div class="card-subtitle">7. Divine Celestial Time</div>
+          <h4 class="card-title">Daiva (दैव)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted);">1 Divine Day = 1 Human Solar Year. The Sun's northern course (Uttarāyaṇa) is day for the Gods; southern course (Dakṣiṇāyana) is night.</p>
+        </div>
+
+        <div class="time-scale-card">
+          <div class="card-subtitle">8. Epochal Patriarch Time</div>
+          <h4 class="card-title">Prājāpatya (प्राजापत्य)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted);">Measures Manvantaras (each 71 Mahāyugas = 306,720,000 solar years), governing the eras of cosmic patriarchs (Manus) and evolutionary renewal.</p>
+        </div>
+
+        <div class="time-scale-card">
+          <div class="card-subtitle">9. Cosmological Lifespan Time</div>
+          <h4 class="card-title">Brāhma (ब्राह्म)</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted);">1 Kalpa = 1 Day of Brahmā = 4.32 Billion Years. Brahmā's lifespan (100 Mahākalpas) = 311.04 Trillion Solar Years!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 19: Complete 14 Chapters Syllabus & Burgess Translation Explorer -->
     <section id="chapters" data-tier="all">
       <div class="section-head">
-        <h3 class="section-title"><span>📜</span> 8. The 14 Adhyāyas (Chapters) Comprehensive Explorer</h3>
+        <h3 class="section-title"><span>📜</span> <span class="lang-en">19. The 14 Adhyāyas (Chapters) Comprehensive Syllabus & Burgess Reader</span><span class="lang-te">19. 14 అధ్యాయముల శ్లోక సూచిక & బర్గెస్ పఠన కోశము</span><span class="lang-sa">१९. चतुर्दशाध्यायाः श्लोकार्थ-भाष्यम्</span></h3>
         <p class="section-sub">
-          Browse all 14 chapters of the Surya Siddhanta with authentic Sanskrit verses, English translation, 
-          mathematical foundations, and pro insights.
+          Browse all 14 chapters of the Sūrya Siddhānta with authentic Sanskrit verses, English translation from Rev. Ebenezer Burgess, 
+          mathematical foundations, and modern astronomical commentary.
         </p>
       </div>
 
       <div class="chapter-nav" id="chapterTabs">
-        <!-- Dynamically populated 14 tabs -->
+        <!-- 14 tabs populated via JavaScript -->
       </div>
 
       <div class="chapter-viewer" id="chapterContent">
-        <!-- Dynamically rendered active chapter -->
+        <!-- Rendered active chapter -->
       </div>
     </section>
 
-    <!-- Section 9: Knowledge Quiz & Assessment -->
+    <!-- Section 20: Knowledge Quiz & Assessment -->
     <section id="quiz" data-tier="all">
       <div class="section-head">
-        <h3 class="section-title"><span>🎯</span> 9. Knowledge Mastery Assessment</h3>
+        <h3 class="section-title"><span>🎯</span> <span class="lang-en">20. Sūrya Siddhānta Astronomical Mastery Assessment</span><span class="lang-te">20. సూర్య సిద్ధాంత ఖగోళ జ్ఞాన మూల్యాంకన పరీక్ష</span><span class="lang-sa">२०. सूर्यसिद्धान्त ज्ञान-परीक्षा</span></h3>
         <p class="section-sub">
-          Test your mastery of Surya Siddhanta concepts across Beginner, Intermediate, and Astronomer/Pro levels.
+          Test your mastery of canonical Sūrya Siddhānta concepts across all 14 chapters, spanning beginner cosmography, 
+          trigonometry, epicycles, eclipses, and Burgess's mathematical notes.
         </p>
       </div>
 
       <div class="quiz-card" id="quizContainer">
-        <!-- Dynamically populated quiz -->
+        <!-- Populated via JavaScript -->
       </div>
     </section>
 
@@ -576,12 +2106,13 @@
   <footer>
     <div style="margin-bottom: 1.25rem;">
       <a href="../index.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; border-color: rgba(245, 185, 66, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(245, 185, 66, 0.1);">
-        <span>← Go to AncientWisdom Portal (प्राचीन ज्ञानम्)</span> 🏛️
+        <span>← Return to AncientWisdom Sanctuary (प्राचीन ज्ञानम्)</span> 🏛️
       </a>
     </div>
     <p>
-      <strong>Sūrya Siddhānta (सूर्यसिद्धान्त)</strong> — Ancient Indian Mathematical Astronomy Laboratory.
-      <br>
+      <strong>Sūrya Siddhānta (सूर्यसिद्धान्त)</strong> — Ancient Indian Mathematical Astronomy Laboratory.<br>
+      Faithfully modeled after the canonical translation by <em>Rev. Ebenezer Burgess</em> (1860) &amp; 
+      the Calcutta University edition by <em>Phanindralal Gangooly</em> &amp; <em>P.C. Sengupta</em> (1935).<br>
       Part of the <a href="../index.html">AncientWisdom</a> Digital Sanctuary. Open-source under the MIT License.
     </p>
   </footer>

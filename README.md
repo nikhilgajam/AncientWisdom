@@ -54,22 +54,20 @@ The root gateway serves as an integrated, living entry point to all seven comput
 
 ---
 
-### 2. [Sūrya Siddhānta (सूर्यसिद्धान्त)](./SuryaSiddhanta/)
-The total learning and understanding guide from **Beginner to Pro** of canonical classical Indian astronomy:
+### 2. [Sūrya Siddhānta (सूर्यसिद्धान्त • సూర్యసిద్ధాంతః)](./SuryaSiddhanta/)
+The complete **20-section**, bilingual (**Dual / తెలుగు / English**) learning and computational laboratory of classical Indian astronomy across all **14 Adhyāyas**, featuring built-in *Reader's Guides* for every technical section:
 - **Beginner Level**:
-  - Anatomy of the cosmos: Spherical Earth (*Bhūgola-kanduka-samānaḥ*) suspended in space by its own gravitational attraction (*Dhāraṇātmikā Śaktiḥ*).
-  - Cosmic time units: 1 Prāṇa (breath) = 4 sidereal seconds $\rightarrow$ 21,600 prāṇas/day matches the 21,600 arcminutes in the celestial circle!
-  - The 9 Systems of Time (*Nava-Mānāni*): Sāvana, Saura, Cāndra, Nākṣatra, Bārhaspatya, Paitrya, Daiva, Prājāpatya, and Brāhma.
+  - Anatomy of the cosmos: Spherical Earth (*Bhūgola*) suspended in space by its own gravitational attraction (*Dhāraṇātmikā Śaktiḥ*), 4 equatorial cardinal cities (*Laṅkā, Yamakoṭi, Siddhāpura, Romaka*), and Mount Meru.
+  - **28 Nakshatras & Janma Nakṣatra Finder**: Daily Moon transit tracker, 7-day forecast, *Yogatārā* star catalog, and **Drik-Gaṇita (*Bīja*-corrected + Chitrapakṣa/Lahiri Ayanāṁśa)** Birth Star calculator with Rāśi, Pāda, and Vedic naming sound.
+  - **The 9 Systems of Time (*Nava-Mānāni*)**: Sāvana, Saura, Cāndra, Nākṣatra, Bārhaspatya, Paitrya, Daiva, Prājāpatya, and Brāhma.
 - **Intermediate Level**:
-  - **Live Ahargaṇa Calculator**: Computes exact elapsed Kali days from the epoch (Feb 18, 3102 BCE) and mean planetary longitudes, Rāśis, and Nakṣatras.
-  - **The 24-Jyā (Sine) Table**: Visualizer for the 24 sines with radius $R = 3438'$ and the second-order finite difference equation:
-    $$J_{n+1} - J_n = [J_n - J_{n-1}] - \frac{J_n}{225}$$
-  - **12-Aṅgula Gnomon (Śaṅku)**: Interactive shadow simulator calculating shadow length $s = 12\cot(\alpha)$ and hypotenuse (*Karṇa*).
+  - **Live Ahargaṇa & Time Lords**: Computes elapsed Kali days from the epoch (Feb 17/18, 3102 BCE), mean longitudes for all 9 bodies, *Horā* rulers, and the 60-year Jovian cycle.
+  - **The 24-Jyā (Sine) Table & Arbitrary Angle Converter**: Visualizer for the 24 sines (`R = 3438'`, `225'` steps) with live step-by-step book interpolation.
+  - **12-Aṅgula Gnomon (Śaṅku) & Matsya Surveying**: Interactive shadow simulator (`s = 12 cot α`), *Deśāntara* (Ujjain Prime Meridian) offset, Heliacal Visibility (*Kālāṁśa*), Lunar Cusp Elevation (*Śṛṅgonnati*), and *Mahāpāta* (*Vyatīpāta / Vaidhṛti*).
 - **Astronomer / Pro Level**:
-  - **Double Epicycle Simulator (Canvas)**: Visualizes Manda-phala (elliptical eccentricity) and Śīghra-phala (heliocentric parallax), demonstrating why planets retrograde (*Vakragati*).
-  - **Eclipses & Parallax**: Geometry of the Earth's shadow cone (*Tamoguṇa*), Parallax in Longitude (*Lambana*), and Parallax in Latitude (*Nati*).
-  - **All 14 Adhyāyas (Chapters)**: Interactive syllabus reader with authentic Sanskrit shlokas, English translation, mathematical formulation, and astronomical insights.
-  - **Mastery Assessment**: Multi-tiered knowledge quiz with deep explanations.
+  - **4-Step *Spaṣṭīkaraṇa* & Double Epicycle Simulator (Canvas)**: Canonical *Manda + Śīghra* solver with *Śīghra-karṇa* hypotenuse for the 5 *Tārāgrahas*, accurate planet colors, and smooth retrograde (*Vakragati*) orbit trails.
+  - **Eclipses & Parallax (*Chedyaka*)**: Earth's shadow cone (*Bhūchāyā*), Solar Parallax (*Lambana* & *Nati*), and geometric *Valana* projection.
+  - **All 14 Adhyāyas & Mastery Quiz**: Interactive chapter syllabus reader (Sanskrit, Burgess translation, math, Telugu titles) and 10-question assessment.
 
 👉 [**Launch Sūrya Siddhānta**](https://nikhilgajam.github.io/AncientWisdom/SuryaSiddhanta/) • [Read Documentation](./SuryaSiddhanta/README.md)
 

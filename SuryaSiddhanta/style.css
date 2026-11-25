@@ -9,6 +9,7 @@
   --gold-dim: #c9932a;
   --sun-flare: #ff7b25;
   --cyan-accent: #38bdf8;
+  --cyan-bright: #67e8f9;
   --purple-nebula: #a855f7;
   --emerald-accent: #10b981;
   --text-main: #f8fafc;
@@ -16,6 +17,8 @@
   --font-display: 'Cinzel', serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --font-telugu: 'Noto Sans Telugu', sans-serif;
+  --font-sanskrit: 'Plus Jakarta Sans', sans-serif;
 }
 
 * {
@@ -58,124 +61,560 @@ body {
   background: radial-gradient(circle, #f5b942 0%, #ff7b25 40%, transparent 75%);
 }
 
-/* Header */
+
+/* ==========================================================================
+   Language Switching System (Consistent with Vaastu)
+   ========================================================================== */
+body[data-lang="english"] .lang-sa,
+body[data-lang="english"] .lang-te {
+  display: none !important;
+}
+
+body[data-lang="sanskrit"] .lang-en,
+body[data-lang="sanskrit"] .lang-te {
+  display: none !important;
+}
+
+/* In Dual mode, keep drawer labels distinct and vibrant */
+body[data-lang="dual"] .drawer-nav-item .lang-sa {
+  color: var(--gold-bright);
+}
+
+/* Header — Consistent with Chandas & Panchanga */
+
+.telugu-font, .lang-te {
+  font-family: var(--font-telugu);
+}
+
+/* Language Switching Rules (100% Vaastu Standard: Dual, Telugu, English) */
+body[data-lang="english"] .lang-te,
+body[data-lang="english"] .lang-sa {
+  display: none !important;
+}
+
+body[data-lang="telugu"] .lang-en,
+body[data-lang="telugu"] .lang-sa {
+  display: none !important;
+}
+
+/* In Dual mode, hide Sanskrit and show English + Telugu in vibrant gold */
+body[data-lang="dual"] .lang-sa {
+  display: none !important;
+}
+
+body[data-lang="dual"] .lang-te {
+  color: var(--gold-bright);
+}
+
+body[data-lang="dual"] .drawer-nav-item .lang-te {
+  color: var(--gold-bright);
+  font-family: var(--font-telugu);
+  font-size: 0.82rem;
+  display: block;
+}
+
+body[data-lang="dual"] .section-title .lang-te {
+  color: var(--gold-bright);
+  font-family: var(--font-telugu);
+  font-size: 1.05rem;
+  display: block;
+  margin-top: 0.2rem;
+  font-weight: 600;
+}
+
+body[data-lang="dual"] .hero-verse .lang-te,
+body[data-lang="dual"] .hero-desc .lang-te,
+body[data-lang="dual"] .hero-actions .lang-te,
+body[data-lang="dual"] .hero-pill .lang-te {
+  display: block;
+}
+
+body[data-lang="dual"] .chapter-tab-btn .lang-te {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--gold-bright);
+  margin-left: 0.25rem;
+}
+
+/* Header Subtitle */
+.logo-text span {
+  font-size: 0.68rem;
+  color: var(--gold-bright);
+  letter-spacing: 0.04em;
+  display: block;
+  font-family: var(--font-telugu), var(--font-body);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 1px;
+}
+
+/* ==========================================================================
+   Header & Navigation Drawer — Sleek & Compact (Vaastu Standard)
+   ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(6, 8, 13, 0.92);
+  background: rgba(9, 11, 17, 0.95);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(245, 185, 66, 0.2);
-  padding: 0.5rem 1.25rem;
+  border-bottom: 1px solid var(--border-gold);
+  padding: 0.4rem 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.site-header.scrolled {
+  background: rgba(8, 10, 15, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.75);
+  border-bottom-color: rgba(245, 158, 11, 0.45);
 }
 
 .header-container {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.75rem;
   flex-wrap: nowrap;
+  gap: 0.75rem;
+  min-height: 42px;
 }
 
 .logo-area {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  text-decoration: none;
-  color: inherit;
-  flex-shrink: 0;
-  cursor: default;
+  cursor: pointer;
   user-select: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: #fff;
 }
 
 .sun-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffd700 0%, #f5b942 50%, #ff7b25 100%);
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(6, 182, 212, 0.05));
+  border: 1px solid var(--gold-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
-  box-shadow: 0 0 14px rgba(255, 183, 3, 0.45);
-  animation: pulseSun 4s infinite alternate ease-in-out;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+  flex-shrink: 0;
 }
 
-@keyframes pulseSun {
-  0% { box-shadow: 0 0 10px rgba(255, 183, 3, 0.35); transform: scale(0.97); }
-  100% { box-shadow: 0 0 20px rgba(255, 183, 3, 0.65); transform: scale(1.02); }
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo-text h1 {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  background: linear-gradient(120deg, #fff, var(--gold-bright));
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: linear-gradient(135deg, #ffffff 15%, #ffd700 55%, #f59e0b 95%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.2;
-}
-
-.logo-text span {
-  font-size: 0.65rem;
-  color: var(--gold-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  line-height: 1.15;
+  margin: 0;
   display: block;
 }
 
-.nav-links {
+/* Header Controls & Language Switcher */
+.header-controls {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 0.2rem 0;
-}
-
-.nav-links::-webkit-scrollbar {
-  display: none;
-}
-
-.nav-item {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.78rem;
-  font-weight: 500;
-  padding: 0.35rem 0.65rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  white-space: nowrap;
+  gap: 0.75rem;
   flex-shrink: 0;
 }
 
-.nav-item:hover {
+.lang-segmented {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 2px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.lang-opt {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.24rem 0.65rem;
+  border-radius: 16px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.lang-opt:hover {
   color: #fff;
-  background: rgba(245, 185, 66, 0.16);
-  border: 1px solid rgba(245, 185, 66, 0.35);
+  background: rgba(245, 158, 11, 0.12);
 }
 
-.nav-item.active {
-  color: #06080d !important;
-  background: linear-gradient(135deg, #ffd700, #f5b942) !important;
-  border-color: #ffd700 !important;
-  font-weight: 700 !important;
-  box-shadow: 0 2px 10px rgba(245, 185, 66, 0.5) !important;
+.lang-opt.active {
+  background: linear-gradient(135deg, var(--gold-bright), #d97706) !important;
+  color: #0c0f17 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.45) !important;
 }
 
-.nav-item.highlight:not(.active) {
-  background: linear-gradient(135deg, rgba(245, 185, 66, 0.22), rgba(255, 123, 37, 0.15));
-  border: 1px solid var(--gold-primary);
-  color: var(--gold-bright);
+.hamburger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+  position: relative;
+  z-index: 101;
+}
+
+.hamburger-btn:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+  transform: translateY(-1px);
+}
+
+.hamburger-box {
+  width: 20px;
+  height: 16px;
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 20px;
+  height: 2px;
+  background-color: var(--gold-bright);
+  border-radius: 2px;
+  position: absolute;
+  transition: transform 0.25s ease, top 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger-inner {
+  top: 7px;
+  left: 0;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  left: 0;
+}
+
+.hamburger-inner::before {
+  top: -6px;
+}
+
+.hamburger-inner::after {
+  top: 6px;
+}
+
+.hamburger-btn.is-active .hamburger-inner {
+  background-color: transparent;
+}
+
+.hamburger-btn.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+
+.hamburger-btn.is-active .hamburger-inner::after {
+  top: 0;
+  transform: rotate(-45deg);
+  background-color: #fff;
+}
+
+/* Navigation Drawer Backdrop Overlay */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 7, 13, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Slide-out Navigation Drawer Menu */
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 410px;
+  max-width: 92vw;
+  height: 100vh;
+  background: #090c14;
+  border-left: 1px solid var(--border-gold);
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.85);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease;
+}
+
+.nav-drawer.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.drawer-header {
+  padding: 1.15rem 1.25rem;
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.drawer-close-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.drawer-close-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.drawer-nav-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-gold) transparent;
+}
+
+.drawer-nav-list::-webkit-scrollbar {
+  width: 5px;
+}
+.drawer-nav-list::-webkit-scrollbar-thumb {
+  background: var(--border-gold);
+  border-radius: 4px;
+}
+
+.drawer-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: var(--text-muted);
+  background: rgba(17, 24, 39, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-nav-item:hover {
+  color: #fff;
+  background: rgba(245, 185, 66, 0.12);
+  border-color: rgba(245, 185, 66, 0.35);
+  transform: translateX(4px);
+}
+
+.drawer-nav-item.active {
+  color: #fff;
+  background: linear-gradient(90deg, rgba(245, 185, 66, 0.22), rgba(6, 182, 212, 0.08));
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 15px rgba(245, 185, 66, 0.2);
+  font-weight: 600;
+}
+
+.drawer-item-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+
+.drawer-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.drawer-footer {
+  padding: 0.85rem 1.15rem;
+  background: rgba(15, 23, 42, 0.85);
+  border-top: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lang-short {
+  display: none;
+}
+
+.lang-full {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0.35rem 0.65rem;
+  }
+
+  .header-container {
+    gap: 0.4rem;
+  }
+
+  .logo-area {
+    gap: 0.45rem;
+    min-width: 0;
+  }
+
+  .sun-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.15rem;
+    border-radius: 8px;
+  }
+
+  .logo-text h1 {
+    font-size: 1.02rem;
+    line-height: 1.15;
+  }
+
+  .logo-text span {
+    font-size: 0.62rem;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header-controls {
+    gap: 0.4rem;
+  }
+
+  .lang-segmented {
+    padding: 1px;
+    gap: 1px;
+    border-radius: 14px;
+  }
+
+  .lang-opt {
+    padding: 0.18rem 0.42rem;
+    font-size: 0.68rem;
+    border-radius: 12px;
+  }
+
+  .lang-full {
+    display: none;
+  }
+
+  .lang-short {
+    display: inline;
+  }
+
+  .hamburger-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+
+  .hamburger-box {
+    width: 18px;
+    height: 14px;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 18px;
+  }
+
+  .nav-drawer {
+    width: 330px;
+    max-width: 88vw;
+  }
+}
+
+@media (max-width: 440px) {
+  .logo-text span {
+    display: none;
+  }
+
+  .logo-text h1 {
+    font-size: 0.95rem;
+  }
+
+  .header-controls {
+    gap: 0.3rem;
+  }
+
+  .lang-opt {
+    padding: 0.16rem 0.36rem;
+    font-size: 0.65rem;
+  }
 }
 
 /* Container */
@@ -582,10 +1021,38 @@ section {
   border-right: none;
 }
 .pada-seg.active-pada {
-  color: var(--gold-bright);
+  color: #fff;
   font-weight: 700;
+  background: linear-gradient(135deg, rgba(245, 185, 66, 0.3), rgba(6, 182, 212, 0.2));
+  border: 1px solid var(--gold-bright);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(245, 185, 66, 0.35);
+}
+
+.forecast-card-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  min-width: 130px;
+  text-align: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  user-select: none;
+}
+
+.forecast-card-item:hover {
   background: rgba(245, 185, 66, 0.12);
-  border-radius: 4px;
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 185, 66, 0.2);
+}
+
+.forecast-card-item.selected-day {
+  background: linear-gradient(135deg, rgba(245, 185, 66, 0.25), rgba(6, 182, 212, 0.15));
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 15px rgba(245, 185, 66, 0.35);
 }
 
 /* 7-Day Forecast Grid */
@@ -918,32 +1385,76 @@ canvas {
   font-size: 0.75rem;
 }
 
-/* 14 Chapter Browser */
+/* 14 Chapter Browser — Beautiful Celestial Themed Tabs */
 .chapter-nav {
   display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  padding-bottom: 0.8rem;
-  margin-bottom: 1.5rem;
-  scrollbar-width: thin;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+  padding: 0.25rem 0;
 }
 
-.chap-tab {
-  white-space: nowrap;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.chapter-tab-btn, .chap-tab {
+  background: rgba(16, 22, 34, 0.82);
+  border: 1px solid var(--border-gold);
+  border-radius: 12px;
+  padding: 0.55rem 0.95rem;
   color: var(--text-muted);
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.chapter-tab-btn .chap-badge, .chap-tab .chap-badge {
+  background: rgba(245, 185, 66, 0.15);
+  color: var(--gold-bright);
+  border: 1px solid rgba(245, 185, 66, 0.35);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
-.chap-tab.active, .chap-tab:hover {
+.chapter-tab-btn:hover, .chap-tab:hover {
   color: #fff;
   background: rgba(245, 185, 66, 0.15);
-  border-color: var(--gold-primary);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(245, 185, 66, 0.3);
+}
+
+.chapter-tab-btn.active, .chap-tab.active {
+  color: #0c0f17 !important;
+  background: linear-gradient(135deg, var(--gold-bright), #d97706) !important;
+  border-color: var(--gold-bright) !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 18px rgba(245, 185, 66, 0.55) !important;
+  transform: translateY(-1px);
+}
+
+.chapter-tab-btn.active .chap-badge, .chap-tab.active .chap-badge {
+  background: #0c0f17;
+  color: var(--gold-bright);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.chapter-tab-btn.active .lang-te, .chap-tab.active .lang-te {
+  color: #0c0f17 !important;
 }
 
 .chapter-viewer {
@@ -1041,4 +1552,311 @@ footer a {
   .hero-title {
     font-size: 2.5rem;
   }
+}
+
+
+
+/* ==========================================================================
+   Interactive Visualization & Calculation Components for 14 Chapters
+   Faithful to Burgess (1860) / P.C. Sengupta (1935 Calcutta Edition)
+   ========================================================================== */
+
+/* Step flow for 4-Step Planetary Correction (Spaṣṭīkaraṇa - Ch. 2) */
+.step-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.step-box {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.15rem;
+  border-top: 3px solid var(--gold-primary);
+  transition: all 0.25s ease;
+}
+
+.step-box:hover {
+  border-top-color: var(--cyan-accent);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.step-num {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--gold-bright);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.step-formula {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--cyan-accent);
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.step-val {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Indian Circle Method (Matsya / Fish Arcs - Ch. 3) */
+.matsya-wrap {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .matsya-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+.matsya-canvas {
+  width: 100%;
+  height: 340px;
+  background: #030509;
+  border-radius: 14px;
+  border: 1px solid var(--border-gold);
+}
+
+/* 4 Equatorial Cardinal Cities (Bhūgola - Ch. 12) */
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.15rem;
+  margin-top: 1.5rem;
+}
+
+.city-card {
+  background: rgba(16, 22, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.35rem;
+  text-align: center;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.city-card.active-day {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 20px rgba(245, 185, 66, 0.25);
+  background: linear-gradient(145deg, rgba(245, 185, 66, 0.1), rgba(16, 22, 34, 0.85));
+}
+
+.city-card.active-night {
+  border-color: var(--purple-nebula);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+  background: linear-gradient(145deg, rgba(168, 85, 247, 0.1), rgba(16, 22, 34, 0.85));
+}
+
+.city-card.active-dawn {
+  border-color: var(--sun-flare);
+  box-shadow: 0 0 20px rgba(255, 123, 37, 0.25);
+  background: linear-gradient(145deg, rgba(255, 123, 37, 0.1), rgba(16, 22, 34, 0.85));
+}
+
+.city-card.active-dusk {
+  border-color: var(--cyan-accent);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+  background: linear-gradient(145deg, rgba(56, 189, 248, 0.1), rgba(16, 22, 34, 0.85));
+}
+
+.city-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.city-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.city-coord {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.city-status-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* Chedyaka Eclipse Graphical Projection Canvas (Ch. 6) */
+.chedyaka-wrap {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .chedyaka-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chedyaka-canvas {
+  width: 100%;
+  height: 360px;
+  background: #020408;
+  border-radius: 14px;
+  border: 1px solid var(--border-gold);
+}
+
+/* Moon Cusp Elevation (Śṛṅgonnati - Ch. 10) */
+.moon-cusp-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .moon-cusp-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+.moon-cusp-canvas {
+  width: 100%;
+  height: 300px;
+  background: #020408;
+  border-radius: 14px;
+  border: 1px solid var(--border-gold);
+}
+
+/* Armillary Sphere (Gola-Yantra - Ch. 13) */
+.armillary-wrap {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .armillary-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+.armillary-canvas {
+  width: 100%;
+  height: 380px;
+  background: #020408;
+  border-radius: 14px;
+  border: 1px solid var(--border-gold);
+}
+
+/* Instruments Gallery (Ch. 13) */
+.instrument-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.instrument-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 14px;
+  padding: 1.35rem;
+  transition: all 0.25s ease;
+}
+
+.instrument-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-bright);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Time Systems 9-Scale Matrix (Ch. 14) */
+.time-scales-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.time-scale-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 14px;
+  padding: 1.25rem;
+  transition: all 0.25s ease;
+  border-left: 4px solid var(--gold-primary);
+}
+
+.time-scale-card:hover {
+  transform: translateY(-2px);
+  border-left-color: var(--cyan-accent);
+  background: var(--bg-card-hover);
+}
+
+/* Astrometric Table */
+.astro-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  margin-top: 1.25rem;
+}
+
+.astro-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.astro-table th {
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--gold-bright);
+  padding: 0.85rem 1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-gold);
+  white-space: nowrap;
+}
+
+.astro-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.astro-table tr:hover td {
+  background: rgba(245, 185, 66, 0.04);
 }
