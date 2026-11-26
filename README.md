@@ -21,6 +21,8 @@ The entire collection is hosted statically via **GitHub Pages**, providing zero-
 | **5. Pañcāṅga (पञ्चाङ्गम् • పంచాంగము)** | 🟢 Live | Five Limbs of Time, Dynamic 60-Year Jovian Cycle, Kāla-Māna Units Converter & precision Muhūrtas | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Panchanga/) | [`./Panchanga`](Panchanga/) |
 | **6. Chandaḥ-śāstra (छन्दःशास्त्रम् • ఛందశ్శాస్త్రము)** | 🟢 Live | World's earliest binary system, Meru Prastāra (Pascal's Triangle), Live Metre Scanner & Cognitive Neuroscience of Mantras | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Chandas/) | [`./Chandas`](Chandas/) |
 | **7. Vāstu-śāstra (వాస్తు శాస్త్రము • वास्तुशास्त्रम्)** | 🟢 Live | Sri Gouru Thirupati Reddy's 16-Zone Matrix, Vīthi Śūla (Road Thrusts), Gunakam 90° Set-Square & Layout Diagnostic | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Vaastu/) | [`./Vaastu`](Vaastu/) |
+| **8. Bṛhat Jātaka (बृहज्जातकम् • బృహజ్జాతకము)** | 🟢 Live | Varāhamihira's 28-chapter Natal Astrology: Ṣaḍvarga, Āyurdāya, Daśās, 336-Bindu Aṣṭakavarga, 32 Nābhasa Yogas, Naṣṭajātaka & 36 Drekkaṇas | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/BrihatJataka/) | [`./BrihatJataka`](BrihatJataka/) |
+| **9. Bṛhat Saṁhitā (बृहत्संहिता • బృహత్సంహిత)** | 🟢 Live | Varāhamihira's 107-chapter Encyclopaedia: Kūrmavibhāga, 195-Day Rain & Droṇas, 81-Pada Vāstu, Dakārgala, Pañca Mahāpuruṣa, Gandhārṇava Perfumes, Śākuna & Gocara | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/BrihatSamhita/) | [`./BrihatSamhita`](BrihatSamhita/) |
 
 ---
 
@@ -157,6 +159,26 @@ The architectural science of spatial equilibrium, grounded in empirical geometry
 - **Treasury of Rhyming Golden Proverbs**: Searchable, categorized repository of the author's famous rhyming aphorisms with full Telugu verses and architectural commentary.
 
 👉 [**Launch Vāstu-śāstra**](https://nikhilgajam.github.io/AncientWisdom/Vaastu/) • [Read Documentation](./Vaastu/README.md)
+
+---
+
+### 8. [Bṛhat Jātaka (बृहज्जातकम् • బృహజ్జాతకము)](./BrihatJataka/)
+Complete bilingual (**Dual / తెలుగు / English**) interactive laboratory of Varāhamihira's canonical 28-chapter treatise (*V. Subrahmanya Sastri* edition):
+- **Foundations & Ṣaḍvarga**: 12-Rāśi Kālapuruṣa SVG wheel, 6-fold division calculator (*Kṣetra, Horā, Drekkaṇa, Navāṁśa, Dvādaśāṁśa, Triṁśāṁśa*), 8-direction compass, and 5-fold planetary friendship & aspect simulator.
+- **Longevity, Daśās & Aṣṭakavarga**: *Piṇḍāyurdāya* & *Cakrapāta Haraṇa* lab (`120y 5d` canonical chart), *Antardaśā* fraction solver, and live 336-bindu *Bhinnāṣṭakavarga* & *Sarvāṣṭakavarga* Canvas visualizer.
+- **Yogas, Nakṣatras & Special Branches**: All **32 Nābhasa Yogas** South-Indian pattern visualizer, 21 *Dvigrha* pairs, 27 *Nakṣatras*, *Strījātaka* Triṁśāṁśa matrix, *Naṣṭajātaka* calculator, all **36 Drekkaṇa** forms, and a 12-question Mastery Quiz.
+
+👉 [**Launch Bṛhat Jātaka**](https://nikhilgajam.github.io/AncientWisdom/BrihatJataka/) • [Read Documentation](./BrihatJataka/README.md)
+
+---
+
+### 9. [Bṛhat Saṁhitā (बृहत्संहिता • బృహత్సంహిత)](./BrihatSamhita/)
+Complete bilingual (**Dual / తెలుగు / English**) interactive encyclopaedia of Varāhamihira's 107-chapter treatise (*V. Subrahmanya Sastri & M. Ramakrishna Bhat* edition):
+- **Astronomy, Geography & Weather**: Eclipse science (`Ch. V`), 9-Region *Kūrmavibhāga* compass (`Ch. XIV`), **195-Day Cloud Pregnancy** & **Droṇa Rainfall Calculator** (`Ch. XXI–XXIII`), and 4 Earthquake Circles (`Ch. XXXII`).
+- **Vāstu, Water, Temples & Perfumery**: Interactive **81-Pada (9×9) Vāstu Puruṣa Maṇḍala** (`Ch. LIII`), *Dakārgala* Well-Placement Compass (`Ch. LIV`), 20 Temple types (`Ch. LVI`), *Pañca Mahāpuruṣa* (`Ch. LXIX`), and **174,720 Gandhārṇava Perfume Combinatorics** (`Ch. LXXVII`).
+- **Omens, Transits & Searchable Index**: *Śākuna* 8-Watch directional omen checker (`Ch. LXXXVI`), live *Gocara* planetary transit checker (`Ch. CIV`), searchable 107-Adhyāya index (`Ch. CVII`), and 12-question Mastery Quiz.
+
+👉 [**Launch Bṛhat Saṁhitā**](https://nikhilgajam.github.io/AncientWisdom/BrihatSamhita/) • [Read Documentation](./BrihatSamhita/README.md)
 
 ---
 

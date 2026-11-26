@@ -550,11 +550,33 @@ function generateMeruPrastara(rows) {
 }
 
 // ==========================================
-// 5. AUDIO & RESONANCE SIMULATOR
+// 5. AUDIO & RESONANCE SIMULATOR (Local WAV files in ./audio/ + Web Audio fallback)
 // ==========================================
 let audioCtx = null;
+const LOCAL_AUDIO_MAP = {
+  432: "./audio/tone_432hz.wav",
+  108: "./audio/tone_108hz.wav",
+  528: "./audio/tone_528hz.wav",
+  216: "./audio/breath_chime.wav"
+};
 
 function playSacredHarmonic(freq = 432, duration = 1.6) {
+  const localFile = LOCAL_AUDIO_MAP[freq];
+  if (localFile) {
+    try {
+      const audio = new Audio(localFile);
+      audio.volume = 0.85;
+      const p = audio.play();
+      if (p && typeof p.catch === "function") {
+        p.catch(() => playOscFallback(freq, duration));
+      }
+      return;
+    } catch (_) { /* fall back to Web Audio */ }
+  }
+  playOscFallback(freq, duration);
+}
+
+function playOscFallback(freq = 432, duration = 1.6) {
   try {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     if (!AudioContext) return;
@@ -567,7 +589,6 @@ function playSacredHarmonic(freq = 432, duration = 1.6) {
     osc.type = "sine";
     osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
 
-    // Warm envelope
     gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.25, audioCtx.currentTime + 0.15);
     gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);

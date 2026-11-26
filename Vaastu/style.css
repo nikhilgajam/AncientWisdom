@@ -1552,3 +1552,5 @@ body[data-lang="dual"] .item-category-pill .lang-en {
     grid-template-columns: 1fr;
   }
 }
+
+section[id], [id] { scroll-margin-top: 86px; }

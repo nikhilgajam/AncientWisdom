@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bṛhat Jātaka (बृहज्जातकम् • బృహజ్జాతకం) — Varāhamihira | Complete Interactive Treatise</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-lang="dual">
+
+  <div class="ambient-glow glow-sun"></div>
+
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="sun-icon">
+          <img src="favicon.svg" alt="Bṛhat Jātaka" width="24" height="24" style="display:block;">
+        </div>
+        <div class="logo-text">
+          <h1>Bṛhat Jātaka</h1>
+          <span>బృహజ్జాతకము • Varāhamihira (6th c. CE)</span>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-segmented" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-opt active" data-lang-val="dual" title="Bilingual View (English + తెలుగు)">
+            <span class="lang-full">🌐 Dual</span>
+            <span class="lang-short">Dual</span>
+          </button>
+          <button type="button" class="lang-opt" data-lang-val="telugu" title="తెలుగు మాత్రమే">
+            <span class="lang-full">తెలుగు</span>
+            <span class="lang-short">తెలుగు</span>
+          </button>
+          <button type="button" class="lang-opt" data-lang-val="english" title="English Only">
+            <span class="lang-full">English</span>
+            <span class="lang-short">Eng</span>
+          </button>
+        </div>
+
+        <button id="menuToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" title="Menu / మెనూ">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- Slide-out Navigation Drawer -->
+  <aside id="navDrawer" class="nav-drawer" aria-label="Main Navigation Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <div class="sun-icon" style="width:34px;height:34px;box-shadow:none;">
+          <img src="favicon.svg" alt="Horā" width="20" height="20">
+        </div>
+        <div>
+          <div class="lang-en" style="font-weight:700;color:#fff;font-size:1.02rem;">Bṛhat Jātaka Index</div>
+          <div class="lang-te" style="font-weight:700;color:var(--gold-bright);font-size:0.95rem;">బృహజ్జాతక విషయ సూచిక</div>
+        </div>
+      </div>
+      <button id="closeDrawer" class="drawer-close-btn" aria-label="Close Navigation Menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav-list">
+      <a href="#sec-personal" class="drawer-nav-item active"><span class="drawer-item-icon">🌟</span><span class="drawer-item-text"><span class="lang-en">Personal Birth Chart & Book Reading</span><span class="lang-te">వ్యక్తిగత జన్మకుండలి & ఫలితాలు</span></span></a>
+      <a href="#sec-ch1" class="drawer-nav-item"><span class="drawer-item-icon">♈</span><span class="drawer-item-text"><span class="lang-en">1. Zodiacal Signs & Ṣaḍvarga (Ch. I)</span><span class="lang-te">1. రాశిప్రభేదాధ్యాయం & షడ్వర్గ (అధ్యా. 1)</span></span></a>
+      <a href="#sec-ch2" class="drawer-nav-item"><span class="drawer-item-icon">🪐</span><span class="drawer-item-text"><span class="lang-en">2. Planets, Strengths & Friendships (Ch. II)</span><span class="lang-te">2. గ్రహయోనిభేదాధ్యాయం & షడ్బల (అధ్యా. 2)</span></span></a>
+      <a href="#sec-ch3-5" class="drawer-nav-item"><span class="drawer-item-icon">🌱</span><span class="drawer-item-text"><span class="lang-en">3. Viyoni, Conception & Birth Time (Ch. III–V)</span><span class="lang-te">3. వియోని, నిషేక & జన్మవిధి (అధ్యా. 3–5)</span></span></a>
+      <a href="#sec-ch6" class="drawer-nav-item"><span class="drawer-item-icon">🛡️</span><span class="drawer-item-text"><span class="lang-en">4. Bālāriṣṭa & Cancellations (Ch. VI)</span><span class="lang-te">4. బాలారిష్ట & అరిష్టభంగం (అధ్యా. 6)</span></span></a>
+      <a href="#sec-ch7" class="drawer-nav-item"><span class="drawer-item-icon">⏳</span><span class="drawer-item-text"><span class="lang-en">5. Āyurdāya Longevity Lab (Ch. VII)</span><span class="lang-te">5. ఆయుర్దాయ గణనాధ్యాయం (అధ్యా. 7)</span></span></a>
+      <a href="#sec-ch8" class="drawer-nav-item"><span class="drawer-item-icon">📆</span><span class="drawer-item-text"><span class="lang-en">6. Daśās & Antardaśās Engine (Ch. VIII)</span><span class="lang-te">6. దశాంతర్దశల విభాగం (అధ్యా. 8)</span></span></a>
+      <a href="#sec-ch9" class="drawer-nav-item"><span class="drawer-item-icon">🔢</span><span class="drawer-item-text"><span class="lang-en">7. Aṣṭakavarga 336-Bindu Matrix (Ch. IX)</span><span class="lang-te">7. అష్టకవర్గ గణన (అధ్యా. 9)</span></span></a>
+      <a href="#sec-ch10-11" class="drawer-nav-item"><span class="drawer-item-icon">👑</span><span class="drawer-item-text"><span class="lang-en">8. Karmajīva & Rājayogas (Ch. X–XI)</span><span class="lang-te">8. కర్మజీవ & రాజయోగాలు (అధ్యా. 10–11)</span></span></a>
+      <a href="#sec-ch12" class="drawer-nav-item"><span class="drawer-item-icon">🔷</span><span class="drawer-item-text"><span class="lang-en">9. 32 Nābhasa Yogas Visualizer (Ch. XII)</span><span class="lang-te">9. 32 నాభస యోగాల చిత్రపటం (అధ్యా. 12)</span></span></a>
+      <a href="#sec-ch13-15" class="drawer-nav-item"><span class="drawer-item-icon">🌙</span><span class="drawer-item-text"><span class="lang-en">10. Candra, Dvigrha & Pravrajyā (Ch. XIII–XV)</span><span class="lang-te">10. చంద్ర, ద్విగ్రహ & ప్రవ్రజ్యా యోగాలు (అధ్యా. 13–15)</span></span></a>
+      <a href="#sec-ch16-18" class="drawer-nav-item"><span class="drawer-item-icon">✨</span><span class="drawer-item-text"><span class="lang-en">11. 27 Nakṣatras & Planets in Signs (Ch. XVI–XVIII)</span><span class="lang-te">11. 27 నక్షత్రాలు & రాశిఫలాలు (అధ్యా. 16–18)</span></span></a>
+      <a href="#sec-ch19-21" class="drawer-nav-item"><span class="drawer-item-icon">👁️</span><span class="drawer-item-text"><span class="lang-en">12. Aspects, 12 Bhāvas & Vargas (Ch. XIX–XXI)</span><span class="lang-te">12. దృష్టిఫల, భావ & ఆశ్రయ ఫలాలు (అధ్యా. 19–21)</span></span></a>
+      <a href="#sec-ch22-24" class="drawer-nav-item"><span class="drawer-item-icon">⚖️</span><span class="drawer-item-text"><span class="lang-en">13. Prakīrṇa, Aniṣṭa & Strījātaka (Ch. XXII–XXIV)</span><span class="lang-te">13. ప్రకీర్ణ, అనిష్ట & స్త్రీజాతకం (అధ్యా. 22–24)</span></span></a>
+      <a href="#sec-marriage" class="drawer-nav-item"><span class="drawer-item-icon">💍</span><span class="drawer-item-text"><span class="lang-en">14. Marriage &amp; Spouse Rules (Ch. XX, XXIII, XXIV)</span><span class="lang-te">14. వివాహ &amp; కళత్ర ఫలితాలు (అధ్యా. 20, 23, 24)</span></span></a>
+      <a href="#sec-ch25-26" class="drawer-nav-item"><span class="drawer-item-icon">🧭</span><span class="drawer-item-text"><span class="lang-en">15. Niryāṇa & Naṣṭajātaka Solver (Ch. XXV–XXVI)</span><span class="lang-te">15. నిర్యాణ & నష్టజాతక గణన (అధ్యా. 25–26)</span></span></a>
+      <a href="#sec-ch27-28" class="drawer-nav-item"><span class="drawer-item-icon">🎨</span><span class="drawer-item-text"><span class="lang-en">16. 36 Drekkaṇas Gallery & Epilogue (Ch. XXVII–XXVIII)</span><span class="lang-te">16. 36 ద్రేక్కాణ రూపాలు & ఉపసంహారం (అధ్యా. 27–28)</span></span></a>
+      <a href="#sec-quiz" class="drawer-nav-item"><span class="drawer-item-icon">🎓</span><span class="drawer-item-text"><span class="lang-en">17. Mastery Assessment Quiz</span><span class="lang-te">17. జ్ఞాన పరీక్ష (క్విజ్)</span></span></a>
+    </nav>
+  </aside>
+
+  <main class="main-wrap">
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-badge">📜 <span class="lang-en">V. Subrahmanya Sastri Edition • All 28 Adhyāyas (588 Pages)</span><span class="dual-sep">•</span><span class="lang-te">వి. సుబ్రహ్మణ్య శాస్త్రి వ్యాఖ్యాన ఆధారితం • 28 అధ్యాయాలు</span></div>
+      <h2 class="hero-title">Varāhamihira's Bṛhat Jātaka</h2>
+      <div class="hero-subtitle-te">వరాహమిహిరుని బృహజ్జాతకము — సంపూర్ణ హోరా శాస్త్ర ప్రయోగశాల</div>
+      <p class="hero-desc">
+        <span class="lang-en">The canonical 6th-century CE treatise on Hindu Natal Astrology (<em>Horā Śāstra</em>) composed by Varāhamihira of Avanti (Ujjain). Every rule, planetary table, Āyurdāya formula, Aṣṭakavarga bindu matrix, 32 Nābhasa patterns, Naṣṭajātaka method, and all 36 Drekkaṇas are faithfully rendered here with interactive visualizations and Telugu support.</span>
+        <span class="lang-te"><br>అవంతి (ఉజ్జయిని) నివాసియైన ఆచార్య వరాహమిహిరుడు రచించిన ప్రామాణిక హోరా శాస్త్ర గ్రంథము. ఇందులోని 28 అధ్యాయములలోని సమస్త నియమాలు, షడ్వర్గ విభాగాలు, ఆయుర్దాయ గణన, అష్టకవర్గ పట్టికలు, 32 నాభస యోగాలు, నష్టజాతక సూత్రాలు మరియు 36 ద్రేక్కాణ వర్ణనలు తెలుగు మరియు ఆంగ్ల భాషలలో సవివరంగా పొందుపరచబడ్డాయి.</span>
+      </p>
+      <div class="hero-stats">
+        <div class="stat-pill"><div class="val">28</div><div class="lbl"><span class="lang-en">Chapters (Adhyāyas)</span><span class="dual-sep">/</span><span class="lang-te">అధ్యాయాలు</span></div></div>
+        <div class="stat-pill"><div class="val">32</div><div class="lbl"><span class="lang-en">Nābhasa Yogas</span><span class="dual-sep">/</span><span class="lang-te">నాభస యోగాలు</span></div></div>
+        <div class="stat-pill"><div class="val">336</div><div class="lbl"><span class="lang-en">Aṣṭakavarga Bindus (Ch. IX)</span><span class="dual-sep">/</span><span class="lang-te">అష్టకవర్గ బిందువులు</span></div></div>
+        <div class="stat-pill"><div class="val">36</div><div class="lbl"><span class="lang-en">Drekkaṇa Forms</span><span class="dual-sep">/</span><span class="lang-te">ద్రేక్కాణ రూపాలు</span></div></div>
+      </div>
+    </section>
+
+    <!-- SECTION: Personal Birth Chart & Book Reading -->
+    <section id="sec-personal" class="study-section" style="border-color: rgba(245, 185, 66, 0.35);">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">Personal Birth Chart &amp; Bṛhat Jātaka Reading</span></h3>
+          <div class="section-title-te"><span class="lang-te">వ్యక్తిగత జన్మకుండలి &amp; బృహజ్జాతక సంపూర్ణ ఫలితాలు</span></div>
+        </div>
+        <span class="ch-badge">All 28 Chapters • Live Ephemeris</span>
+      </div>
+
+      <div class="control-grid">
+        <div class="field-group">
+          <label><span class="lang-en">Date of Birth</span><span class="dual-sep">/</span><span class="lang-te">పుట్టిన తేదీ</span></label>
+          <input type="date" id="pbDate" value="1995-05-15">
+        </div>
+        <div class="field-group">
+          <label><span class="lang-en">Time of Birth (Local 24h)</span><span class="dual-sep">/</span><span class="lang-te">పుట్టిన సమయం</span></label>
+          <input type="time" id="pbTime" value="08:30">
+        </div>
+        <div class="field-group">
+          <label><span class="lang-en">Search City / Town / Village</span><span class="dual-sep">/</span><span class="lang-te">నగరం / గ్రామం వెతకండి</span></label>
+          <input type="text" id="pbPlaceSearch" list="pbPlaceDatalist" placeholder="Type village or town (e.g. Ramannapeta, Proddatur...)">
+          <datalist id="pbPlaceDatalist"></datalist>
+        </div>
+        <div class="field-group">
+          <label><span class="lang-en">Birth Place Preset (250+ Places)</span><span class="dual-sep">/</span><span class="lang-te">జన్మ స్థలం ఎంచుకోండి</span></label>
+          <select id="pbCity"></select>
+        </div>
+        <div class="field-group">
+          <label><span class="lang-en">Gender (for Ch. XXIV)</span><span class="dual-sep">/</span><span class="lang-te">లింగం (స్త్రీజాతకం కొరకు)</span></label>
+          <select id="pbGender">
+            <option value="male">Male / పురుషుడు</option>
+            <option value="female">Female / స్త్రీ</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label><span class="lang-en">Latitude (°N+, °S-)</span><span class="dual-sep">/</span><span class="lang-te">అక్షాంశం</span></label>
+          <input type="number" id="pbLat" step="0.01" value="17.39">
+        </div>
+        <div class="field-group">
+          <label><span class="lang-en">Longitude (°E+, °W-)</span><span class="dual-sep">/</span><span class="lang-te">రేఖాంశం</span></label>
+          <input type="number" id="pbLon" step="0.01" value="78.49">
+        </div>
+        <div class="field-group">
+          <label><span class="lang-en">Timezone (UTC Offset hrs)</span><span class="dual-sep">/</span><span class="lang-te">సమయ మండలం (IST=5.5)</span></label>
+          <input type="number" id="pbTz" step="0.5" value="5.5">
+        </div>
+      </div>
+
+      <div class="no-print" style="display:flex;gap:0.65rem;flex-wrap:wrap;margin-bottom:0.65rem;">
+        <button type="button" class="btn-primary" id="btnGenChart"><span class="lang-en">Generate My Bṛhat Jātaka Reading</span><span class="dual-sep">/</span><span class="lang-te">నా జాతక ఫలితాలు చూపించు</span></button>
+        <button type="button" class="btn-secondary" id="btnSyncLabs"><span class="lang-en">Sync Chart to Āyurdāya &amp; Aṣṭakavarga Labs</span><span class="dual-sep">/</span><span class="lang-te">ఆయుర్దాయ &amp; అష్టకవర్గకు పంపించు</span></button>
+        <button type="button" class="btn-secondary" id="btnPrintPersonal">🖨️ <span class="lang-en">Print Birth Chart &amp; Reading</span><span class="dual-sep">/</span><span class="lang-te">జాతకం ప్రింట్ చేయి</span></button>
+      </div>
+      <div class="no-print" style="font-size:0.83rem;color:var(--text-muted);margin-bottom:1.1rem;">
+        <span class="lang-en">Don't know your Birth Date or Time?</span><span class="dual-sep">/</span><span class="lang-te">పుట్టిన తేదీ లేదా సమయం తెలియదా?</span>
+        <a href="#sec-ch25-26" style="color:var(--gold-bright);font-weight:600;text-decoration:underline;margin-left:0.35rem;">
+          <span class="lang-en">Use the Lost Horoscope (Naṣṭajātaka) Finder (Ch. XXVI) ↓</span><span class="dual-sep">/</span><span class="lang-te">నష్టజాతక (పోయిన జాతక) గణన వాడండి ↓</span>
+        </a>
+      </div>
+
+      <div id="printReportHeader" class="print-only"></div>
+      <div id="personalChartOut"></div>
+      <div id="printReportFooter" class="print-only">
+        <span class="lang-en">Based on Varāhamihira's <em>Bṛhat Jātaka</em> (Ch. I–XXVIII, Lahiri Ayanāṁśa) • AncientWisdom</span>
+        <span class="dual-sep"> • </span>
+        <span class="lang-te">వరాహమిహిరుని <em>బృహజ్జాతకము</em> ఆధారంగా (అధ్యా. 1–28) • AncientWisdom</span>
+      </div>
+    </section>
+
+    <!-- SECTION 1: Chapter I -->
+    <section id="sec-ch1" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">1. Rāśi Prabheda: Signs of the Zodiac & Ṣaḍvargas</span></h3>
+          <div class="section-title-te"><span class="lang-te">1. రాశిప్రభేదాధ్యాయం — ద్వాదశ రాశులు & షడ్వర్గ గణన</span></div>
+        </div>
+        <span class="ch-badge">Chapter I • Slokas 1–20</span>
+      </div>
+
+      <div class="reader-guide">
+        <strong><span class="lang-en">What This Is (Ch. I):</span><span class="dual-sep">/</span><span class="lang-te">గ్రంథ వివరణ (అధ్యా. 1):</span></strong>
+        <span class="lang-en"><em>Horā</em> is derived from <em>Ahorātra</em> (day & night) by dropping the first and last letters. Click any of the 12 signs on the interactive Kālapuruṣa wheel below or test any longitude (`0°–30°`) in the Ṣaḍvarga calculator to see its 6 divisions (Kṣetra, Horā, Drekkaṇa, Navāṁśa, Dvādaśāṁśa, Triṁśāṁśa) and Vargottama / Ṛkṣa-Sandhi status.</span>
+        <span class="lang-te"><em>అహోరాత్ర</em> పదంలోని మొదటి మరియు చివరి అక్షరాలు లోపించగా <em>హోరా</em> ఏర్పడింది. క్రింది 12 రాశుల చక్రంలో ఏ రాశినైనా క్లిక్ చేసి కాలపురుష అంగాలు, ఉచ్ఛ-నీచ డిగ్రీలు, దిక్కులు చూడండి. అలాగే ఏదైనా డిగ్రీని ఇచ్చి షడ్వర్గ అధిపతులను తెలుసుకోండి.</span>
+      </div>
+
+      <div class="split-2">
+        <div class="panel-box" style="text-align:center;">
+          <h4 style="color:var(--gold-bright);margin-bottom:0.75rem;"><span class="lang-en">Interactive 12-Rāśi Kālapuruṣa Wheel</span><span class="dual-sep">•</span><span class="lang-te">ద్వాదశ రాశి కాలపురుష చక్రం</span></h4>
+          <svg id="zodiacWheelSvg" viewBox="0 0 380 380" style="width:100%;max-width:360px;height:auto;margin:0 auto;display:block;"></svg>
+        </div>
+
+        <div class="panel-box" id="rasiDetailBox">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="panel-box" style="margin-top:1.25rem;">
+        <h4 style="color:var(--cyan-bright);margin-bottom:0.8rem;"><span class="lang-en">Ṣaḍvarga (6-Fold Division) & Vargottama Calculator (Ch. I, Sl. 6–14)</span><span class="dual-sep">•</span><span class="lang-te">షడ్వర్గ & వర్గోత్తమ గణన</span></h4>
+        <div class="control-grid">
+          <div class="field-group">
+            <label><span class="lang-en">Rāśi (Sign)</span><span class="dual-sep">/</span><span class="lang-te">రాశి</span></label>
+            <select id="svRasi"></select>
+          </div>
+          <div class="field-group">
+            <label><span class="lang-en">Degree in Sign (0° – 29.99°)</span><span class="dual-sep">/</span><span class="lang-te">రాశిలోని డిగ్రీ</span></label>
+            <input type="number" id="svDeg" min="0" max="29.99" step="0.5" value="10">
+          </div>
+        </div>
+        <div id="svResult"></div>
+      </div>
+
+      <div class="panel-box" style="margin-top:1.25rem;">
+        <h4 style="color:var(--gold-primary);margin-bottom:0.75rem;"><span class="lang-en">12 Bhāva Names, Upacaya, Kendra & Rising Measures (Ch. I, Sl. 15–19)</span><span class="dual-sep">•</span><span class="lang-te">ద్వాదశ భావ నామాలు & రాశి మానాలు</span></h4>
+        <div class="data-table-wrap">
+          <table class="bj-table" id="bhavaNamesTable"></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Chapter II -->
+    <section id="sec-ch2" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">2. Graha-Yoni-Bheda: Planets, Strengths & Friendships</span></h3>
+          <div class="section-title-te"><span class="lang-te">2. గ్రహయోనిభేదాధ్యాయం — గ్రహ స్వభావాలు, బలాలు & మైత్రి</span></div>
+        </div>
+        <span class="ch-badge">Chapter II • Slokas 1–21</span>
+      </div>
+
+      <div class="tab-bar" id="planetTabs"></div>
+      <div class="split-2">
+        <div class="panel-box" id="planetDetailBox"></div>
+        <div class="panel-box">
+          <h4 style="color:var(--gold-bright);margin-bottom:0.75rem;"><span class="lang-en">8-Direction Planetary Compass & Digbala (Sl. 5, 19)</span><span class="dual-sep">•</span><span class="lang-te">అష్టదిక్ గ్రహ చక్రం & దిగ్బలం</span></h4>
+          <svg id="dirCompassSvg" viewBox="0 0 320 320" style="width:100%;max-width:300px;margin:0 auto;display:block;"></svg>
+          <p style="font-size:0.84rem;color:var(--text-muted);margin-top:0.65rem;text-align:center;">
+            <span class="lang-en">Naisargikabala ascending (Sl. 21): Saturn &lt; Mars &lt; Mercury &lt; Jupiter &lt; Venus &lt; Moon &lt; Sun.</span><br>
+            <span class="lang-te">నైసర్గిక బల క్రమం (ఆరోహణ): శని &lt; కుజ &lt; బుధ &lt; గురు &lt; శుక్ర &lt; చంద్ర &lt; రవి.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="panel-box" style="margin-top:1.25rem;">
+        <h4 style="color:var(--cyan-bright);margin-bottom:0.75rem;"><span class="lang-en">5-Fold Compound Friendship & Aspect Calculator (Sl. 13, 15–18)</span><span class="dual-sep">•</span><span class="lang-te">పంచవిధ గ్రహమైత్రి & దృష్టి గణన</span></h4>
+        <div class="control-grid">
+          <div class="field-group">
+            <label><span class="lang-en">Planet A (Observer)</span><span class="dual-sep">/</span><span class="lang-te">గ్రహం A</span></label>
+            <select id="frPlanetA"></select>
+          </div>
+          <div class="field-group">
+            <label><span class="lang-en">Planet B (Target)</span><span class="dual-sep">/</span><span class="lang-te">గ్రహం B</span></label>
+            <select id="frPlanetB"></select>
+          </div>
+          <div class="field-group">
+            <label><span class="lang-en">House of B from A (1–12)</span><span class="dual-sep">/</span><span class="lang-te">A నుండి B స్థానం (1–12)</span></label>
+            <input type="number" id="frHouseDist" min="1" max="12" value="5">
+          </div>
+        </div>
+        <div id="friendshipResult"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Chapters III, IV, V -->
+    <section id="sec-ch3-5" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">3. Viyoni Janma, Conception (Niṣeka) & Birth Time (Janma-Vidhi)</span></h3>
+          <div class="section-title-te"><span class="lang-te">3. వియోని జన్మ, గర్భాధానం (నిషేకం) & జన్మవిధి</span></div>
+        </div>
+        <span class="ch-badge">Chapters III–V</span>
+      </div>
+
+      <div class="tab-bar" id="ch35Tabs">
+        <button class="tab-btn active" data-tab="ch3"><span class="lang-en">Ch. III: Viyoni & Trees</span><span class="dual-sep">/</span><span class="lang-te">వియోని & వృక్షాలు</span></button>
+        <button class="tab-btn" data-tab="ch4"><span class="lang-en">Ch. IV: Conception & 10 Months</span><span class="dual-sep">/</span><span class="lang-te">గర్భాధానం & 10 నెలలు</span></button>
+        <button class="tab-btn" data-tab="ch5"><span class="lang-en">Ch. V: Delivery Chamber & Moles</span><span class="dual-sep">/</span><span class="lang-te">సూతికాగృహం & పుట్టుమచ్చలు</span></button>
+      </div>
+      <div id="ch35Content"></div>
+    </section>
+
+    <!-- SECTION 4: Chapter VI -->
+    <section id="sec-ch6" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">4. Bālāriṣṭa (Early Death) & Ariṣṭa-Bhaṅga Cancellations</span></h3>
+          <div class="section-title-te"><span class="lang-te">4. బాలారిష్ట యోగాలు & అరిష్టభంగ నియమాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapter VI • Slokas 1–12</span>
+      </div>
+      <div class="tab-bar" id="ch6Filter">
+        <button class="tab-btn active" data-f="all"><span class="lang-en">All 12 Slokas</span><span class="dual-sep">/</span><span class="lang-te">అన్ని 12 శ్లోకాలు</span></button>
+        <button class="tab-btn" data-f="arishta"><span class="lang-en">Ariṣṭa Yogas</span><span class="dual-sep">/</span><span class="lang-te">అరిష్ట యోగాలు</span></button>
+        <button class="tab-btn" data-f="bhanga"><span class="lang-en">Cancellations</span><span class="dual-sep">/</span><span class="lang-te">అరిష్టభంగం</span></button>
+      </div>
+      <div class="cards-grid" id="ch6Grid"></div>
+    </section>
+
+    <!-- SECTION 5: Chapter VII -->
+    <section id="sec-ch7" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">5. Āyurdāya (Length of Life): Piṇḍa & Satyācārya Aṁśa Lab</span></h3>
+          <div class="section-title-te"><span class="lang-te">5. ఆయుర్దాయ గణనాధ్యాయం — పిండాయుర్దాయం & అంశాయుర్దాయం</span></div>
+        </div>
+        <span class="ch-badge">Chapter VII • Slokas 1–14</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">Canonical Rule (Ch. VII, Sl. 1–13):</span><span class="dual-sep">/</span><span class="lang-te">శాస్త్ర నియమం (అధ్యా. 7):</span></strong>
+        <span class="lang-en">Test Varāhamihira's exact <strong>120 Years, 5 Days</strong> configuration (Sl. 6) or enter custom longitudes. Under <em>Piṇḍāyurdāya</em>, malefics in houses 12..7 lose 1, 1/2, 1/3, 1/4, 1/5, 1/6 (benefics lose half), and per Sl. 13, when multiple reductions apply, <strong>only the single greatest reduction</strong> is taken.</span>
+        <span class="lang-te">శ్లోకం 6 లోని ప్రామాణిక <strong>120 సం. 5 రోజుల</strong> పరామాయుః స్థితిని పరీక్షించండి లేదా మీ గ్రహ డిగ్రీలను నమోదు చేయండి. అనేక హరణలు వచ్చినప్పుడు <strong>అత్యధికమైన ఒక్క హరణ మాత్రమే</strong> వర్తిస్తుంది (శ్లో. 13).</span>
+      </div>
+      <div style="margin-bottom:1rem;display:flex;gap:0.6rem;flex-wrap:wrap;">
+        <button class="btn-primary" id="btnLoad120"><span class="lang-en">Load 120y 5d Exaltation Chart (Sl. 6)</span><span class="dual-sep">/</span><span class="lang-te">120 సం. 5 రో. ఆదర్శ చక్రం (శ్లో. 6)</span></button>
+      </div>
+      <div id="ayurInputs" class="control-grid"></div>
+      <div id="ayurResult" class="panel-box" style="margin-top:1rem;"></div>
+      <div class="split-2" style="margin-top:1.25rem;">
+        <div class="panel-box" id="paramayusBox"></div>
+        <div class="panel-box" id="chakrapataBox"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Chapter VIII -->
+    <section id="sec-ch8" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">6. Daśās & Antardaśās Fraction Engine</span></h3>
+          <div class="section-title-te"><span class="lang-te">6. దశాంతర్దశాధ్యాయం — దశా క్రమం & అంతర్దశ గణన</span></div>
+        </div>
+        <span class="ch-badge">Chapter VIII • Slokas 1–23</span>
+      </div>
+      <div class="split-2">
+        <div class="panel-box">
+          <h4 style="color:var(--gold-bright);margin-bottom:0.75rem;"><span class="lang-en">Antardaśā Proportion Calculator (Sl. 3–4)</span><span class="dual-sep">•</span><span class="lang-te">అంతర్దశ భాగ గణన (శ్లో. 3–4)</span></h4>
+          <div class="control-grid">
+            <div class="field-group">
+              <label><span class="lang-en">Main Daśā Years</span><span class="dual-sep">/</span><span class="lang-te">మహాదశా సంవత్సరాలు</span></label>
+              <input type="number" id="dasaYears" value="15" min="1" max="50" step="0.5">
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">Planets Same House (1/2)</span><span class="dual-sep">/</span><span class="lang-te">సహస్థిత గ్రహాలు (1/2)</span></label>
+              <input type="number" id="dasaSame" value="1" min="0" max="5">
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">Planets in 5th/9th (1/3)</span><span class="dual-sep">/</span><span class="lang-te">5/9 స్థాన గ్రహాలు (1/3)</span></label>
+              <input type="number" id="dasaTrine" value="1" min="0" max="5">
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">Planets in 4th/8th (1/4)</span><span class="dual-sep">/</span><span class="lang-te">4/8 స్థాన గ్రహాలు (1/4)</span></label>
+              <input type="number" id="dasaQuad" value="1" min="0" max="5">
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">Planets in 7th (1/7)</span><span class="dual-sep">/</span><span class="lang-te">7వ స్థాన గ్రహాలు (1/7)</span></label>
+              <input type="number" id="dasa7th" value="0" min="0" max="5">
+            </div>
+          </div>
+          <div id="dasaCalcOut"></div>
+        </div>
+        <div class="panel-box" id="dasaQualitiesBox"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Chapter IX -->
+    <section id="sec-ch9" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">7. Aṣṭakavarga Live Matrix & 336-Bindu Analyzer</span></h3>
+          <div class="section-title-te"><span class="lang-te">7. అష్టకవర్గాధ్యాయం — సప్తగ్రహ భిన్నాష్టకవర్గ & సర్వాష్టకవర్గ</span></div>
+        </div>
+        <span class="ch-badge">Chapter IX • Slokas 1–8</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">How It Works (Ch. IX, Sl. 1–8):</span><span class="dual-sep">/</span><span class="lang-te">గణనా విధానం (అధ్యా. 9):</span></strong>
+        <span class="lang-en">Place the 7 planets and Lagna in any sign (Meṣa=1 to Mīna=12). The engine computes the exact bindus for all 7 Bhinnāṣṭakavargas (Sun 48, Moon 48, Mars 39, Mercury 54, Jupiter 56, Venus 52, Saturn 39 = <strong>336 total bindus</strong> as printed in Ch. IX). Signs with &gt;4 bindus are benefic; &lt;4 are malefic; 4 is neutral.</span>
+        <span class="lang-te">లగ్నంతో సహా 7 గ్రహాలను 12 రాశులలో ఉంచితే, గ్రంథంలో చెప్పిన <strong>336 బిందువుల</strong> (రవి 48, చంద్ర 48, కుజ 39, బుధ 54, గురు 56, శుక్ర 52, శని 39) భిన్నాష్టకవర్గ మరియు సర్వాష్టకవర్గ ఫలితాలు తక్షణమే కనిపిస్తాయి.</span>
+      </div>
+      <div id="avInputs" class="control-grid"></div>
+      <div class="tab-bar" id="avPlanetTabs"></div>
+      <div class="split-2">
+        <div class="panel-box">
+          <div id="avSouthChart" class="south-chart"></div>
+          <div id="avNoteBox" style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-muted);"></div>
+        </div>
+        <div class="panel-box">
+          <h4 style="color:var(--gold-bright);margin-bottom:0.65rem;"><span class="lang-en">Sarvāṣṭakavarga (Total 336 Bindus Across 12 Signs)</span><span class="dual-sep">•</span><span class="lang-te">సర్వాష్టకవర్గ బిందువుల రేఖాచిత్రం</span></h4>
+          <canvas id="avCanvas" class="bj-canvas" width="520" height="270"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Chapters X & XI -->
+    <section id="sec-ch10-11" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">8. Karmajīva (Avocation) & Rājayogas</span></h3>
+          <div class="section-title-te"><span class="lang-te">8. కర్మజీవ (జీవనోపాధి) & రాజయోగాధ్యాయం</span></div>
+        </div>
+        <span class="ch-badge">Chapters X–XI</span>
+      </div>
+      <div class="split-2">
+        <div class="panel-box" id="karmaBox"></div>
+        <div class="panel-box" id="rajaBox"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: Chapter XII -->
+    <section id="sec-ch12" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">9. The 32 Nābhasa Yogas Visual Pattern Lab</span></h3>
+          <div class="section-title-te"><span class="lang-te">9. 32 నాభస యోగాల చక్ర చిత్రపట ప్రయోగశాల</span></div>
+        </div>
+        <span class="ch-badge">Chapter XII • Slokas 1–19</span>
+      </div>
+      <div class="tab-bar" id="nabhasaCatTabs">
+        <button class="tab-btn active" data-cat="all"><span class="lang-en">All 32</span><span class="dual-sep">/</span><span class="lang-te">అన్నీ (32)</span></button>
+        <button class="tab-btn" data-cat="Asraya"><span class="lang-en">3 Āśraya</span><span class="dual-sep">/</span><span class="lang-te">3 ఆశ్రయ</span></button>
+        <button class="tab-btn" data-cat="Dala"><span class="lang-en">2 Dala</span><span class="dual-sep">/</span><span class="lang-te">2 దళ</span></button>
+        <button class="tab-btn" data-cat="Akriti"><span class="lang-en">20 Ākṛti</span><span class="dual-sep">/</span><span class="lang-te">20 ఆకృతి</span></button>
+        <button class="tab-btn" data-cat="Sankhya"><span class="lang-en">7 Saṅkhyā</span><span class="dual-sep">/</span><span class="lang-te">7 సంఖ్యా</span></button>
+      </div>
+      <div class="split-2">
+        <div class="panel-box">
+          <div id="nabhasaList" style="max-height:360px;overflow-y:auto;display:flex;flex-direction:column;gap:0.4rem;"></div>
+        </div>
+        <div class="panel-box">
+          <div id="nabhasaChart" class="south-chart"></div>
+          <div id="nabhasaDetail" style="margin-top:1rem;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: Chapters XIII, XIV, XV -->
+    <section id="sec-ch13-15" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">10. Candra Yogas, 21 Dvigrha Pairs & Pravrajyā (Ascetic) Yogas</span></h3>
+          <div class="section-title-te"><span class="lang-te">10. చంద్ర యోగాలు, ద్విగ్రహ సంయోగాలు & ప్రవ్రజ్యా యోగాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapters XIII–XV</span>
+      </div>
+      <div class="tab-bar" id="ch1315Tabs">
+        <button class="tab-btn active" data-t="ch13"><span class="lang-en">Ch. XIII: Candra Yogas</span><span class="dual-sep">/</span><span class="lang-te">చంద్ర యోగాలు</span></button>
+        <button class="tab-btn" data-t="ch14"><span class="lang-en">Ch. XIV: 21 Planet Pairs</span><span class="dual-sep">/</span><span class="lang-te">21 గ్రహ సంయోగాలు</span></button>
+        <button class="tab-btn" data-t="ch15"><span class="lang-en">Ch. XV: Pravrajyā Orders</span><span class="dual-sep">/</span><span class="lang-te">సన్యాస యోగాలు</span></button>
+      </div>
+      <div id="ch1315Body"></div>
+    </section>
+
+    <!-- SECTION 11: Chapters XVI, XVII, XVIII -->
+    <section id="sec-ch16-18" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">11. 27 Nakṣatras & Planets in the 12 Rāśis</span></h3>
+          <div class="section-title-te"><span class="lang-te">11. 27 నక్షత్ర ఫలాలు & ద్వాదశ రాశులలో గ్రహ ఫలితాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapters XVI–XVIII</span>
+      </div>
+      <div class="tab-bar" id="ch1618Tabs">
+        <button class="tab-btn active" data-t="nak"><span class="lang-en">Ch. XVI: 27 Nakṣatras</span><span class="dual-sep">/</span><span class="lang-te">27 నక్షత్రాలు</span></button>
+        <button class="tab-btn" data-t="signs"><span class="lang-en">Ch. XVII–XVIII: Planets in 12 Signs</span><span class="dual-sep">/</span><span class="lang-te">రాశులలో గ్రహ ఫలాలు</span></button>
+      </div>
+      <div id="ch1618Body"></div>
+    </section>
+
+    <!-- SECTION 12: Chapters XIX, XX, XXI -->
+    <section id="sec-ch19-21" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">12. Dṛṣṭi-Phala (Aspects), 12 Bhāvas & Āśraya / Vargas</span></h3>
+          <div class="section-title-te"><span class="lang-te">12. దృష్టిఫల, ద్వాదశ భావ & ఆశ్రయ/వర్గ ఫలాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapters XIX–XXI</span>
+      </div>
+      <div class="tab-bar" id="ch1921Tabs">
+        <button class="tab-btn active" data-t="ch19"><span class="lang-en">Ch. XIX: Planetary Aspects</span><span class="dual-sep">/</span><span class="lang-te">గ్రహ దృష్టి ఫలాలు</span></button>
+        <button class="tab-btn" data-t="ch20"><span class="lang-en">Ch. XX: 12 Bhāvas</span><span class="dual-sep">/</span><span class="lang-te">ద్వాదశ భావ ఫలాలు</span></button>
+        <button class="tab-btn" data-t="ch21"><span class="lang-en">Ch. XXI: Āśraya & Vargas</span><span class="dual-sep">/</span><span class="lang-te">ఆశ్రయ & వర్గ ఫలాలు</span></button>
+      </div>
+      <div id="ch1921Body"></div>
+    </section>
+
+    <!-- SECTION 13: Chapters XXII, XXIII, XXIV -->
+    <section id="sec-ch22-24" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">13. Prakīrṇa, Aniṣṭa Yogas & Strījātaka (Female Horoscopy)</span></h3>
+          <div class="section-title-te"><span class="lang-te">13. ప్రకీర్ణ, అనిష్ట యోగాలు & స్త్రీజాతకం</span></div>
+        </div>
+        <span class="ch-badge">Chapters XXII–XXIV</span>
+      </div>
+      <div class="tab-bar" id="ch2224Tabs">
+        <button class="tab-btn active" data-t="ch24"><span class="lang-en">Ch. XXIV: Strījātaka Matrix</span><span class="dual-sep">/</span><span class="lang-te">స్త్రీజాతక త్రింశాంశ</span></button>
+        <button class="tab-btn" data-t="ch23"><span class="lang-en">Ch. XXIII: Aniṣṭa Yogas</span><span class="dual-sep">/</span><span class="lang-te">అనిష్ట యోగాలు</span></button>
+        <button class="tab-btn" data-t="ch22"><span class="lang-en">Ch. XXII: Prakīrṇa & Kārakas</span><span class="dual-sep">/</span><span class="lang-te">ప్రకీర్ణ & కారక గ్రహాలు</span></button>
+      </div>
+      <div id="ch2224Body"></div>
+    </section>
+
+    <!-- SECTION: Marriage & Spouse (Ch. I, II, XX, XXIII, XXIV) -->
+    <section id="sec-marriage" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">14. Marriage, Spouse &amp; Married Life (Jāmitra &amp; Strījātaka)</span></h3>
+          <div class="section-title-te"><span class="lang-te">14. వివాహము, కళత్ర స్వభావము &amp; దాంపత్య నియమాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapters I, II, XX, XXIII, XXIV</span>
+      </div>
+      <div id="marriageSecBody"></div>
+    </section>
+
+    <!-- SECTION 14: Chapters XXV & XXVI -->
+    <section id="sec-ch25-26" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">14. Niryāṇa (Death & Gati) & Naṣṭajātaka (Lost Horoscopes)</span></h3>
+          <div class="section-title-te"><span class="lang-te">14. నిర్యాణ (మరణ-గతి) & నష్టజాతక గణనా యంత్రం</span></div>
+        </div>
+        <span class="ch-badge">Chapters XXV–XXVI</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">What These Are &amp; Why They Matter (Ch. XXV–XXVI):</span><span class="dual-sep">/</span><span class="lang-te">ఇవి ఏమిటి &amp; ఎందుకు ముఖ్యం (అధ్యా. 25–26):</span></strong><br>
+        • <strong><span class="lang-en">Niryāṇa (Ch. XXV — Exit &amp; Gati):</span><span class="lang-te">నిర్యాణం (అధ్యా. 25 — మరణం &amp; గతి):</span></strong>
+        <span class="lang-en">Examines the <strong>8th house</strong>, the <strong>22nd Drekkaṇa</strong>, and planetary aspects to indicate the circumstances of life's end and the soul's <em>Gati</em> (afterlife direction). <strong>Why important:</strong> While Āyurdāya (Ch. VII) estimates lifespan, Niryāṇa completes the life-cycle study and highlights key 8th-house health/safety cautions.</span>
+        <span class="lang-te"><strong>8వ భావం</strong>, <strong>22వ ద్రేక్కాణం</strong> మరియు గ్రహ దృష్టుల ద్వారా ఆయుర్దాయం ముగిసే విధానం మరియు ఆత్మ <em>గతి</em>ని వివరిస్తుంది. <strong>ప్రాముఖ్యత:</strong> ఆయుర్దాయం (అధ్యా. 7) జీవితకాలాన్ని చెబితే, నిర్యాణం జీవిత చక్రం యొక్క అంతిమ దశ మరియు ఆరోగ్య జాగ్రత్తలను పూర్తిగా వివరిస్తుంది.</span><br>
+        • <strong><span class="lang-en">Naṣṭajātaka (Ch. XXVI — Lost Horoscopes):</span><span class="lang-te">నష్టజాతకం (అధ్యా. 26 — పోయిన జాతక పునర్నిర్మాణం):</span></strong>
+        <span class="lang-en">A mathematical method to <strong>recover a person's birth chart when birth date/time is unknown</strong>, using the query-time Lagna, direction faced, shadow length (<em>Chāyāṅgula</em>), and name syllables (<em>Mātrās</em>). <strong>Why important:</strong> Essential whenever birth records are missing or uncertain.</span>
+        <span class="lang-te">పుట్టిన తేదీ లేదా సమయం తెలియని వారి <strong>జన్మ నక్షత్రం మరియు లగ్నాన్ని తిరిగి గణించే</strong> ప్రామాణిక పద్ధతి (ప్రశ్న సమయ లగ్నం, దిక్కు, ఛాయాంగుళాలు, నామ మాత్రల ఆధారంగా). <strong>ప్రాముఖ్యత:</strong> జన్మ వివరాలు లేని వారికి జాతకాన్ని కనుగొనడానికి ఇది కీలకం.</span>
+      </div>
+      <div class="split-2">
+        <div class="panel-box" id="ch25Box"></div>
+        <div class="panel-box">
+          <h4 style="color:var(--cyan-bright);margin-bottom:0.45rem;"><span class="lang-en">Lost Jātaka Finder — Naṣṭajātaka (Ch. XXVI, Sl. 1–16)</span><span class="dual-sep">•</span><span class="lang-te">నష్టజాతక గణన — పోయిన జాతకం కనుగొనుట (అధ్యా. 26)</span></h4>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.75rem;">
+            <span class="lang-en">Enter the moment of asking (or click <em>Use Current Time &amp; Place</em>), direction faced, and name to recover Ayana, Birth Season, Jupiter's sign, and Janma Nakṣatra per Ch. XXVI.</span>
+            <span class="lang-te">అడిగే సమయ లగ్నం, దిక్కు మరియు పేరు ఆధారంగా అయనం, ఋతువు, గురు స్థానం మరియు జన్మ నక్షత్రాన్ని కనుగొనండి.</span>
+          </p>
+          <div style="margin-bottom:0.75rem;">
+            <button type="button" class="btn-secondary" id="btnNjNow" style="font-size:0.8rem;padding:0.4rem 0.75rem;">⏱️ <span class="lang-en">Use Current Time &amp; Place (Query Lagna)</span><span class="dual-sep">/</span><span class="lang-te">ప్రస్తుత సమయ లగ్నం వాడు</span></button>
+          </div>
+          <div class="control-grid">
+            <div class="field-group">
+              <label><span class="lang-en">1. Rising Sign Right Now (at asking time)</span><span class="dual-sep">/</span><span class="lang-te">1. ప్రశ్న అడిగే సమయ రాశి</span></label>
+              <select id="njQuerySign"></select>
+              <small style="color:var(--text-muted);font-size:0.74rem;"><span class="lang-en">Auto-filled when you click "Use Current Time &amp; Place" (Ch. XXVI, Sl. 1–2).</span><span class="dual-sep">/</span><span class="lang-te">పై బటన్ నొక్కితే ఇదే నింపబడుతుంది.</span></small>
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">2. Degree of Rising Sign (0°–30°)</span><span class="dual-sep">/</span><span class="lang-te">2. ఆ రాశిలోని డిగ్రీ (0°–30°)</span></label>
+              <input type="number" id="njQueryDeg" value="10" min="0" max="29.99" step="0.5">
+              <small style="color:var(--text-muted);font-size:0.74rem;"><span class="lang-en">0°–15° = Jan–Jun birth; 15°–30° = Jul–Dec birth.</span><span class="dual-sep">/</span><span class="lang-te">0°–15° = ఉత్తరాయణం; 15°–30° = దక్షిణాయణం.</span></small>
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">3. Person's First Name (given by mother)</span><span class="dual-sep">/</span><span class="lang-te">3. వ్యక్తి మొదటి పేరు (తల్లి పెట్టినది)</span></label>
+              <input type="text" id="njName" placeholder="e.g. Rama, Sita, Krishna...">
+              <small style="color:var(--text-muted);font-size:0.74rem;"><span class="lang-en">Automatically counts vowel beats (Mātrās) below (Sl. 15).</span><span class="dual-sep">/</span><span class="lang-te">పేరు రాస్తే క్రింది మాత్రల సంఖ్య అదే వస్తుంది.</span></small>
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">4. Name Syllable Beats (Mātrās — auto-filled)</span><span class="dual-sep">/</span><span class="lang-te">4. పేరులోని మాత్రల సంఖ్య</span></label>
+              <input type="number" id="njMatras" value="6" min="1" max="60">
+              <small style="color:var(--text-muted);font-size:0.74rem;"><span class="lang-en">Short vowel = 1, long vowel = 2 (e.g. Rā-ma = 2+1 = 3).</span><span class="dual-sep">/</span><span class="lang-te">హ్రస్వ అచ్చు = 1, దీర్ఘ అచ్చు = 2.</span></small>
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">5. Shadow Length Now (finger-widths; 0 if night/indoors)</span><span class="dual-sep">/</span><span class="lang-te">5. ఇప్పుడు నీడ పొడవు (వేళ్లలో; రాత్రి/ఇంట్లో 0)</span></label>
+              <input type="number" id="njShadow" value="5" min="0" max="60">
+              <small style="color:var(--text-muted);font-size:0.74rem;"><span class="lang-en">Chāyāṅgula: shadow of a 12-finger upright stick in sun; 0 if indoors/night.</span><span class="dual-sep">/</span><span class="lang-te">ఎండలో 12 అంగుళాల కర్ర నీడ పొడవు; రాత్రి/ఇంట్లో 0 వేయండి.</span></small>
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">6. Which Direction Are You / They Facing Now?</span><span class="dual-sep">/</span><span class="lang-te">6. ఇప్పుడు మీరు ఏ దిక్కు వైపు చూస్తున్నారు?</span></label>
+              <select id="njDir"></select>
+              <small style="color:var(--text-muted);font-size:0.74rem;"><span class="lang-en">Compass direction the person is facing while asking (Sl. 16).</span><span class="dual-sep">/</span><span class="lang-te">ప్రశ్న అడిగేటప్పుడు ముఖం పెట్టిన దిక్కు.</span></small>
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">7. How Many Others Are Facing the Same Direction?</span><span class="dual-sep">/</span><span class="lang-te">7. అదే దిక్కు వైపు చూస్తున్న ఇతర వ్యక్తులు ఎంతమంది?</span></label>
+              <input type="number" id="njPersons" value="1" min="0" max="50">
+              <small style="color:var(--text-muted);font-size:0.74rem;"><span class="lang-en">Other people nearby facing the same way; enter 0 if alone (Sl. 16).</span><span class="dual-sep">/</span><span class="lang-te">అక్కడ అదే దిక్కులో ఉన్న ఇతరుల సంఖ్య (ఒంటరిగా ఉంటే 0).</span></small>
+            </div>
+          </div>
+          <div id="njResult"></div>
+          <div class="reader-guide" style="margin-top:0.85rem;margin-bottom:0;font-size:0.82rem;line-height:1.65;">
+            <strong><span class="lang-en">How This Is Calculated (Measured Right Now at Asking Time — Ch. XXVI):</span><span class="dual-sep">/</span><span class="lang-te">ఇది ఎలా లెక్కించబడుతుంది (ప్రశ్న అడిగే ప్రస్తుత సమయం ఆధారంగా — అధ్యా. 26):</span></strong><br>
+            • <strong><span class="lang-en">When to use:</span><span class="dual-sep">/</span><span class="lang-te">ఎప్పుడు వాడాలి:</span></strong>
+            <span class="lang-en">Only when birth date/time is unknown — all inputs are measured <strong>right now</strong> (not at delivery).</span>
+            <span class="lang-te">పుట్టిన తేదీ/సమయం తెలియని వారికి మాత్రమే — అన్ని వివరాలు <strong>ఇప్పుడు</strong> (అడిగే సమయంలో) తీసుకోవాలి.</span><br>
+            • <strong><span class="lang-en">1) Birth Half-Year (Sl. 1):</span><span class="dual-sep">/</span><span class="lang-te">1) అయనం (శ్లో. 1):</span></strong>
+            <span class="lang-en">If the rising sign right now is in <code>0°–15°</code> → <strong>Uttarāyaṇa</strong> (Jan–Jun); if <code>15°–30°</code> → <strong>Dakṣiṇāyana</strong> (Jul–Dec).</span>
+            <span class="lang-te">ప్రస్తుత లగ్నం <code>0°–15°</code>లో ఉంటే <strong>ఉత్తరాయణం</strong>; <code>15°–30°</code>లో ఉంటే <strong>దక్షిణాయణం</strong>.</span><br>
+            • <strong><span class="lang-en">2) Birth Jupiter &amp; Season (Sl. 2):</span><span class="dual-sep">/</span><span class="lang-te">2) జన్మ గురు &amp; ఋతువు (శ్లో. 2):</span></strong>
+            <span class="lang-en">The rising sign's <code>10°</code> slice (1st/2nd/3rd Drekkaṇa) places birth Jupiter in the <strong>1st, 5th, or 9th</strong> sign from it, and that slice's planet gives the birth season (<em>Ṛtu</em>, Ch. II-12).</span>
+            <span class="lang-te">ప్రస్తుత లగ్నంలోని <code>10°</code> భాగం (1/2/3 ద్రేక్కాణం) ఆధారంగా గురు రాశి (1, 5, 9) మరియు జన్మ ఋతువు తెలుస్తాయి.</span><br>
+            • <strong><span class="lang-en">3) Birth Star by Name (Sl. 15):</span><span class="dual-sep">/</span><span class="lang-te">3) పేరుతో నక్షత్రం (శ్లో. 15):</span></strong>
+            <span class="lang-en"><code>(Name Mātrās × 2 + Shadow) mod 27</code>, then count that many stars starting from <strong>Dhaniṣṭhā</strong>.</span>
+            <span class="lang-te"><code>(నామ మాత్రలు × 2 + నీడ) ÷ 27 శేషం</code> — ఆ సంఖ్యను <strong>ధనిష్ఠ</strong> నుండి లెక్కిస్తే జన్మ నక్షత్రం వస్తుంది.</span><br>
+            • <strong><span class="lang-en">4) Birth Star by Direction (Sl. 16):</span><span class="dual-sep">/</span><span class="lang-te">4) దిక్కుతో నక్షత్రం (శ్లో. 16):</span></strong>
+            <span class="lang-en"><code>(Direction Number × 15 + Others Facing Same Way) mod 27</code> (E=2, SE=3, S=14, SW=10, W=15, NW=21, N=9, NE=8), counted from <strong>Dhaniṣṭhā</strong>.</span>
+            <span class="lang-te"><code>(దిక్సంఖ్య × 15 + అదే దిక్కు వ్యక్తులు) ÷ 27 శేషం</code> — <strong>ధనిష్ఠ</strong> నుండి లెక్కిస్తే జన్మ నక్షత్రం వస్తుంది.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 15: Chapters XXVII & XXVIII -->
+    <section id="sec-ch27-28" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">15. All 36 Drekkaṇas (Decanates) Gallery & Conclusion</span></h3>
+          <div class="section-title-te"><span class="lang-te">15. 36 ద్రేక్కాణ స్వరూప చిత్రమాలిక & ఉపసంహారం</span></div>
+        </div>
+        <span class="ch-badge">Chapters XXVII–XXVIII</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">What the 36 Drekkaṇas Are &amp; Why They Matter (Ch. XXVII):</span><span class="dual-sep">/</span><span class="lang-te">36 ద్రేక్కాణాలు ఏమిటి &amp; ఎందుకు ముఖ్యం (అధ్యా. 27):</span></strong><br>
+        <span class="lang-en">Each of the 12 zodiac signs (<code>30°</code>) is divided into <strong>3 equal <code>10°</code> sections called Drekkaṇas (Decanates)</strong>, giving <code>12 × 3 = 36</code> symbolic forms (Male, Female, Armed/Āyudha, Quadruped, Serpent/Sarpa, Bird/Pakṣin, etc.). <strong>Why important:</strong> Varāhamihira uses these 36 Drekkaṇas across the treatise to judge: (1) the native's <strong>body build, nature &amp; temperament</strong> (from the Lagna Drekkaṇa), (2) <strong>manner of death</strong> (from the 22nd Drekkaṇa, Ch. XXV), (3) <strong>planetary strength</strong> (Ṣaḍvarga, Ch. I–II), and (4) <strong>animal/bird birth &amp; lost-object queries</strong> (Ch. III &amp; XXVII).</span>
+        <span class="lang-te">12 రాశులలోని ప్రతి రాశిని (<code>30°</code>) <strong>3 సమాన <code>10°</code> భాగాలుగా</strong> విభజిస్తే వచ్చేవే <strong>36 ద్రేక్కాణాలు</strong> (పురుష, స్త్రీ, ఆయుధ, చతుష్పాద, సర్ప, పక్షి మొదలైన రూపాలు). <strong>ప్రాముఖ్యత:</strong> గ్రంథంలో వీటిని 4 ముఖ్య విషయాలకు ఉపయోగిస్తారు: (1) లగ్న ద్రేక్కాణం ద్వారా <strong>శరీర ఆకృతి &amp; స్వభావం</strong>, (2) 22వ ద్రేక్కాణం ద్వారా <strong>మరణ కారణం</strong> (అధ్యా. 25), (3) <strong>షడ్వర్గ గ్రహ బలం</strong> (అధ్యా. 1–2), మరియు (4) <strong>వియోని జన్మ &amp; చోర/ప్రశ్న శాస్త్రం</strong> (అధ్యా. 3, 27).</span>
+      </div>
+      <div class="tab-bar" id="drekFilter">
+        <button class="tab-btn active" data-t="all"><span class="lang-en">All 36</span><span class="dual-sep">/</span><span class="lang-te">అన్నీ (36)</span></button>
+        <button class="tab-btn" data-t="male"><span class="lang-en">Male (23)</span><span class="dual-sep">/</span><span class="lang-te">పురుష</span></button>
+        <button class="tab-btn" data-t="female"><span class="lang-en">Female (12)</span><span class="dual-sep">/</span><span class="lang-te">స్త్రీ</span></button>
+        <button class="tab-btn" data-t="armed"><span class="lang-en">Armed / Āyudha (11)</span><span class="dual-sep">/</span><span class="lang-te">ఆయుధ</span></button>
+        <button class="tab-btn" data-t="quadruped"><span class="lang-en">Quadruped (9)</span><span class="dual-sep">/</span><span class="lang-te">చతుష్పాద</span></button>
+        <button class="tab-btn" data-t="serpent"><span class="lang-en">Serpent / Sarpa (5)</span><span class="dual-sep">/</span><span class="lang-te">సర్ప</span></button>
+        <button class="tab-btn" data-t="bird"><span class="lang-en">Bird / Pakṣin (4)</span><span class="dual-sep">/</span><span class="lang-te">పక్షి</span></button>
+      </div>
+      <div class="cards-grid" id="drekGrid"></div>
+      <div class="panel-box" style="margin-top:1.25rem;" id="ch28Box"></div>
+    </section>
+
+    <!-- SECTION 16: Mastery Quiz -->
+    <section id="sec-quiz" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">16. Bṛhat Jātaka Mastery Assessment</span></h3>
+          <div class="section-title-te"><span class="lang-te">16. బృహజ్జాతక జ్ఞాన పరీక్ష</span></div>
+        </div>
+        <span class="ch-badge">12 Questions</span>
+      </div>
+      <div id="quizBox"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div style="margin-bottom: 1.25rem;">
+      <a href="../index.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid rgba(245, 185, 66, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(245, 185, 66, 0.12);">
+        <span class="lang-en">← Go to AncientWisdom Portal (प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము)</span>
+        <span class="lang-te">← ప్రాచీన జ్ఞానము పోర్టల్ కు వెళ్ళండి (AncientWisdom Portal)</span> 🏛️
+      </a>
+    </div>
+    <p>
+      <span class="lang-en">Based strictly on <strong>Varāhamihira's Bṛhat Jātaka</strong> (V. Subrahmanya Sastri's English Translation, 2nd Ed. 1996).</span>
+      <span class="dual-sep">•</span>
+      <span class="lang-te">ఆచార్య వరాహమిహిరుని <strong>బృహజ్జాతకము</strong> (28 అధ్యాయములు) ఆధారంగా రూపొందించబడినది.</span>
+    </p>
+  </footer>
+
+  <script src="data_part1.js"></script>
+  <script src="data_part2.js"></script>
+  <script src="data_part3.js"></script>
+  <script src="data_te_extra.js"></script>
+  <script src="places.js"></script>
+  <script src="ephemeris.js"></script>
+  <script src="guides.js"></script>
+  <script src="brihat_jataka.js"></script>
+</body>
+</html>

@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-lang="dual">
 
-  <!-- Sticky Header -->
+  <!-- Sticky Header (Sleek Single-Row matching BrihatJataka / BrihatSamhita) -->
   <header class="site-header">
     <div class="header-container">
       <div class="logo-area">
@@ -23,27 +23,45 @@
         </div>
       </div>
 
-      <nav class="nav-links">
-        <a href="#scanner" class="nav-item active">🔍 Live Metre Scanner</a>
-        <a href="#ganas" class="nav-item">🪘 8 Gaṇas</a>
-        <a href="#binary" class="nav-item">⚡ Binary System</a>
-        <a href="#meru" class="nav-item">🔺 Meru Prastāra</a>
-        <a href="#neuroscience" class="nav-item">🧠 Mantra Neuroscience</a>
-        <a href="#compendium" class="nav-item">📚 Metre Compendium</a>
-      </nav>
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <div class="lang-segmented" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-opt active" data-lang-val="dual">🌐 Dual</button>
+          <button type="button" class="lang-opt" data-lang-val="telugu">తెలుగు</button>
+          <button type="button" class="lang-opt" data-lang-val="english">Eng</button>
+        </div>
+        <button id="menuToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
     </div>
   </header>
+
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+  <aside id="navDrawer" class="nav-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div style="font-weight:700;color:var(--gold-bright);">📜 <span class="lang-en">Chandaḥ-śāstra Index</span><span class="dual-sep">•</span><span class="lang-te">విషయ సూచిక</span></div>
+      <button id="closeDrawer" class="drawer-close-btn" aria-label="Close">✕</button>
+    </div>
+    <nav class="drawer-nav-list">
+      <a href="#scanner" class="drawer-nav-item active">🔍 <span class="lang-en">1. Live Metre Scanner</span><span class="dual-sep">•</span><span class="lang-te">ఛందస్సు స్కానర్</span></a>
+      <a href="#ganas" class="drawer-nav-item">🪘 <span class="lang-en">2. The 8 Gaṇas</span><span class="dual-sep">•</span><span class="lang-te">అష్టగణాలు</span></a>
+      <a href="#binary" class="drawer-nav-item">⚡ <span class="lang-en">3. Pingala's Binary System</span><span class="dual-sep">•</span><span class="lang-te">బైనరీ విధానం</span></a>
+      <a href="#meru" class="drawer-nav-item">🔺 <span class="lang-en">4. Meru Prastāra &amp; Fibonacci</span><span class="dual-sep">•</span><span class="lang-te">మేరు ప్రస్తారం</span></a>
+      <a href="#neuroscience" class="drawer-nav-item">🧠 <span class="lang-en">5. Mantra Neuroscience</span><span class="dual-sep">•</span><span class="lang-te">మంత్ర నాడీశాస్త్రం</span></a>
+      <a href="#swasa" class="drawer-nav-item">🌬️ <span class="lang-en">6. Śvāsa Mahā Vijñānam</span><span class="dual-sep">•</span><span class="lang-te">శ్వాస మహావిజ్ఞానం</span></a>
+      <a href="#compendium" class="drawer-nav-item">📚 <span class="lang-en">7. Canonical Metres</span><span class="dual-sep">•</span><span class="lang-te">ఛందో గ్రంథం</span></a>
+    </nav>
+  </aside>
 
   <div class="container">
 
     <!-- Hero Section -->
     <section class="hero" id="overview">
-      <div class="hero-pill">📜 The Vedāṅga of Prosody, Combinatorics & Binary Logic (c. 300–200 BCE)</div>
-      <h2 class="hero-title">Chandaḥ-śāstra & The Science of Metre</h2>
+      <div class="hero-pill">📜 <span class="lang-en">The Vedāṅga of Prosody, Combinatorics &amp; Breath Science (c. 300–200 BCE)</span><span class="dual-sep">•</span><span class="lang-te">ఛందస్సు, బైనరీ గణితం, శ్వాస విజ్ఞాన వేదాంగం</span></div>
+      <h2 class="hero-title"><span class="lang-en">Chandaḥ-śāstra &amp; The Science of Metre</span><span class="dual-sep">•</span><span class="lang-te">ఛందశ్శాస్త్రం &amp; శ్వాస మహావిజ్ఞానం</span></h2>
       <p class="hero-sub">
-        Explore Acharya Pingala's foundational masterwork on poetic chronometry, the world's earliest documented binary numbering system, 
-        the stepped binomial pyramid of <em>Meru Prastāra</em> (Pascal's Triangle), <em>Mātrāvṛtta</em> Fibonacci combinatorics, 
-        and the empirical cognitive neuroscience demonstrating how sacred metric stotras rewire and harmonize the human brain.
+        <span class="lang-en">Explore Acharya Pingala's foundational masterwork on poetic chronometry, the world's earliest documented binary numbering system, <em>Meru Prastāra</em> (Pascal's Triangle), <em>Mātrāvṛtta</em> Fibonacci combinatorics, mantra neuroscience, and <em>Śvāsa Mahā Vijñānam</em> (how rhythm &amp; slower breathing preserve Prāṇa and longevity).</span>
+        <span class="lang-te"><br>ఆచార్య పింగళుని ఛందశ్శాస్త్రం, ప్రపంచపు తొలి బైనరీ సంఖ్యా విధానం, మేరు ప్రస్తారం, మంత్ర నాడీశాస్త్రం మరియు లయబద్ధమైన శ్వాస ద్వారా ఆయుర్దాయం-అంతఃశక్తులను పెంచే <strong>శ్వాస మహావిజ్ఞానం</strong> గురించి సులభంగా తెలుసుకోండి.</span>
       </p>
 
       <div class="hero-actions">
@@ -501,7 +519,140 @@ māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya</textarea>
       </div>
     </section>
 
-    <!-- SECTION 6: MASTER METRE COMPENDIUM -->
+    <!-- SECTION 6: SWASA MAHA VIGNANAM (PRANAS, BREATHS, LIFESPAN & SAKTIS) -->
+    <section id="swasa" class="panel">
+      <div class="section-head">
+        <h3 class="section-title"><span>🌬️</span> <span class="lang-en">6. Śvāsa Mahā Vijñānam: Prāṇas, Breaths, Lifespan &amp; Śaktis</span><span class="dual-sep">•</span><span class="lang-te">6. శ్వాస మహావిజ్ఞానం — ప్రాణాలు, ఆయుర్దాయం &amp; అంతఃశక్తులు</span></h3>
+        <p class="section-sub">
+          <span class="lang-en">In classical Vedic chronometry &amp; Yoga (<em>Svara Śāstra / Prāṇāyāma</em>), a resting human takes <strong>~15 breaths per minute (1 Prāṇa = 4 seconds) = 21,600 breaths per day</strong>. Slowing the breath through rhythmic Chandas chanting and Prāṇāyāma reduces autonomic strain, preserves Prāṇic energy, extends longevity, and awakens higher mental clarity (Śaktis).</span>
+          <span class="lang-te"><br>ప్రాచీన స్వర శాస్త్రం &amp; యోగశాస్త్రం ప్రకారం మనిషి నిమిషానికి <strong>~15 సార్లు (1 ప్రాణం = 4 సెకన్లు) = రోజుకు 21,600 శ్వాసలు</strong> తీసుకుంటాడు. ఛందస్సుతో కూడిన లయబద్ధ పఠనం, ప్రాణాయామం ద్వారా శ్వాస వేగాన్ని తగ్గిస్తే ప్రాణశక్తి నిల్వ ఉండి ఆయుర్దాయం, ఏకాగ్రత మరియు అంతఃశక్తులు పెరుగుతాయి.</span>
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-bottom:1.5rem;">
+        <div class="neuro-card" style="border-color:rgba(56,189,248,0.4);">
+          <h4 style="color:#fff;margin-bottom:0.5rem;"><span class="lang-en">Interactive Daily Breath (Śvāsa) Budget Calculator</span><span class="dual-sep">•</span><span class="lang-te">రోజువారీ శ్వాస గణన యంత్రం</span></h4>
+          <label style="font-size:0.84rem;color:var(--text-muted);display:flex;justify-content:space-between;">
+            <span><span class="lang-en">Your Breaths / Minute:</span><span class="dual-sep">/</span><span class="lang-te">నిమిషానికి శ్వాసలు:</span></span>
+            <strong id="swasaBpmVal" style="color:var(--gold-bright);">15 / min</strong>
+          </label>
+          <input type="range" id="swasaBpmSlider" min="4" max="24" value="15" style="width:100%;margin-top:0.45rem;accent-color:var(--cyan-accent);">
+          <div id="swasaCalcOut"></div>
+        </div>
+
+        <div class="neuro-card pacer-card">
+          <h4 style="color:#fff;margin-bottom:0.45rem;">
+            <span class="lang-en">Guided Śvāsa &amp; Chandas Breath Pacer</span><span class="dual-sep">•</span><span class="lang-te">లయబద్ధ శ్వాస &amp; ప్రాణాయామ సాధన చక్రం</span>
+          </h4>
+          <div style="margin-bottom:0.65rem;">
+            <label for="breathTechniqueSel" style="display:block;font-size:0.8rem;color:var(--gold-bright);margin-bottom:0.3rem;">
+              <span class="lang-en">Choose Breath Technique / Ratio:</span><span class="dual-sep">/</span><span class="lang-te">శ్వాస పద్ధతి / కాల ప్రమాణం ఎంచుకోండి:</span>
+            </label>
+            <select id="breathTechniqueSel" class="technique-select">
+              <option value="chandas_426">Chandas 4-2-6 (Inhale 4s • Hold 2s • Exhale 6s • 5 bpm) — Balanced Focus</option>
+              <option value="box_4444">Sama Vṛtti / Box 4-4-4-4 (In 4s • Hold 4s • Out 4s • Hold 4s • 3.75 bpm) — Stability</option>
+              <option value="calm_478">Praśānta 4-7-8 (Inhale 4s • Hold 7s • Exhale 8s • 3.2 bpm) — Deep Calm &amp; Sleep</option>
+              <option value="yogic_4168">Classical Yogic 1:4:2 (In 4s • Hold 16s • Out 8s • 2.1 bpm) — Antar-Kumbhaka</option>
+              <option value="coherent_505">Coherent Resonance 5-0-5 (Inhale 5s • Exhale 5s • 6 bpm) — Maximum HRV</option>
+              <option value="santi_448">Śānti 4-4-8 (Inhale 4s • Hold 4s • Exhale 8s • 3.75 bpm) — Deep Relaxation</option>
+              <option value="kevala_848">Kevala Dhyāna 8-4-8 (Inhale 8s • Hold 4s • Exhale 8s • 3 bpm) — Meditation</option>
+              <option value="flow_606">Prāṇa Dhāraṇā 6-0-6 (Inhale 6s • Exhale 6s • 5 bpm) — Smooth Rhythmic Flow</option>
+              <option value="nadi_488">Nādī Śodhana 4-8-8 (Inhale 4s • Hold 8s • Exhale 8s • 3 bpm) — Psychic Purification</option>
+            </select>
+          </div>
+          <p id="techniqueDetail" style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.35rem;line-height:1.5;min-height:2.6em;">
+            <span class="lang-en">Inhale 4s • Hold 2s • Exhale 6s (5 breaths/min)</span><span class="lang-te"><br>4సె పూరకం • 2సె కుంభకం • 6సె రేచకం (నిమిషానికి 5 శ్వాసలు)</span>
+          </p>
+          <div class="breath-orb-wrap">
+            <div class="breath-orb-ring"></div>
+            <div class="breath-orb" id="swasaOrb">
+              <span id="swasaOrbText"><span class="lang-en">Ready<br><small style="opacity:0.8;">5 bpm</small></span><span class="lang-te"><br>సిద్ధం</span></span>
+            </div>
+          </div>
+          <button type="button" id="swasaPacerBtn" class="btn-ghost pacer-btn">
+            ▶ <span class="lang-en">Start Guided Breath</span><span class="dual-sep">/</span><span class="lang-te">శ్వాస అభ్యాసం ప్రారంభించు</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- How Less Breaths Help Lifespan & Saktis + Svara Vijnanam -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:1.5rem;">
+        <div class="neuro-card">
+          <span class="neuro-badge" style="background:rgba(16,185,129,0.2);color:var(--emerald-bright);border:1px solid var(--emerald-bright);">Longevity • దీర్ఘాయుస్సు</span>
+          <h4 style="color:#fff;margin-bottom:0.35rem;"><span class="lang-en">Why Fewer Breaths Lengthen Life</span><span class="dual-sep">•</span><span class="lang-te">తక్కువ శ్వాసలు ఆయుర్దాయాన్ని ఎలా పెంచుతాయి?</span></h4>
+          <p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">
+            <span class="lang-en">Yogic texts view life as measured in total breaths (<em>Prāṇas</em>), while modern physiology shows slow breathing (4–6/min) lowers resting heart rate, blood pressure, oxidative stress, and cortisol, shifting the body into deep cellular repair.</span>
+            <span class="lang-te"><br>యోగశాస్త్రం ఆయుస్సును శ్వాసల సంఖ్యలో కొలుస్తుంది; ఆధునిక శాస్త్రం ప్రకారం నెమ్మదైన శ్వాస గుండె వేగాన్ని, రక్తపోటును, ఒత్తిడిని తగ్గించి కణజాల మరమ్మత్తును పెంచుతుంది.</span>
+          </p>
+        </div>
+        <div class="neuro-card">
+          <span class="neuro-badge" style="background:rgba(168,85,247,0.2);color:var(--purple-accent);border:1px solid var(--purple-accent);">Śaktis • అంతఃశక్తులు</span>
+          <h4 style="color:#fff;margin-bottom:0.35rem;"><span class="lang-en">Mental Clarity &amp; Inner Śaktis</span><span class="dual-sep">•</span><span class="lang-te">మనోశక్తి &amp; అంతఃశక్తుల వికాసం</span></h4>
+          <p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">
+            <span class="lang-en"><em>"Cale vāte calaṁ cittam"</em> (Haṭha Yoga Pradīpikā 2.2): when breath is restless, the mind is restless; when breath becomes steady and subtle via Chandas &amp; Kumbhaka, focus (<em>Dhāraṇā</em>), memory, intuition, and emotional steadiness blossom.</span>
+            <span class="lang-te"><br>"చలే వాతే చలం చిత్తం" — శ్వాస చంచలంగా ఉంటే మనస్సు చంచలంగా ఉంటుంది; శ్వాస స్థిరమైతే ఏకాగ్రత, జ్ఞాపకశక్తి, సంకల్పబలం మరియు అంతర్దృష్టి వికసిస్తాయి.</span>
+          </p>
+        </div>
+        <div class="neuro-card">
+          <span class="neuro-badge" style="background:rgba(245,185,66,0.2);color:var(--gold-bright);border:1px solid var(--gold-bright);">Svara Śāstra • స్వర శాస్త్రం</span>
+          <h4 style="color:#fff;margin-bottom:0.35rem;"><span class="lang-en">Iḍā, Piṅgalā &amp; Suṣumnā Nāḍīs</span><span class="dual-sep">•</span><span class="lang-te">ఇడ, పింగళ &amp; సుషుమ్న నాడులు</span></h4>
+          <p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">
+            <span class="lang-en"><strong>Iḍā (Left nostril / Moon):</strong> cooling, calm, study &amp; creative work. <strong>Piṅgalā (Right nostril / Sun):</strong> warming, digestion, physical action. <strong>Suṣumnā (Both balanced):</strong> ideal for mantra chanting &amp; meditation.</span>
+            <span class="lang-te"><br><strong>ఇడ (ఎడమ ముక్కు / చంద్ర):</strong> చల్లదనం, విద్య, శాంతి. <strong>పింగళ (కుడి ముక్కు / సూర్య):</strong> వేడి, జీర్ణశక్తి, శారీరక శ్రమ. <strong>సుషుమ్న (రెండూ సమానం):</strong> మంత్ర జపం &amp; ధ్యానానికి శ్రేష్ఠం.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Human vs Animal Breath Rate & Lifespan Comparison -->
+      <h4 style="color:var(--gold-bright);margin-bottom:0.55rem;"><span class="lang-en">Breath Rate vs. Lifespan Across Nature (Approximate Biological Averages)</span><span class="dual-sep">•</span><span class="lang-te">ప్రకృతిలో శ్వాస వేగం vs ఆయుర్దాయం (జంతువులతో పోలిక)</span></h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th><span class="lang-en">Creature / ప్రాణి</span></th>
+              <th><span class="lang-en">Breaths / Min • నిమిషానికి శ్వాసలు</span></th>
+              <th><span class="lang-en">Approx. Breaths / Day • రోజుకు</span></th>
+              <th><span class="lang-en">Typical Lifespan • ఆయుర్దాయం</span></th>
+              <th><span class="lang-en">Key Insight • ముఖ్య పాఠం</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Mouse / Rat (ఎలుక)</strong></td><td>~100–150 / min</td><td>~144,000+</td><td>~2–3 years</td><td><span class="lang-en">Very rapid breath &amp; heartbeat → shortest life</span><span class="dual-sep">•</span><span class="lang-te">అతివేగ శ్వాస → అతి తక్కువ ఆయుస్సు</span></td></tr>
+            <tr><td><strong>Rabbit (కుందేలు)</strong></td><td>~35–60 / min</td><td>~50,000–86,000</td><td>~6–10 years</td><td><span class="lang-en">Fast, shallow breathing</span><span class="dual-sep">•</span><span class="lang-te">వేగవంతమైన శ్వాస</span></td></tr>
+            <tr><td><strong>Monkey (కోతి)</strong></td><td>~30–40 / min</td><td>~43,000–57,000</td><td>~20–25 years</td><td><span class="lang-en">Restless breath &amp; restless attention</span><span class="dual-sep">•</span><span class="lang-te">చంచల శ్వాస &amp; చంచల మనస్సు</span></td></tr>
+            <tr><td><strong>Dog (కుక్క)</strong></td><td>~20–30 / min</td><td>~28,800–43,200</td><td>~10–14 years</td><td><span class="lang-en">Rapid panting rate</span><span class="dual-sep">•</span><span class="lang-te">వేగవంతమైన శ్వాస క్రియ</span></td></tr>
+            <tr style="background:rgba(56,189,248,0.08);"><td><strong>Human — Average (మనిషి - సాధారణం)</strong></td><td><strong>~15 / min</strong> (1 Prāṇa = 4s)</td><td><strong>21,600</strong></td><td>~70–100 years</td><td><span class="lang-en">Classical baseline (6 Prāṇas = 1 Vighaṭikā)</span><span class="dual-sep">•</span><span class="lang-te">ప్రామాణిక కొలత (రోజుకు 21,600)</span></td></tr>
+            <tr style="background:rgba(16,185,129,0.08);"><td><strong>Human — Chandas / Prāṇāyāma (మంత్ర/యోగ స్థితి)</strong></td><td><strong>~5–6 / min</strong></td><td>~7,200–8,640</td><td>Vitality &amp; Longevity</td><td><span class="lang-en">Saves ~13,000+ breaths/day; peak vagal calm</span><span class="dual-sep">•</span><span class="lang-te">రోజుకు ~13,000+ శ్వాసలు ఆదా; ప్రశాంత శక్తి</span></td></tr>
+            <tr><td><strong>Elephant (ఏనుగు)</strong></td><td>~4–6 / min</td><td>~5,760–8,640</td><td>~60–80+ years</td><td><span class="lang-en">Deep, slow, unhurried respiration</span><span class="dual-sep">•</span><span class="lang-te">లోతైన, నెమ్మదైన శ్వాస</span></td></tr>
+            <tr><td><strong>Whale (తిమింగలం)</strong></td><td>~3–5 / min</td><td>~4,320–7,200</td><td>~80–200 years</td><td><span class="lang-en">Very slow breath cycles &amp; huge longevity</span><span class="dual-sep">•</span><span class="lang-te">అతి తక్కువ శ్వాస వేగం → దీర్ఘాయుస్సు</span></td></tr>
+            <tr><td><strong>Tortoise (తాబేలు / కూర్మం)</strong></td><td><strong>~3–4 / min</strong></td><td>~4,320–5,760</td><td><strong>~150–200+ years</strong></td><td><span class="lang-en">Slowest land breather → longest natural lifespan</span><span class="dual-sep">•</span><span class="lang-te">అతి నెమ్మదైన శ్వాస → అత్యధిక ఆయుర్దాయం</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Breath Rate -> Powers / Saktis -->
+      <h4 style="color:var(--cyan-accent);margin:1.5rem 0 0.65rem;"><span class="lang-en">How Fewer Breaths Unlock Higher Powers (Śaktis) &amp; Longevity</span><span class="dual-sep">•</span><span class="lang-te">శ్వాస సంఖ్య తగ్గితే కలిగే శక్తులు &amp; ఫలితాలు (శ్వాస మహావిజ్ఞానం)</span></h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th><span class="lang-en">Breaths / Min • నిమిషానికి</span></th>
+              <th><span class="lang-en">Breaths / Day • రోజుకు</span></th>
+              <th><span class="lang-en">State • స్థితి</span></th>
+              <th><span class="lang-en">Powers, Benefits &amp; Śaktis • కలిగే శక్తులు &amp; లాభాలు</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>15 / min</strong> (4s)</td><td>21,600</td><td><span class="lang-en">Normal Waking</span><span class="dual-sep">•</span><span class="lang-te">సాధారణ స్థితి</span></td><td><span class="lang-en">Regular daily activity &amp; baseline human lifespan</span><span class="dual-sep">•</span><span class="lang-te">రోజువారీ సాధారణ జీవక్రియ &amp; ప్రామాణిక ఆయుస్సు</span></td></tr>
+            <tr><td><strong>10–12 / min</strong> (5–6s)</td><td>14,400–17,280</td><td><span class="lang-en">Calm Alertness (Śānti)</span><span class="dual-sep">•</span><span class="lang-te">ప్రశాంత స్థితి</span></td><td><span class="lang-en">Reduced stress &amp; anxiety, steady heart rate, sharper memory</span><span class="dual-sep">•</span><span class="lang-te">ఒత్తిడి తగ్గుట, గుండె ప్రశాంతత, మెరుగైన జ్ఞాపకశక్తి</span></td></tr>
+            <tr><td><strong>6–8 / min</strong> (8–10s)</td><td>8,640–11,520</td><td><span class="lang-en">Prāṇic Coherence (Dhāraṇā)</span><span class="dual-sep">•</span><span class="lang-te">ధారణ &amp; వాక్శుద్ధి</span></td><td><span class="lang-en">Strong vagal tone, deep concentration, clear speech (Vāk-śuddhi), high intuition</span><span class="dual-sep">•</span><span class="lang-te">అధిక ఏకాగ్రత, వాక్శుద్ధి, అంతర్దృష్టి &amp; భావోద్వేగ నియంత్రణ</span></td></tr>
+            <tr style="background:rgba(16,185,129,0.08);"><td><strong>4–5 / min</strong> (12–15s)</td><td>5,760–7,200</td><td><span class="lang-en">Chandas / Dhyāna Resonance</span><span class="dual-sep">•</span><span class="lang-te">ధ్యాన &amp; సంకల్ప శక్తి</span></td><td><span class="lang-en">Quiet mind (DMN calm), strong willpower (Saṅkalpa Śakti), cellular repair &amp; longevity</span><span class="dual-sep">•</span><span class="lang-te">మనోనిశ్చలత, సంకల్ప శక్తి, రోగనిరోధక బలం &amp; దీర్ఘాయుస్సు</span></td></tr>
+            <tr style="background:rgba(245,185,66,0.08);"><td><strong>1–3 / min</strong> (Yogic Kumbhaka)</td><td>1,440–4,320</td><td><span class="lang-en">Suṣumnā Mastery (Classical Yoga)</span><span class="dual-sep">•</span><span class="lang-te">సుషుమ్న &amp; యోగ సిద్ధులు</span></td><td><span class="lang-en">Per Haṭha Yoga &amp; Śiva Svarodaya: Prāṇa enters Suṣumnā, granting fearlessness, freedom from fatigue, radiant vitality &amp; yogic Siddhis (practice gently with guidance)</span><span class="dual-sep">•</span><span class="lang-te">హఠయోగ-స్వరశాస్త్ర ప్రకారం ప్రాణం సుషుమ్నలో స్థిరపడి నిర్భయత్వం, అలసట లేకపోవడం, తేజస్సు &amp; యోగ సిద్ధులు కలుగుతాయి</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 7: MASTER METRE COMPENDIUM -->
     <section id="compendium" class="panel">
       <div class="section-head">
         <h3 class="section-title"><span>📚</span> 6. Canonical Metre Compendium (ఛందో గ్రంథము • छन्दो ग्रन्थः)</h3>
@@ -663,5 +814,6 @@ māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya</textarea>
   </footer>
 
   <script src="chandas.js"></script>
+  <script src="swasa_and_guides.js"></script>
 </body>
 </html>

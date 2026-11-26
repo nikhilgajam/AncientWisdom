@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bṛhat Saṁhitā (బృహత్సంహిత) — Varāhamihira | Complete Interactive Encyclopaedia</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-lang="dual">
+
+  <div class="ambient-glow glow-sun"></div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="sun-icon"><img src="favicon.svg" alt="Bṛhat Saṁhitā" width="24" height="24" style="display:block;"></div>
+        <div class="logo-text">
+          <h1>Bṛhat Saṁhitā</h1>
+          <span>బృహత్సంహిత • Varāhamihira (6th c. CE)</span>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-segmented" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-opt active" data-lang-val="dual"><span class="lang-full">🌐 Dual</span><span class="lang-short">Dual</span></button>
+          <button type="button" class="lang-opt" data-lang-val="telugu"><span class="lang-full">తెలుగు</span><span class="lang-short">తెలుగు</span></button>
+          <button type="button" class="lang-opt" data-lang-val="english"><span class="lang-full">English</span><span class="lang-short">Eng</span></button>
+        </div>
+        <button id="menuToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+  <aside id="navDrawer" class="nav-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <div class="sun-icon" style="width:34px;height:34px;box-shadow:none;"><img src="favicon.svg" alt="Saṁhitā" width="20" height="20"></div>
+        <div>
+          <div class="lang-en" style="font-weight:700;color:#fff;font-size:1.02rem;">Bṛhat Saṁhitā Index</div>
+          <div class="lang-te" style="font-weight:700;color:var(--gold-bright);font-size:0.95rem;">బృహత్సంహిత విషయ సూచిక</div>
+        </div>
+      </div>
+      <button id="closeDrawer" class="drawer-close-btn" aria-label="Close">✕</button>
+    </div>
+    <nav class="drawer-nav-list">
+      <a href="#sec-intro" class="drawer-nav-item active"><span class="drawer-item-icon">🪐</span><span class="drawer-item-text"><span class="lang-en">1. Foundations, Planets &amp; Sky (Ch. I–XIII)</span><span class="lang-te">1. శాస్త్ర ప్రవేశం &amp; గ్రహచారాలు (1–13)</span></span></a>
+      <a href="#sec-kurma" class="drawer-nav-item"><span class="drawer-item-icon">🧭</span><span class="drawer-item-text"><span class="lang-en">2. Kūrmavibhāga &amp; Domains (Ch. XIV–XX)</span><span class="lang-te">2. కూర్మవిభాగం &amp; గ్రహ యుద్ధాలు (14–20)</span></span></a>
+      <a href="#sec-weather" class="drawer-nav-item"><span class="drawer-item-icon">🌧️</span><span class="drawer-item-text"><span class="lang-en">3. Clouds &amp; Rainfall Calculator (Ch. XXI–XXXI)</span><span class="lang-te">3. మేఘ గర్భం &amp; వర్ష గణన (21–31)</span></span></a>
+      <a href="#sec-portents" class="drawer-nav-item"><span class="drawer-item-icon">☄️</span><span class="drawer-item-text"><span class="lang-en">4. Quakes, Meteors, Prices &amp; Royal Rites (Ch. XXXII–LII)</span><span class="lang-te">4. భూకంపాలు, ఉల్కలు, ధరలు (32–52)</span></span></a>
+      <a href="#sec-vastu" class="drawer-nav-item"><span class="drawer-item-icon">🏛️</span><span class="drawer-item-text"><span class="lang-en">5. 81-Pada Vāstu Maṇḍala Lab (Ch. LIII)</span><span class="lang-te">5. 81 పద వాస్తు మండలం (అధ్యా. 53)</span></span></a>
+      <a href="#sec-water-arts" class="drawer-nav-item"><span class="drawer-item-icon">💧</span><span class="drawer-item-text"><span class="lang-en">6. Water Springs, Trees, Temples &amp; Idols (Ch. LIV–LXVII)</span><span class="lang-te">6. దకార్గలం, వృక్షాలు, దేవాలయాలు (54–67)</span></span></a>
+      <a href="#sec-human-gems" class="drawer-nav-item"><span class="drawer-item-icon">💎</span><span class="drawer-item-text"><span class="lang-en">7. 5 Great Men, Perfumes &amp; Gems (Ch. LXVIII–LXXXV)</span><span class="lang-te">7. పంచమహాపురుష, గంధయుక్తి, రత్నాలు (68–85)</span></span></a>
+      <a href="#sec-sakuna" class="drawer-nav-item"><span class="drawer-item-icon">🦅</span><span class="drawer-item-text"><span class="lang-en">8. Śākuna 8-Watch Omen Checker (Ch. LXXXVI–XCVI)</span><span class="lang-te">8. శాకున అష్టజాము శకునాలు (86–96)</span></span></a>
+      <a href="#sec-gocara" class="drawer-nav-item"><span class="drawer-item-icon">📆</span><span class="drawer-item-text"><span class="lang-en">9. Gocara Transit Checker &amp; Muhūrta (Ch. XCVII–CV)</span><span class="lang-te">9. గోచార ఫలాలు &amp; ముహూర్తం (97–105)</span></span></a>
+      <a href="#sec-index107" class="drawer-nav-item"><span class="drawer-item-icon">📚</span><span class="drawer-item-text"><span class="lang-en">10. Complete 107-Adhyāya Index (Ch. CVI–CVII)</span><span class="lang-te">10. 107 అధ్యాయాల సంపూర్ణ సూచిక</span></span></a>
+      <a href="#sec-quiz" class="drawer-nav-item"><span class="drawer-item-icon">🎓</span><span class="drawer-item-text"><span class="lang-en">11. Mastery Assessment Quiz</span><span class="lang-te">11. జ్ఞాన పరీక్ష (క్విజ్)</span></span></a>
+    </nav>
+  </aside>
+
+  <main class="main-wrap">
+
+    <section class="hero-banner">
+      <div class="hero-badge">📜 <span class="lang-en">V. Subrahmanya Sastri &amp; M. R. Bhat Edition • 107 Adhyāyas (1,116 Pages)</span><span class="dual-sep">•</span><span class="lang-te">107 అధ్యాయాలు • సంపూర్ణ విజ్ఞాన సర్వస్వం</span></div>
+      <h2 class="hero-title">Varāhamihira's Bṛhat Saṁhitā</h2>
+      <div class="hero-subtitle-te">వరాహమిహిరుని బృహత్సంహిత — సంపూర్ణ ప్రకృతి, వాస్తు, జ్యోతిష &amp; శాస్త్ర ప్రయోగశాల</div>
+      <p class="hero-desc">
+        <span class="lang-en">The monumental 6th-century CE encyclopaedia by Varāhamihira covering Astronomy, Eclipses, Geography (Kūrmavibhāga), Weather &amp; Rainfall Forecasting, Vāstu Architecture, Underground Water Springs, Horticulture, Temple Engineering, Gemology, Perfumery, Physiognomy, Omens (Śākuna), Muhūrta, and Planetary Transits (Gocara).</span>
+        <span class="lang-te"><br>ఖగోళ శాస్త్రం, గ్రహణాలు, కూర్మవిభాగం, వర్షాంచనా, వాస్తు, భూగర్భ జలాలు (దకార్గలం), వృక్షాయుర్వేదం, దేవాలయ-ప్రతిమా నిర్మాణం, రత్నపరీక్ష, గంధయుక్తి, పంచమహాపురుష లక్షణాలు, శకున శాస్త్రం మరియు గోచార ఫలాలను సమగ్రంగా వివరించే ప్రామాణిక గ్రంథం.</span>
+      </p>
+      <div class="hero-stats">
+        <div class="stat-pill"><div class="val">107</div><div class="lbl"><span class="lang-en">Adhyāyas (Chapters)</span><span class="dual-sep">/</span><span class="lang-te">అధ్యాయాలు</span></div></div>
+        <div class="stat-pill"><div class="val">81</div><div class="lbl"><span class="lang-en">Pada Vāstu Maṇḍala</span><span class="dual-sep">/</span><span class="lang-te">పద వాస్తు మండలం</span></div></div>
+        <div class="stat-pill"><div class="val">174,720</div><div class="lbl"><span class="lang-en">Gandhārṇava Perfumes</span><span class="dual-sep">/</span><span class="lang-te">గంధార్ణవ సుగంధాలు</span></div></div>
+        <div class="stat-pill"><div class="val">9</div><div class="lbl"><span class="lang-en">Kūrma Regions</span><span class="dual-sep">/</span><span class="lang-te">కూర్మ దిక్కులు</span></div></div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: Ch I-XIII -->
+    <section id="sec-intro" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">1. Foundations, Planetary Courses &amp; Sky Phenomena</span></h3>
+          <div class="section-title-te"><span class="lang-te">1. శాస్త్ర ప్రవేశం, గ్రహచారాలు &amp; కేతు-అగస్త్య-సప్తర్షి చారాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapters I–XIII</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">What This Covers (Ch. I–XIII):</span><span class="dual-sep">/</span><span class="lang-te">వివరణ (అధ్యా. 1–13):</span></strong>
+        <span class="lang-en">Varāhamihira defines the 3 branches of Jyotiṣa (Tantra, Horā, Śākhā), the qualifications of a true Astrologer, the scientific cause of eclipses (Ch. V — refuting the demon-swallowing myth), and the sky transits of all 7 planets, Comets, Canopus (Agastya), and Ursa Major (Saptarṣis).</span>
+        <span class="lang-te">జ్యోతిష శాస్త్రంలోని 3 స్కంధాలు (తంత్ర, హోరా, శాఖ), జ్యోతిష్యుని అర్హతలు, గ్రహణాలకు శాస్త్రీయ కారణం (అధ్యా. 5) మరియు సప్తగ్రహ, కేతు, అగస్త్య, సప్తర్షి చారాలు.</span>
+      </div>
+      <div id="secIntroBody"></div>
+    </section>
+
+    <!-- SECTION 2: Ch XIV-XX -->
+    <section id="sec-kurma" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">2. Kūrmavibhāga (9-Region Globe) &amp; Planetary Domains</span></h3>
+          <div class="section-title-te"><span class="lang-te">2. కూర్మవిభాగం (9 దిక్కులు-దేశాలు) &amp; గ్రహయుద్ధాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapters XIV–XX</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">How Kūrmavibhāga Works (Ch. XIV):</span><span class="dual-sep">/</span><span class="lang-te">కూర్మవిభాగం వివరణ (అధ్యా. 14):</span></strong>
+        <span class="lang-en">Starting from Kṛttikā, the 27 Nakṣatras are grouped into 9 triads mapped onto a Tortoise-shaped map of India/Earth (Center + 8 directions). Click any direction below to inspect its Nakṣatras and regions!</span>
+        <span class="lang-te">కృత్తిక నుండి 27 నక్షత్రాలను 3-3 చొప్పున 9 భాగాలుగా (మధ్యం + 8 దిక్కులు) విభజించారు. ఏదైనా దిక్కును క్లిక్ చేసి ఆ ప్రాంతాలను చూడండి.</span>
+      </div>
+      <div class="split-2">
+        <div class="panel-box">
+          <h4 style="color:var(--gold-bright);margin-bottom:0.65rem;"><span class="lang-en">Interactive 9-Region Kūrma Compass</span><span class="dual-sep">•</span><span class="lang-te">కూర్మవిభాగ 9 దిక్కుల పటం</span></h4>
+          <div id="kurmaGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.45rem;"></div>
+        </div>
+        <div class="panel-box" id="kurmaDetail"></div>
+      </div>
+      <div class="cards-grid" id="secDomainsGrid" style="margin-top:1.15rem;"></div>
+    </section>
+
+    <!-- SECTION 3: Ch XXI-XXXI -->
+    <section id="sec-weather" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">3. Meteorology, Cloud Pregnancy &amp; Rainfall Calculator</span></h3>
+          <div class="section-title-te"><span class="lang-te">3. మేఘ గర్భలక్షణం, వర్షమానం &amp; సద్యోవృష్టి</span></div>
+        </div>
+        <span class="ch-badge">Chapters XXI–XXXI</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">Varāhamihira's Weather Science (Ch. XXI–XXIII):</span><span class="dual-sep">/</span><span class="lang-te">వర్ష విజ్ఞానం (అధ్యా. 21–23):</span></strong>
+        <span class="lang-en">Clouds conceived from Mārgaśīrṣa Śukla 1 deliver rain exactly <strong>195 solar days</strong> later (Ch. XXI). Rainfall is measured in a 1-cubit circular gauge in <em>Droṇas</em> (1 Droṇa = 4 Āḍhakas = 200 Palas).</span>
+        <span class="lang-te">మార్గశిర శుక్ల 1 నుండి గర్భం దాల్చిన మేఘాలు సరిగ్గా <strong>195 సౌర దినాల</strong> తర్వాత వర్షిస్తాయి (అధ్యా. 21). వర్షాన్ని ద్రోణాల్లో కొలుస్తారు.</span>
+      </div>
+      <div class="split-2">
+        <div class="panel-box">
+          <h4 style="color:var(--cyan-bright);margin-bottom:0.65rem;"><span class="lang-en">195-Day Cloud Delivery &amp; Droṇa Calculator</span><span class="dual-sep">•</span><span class="lang-te">195 దినాల వర్ష &amp; ద్రోణ గణన</span></h4>
+          <div class="control-grid">
+            <div class="field-group">
+              <label><span class="lang-en">Cloud Conception Date (Ch. XXI)</span><span class="dual-sep">/</span><span class="lang-te">మేఘ గర్భధారణ తేదీ</span></label>
+              <input type="date" id="cloudDate" value="2025-12-15">
+            </div>
+            <div class="field-group">
+              <label><span class="lang-en">Select Nakṣatra for Seasonal Droṇas (Ch. XXIII)</span><span class="dual-sep">/</span><span class="lang-te">నక్షత్ర వర్ష ద్రోణాల కొరకు</span></label>
+              <select id="rainStarSel"></select>
+            </div>
+          </div>
+          <div id="weatherCalcOut"></div>
+        </div>
+        <div class="panel-box" id="weatherCardsBox"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Ch XXXII-LII -->
+    <section id="sec-portents" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">4. Earthquakes, Meteors, Crops, Prices &amp; Royal Ceremonies</span></h3>
+          <div class="section-title-te"><span class="lang-te">4. భూకంపాలు, ఉల్కలు, పంటలు, ధరలు &amp; రాజ విధులు</span></div>
+        </div>
+        <span class="ch-badge">Chapters XXXII–LII</span>
+      </div>
+      <div id="secPortentsBody"></div>
+    </section>
+
+    <!-- SECTION 5: Ch LIII Vastu -->
+    <section id="sec-vastu" class="study-section" style="border-color:rgba(245,185,66,0.35);">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">5. Vāstuvidyā: Interactive 81-Pada Vāstu Maṇḍala &amp; House Lab</span></h3>
+          <div class="section-title-te"><span class="lang-te">5. వాస్తువిద్య — 81 పద వాస్తు పురుష మండలం &amp; గృహ కొలతలు</span></div>
+        </div>
+        <span class="ch-badge">Chapter LIII • 125 Slokas</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">Understanding the 81-Pada Maṇḍala (Ch. LIII, Sl. 42–56, 118):</span><span class="dual-sep">/</span><span class="lang-te">81 పద వాస్తు మండలం వివరణ (అధ్యా. 53):</span></strong>
+        <span class="lang-en">Varāhamihira divides a residential plot into <code>9 × 9 = 81</code> squares presided over by <strong>45 deities</strong> (Brahmā in the central 9 squares, 4 inner directional lords, 8 inner corner deities, and 32 perimeter deities). Click any square below to inspect its deity! Room rules (Sl. 118): <strong>NE = Worship</strong>, <strong>SE = Kitchen</strong>, <strong>SW = Store-room</strong>, <strong>NW = Granary/Treasure</strong>.</span>
+        <span class="lang-te">గృహ స్థలాన్ని <code>9 × 9 = 81</code> పదాలుగా విభజించి <strong>45 దేవతలను</strong> ప్రతిష్ఠించారు (మధ్య 9 పదాల్లో బ్రహ్మ, చుట్టూ 32 బాహ్య దేవతలు). ఏదైనా గదిని క్లిక్ చేసి చూడండి. గదులు: <strong>ఈశాన్యం=పూజ</strong>, <strong>ఆగ్నేయం=వంట</strong>, <strong>నైఋతి=నిల్వ</strong>, <strong>వాయవ్యం=ధాన్యాగారం</strong>.</span>
+      </div>
+      <div class="split-2">
+        <div class="panel-box">
+          <h4 style="color:var(--gold-bright);margin-bottom:0.55rem;"><span class="lang-en">Interactive 9×9 (81-Pada) Vāstu Grid (North = Top)</span><span class="dual-sep">•</span><span class="lang-te">81 పద వాస్తు చక్రం</span></h4>
+          <div id="vastuGrid81" style="display:grid;grid-template-columns:repeat(9,1fr);gap:2px;background:rgba(245,185,66,0.22);border:2px solid var(--gold-primary);padding:3px;border-radius:10px;font-size:0.64rem;"></div>
+          <div id="vastuPadaInfo" style="margin-top:0.65rem;padding:0.6rem 0.75rem;border-radius:8px;background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.1);font-size:0.84rem;"></div>
+        </div>
+        <div class="panel-box">
+          <h4 style="color:var(--cyan-bright);margin-bottom:0.55rem;"><span class="lang-en">House Dimensions by Rank/Caste (Sl. 4–19)</span><span class="dual-sep">•</span><span class="lang-te">వర్ణ-హోదా గృహ కొలతలు (మూరల్లో)</span></h4>
+          <div class="field-group" style="margin-bottom:0.75rem;">
+            <label><span class="lang-en">Select Rank / Varṇa</span><span class="dual-sep">/</span><span class="lang-te">హోదా / వర్ణం ఎంచుకోండి</span></label>
+            <select id="vastuRankSel"></select>
+          </div>
+          <div id="vastuRankOut"></div>
+          <h4 style="color:var(--gold-bright);margin:0.85rem 0 0.45rem;"><span class="lang-en">Classical House Plans (Sl. 31–38)</span><span class="dual-sep">•</span><span class="lang-te">శాలా భేదాలు</span></h4>
+          <div id="vastuPlansOut" style="font-size:0.83rem;line-height:1.55;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Ch LIV-LXVII -->
+    <section id="sec-water-arts" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">6. Dakārgala (Water Springs), Trees, Temples, Idols &amp; Animals</span></h3>
+          <div class="section-title-te"><span class="lang-te">6. భూగర్భ జలాలు (దకార్గలం), వృక్షాయుర్వేదం, దేవాలయాలు &amp; జంతు లక్షణాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapters LIV–LXVII</span>
+      </div>
+      <div class="split-2">
+        <div class="panel-box">
+          <h4 style="color:var(--cyan-bright);margin-bottom:0.55rem;"><span class="lang-en">Well-Placement Compass (Ch. LIV, Sl. 97–98)</span><span class="dual-sep">•</span><span class="lang-te">బావి తవ్వే దిక్కుల ఫలితాలు (అధ్యా. 54)</span></h4>
+          <div class="cards-grid" id="dakargalaGrid"></div>
+        </div>
+        <div class="panel-box" id="ch55_67Box"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Ch LXVIII-LXXXV -->
+    <section id="sec-human-gems" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">7. Pañca Mahāpuruṣa, Perfumery (Gandhayukti) &amp; Gemology</span></h3>
+          <div class="section-title-te"><span class="lang-te">7. పంచమహాపురుషులు, గంధయుక్తి &amp; రత్నపరీక్ష</span></div>
+        </div>
+        <span class="ch-badge">Chapters LXVIII–LXXXV</span>
+      </div>
+      <div class="cards-grid" id="mahapurushaGrid"></div>
+      <div class="split-2" style="margin-top:1.15rem;">
+        <div class="panel-box">
+          <h4 style="color:var(--gold-bright);margin-bottom:0.55rem;"><span class="lang-en">Gandhārṇava Perfume Combinatorics (Ch. LXXVII, Sl. 13–22)</span><span class="dual-sep">•</span><span class="lang-te">గంధార్ణవ సుగంధ గణన (అధ్యా. 77)</span></h4>
+          <p style="font-size:0.83rem;color:var(--text-muted);margin-bottom:0.65rem;"><span class="lang-en">Varāhamihira computes total unique perfumes by choosing <em>k</em> substances from <em>n</em> ingredients and varying proportions <code>1:2:3:4</code> (in the book: <code>n=16, k=4 → 1,820 × 96 = 174,720</code>).</span><span class="lang-te">ఎంచుకున్న ద్రవ్యాలను <code>1:2:3:4</code> పాళ్లలో కలపడం ద్వారా వచ్చే సుగంధ సంఖ్య (<code>n=16, k=4 → 1,74,720</code>).</span></p>
+          <div class="control-grid">
+            <div class="field-group"><label><span class="lang-en">Total Ingredients (n)</span><span class="dual-sep">/</span><span class="lang-te">మొత్తం ద్రవ్యాలు (n)</span></label><input type="number" id="gandhN" value="16" min="4" max="30"></div>
+            <div class="field-group"><label><span class="lang-en">Chosen per Perfume (k)</span><span class="dual-sep">/</span><span class="lang-te">ఎంచుకున్నవి (k)</span></label><input type="number" id="gandhK" value="4" min="1" max="8"></div>
+          </div>
+          <div id="gandhOut"></div>
+        </div>
+        <div class="panel-box" id="ch68_85Box"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Ch LXXXVI-XCVI Sakuna -->
+    <section id="sec-sakuna" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">8. Śākuna: Interactive 8-Watch Omen Checker &amp; Animal Signs</span></h3>
+          <div class="section-title-te"><span class="lang-te">8. శాకున శాస్త్రం — అష్టజాము శకున చక్రం &amp; పక్షి-మృగ శకునాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapters LXXXVI–XCVI</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">How the 8-Watch Directional Cycle Works (Ch. LXXXVI, Sl. 12–13):</span><span class="dual-sep">/</span><span class="lang-te">అష్టజాము దిక్చక్రం (అధ్యా. 86):</span></strong>
+        <span class="lang-en">Each 3-hour watch has 3 solar quarters: <strong>Aṅgāra</strong> (Charcoal/spent), <strong>Dīpta</strong> (Burning/same-day effect), and <strong>Dhūminī</strong> (Smoking/impending); the remaining 5 quarters are <strong>Śānta</strong> (Tranquil/auspicious, especially the 5th).</span>
+        <span class="lang-te">ప్రతి 3 గంటల జాములో 3 దిక్కులు అంగార (గతించిన), దీప్త (తక్షణ), ధూమిని (రాబోయే) కాగా మిగిలిన 5 దిక్కులు శాంత (శుభం) దిక్కులు.</span>
+      </div>
+      <div class="split-2">
+        <div class="panel-box">
+          <h4 style="color:var(--gold-bright);margin-bottom:0.55rem;"><span class="lang-en">Check Your Watch &amp; Direction</span><span class="dual-sep">•</span><span class="lang-te">జాము &amp; దిక్కు శకున పరీక్ష</span></h4>
+          <div class="control-grid">
+            <div class="field-group"><label><span class="lang-en">3-Hour Watch</span><span class="dual-sep">/</span><span class="lang-te">జాము</span></label><select id="sakWatch"></select></div>
+            <div class="field-group"><label><span class="lang-en">Direction of Omen</span><span class="dual-sep">/</span><span class="lang-te">శకున దిక్కు</span></label><select id="sakDir"></select></div>
+          </div>
+          <div id="sakResult"></div>
+        </div>
+        <div class="panel-box" id="sakCardsBox"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: Ch XCVII-CV Gocara & Muhurta -->
+    <section id="sec-gocara" class="study-section" style="border-color:rgba(56,189,248,0.35);">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">9. Gocara (Planetary Transits) Checker &amp; Muhūrta</span></h3>
+          <div class="section-title-te"><span class="lang-te">9. గోచార గ్రహ సంచార పరీక్ష &amp; ముహూర్త-నక్షత్ర గుణాలు</span></div>
+        </div>
+        <span class="ch-badge">Chapters XCVII–CV</span>
+      </div>
+      <div class="reader-guide">
+        <strong><span class="lang-en">How Gocara Works (Ch. CIV, Sl. 4):</span><span class="dual-sep">/</span><span class="lang-te">గోచార నియమం (అధ్యా. 104, శ్లో. 4):</span></strong>
+        <span class="lang-en">Count the house from your <strong>Janma Rāśi (Birth Moon Sign)</strong> to the planet's current transit sign. Every planet gives good results in the <strong>11th house</strong>, plus its specific benefic houses listed in Sloka 4!</span>
+        <span class="lang-te">మీ <strong>జన్మ రాశి</strong> నుండి ప్రస్తుత గ్రహ సంచార రాశి వరకు లెక్కించిన స్థానం ఆ గ్రహానికి శుభమా కాదా అని తెలుపుతుంది (11వ స్థానంలో అన్ని గ్రహాలూ శుభఫలితాలు ఇస్తాయి).</span>
+      </div>
+      <div class="panel-box" style="margin-bottom:1.15rem;">
+        <div class="control-grid">
+          <div class="field-group"><label><span class="lang-en">Your Birth Moon Sign (Janma Rāśi)</span><span class="dual-sep">/</span><span class="lang-te">మీ జన్మ రాశి</span></label><select id="gocMoon"></select></div>
+          <div class="field-group"><label><span class="lang-en">Transit Planet</span><span class="dual-sep">/</span><span class="lang-te">సంచార గ్రహం</span></label><select id="gocPlanet"></select></div>
+          <div class="field-group"><label><span class="lang-en">Planet's Current Sign</span><span class="dual-sep">/</span><span class="lang-te">ప్రస్తుత సంచార రాశి</span></label><select id="gocSign"></select></div>
+        </div>
+        <div id="gocResult"></div>
+      </div>
+      <div class="cards-grid" id="muhurtaGrid"></div>
+    </section>
+
+    <!-- SECTION 10: Complete 107-Adhyaya Index -->
+    <section id="sec-index107" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">10. Complete 107-Adhyāya Index (Searchable)</span></h3>
+          <div class="section-title-te"><span class="lang-te">10. 107 అధ్యాయాల సంపూర్ణ విషయ సూచిక</span></div>
+        </div>
+        <span class="ch-badge">Chapters I–CVII</span>
+      </div>
+      <div class="field-group" style="margin-bottom:0.85rem;max-width:440px;">
+        <label><span class="lang-en">Search any chapter or topic</span><span class="dual-sep">/</span><span class="lang-te">అధ్యాయం లేదా అంశం వెతకండి</span></label>
+        <input type="text" id="idxSearch" placeholder="e.g. Vastu, Rain, Gem, Eclipse, Gocara, Dog, Crow...">
+      </div>
+      <div class="data-table-wrap" style="max-height:420px;overflow-y:auto;">
+        <table class="bj-table">
+          <thead><tr><th>#</th><th><span class="lang-en">Chapter / అధ్యాయం</span></th><th><span class="lang-en">Core Contents (Per Book)</span></th></tr></thead>
+          <tbody id="idxTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 11: Quiz -->
+    <section id="sec-quiz" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">11. Mastery Assessment Quiz</span></h3>
+          <div class="section-title-te"><span class="lang-te">11. బృహత్సంహిత జ్ఞాన పరీక్ష</span></div>
+        </div>
+        <span class="ch-badge">12 Questions</span>
+      </div>
+      <div id="quizBox"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div style="margin-bottom: 1.25rem;">
+      <a href="../index.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid rgba(245, 185, 66, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(245, 185, 66, 0.12);">
+        <span class="lang-en">← Go to AncientWisdom Portal (प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము)</span>
+        <span class="lang-te">← ప్రాచీన జ్ఞానము పోర్టల్ కు వెళ్ళండి (AncientWisdom Portal)</span> 🏛️
+      </a>
+    </div>
+    <p><span class="lang-en">Bṛhat Saṁhitā Interactive Treatise • Strictly faithful to Varāhamihira's 107 Adhyāyas (V. Subrahmanya Sastri &amp; M. R. Bhat edition).</span> <span class="dual-sep">•</span> <span class="lang-te">వరాహమిహిరుని బృహత్సంహిత (107 అధ్యాయాలు).</span></p>
+  </footer>
+
+  <script src="data_part1.js"></script>
+  <script src="data_part2.js"></script>
+  <script src="data_part3.js"></script>
+  <script src="guides.js"></script>
+  <script src="brihat_samhita.js"></script>
+</body>
+</html>

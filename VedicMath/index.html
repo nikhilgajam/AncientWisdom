@@ -23,16 +23,27 @@
         </div>
       </div>
 
-      <nav class="nav-links">
-        <a href="#overview" class="nav-item active">📜 Overview</a>
-        <a href="#beginner" class="nav-item">🌱 L1: Beginner</a>
-        <a href="#intermediate" class="nav-item">⚡ L2: Intermediate</a>
-        <a href="#advanced" class="nav-item">🏹 L3: Advanced</a>
-        <a href="#pro" class="nav-item">👑 L4: Pro Master</a>
-        <a href="#catalog" class="nav-item">📚 All 29 Sūtras</a>
-      </nav>
+      <button id="menuToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
     </div>
   </header>
+
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+  <aside id="navDrawer" class="nav-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div style="font-weight:700;color:#fcd34d;">⚡ Vedic Math Index • వైదికగణితం</div>
+      <button id="closeDrawer" class="drawer-close-btn" aria-label="Close">✕</button>
+    </div>
+    <nav class="drawer-nav-list">
+      <a href="#overview" class="drawer-nav-item active">📜 Overview</a>
+      <a href="#beginner" class="drawer-nav-item">🌱 L1: Beginner</a>
+      <a href="#intermediate" class="drawer-nav-item">⚡ L2: Intermediate</a>
+      <a href="#advanced" class="drawer-nav-item">🏹 L3: Advanced</a>
+      <a href="#pro" class="drawer-nav-item">👑 L4: Pro Master</a>
+      <a href="#catalog" class="drawer-nav-item">📚 All 29 Sūtras</a>
+    </nav>
+  </aside>
 
   <div class="container">
 
@@ -546,5 +557,15 @@
   </footer>
 
   <script src="vedic_math.js"></script>
+  <script>
+    (function(){
+      var t=document.getElementById("menuToggle"),d=document.getElementById("navDrawer"),o=document.getElementById("navOverlay"),c=document.getElementById("closeDrawer");
+      function setD(open){if(!d||!o)return;d.classList.toggle("open",open);o.classList.toggle("open",open);d.setAttribute("aria-hidden",String(!open));o.setAttribute("aria-hidden",String(!open));if(t)t.setAttribute("aria-expanded",String(open));}
+      if(t)t.addEventListener("click",function(){setD(!d.classList.contains("open"));});
+      if(c)c.addEventListener("click",function(){setD(false);});
+      if(o)o.addEventListener("click",function(){setD(false);});
+      document.querySelectorAll(".drawer-nav-item").forEach(function(a){a.addEventListener("click",function(){document.querySelectorAll(".drawer-nav-item").forEach(function(x){x.classList.remove("active");});a.classList.add("active");setD(false);});});
+    })();
+  </script>
 </body>
 </html>
