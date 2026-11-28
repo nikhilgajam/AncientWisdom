@@ -9,20 +9,24 @@
 ## 2. File Inventory
 | File | Lines | Bytes | Role |
 | :--- | ---: | ---: | :--- |
-| `index.html` | 667 | 41,667 | 7-section layout (`overview` + 6 core interactive modules) |
-| `style.css` | 557 | 11,397 | Dark indigo/gold prosody theme, syllable Laghu/Guru badges, Meru pyramid layout |
-| `chandas.js` | 877 | 35,183 | Multilingual transliterator, syllabifier, metre classifier, Prastāra/Naṣṭa/Uddiṣṭa/Meru algorithms, Web Audio chimes |
+| `index.html` | 835 | 65,508 | 9-section layout (`overview` + 8 interactive modules with `#sanskrit-tutor` at top) |
+| `style.css` | 772 | 18,857 | Dark indigo/gold prosody theme, syllable Laghu/Guru badges, Meru pyramid layout |
+| `chandas.js` | 898 | 35,818 | Multilingual transliterator, syllabifier, metre classifier, Prastāra/Naṣṭa/Uddiṣṭa/Meru algorithms, Web Audio chimes |
+| `sanskrit_tutor.js` | 1,001 | 94,201 | Beginner-to-Pro Sanskrit Mastery Studio (Picture-Word Studio across 10 categories incl. 43 Relations, 22 Colors, 40 Animals, 6 Seasons; Flashcards & Spoken Sanskrit; Barakhadi combiner; 23,040+ Sentence Builder; 15-Q Quiz) |
+| `swasa_and_guides.js` | 389 | 31,733 | Śvāsa Mahā Vijñānam interactive modules & guides |
 | `favicon.svg` | 47 | 2,627 | Standalone SVG vector icon |
-| `README.md` | 64 | 5,659 | Module documentation |
+| `README.md` | 63 | 5,659 | Module documentation |
 
 ## 3. Section Map (`index.html`)
 1. `#overview` — Chandaḥ-śāstra & The Science of Metre hero
-2. `#scanner` — 1. Real-Time Metre Scanner & Prosody Analyzer (Devanagari, Telugu, IAST)
-3. `#ganas` — 2. The 8 Canonical Gaṇas (*Aṣṭagaṇāḥ*: Ya, Ma, Ta, Ra, Ja, Bha, Na, Sa + La/Ga) & `यमाता राजभानसलगाम्` ring
-4. `#binary` — 3. Pingala's Binary System (*Prastāra, Naṣṭa, Uddiṣṭa, Saṅkhyā*)
-5. `#meru` — 4. *Meru Prastāra* (Pascal's Triangle) & Fibonacci (*Gopāla-Hemacandra*) Diagonals
-6. `#neuroscience` — 5. Cognitive Neuroscience of Mantras & Stotras (EEG Alpha/Theta, Vagus nerve, Hippocampus, Palatal reflexology, DMN, 432/108/528 Hz audio)
-7. `#compendium` — 6. Canonical Metre Compendium
+2. `#sanskrit-tutor` — 1. Learn Sanskrit — Beginner to Pro (`sanskrit_tutor.js`)
+3. `#scanner` — 2. Real-Time Metre Scanner & Prosody Analyzer (Devanagari, Telugu, IAST)
+4. `#ganas` — 3. The 8 Canonical Gaṇas (*Aṣṭagaṇāḥ*: Ya, Ma, Ta, Ra, Ja, Bha, Na, Sa + La/Ga) & `यमाता राजभानसलगाम्` ring
+5. `#binary` — 4. Pingala's Binary System (*Prastāra, Naṣṭa, Uddiṣṭa, Saṅkhyā*)
+6. `#meru` — 5. *Meru Prastāra* (Pascal's Triangle) & Fibonacci (*Gopāla-Hemacandra*) Diagonals
+7. `#neuroscience` — 6. Cognitive Neuroscience of Mantras & Stotras (EEG Alpha/Theta, Vagus nerve, Hippocampus, Palatal reflexology, DMN, 432/108/528 Hz audio)
+8. `#swasa` — 7. *Śvāsa Mahā Vijñānam*: Prāṇas, Breaths, Lifespan & Śaktis
+9. `#compendium` — 8. Canonical Metre Compendium
 
 ## 4. JavaScript Symbols (`chandas.js`)
 - **Top-Level Constants**:

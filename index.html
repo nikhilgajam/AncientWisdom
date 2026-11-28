@@ -205,7 +205,9 @@
     .section-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
       margin-bottom: 2rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding-bottom: 0.75rem;
@@ -213,18 +215,26 @@
 
     .section-title {
       font-family: var(--font-display);
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       color: #fff;
       display: flex;
       align-items: center;
       gap: 0.6rem;
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .section-badge {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--gold-bright);
       font-family: var(--font-body);
-      font-weight: 500;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 0.28rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(245, 185, 66, 0.12);
+      border: 1px solid rgba(245, 185, 66, 0.3);
     }
 
     /* Live Ephemeris Dashboard */
@@ -532,10 +542,25 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding-top: 1rem;
-      font-size: 0.8rem;
+      flex-wrap: nowrap;
+      gap: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 1.15rem;
+      padding-top: 0.95rem;
+      font-size: 0.76rem;
       color: var(--text-muted);
+    }
+    .app-card-footer .btn-launch {
+      flex-shrink: 0;
+      white-space: nowrap;
+      padding: 0.48rem 0.9rem !important;
+      font-size: 0.82rem !important;
+    }
+    .app-card-footer > span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.76rem !important;
     }
 
     /* Architecture Callout */
@@ -669,7 +694,7 @@
       <div class="section-title">
         <span>⚡</span> Active Interactive Laboratories
       </div>
-      <div class="section-badge">7 Apps Live & Functional</div>
+      <div class="section-badge">12 Apps Live & Functional</div>
     </div>
 
     <div class="apps-grid">
@@ -722,15 +747,13 @@
       <div class="app-card" style="border-color: rgba(56, 189, 248, 0.45); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(15, 28, 38, 0.9));">
         <div>
           <div class="app-card-header">
-            <span class="app-icon">⚡</span>
+            <span class="app-icon">🪷</span>
             <span class="tag tag-active">🟢 Active & Live</span>
           </div>
           <h4 class="app-name">Vedic Mathematics</h4>
           <div class="app-sub">वैदिकगणितम् • వైదికగణితము • 29 Sūtras Studio</div>
           <p>
-            Complete 4-tier mental computation suite: Ekādhikena (5s & 10s), Ekanyūnena (9s), Bījaṅka (test of 9), 
-            Ūrdhva-Tiryag cross-multiplication, Dvandva Yoga (universal Duplex squaring), Yāvadūnam, Vinculum, 
-            Dhvajāṅka (single-line Flag division), Vilokanam (instant cube roots in 2s), and all 29 canonical Sūtras.
+            4-tier mental math studio covering all 16 Sūtras &amp; 13 Upa-Sūtras: cross-multiplication, Duplex squaring, Flag division, Bījaṅka checksums, and instant cube roots.
           </p>
         </div>
         <div class="app-card-footer">
@@ -751,8 +774,7 @@
           <h4 class="app-name">Āyurveda (आयुर्वेदः • ఆయుర్వేదము)</h4>
           <div class="app-sub">Classical Medicine, Tridoṣa, Pañca-Mahābhūta & Agni</div>
           <p>
-            Tridoṣa bio-energetics (Vāta, Pitta, Kapha), an interactive 8-dimension Prakṛti diagnostic test, 
-            Pañca-Mahābhūtas (5 elements), Tri-Guṇas (mental humors), Caturvidha Agni, Ṣaḍ-Rasa, Ṛtu-caryā, and Dinacaryā.
+            Tridoṣa bio-energetics, 8-dimension Prakṛti test, Pañca-Mahābhūtas, Tri-Guṇas, Ṣaḍ-Rasa, Dinacaryā, Ṛtu-caryā, and Suśruta Saṁhitā's 107 Marmas, 101 Yantras &amp; 20 Śastras.
           </p>
         </div>
         <div class="app-card-footer">
@@ -793,11 +815,9 @@
             <span class="tag tag-active">🟢 Active & Live</span>
           </div>
           <h4 class="app-name">Chandaḥ-śāstra (छन्दःशास्त्रम् • ఛందశ్శాస్త్రము)</h4>
-          <div class="app-sub">Acharya Pingala's Binary Combinatorics & Metre Scanner</div>
+          <div class="app-sub">Learn Sanskrit (Beginner–Pro), Pingala's Binary &amp; Metre Scanner</div>
           <p>
-            The world's earliest documented binary numbering system, Meru Prastāra (Pascal's Triangle), 
-            and Mātrāvṛtta combinatorics. Real-time metre scanner for Anuṣṭubh, Gāyatrī, and classical meters, 
-            along with cognitive neuroscience of mantras and brain entrainment.
+            Interactive Beginner-to-Pro Sanskrit Mastery Studio (Picture-Word Cards, Flashcards, 23,040+ Sentence Builder), Pingala's binary system, Meru Prastāra, live metre scanner, and mantra neuroscience.
           </p>
         </div>
         <div class="app-card-footer">
@@ -812,15 +832,13 @@
       <div class="app-card" style="border-color: rgba(245, 158, 11, 0.45); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(35, 25, 12, 0.9));">
         <div>
           <div class="app-card-header">
-            <span class="app-icon">🏛️</span>
+            <span class="app-icon">🧭</span>
             <span class="tag tag-active">🟢 Active & Live</span>
           </div>
           <h4 class="app-name">Vāstu-śāstra (వాస్తు శాస్త్రము • वास्तुशास्त्रम्)</h4>
           <div class="app-sub">Sri Gouru Thirupati Reddy's Empirical Architectural Harmony</div>
           <p>
-            The definitive science of spatial equilibrium, the 16-zone Exalted (ఉచ్ఛ) vs Exiguous (నీచ) perimeter matrix, 
-            beneficent & baneful Vīthi Śūla (street thrusts), Gunakam (90° set-square angular plot corrections), 
-            interactive house layout validator, and authentic rhyming Vaastu proverbs.
+            Spatial equilibrium through the 16-zone Exalted/Exiguous matrix, Vīthi Śūla street thrusts, 90° Gunakam corrections, interactive house validator, and traditional Vaastu proverbs.
           </p>
         </div>
         <div class="app-card-footer">
@@ -841,9 +859,7 @@
           <h4 class="app-name">Bṛhat Jātaka (बृहज्जातकम् • బృహజ్జాతకము)</h4>
           <div class="app-sub">Varāhamihira's Canonical Natal Astrology (All 28 Adhyāyas)</div>
           <p>
-            Complete bilingual (English &amp; తెలుగు) interactive treatise covering 12 Rāśis &amp; Ṣaḍvargas, 5-fold planetary friendships,
-            Āyurdāya longevity lab, Daśā-Antardaśā fractions, 336-bindu Aṣṭakavarga matrix, 32 Nābhasa Yogas, 27 Nakṣatras, Strījātaka,
-            Naṣṭajātaka solver, and all 36 Drekkaṇa forms.
+            Bilingual natal astrology studio covering Ṣaḍvargas, planetary friendships, Āyurdāya longevity, 336-bindu Aṣṭakavarga, 32 Nābhasa Yogas, Naṣṭajātaka, and 36 Drekkaṇas.
           </p>
         </div>
         <div class="app-card-footer">
@@ -858,15 +874,13 @@
       <div class="app-card" style="border-color: rgba(56, 189, 248, 0.45); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(14, 30, 44, 0.9));">
         <div>
           <div class="app-card-header">
-            <span class="app-icon">🧭</span>
+            <span class="app-icon">🌍</span>
             <span class="tag tag-active">🟢 Active & Live</span>
           </div>
           <h4 class="app-name">Bṛhat Saṁhitā (बृहत्संहिता • బృహత్సంహిత)</h4>
           <div class="app-sub">Varāhamihira's 107-Adhyāya Encyclopaedia of Nature, Vāstu &amp; Omens</div>
           <p>
-            Complete bilingual (Dual / తెలుగు / English) interactive treatise covering Planetary Courses &amp; Eclipses,
-            9-Region Kūrmavibhāga, 195-Day Cloud &amp; Droṇa Rain Calculator, 81-Pada Vāstu Maṇḍala, Dakārgala Water Springs,
-            Pañca Mahāpuruṣa, 174,720 Gandhārṇava Perfumes, Śākuna 8-Watch Omens, Gocara Transits &amp; searchable 107-Chapter Index.
+            Bilingual encyclopaedia of Earth &amp; sky sciences: 9-region Kūrmavibhāga, 195-day rainfall calculator, 81-Pada Vāstu Maṇḍala, Dakārgala water veins, perfumes, omens &amp; Gocara.
           </p>
         </div>
         <div class="app-card-footer">
@@ -877,12 +891,75 @@
         </div>
       </div>
 
+      <!-- Card 10: Swasa Maha Vignanam -->
+      <div class="app-card" style="border-color: rgba(245, 185, 66, 0.5); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(34, 24, 14, 0.9));">
+        <div>
+          <div class="app-card-header">
+            <span class="app-icon">🌬️</span>
+            <span class="tag tag-active">🟢 Active & Live</span>
+          </div>
+          <h4 class="app-name">Śvāsa Mahā Vijñān (శ్వాస మహా విజ్ఞాన్ • శ్వాస విజ్ఞానము)</h4>
+          <div class="app-sub">Aśvinī Sūkta Sahita Śvāsa Mahā Vijñān (Parts 1 &amp; 2)</div>
+          <p>
+            Bilingual breath-science studio: 21,600 daily breaths &amp; 24-hr Chakra clock, 12-to-1 Aṅgula siddhis, Svara Vijñāna, Hamsa Gamanam SVG, Kriyā Yoga (108-cycle) &amp; 12-verse Aśvinī Sūktam.
+          </p>
+        </div>
+        <div class="app-card-footer">
+          <a href="./SwasaMahaVignanam/" class="btn-launch" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <span>Launch App</span> 🚀
+          </a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Folder: <code>./SwasaMahaVignanam/</code></span>
+        </div>
+      </div>
+
+      <!-- Card 11: Yoga Sastra -->
+      <div class="app-card" style="border-color: rgba(168, 85, 247, 0.5); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(28, 16, 40, 0.9));">
+        <div>
+          <div class="app-card-header">
+            <span class="app-icon">🧘</span>
+            <span class="tag tag-active">🟢 Active & Live</span>
+          </div>
+          <h4 class="app-name">Yoga Śāstra (योगशास्त्रम् • యోగశాస్త్రము)</h4>
+          <div class="app-sub">Yoga Sūtras, Haṭha Pradīpikā, Sūrya Namaskāra &amp; Vijñāna Bhairava</div>
+          <p>
+            12-section bilingual studio: 4 Pādas, 15 animated Āsanas, 12-step Sūrya Namaskāra, 6 Ṣaṭkarmas, 8 Kumbhakas (Web Audio Bhrāmarī), Mitāhāra, Nāḍī Śuddhi, 10 Nādas &amp; Vijñāna Bhairava Tantra's 112 Dhāraṇās.
+          </p>
+        </div>
+        <div class="app-card-footer">
+          <a href="./YogaShastra/" class="btn-launch" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <span>Launch App</span> 🚀
+          </a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Folder: <code>./YogaShastra/</code></span>
+        </div>
+      </div>
+
+      <!-- Card 12: Arthashastra -->
+      <div class="app-card" style="border-color: rgba(245, 185, 66, 0.45); background: linear-gradient(145deg, rgba(22, 27, 34, 0.85), rgba(32, 24, 16, 0.9));">
+        <div>
+          <div class="app-card-header">
+            <span class="app-icon">👑</span>
+            <span class="tag tag-active">🟢 Active & Live</span>
+          </div>
+          <h4 class="app-name">Arthaśāstra (कौटिलीय अर्थशास्त्रम् • కౌటిల్య అర్థశాస్త్రము)</h4>
+          <div class="app-sub">Kauṭilya's Complete 15-Book Statecraft, Wealth &amp; Law</div>
+          <p>
+            13-section Mauryan treatise: 15 Adhikaraṇas, Saptāṅga, 12-King Rāja-Maṇḍala, Wealth &amp; 40 Embezzlement Traps, Law &amp; Forensics, 28+ Adhyakṣas, Battle Vyūhas, Royal Routine, Salaries &amp; 32 Tantrayuktis.
+          </p>
+        </div>
+        <div class="app-card-footer">
+          <a href="./Arthashastra/" class="btn-launch" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <span>Launch App</span> 🚀
+          </a>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Folder: <code>./Arthashastra/</code></span>
+        </div>
+      </div>
+
     </div>
 
     <!-- Unified Knowledge Synthesis: The Interconnected Universe -->
     <div class="section-header">
       <div class="section-title">
-        <span>🌐</span> The Interconnected Sciences Synthesis (నవ-శాస్త్ర సమన్వయం • नवशास्त्र समन्वयः)
+        <span>🌐</span> The Interconnected Sciences Synthesis (ద్వాదశ-శాస్త్ర సమన్వయం • द्वादशशास्त्र समन्वयः)
       </div>
       <div class="section-badge">Holistic Epistemology</div>
     </div>
@@ -975,6 +1052,138 @@
         <p class="synthesis-desc">
           From 195-day cloud pregnancies and subsurface Dakārgala water veins to the 81-Pada Vāstu Maṇḍala,
           174,720 Gandhārṇava perfume permutations, and Gocara transits, all 107 Adhyāyas unify nature and cosmos.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🌬️</span>
+        <h4 class="synthesis-title">Breath Science ↔ Cosmos &amp; Prāṇa</h4>
+        <div class="synthesis-bridge">Śvāsa Mahā Vijñān ⟷ Chakras, Navagrahas &amp; Aśvinī</div>
+        <p class="synthesis-desc">
+          The 21,600 daily breaths mirror cosmic time, traversing all 7 Chakras and 9 Planets (<em>Hamsa Gamanam</em>),
+          balancing Iḍā, Piṅgalā &amp; Suṣumnā Nāḍīs, and harmonizing paired organs via <em>Aśvinī Sūktam</em> &amp; <em>Kriyā Yoga</em>.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🧘</span>
+        <h4 class="synthesis-title">Mind &amp; Breath ↔ Higher Consciousness</h4>
+        <div class="synthesis-bridge">Yoga Śāstra ⟷ Aṣṭāṅga, Kumbhaka &amp; Vijñāna Bhairava</div>
+        <p class="synthesis-desc">
+          Patañjali's 8 limbs, Svātmārāma's 15 Āsanas, 12-step Sūrya Namaskāra, 8 Kumbhakas, and Vijñāna Bhairava Tantra's 112 Dhāraṇās unify
+          breath mastery (<em>Śvāsa</em>) and physiology (<em>Āyurveda</em>) into non-dual meditative absorption (<em>Samādhi</em>).
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">👑</span>
+        <h4 class="synthesis-title">Statecraft ↔ Wealth, Law &amp; Strategy</h4>
+        <div class="synthesis-bridge">Kauṭilya's Arthaśāstra ⟷ Saptāṅga, Kośa &amp; Tantrayukti</div>
+        <p class="synthesis-desc">
+          The 7 limbs of state (<em>Saptāṅga</em>), 12-King <em>Rāja-Maṇḍala</em>, 40 embezzlement audits, civil/forensic law, and 32 <em>Tantrayuktis</em>
+          connect governance and wealth creation directly with <em>Pañcāṅga</em> and <em>Vāstu</em>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Foundations: The 4 Vedas & 6 Vedangas -->
+    <div class="section-header">
+      <div class="section-title">
+        <span>📿</span> The 4 Vedas &amp; 6 Vedāṅgas (చతుర్వేదాలు &amp; షడ్వేదాంగాలు • चतुर्वेदाः षड्वेदाङ्गानि च)
+      </div>
+      <div class="section-badge">Canonical Roots</div>
+    </div>
+
+    <div class="synthesis-grid" style="margin-bottom: 1.5rem;">
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🔥</span>
+        <h4 class="synthesis-title">1. Ṛgveda (ऋग्वेदः • ఋగ్వేదము)</h4>
+        <div class="synthesis-bridge">10 Maṇḍalas • 1,028 Sūktas • Upaveda: Āyurveda</div>
+        <p class="synthesis-desc">
+          The oldest Vedic saṁhitā (~10,552 mantras) composed in sacred Chandas (Gāyatrī, Triṣṭubh, Jagatī), praising cosmic forces (Agni, Indra, Sūrya, Aśvinī Devatas). Presided over by the <em>Hotā</em> priest.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🪔</span>
+        <h4 class="synthesis-title">2. Yajurveda (यजुर्वेदः • యజుర్వేదము)</h4>
+        <div class="synthesis-bridge">Śukla &amp; Kṛṣṇa • Yajña Vidyā • Upaveda: Dhanurveda</div>
+        <p class="synthesis-desc">
+          The Veda of sacred rituals, prose mantras (<em>Yajus</em>), and altar geometry (<em>Śulba Sūtras</em>), preserved in Śukla (Vājasaneyi) and Kṛṣṇa (Taittirīya) recensions. Presided over by the <em>Adhvaryu</em> priest.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🎶</span>
+        <h4 class="synthesis-title">3. Sāmaveda (सामवेदः • సామవేదము)</h4>
+        <div class="synthesis-bridge">1,875 Mantras • Svara Music • Upaveda: Gāndharvaveda</div>
+        <p class="synthesis-desc">
+          The Veda of sacred melody and harmonic chanting (<em>Sāman</em>), setting Ṛgvedic hymns to seven musical notes (<em>Svaras</em>)—the foundational root of Indian classical music. Presided over by the <em>Udgātā</em> priest.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🌿</span>
+        <h4 class="synthesis-title">4. Atharvaveda (अथर्ववेदः • అథర్వవేదము)</h4>
+        <div class="synthesis-bridge">20 Kāṇḍas • ~5,987 Mantras • Upaveda: Arthaśāstra</div>
+        <p class="synthesis-desc">
+          The Veda of applied sciences, holistic healing, longevity, herbs, domestic harmony, and statecraft (including Prāṇa Sūkta and Bhūmi Sūkta). Presided over by the <em>Brahmā</em> priest.
+        </p>
+      </div>
+    </div>
+
+    <div class="synthesis-grid">
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🌬️</span>
+        <h4 class="synthesis-title">1. Śikṣā (शिक्षा • శిక్ష) — Nose / Breath</h4>
+        <div class="synthesis-bridge">Phonetics, Articulation &amp; Prāṇa • Pāṇinīya Śikṣā</div>
+        <p class="synthesis-desc">
+          Governs exact pronunciation, anatomical articulation places (<em>Kaṇṭhya, Tālavya, Mūrdhanya, Dantya, Oṣṭhya</em>), pitch accents (<em>Udātta, Anudātta, Svarita</em>), and breath regulation.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">📐</span>
+        <h4 class="synthesis-title">2. Chandas (छन्दः • ఛందస్సు) — Feet</h4>
+        <div class="synthesis-bridge">Prosody &amp; Binary Combinatorics • Ācārya Piṅgala</div>
+        <p class="synthesis-desc">
+          Preserves Vedic verses through strict syllable counts and Laghu/Guru weights, giving rise to <em>Prastāra</em> (2<sup>n</sup> binary) and <em>Meru Prastāra</em> (Pascal's Triangle).
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🗣️</span>
+        <h4 class="synthesis-title">3. Vyākaraṇa (व्याकरणम् • వ్యాకరణము) — Mouth</h4>
+        <div class="synthesis-bridge">Generative Grammar • Pāṇini's Aṣṭādhyāyī (4,000 Sūtras)</div>
+        <p class="synthesis-desc">
+          The world's earliest formal generative grammar by Pāṇini (with Kātyāyana &amp; Patañjali's <em>Mahābhāṣya</em>), encoding Sanskrit morphology in algebraic meta-rules (<em>Māheśvara Sūtras</em>).
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">📖</span>
+        <h4 class="synthesis-title">4. Nirukta (निरुक्तम् • నిరుక్తము) — Ears</h4>
+        <div class="synthesis-bridge">Vedic Etymology &amp; Semantics • Ācārya Yāska</div>
+        <p class="synthesis-desc">
+          Explains how Vedic words derive from verbal roots (<em>Dhātus</em>), commenting on the ancient <em>Nighaṇṭu</em> lexicon to preserve exact scriptural meaning across millennia.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🏛️</span>
+        <h4 class="synthesis-title">5. Kalpa (कल्पः • కల్పము) — Hands</h4>
+        <div class="synthesis-bridge">Ritual, Dharma &amp; Śulba Geometry • Baudhāyana</div>
+        <p class="synthesis-desc">
+          Encompasses <em>Śrauta, Gṛhya, Dharma</em>, and <em>Śulba Sūtras</em>—including the Pythagorean theorem, √2 approximations, and circle-squaring formulas used in Vedic altar construction.
+        </p>
+      </div>
+
+      <div class="synthesis-card">
+        <span class="synthesis-icon">🔭</span>
+        <h4 class="synthesis-title">6. Jyotiṣa (ज्योतिषम् • జ్యోతిషము) — Eyes</h4>
+        <div class="synthesis-bridge">Astronomy, Timekeeping &amp; Pañcāṅga • Lagadha &amp; Varāhamihira</div>
+        <p class="synthesis-desc">
+          Tracks solar-lunar motions, solstices, eclipses, and the 27 Nakṣatras to fix sacred Yajña timings and civil calendars (<em>Vedāṅga Jyotiṣa</em>, <em>Sūrya Siddhānta</em>, <em>Bṛhat Saṁhitā</em>).
         </p>
       </div>
     </div>
@@ -1098,20 +1307,54 @@
         shloka: "ज्योतिषशास्त्रमनेकभेदविषयं स्कन्धत्रयाधिष्ठितं तत्कात्स्न्र्योपनयस्य नाम मुनिभिः संकीर्त्यते संहिता ।",
         telugu: "జ్యోతిషశాస్త్రమనేకభేదవిషయం స్కంధత్రయాధిష్ఠితం తత్కార్త్స్న్యోపనయస్య నామ మునిభిః సంకీర్త్యతే సంహితా ।",
         meaning: "Jyotiṣa Śāstra rests upon three great pillars — Tantra (Astronomy/Gaṇita), Horā (Horoscopy), and Śākhā — and their complete unified treatment is called Saṁhitā by the sages."
+      },
+      {
+        title: "Hamsa: Breath as the Supreme Guru & Cosmos • హంస శ్వాస తత్వం",
+        field: "Śvāsa Mahā Vijñān (Breath Science • శ్వాస మహా విజ్ఞాన్ — Part 1, p. 46)",
+        shloka: "हंसो गणेश विधिरेव हंसो हंसो हरिर्विश्वमयः स्वशम्भुः । हंसो हमात्मा गुरुरेव हंसो हंसो हमासं परमात्मरूपः ॥",
+        telugu: "హంసో గణేశ విధిరేవహంసో హంసో హరిర్విశ్వ మయస్వశంభుః । హంసో హమాత్మా గురురేవహంసో హంసో హమాసం పరమాత్మరూపః ॥",
+        meaning: "Hamsa (the rhythmic breath: 'So' on inhale, 'Ham' on exhale) is Gaṇeśa, Brahmā, Viṣṇu, Śiva, the Ātmā, the Guru, and the Supreme Paramātmā itself."
+      },
+      {
+        title: "The Stillness of Mind & True Self • చిత్తవృత్తి నిరోధము",
+        field: "Yoga Śāstra (Pātañjala Yoga Sūtras • యోగశాస్త్రము — I.2–3)",
+        shloka: "योगश्चित्तवृत्तिनिरोधः । तदा द्रष्टुः स्वरूपेऽवस्थानम् ॥",
+        telugu: "యోగశ్చిత్తవృత్తినిరోధః । తదా ద్రష్టుః స్వరూపేఽవస్థానమ్ ॥",
+        meaning: "Yoga is the cessation of the restless modifications of the mind-stuff (Citta-Vṛtti); then the Seer (Puruṣa) abides in its own true, luminous nature."
+      },
+      {
+        title: "The Root of Happiness, Dharma & Prosperity • సుఖ-ధర్మ-అర్థ మూల సూత్రం",
+        field: "Arthaśāstra (Kauṭilya • కౌటిల్య అర్థశాస్త్రము — Cāṇakya Sūtra)",
+        shloka: "सुखस्य मूलं धर्मः । धर्मस्य मूलं अर्थः । अर्थस्य मूलं राज्यम् ॥",
+        telugu: "సుఖస్య మూలం ధర్మః । ధర్మస్య మూలం అర్థః । అర్థస్య మూలం రాజ్యమ్ ॥",
+        meaning: "The root of happiness is Dharma (righteousness); the root of Dharma is Artha (prosperity); and the root of Artha is well-governed Rājya (the State)."
+      },
+      {
+        title: "The 21,600 Daily Breaths as Natural Mantra • సహజ హంస అజపా జపము",
+        field: "Vijñāna Bhairava Tantra (విజ్ఞాన భైరవ తంత్రం — vv. 155–156)",
+        shloka: "सकारेण बहिर्याति हकारेण विशेत्पुनः । हंसहंसेत्यमुं मन्त्रं जीवो जपति नित्यशः ॥",
+        telugu: "సకారేణ బహిర్యాతి హకారేణ విశేత్పునః । హంసహంసేత్యముం మంత్రం జీవో జపతి నిత్యశః ॥",
+        meaning: "Every breath naturally sounds 'Haṁ' going out and 'Saḥ' coming in — thus the living being chants the sacred Haṁsa mantra 21,600 times every day and night."
       }
     ];
 
-    let currentWisdomIdx = 0;
+    function showWisdom(idx) {
+      const item = WISDOM_PRESETS[idx];
+      document.getElementById("wisdomField").textContent = item.field;
+      document.getElementById("wisdomTitle").textContent = item.title;
+      document.getElementById("wisdomShloka").textContent = item.shloka;
+      document.getElementById("wisdomTelugu").textContent = item.telugu;
+      document.getElementById("wisdomMeaning").textContent = item.meaning;
+    }
+
+    let currentWisdomIdx = Math.floor(Math.random() * WISDOM_PRESETS.length);
+    showWisdom(currentWisdomIdx);
+
     const nextBtn = document.getElementById("nextWisdomBtn");
     if (nextBtn) {
       nextBtn.addEventListener("click", () => {
         currentWisdomIdx = (currentWisdomIdx + 1) % WISDOM_PRESETS.length;
-        const item = WISDOM_PRESETS[currentWisdomIdx];
-        document.getElementById("wisdomField").textContent = item.field;
-        document.getElementById("wisdomTitle").textContent = item.title;
-        document.getElementById("wisdomShloka").textContent = item.shloka;
-        document.getElementById("wisdomTelugu").textContent = item.telugu;
-        document.getElementById("wisdomMeaning").textContent = item.meaning;
+        showWisdom(currentWisdomIdx);
       });
     }
 

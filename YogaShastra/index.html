@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga Śāstra (योगशास्त्रम् • యోగశాస్త్రము) — Pātañjala Yoga Sūtras &amp; Haṭha Yoga Pradīpikā</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="../SwasaMahaVignanam/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .asana-visual {
+      width: 100%;
+      height: 112px;
+      background: radial-gradient(circle at 50% 45%, rgba(56, 189, 248, 0.12), rgba(6, 8, 13, 0.78) 75%);
+      border: 1px solid rgba(245, 185, 66, 0.24);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.45rem 0 0.6rem;
+      overflow: hidden;
+    }
+    .asana-svg {
+      width: 124px;
+      height: 100px;
+    }
+    .asana-svg .mat { stroke: rgba(255,255,255,0.2); stroke-width: 2; stroke-linecap: round; }
+    .asana-svg .limb { fill: none; stroke: #38bdf8; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+    .asana-svg .torso { fill: none; stroke: #ffd97d; stroke-width: 4.2; stroke-linecap: round; stroke-linejoin: round; }
+    .asana-svg .head { fill: #0e131f; stroke: #ffd97d; stroke-width: 2.5; }
+    .asana-svg .accent { fill: #10b981; }
+    @keyframes asanaBreath {
+      0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.25)); }
+      50% { transform: translateY(-2.5px) scale(1.03); filter: drop-shadow(0 0 10px rgba(245, 185, 66, 0.45)); }
+    }
+    .asana-svg .pose-group {
+      transform-origin: 62px 76px;
+      animation: asanaBreath 4.2s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body data-lang="dual">
+
+  <div class="ambient-glow glow-sun"></div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="sun-icon"><img src="favicon.svg" alt="Yoga Śāstra" width="24" height="24" style="display:block;"></div>
+        <div class="logo-text">
+          <h1>Yoga Śāstra</h1>
+          <span>योगशास्त्रम् • యోగశాస్త్రము • Patañjali &amp; Svātmārāma</span>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-segmented" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-opt active" data-lang-val="dual"><span class="lang-full">🌐 Dual</span><span class="lang-short">Dual</span></button>
+          <button type="button" class="lang-opt" data-lang-val="telugu"><span class="lang-full">తెలుగు</span><span class="lang-short">తెలుగు</span></button>
+          <button type="button" class="lang-opt" data-lang-val="english"><span class="lang-full">English</span><span class="lang-short">Eng</span></button>
+        </div>
+        <button id="menuToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+  <aside id="navDrawer" class="nav-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <div class="sun-icon" style="width:34px;height:34px;box-shadow:none;"><img src="favicon.svg" alt="Yoga" width="20" height="20"></div>
+        <div>
+          <div class="lang-en" style="font-weight:700;color:#fff;font-size:1.02rem;">Yoga Śāstra Index</div>
+          <div class="lang-te" style="font-weight:700;color:var(--gold-bright);font-size:0.95rem;">యోగశాస్త్ర విషయ సూచిక</div>
+        </div>
+      </div>
+      <button id="closeDrawer" class="drawer-close-btn" aria-label="Close">✕</button>
+    </div>
+    <nav class="drawer-nav-list">
+      <a href="#sec-overview" class="drawer-nav-item active"><span class="drawer-item-icon">🪷</span><span class="drawer-item-text"><span class="lang-en">1. Pātañjala Yoga Sūtras (4 Pādas)</span><span class="lang-te">1. పతంజలి యోగసూత్రాలు (4 పాదాలు)</span></span></a>
+      <a href="#sec-vritti" class="drawer-nav-item"><span class="drawer-item-icon">🧠</span><span class="drawer-item-text"><span class="lang-en">2. Pañca-Vṛtti, Kleśa &amp; Antarāya Lab</span><span class="lang-te">2. పంచవృత్తులు, క్లేశాలు &amp; అంతరాయాలు</span></span></a>
+      <a href="#sec-ashtanga" class="drawer-nav-item"><span class="drawer-item-icon">☸️</span><span class="drawer-item-text"><span class="lang-en">3. Aṣṭāṅga 8-Limb Map &amp; 15 Āsanas</span><span class="lang-te">3. అష్టాంగ యోగం &amp; 15 ఆసనాలు</span></span></a>
+      <a href="#sec-shatkarma" class="drawer-nav-item"><span class="drawer-item-icon">💧</span><span class="drawer-item-text"><span class="lang-en">4. Ṣaṭkarmas (6 Purifications)</span><span class="lang-te">4. షట్కర్మలు (హఠయోగ ప్రదీపిక)</span></span></a>
+      <a href="#sec-kumbhaka" class="drawer-nav-item"><span class="drawer-item-icon">🐝</span><span class="drawer-item-text"><span class="lang-en">5. 8 Classical Kumbhakas &amp; Bhrāmarī Pacer</span><span class="lang-te">5. అష్టకుంభకాలు &amp; భ్రామరీ సాధన</span></span></a>
+      <a href="#sec-mudra" class="drawer-nav-item"><span class="drawer-item-icon">🔔</span><span class="drawer-item-text"><span class="lang-en">6. 10 Mudrās &amp; 4 Nādānusandhāna States</span><span class="lang-te">6. దశముద్రలు &amp; నాదానుసంధానం</span></span></a>
+      <a href="#sec-surya" class="drawer-nav-item"><span class="drawer-item-icon">☀️</span><span class="drawer-item-text"><span class="lang-en">7. Sūrya Namaskāra (12 Steps &amp; Mantras)</span><span class="lang-te">7. సూర్య నమస్కారాలు (12 మంత్రాలు)</span></span></a>
+      <a href="#sec-diet" class="drawer-nav-item"><span class="drawer-item-icon">🥗</span><span class="drawer-item-text"><span class="lang-en">8. Obstacles, Mitāhāra &amp; Pathya</span><span class="lang-te">8. మితాహారం &amp; పథ్యాపథ్యాలు</span></span></a>
+      <a href="#sec-nadis" class="drawer-nav-item"><span class="drawer-item-icon">🌊</span><span class="drawer-item-text"><span class="lang-en">9. Nāḍī Śuddhi, Granthis &amp; 10 Nādas</span><span class="lang-te">9. నాడీ శుద్ధి &amp; దశనాదాలు</span></span></a>
+      <a href="#sec-vibhuti" class="drawer-nav-item"><span class="drawer-item-icon">✨</span><span class="drawer-item-text"><span class="lang-en">10. Vibhūti &amp; Kaivalya Pāda (YS III–IV)</span><span class="lang-te">10. విభూతి &amp; కైవల్య పాదం</span></span></a>
+      <a href="#sec-vbt" class="drawer-nav-item"><span class="drawer-item-icon">🔱</span><span class="drawer-item-text"><span class="lang-en">11. Vijñāna Bhairava Tantra (112 Dhāraṇās)</span><span class="lang-te">11. విజ్ఞాన భైరవ తంత్రం (112 ధారణలు)</span></span></a>
+      <a href="#sec-quiz" class="drawer-nav-item"><span class="drawer-item-icon">🎓</span><span class="drawer-item-text"><span class="lang-en">12. Mastery Assessment Quiz</span><span class="lang-te">12. జ్ఞాన పరీక్ష (క్విజ్)</span></span></a>
+    </nav>
+  </aside>
+
+  <main class="main-wrap">
+    <section class="hero-banner">
+      <div class="hero-badge">🪷 <span class="lang-en">Pātañjala Yoga Sūtras &amp; Haṭha Yoga Pradīpikā (Svātmārāma)</span><span class="dual-sep">•</span><span class="lang-te">పతంజలి యోగసూత్రాలు &amp; హఠయోగ ప్రదీపిక</span></div>
+      <h2 class="hero-title">Yoga Śāstra — Mind, Breath &amp; Awakening</h2>
+      <div class="hero-subtitle-te">యోగశ్చిత్తవృత్తినిరోధః (I.2) • హఠవిద్యా హి మత్స్యేంద్రగోరక్షాద్యా విజానతే</div>
+      <p class="hero-desc">
+        <span class="lang-en">A canonical interactive laboratory uniting <strong>Patañjali's Yoga Sūtras</strong> (4 Pādas, 5 Citta-Vṛttis, 5 Kleśas, 9 Antarāyas, Aṣṭāṅga 8 Limbs) with <strong>Svātmārāma's Haṭha Yoga Pradīpikā</strong> (15 Āsanas, 6 Ṣaṭkarmas, 8 Kumbhakas with Web Audio Bhrāmarī pacer, 10 Mudrās, and 4 Nādānusandhāna states).</span>
+        <span class="lang-te"><br><strong>పతంజలి యోగసూత్రాలు</strong> (4 పాదాలు, పంచవృత్తులు, పంచక్లేశాలు, 9 అంతరాయాలు, అష్టాంగ యోగం) మరియు <strong>స్వాత్మారాముని హఠయోగ ప్రదీపిక</strong> (15 ఆసనాలు, షట్కర్మలు, 8 కుంభకాలు, 10 ముద్రలు, 4 నాదానుసంధాన అవస్థలు) ల ప్రామాణిక ప్రయోగశాల.</span>
+      </p>
+      <div class="hero-stats">
+        <div class="stat-pill"><div class="val">195</div><div class="lbl"><span class="lang-en">Yoga Sūtras (4 Pādas)</span><span class="dual-sep">/</span><span class="lang-te">యోగసూత్రాలు</span></div></div>
+        <div class="stat-pill"><div class="val">8</div><div class="lbl"><span class="lang-en">Aṣṭāṅga Limbs &amp; Kumbhakas</span><span class="dual-sep">/</span><span class="lang-te">అష్టాంగ &amp; కుంభకాలు</span></div></div>
+        <div class="stat-pill"><div class="val">6 + 10</div><div class="lbl"><span class="lang-en">Ṣaṭkarmas &amp; Mudrās</span><span class="dual-sep">/</span><span class="lang-te">షట్కర్మలు &amp; ముద్రలు</span></div></div>
+        <div class="stat-pill"><div class="val">4</div><div class="lbl"><span class="lang-en">Nādānusandhāna Avasthās</span><span class="dual-sep">/</span><span class="lang-te">నాద అవస్థలు</span></div></div>
+      </div>
+    </section>
+
+    <section id="sec-overview" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">1. Structure of Pātañjala Yoga Sūtras (4 Pādas)</span></h3><div class="section-title-te"><span class="lang-te">1. పతంజలి యోగసూత్రాల చతుష్పాద నిర్మాణం</span></div></div>
+        <span class="ch-badge">YS I–IV</span>
+      </div>
+      <div id="secOverviewBody"></div>
+    </section>
+
+    <section id="sec-vritti" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">2. Pañca-Vṛtti, Pañca-Kleśa &amp; 9 Antarāyas Analyzer</span></h3><div class="section-title-te"><span class="lang-te">2. పంచవృత్తులు, పంచక్లేశాలు &amp; 9 అంతరాయాల విశ్లేషణ</span></div></div>
+        <span class="ch-badge">YS I.5–11, I.30, II.3</span>
+      </div>
+      <div id="secVrittiBody"></div>
+    </section>
+
+    <section id="sec-ashtanga" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">3. Interactive Aṣṭāṅga 8-Limb Map &amp; 15 Haṭha Āsanas</span></h3><div class="section-title-te"><span class="lang-te">3. అష్టాంగ యోగ 8 అంగాలు &amp; హఠయోగ 15 ఆసనాలు</span></div></div>
+        <span class="ch-badge">YS II.29 • HYP Ch. I</span>
+      </div>
+      <div id="secAshtangaBody"></div>
+    </section>
+
+    <section id="sec-shatkarma" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">4. Ṣaṭkarmas — The Six Purificatory Practices</span></h3><div class="section-title-te"><span class="lang-te">4. షట్కర్మలు — ఆరు శుద్ధి ప్రక్రియలు</span></div></div>
+        <span class="ch-badge">HYP Ch. II.22–38</span>
+      </div>
+      <div id="secShatkarmaBody"></div>
+    </section>
+
+    <section id="sec-kumbhaka" class="study-section" style="border-color:rgba(245,185,66,0.35);">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">5. 8 Classical Kumbhakas &amp; Web Audio Bhrāmarī Pacer</span></h3><div class="section-title-te"><span class="lang-te">5. అష్టకుంభకాలు &amp; భ్రామరీ నాద సాధన</span></div></div>
+        <span class="ch-badge">HYP Ch. II.44–75</span>
+      </div>
+      <div id="secKumbhakaBody"></div>
+    </section>
+
+    <section id="sec-mudra" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">6. 10 Mahā-Mudrās &amp; 4 Nādānusandhāna States</span></h3><div class="section-title-te"><span class="lang-te">6. దశముద్రలు &amp; నాదానుసంధాన చతురవస్థలు</span></div></div>
+        <span class="ch-badge">HYP Ch. III &amp; IV</span>
+      </div>
+      <div id="secMudraBody"></div>
+    </section>
+
+    <section id="sec-surya" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">7. Sūrya Namaskāra — 12 Postures, Mantras &amp; Breath</span></h3><div class="section-title-te"><span class="lang-te">7. సూర్య నమస్కారాలు — 12 ఆసనాలు, మంత్రాలు &amp; శ్వాస క్రమం</span></div></div>
+        <span class="ch-badge">Vedic Āditya Tradition</span>
+      </div>
+      <div id="secSuryaBody"></div>
+    </section>
+
+    <section id="sec-diet" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">8. Haṭha Prerequisites, 6 Obstacles &amp; Mitāhāra Diet</span></h3><div class="section-title-te"><span class="lang-te">8. సాధక-బాధక తత్వాలు, మితాహారం &amp; పథ్యాపథ్యాలు</span></div></div>
+        <span class="ch-badge">HYP I.12–16, I.58–66</span>
+      </div>
+      <div id="secDietBody"></div>
+    </section>
+
+    <section id="sec-nadis" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">9. Nāḍī Śuddhi, 3 Granthis &amp; 10 Inner Nāda Sounds</span></h3><div class="section-title-te"><span class="lang-te">9. నాడీ శుద్ధి, 3 గ్రంథులు &amp; దశనాద శ్రవణం</span></div></div>
+        <span class="ch-badge">HYP II.7–10, IV.84–86</span>
+      </div>
+      <div id="secNadisBody"></div>
+    </section>
+
+    <section id="sec-vibhuti" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">10. Saṁyama Vibhūtis &amp; Kaivalya Pāda Philosophy</span></h3><div class="section-title-te"><span class="lang-te">10. సంయమ విభూతులు &amp; కైవల్య పాద తత్వము</span></div></div>
+        <span class="ch-badge">YS Books III–IV</span>
+      </div>
+      <div id="secVibhutiBody"></div>
+    </section>
+
+    <section id="sec-vbt" class="study-section" style="border-color:rgba(168,85,247,0.4);">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">11. Vijñāna Bhairava Tantra — 112 Dhāraṇās &amp; 3 Upāyas</span></h3><div class="section-title-te"><span class="lang-te">11. విజ్ఞాన భైరవ తంత్రం — 112 ధ్యాన పద్ధతులు &amp; త్రివిధ ఉపాయాలు</span></div></div>
+        <span class="ch-badge">Rudrayāmala • 163 Verses</span>
+      </div>
+      <div id="secVbtBody"></div>
+    </section>
+
+    <section id="sec-quiz" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">12. Yoga Śāstra Mastery Quiz</span></h3><div class="section-title-te"><span class="lang-te">12. యోగశాస్త్ర జ్ఞాన పరీక్ష</span></div></div>
+        <span class="ch-badge">18 Questions</span>
+      </div>
+      <div id="secQuizBody"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div style="margin-bottom: 1.25rem;">
+      <a href="../index.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid rgba(245, 185, 66, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(245, 185, 66, 0.12);">
+        <span class="lang-en">← Go to AncientWisdom Portal (प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము)</span>
+        <span class="lang-te">← ప్రాచీన జ్ఞానము పోర్టల్ కు వెళ్ళండి (AncientWisdom Portal)</span> 🏛️
+      </a>
+    </div>
+    <p><span class="lang-en">Yoga Śāstra Interactive Laboratory • Strictly grounded in Pātañjala Yoga Sūtras &amp; Haṭha Yoga Pradīpikā.</span> <span class="dual-sep">•</span> <span class="lang-te">పతంజలి యోగసూత్రాలు &amp; హఠయోగ ప్రదీపిక.</span></p>
+  </footer>
+
+  <script src="yoga.js"></script>
+</body>
+</html>

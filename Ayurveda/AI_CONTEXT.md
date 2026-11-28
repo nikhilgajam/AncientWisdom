@@ -9,11 +9,12 @@
 ## 2. File Inventory
 | File | Lines | Bytes | Role |
 | :--- | ---: | ---: | :--- |
-| `index.html` | 468 | 27,791 | 11-section layout (`overview` + 10 clinical pillars) with sticky header and drawer/scroll navigation |
-| `style.css` | 446 | 9,165 | Dark emerald/gold theme, responsive grids, circadian dial, and assessment UI |
-| `ayurveda.js` | 539 | 25,565 | Prakṛti & Tri-Guṇa quiz engines, Dinacaryā 24h live clock, Ṛtu-caryā renderer, and ScrollSpy |
-| `favicon.svg` | 41 | 1,881 | Standalone SVG vector icon |
-| `README.md` | 49 | 3,859 | User-facing documentation |
+| `index.html` | 501 | 30,054 | 12-section layout (`overview` + 10 clinical pillars + Suśruta Saṁhitā section) with sticky header and drawer/scroll navigation |
+| `style.css` | 485 | 11,211 | Dark emerald/gold theme, responsive grids, circadian dial, and assessment UI |
+| `ayurveda.js` | 538 | 25,565 | Prakṛti & Tri-Guṇa quiz engines, Dinacaryā 24h live clock, Ṛtu-caryā renderer, and ScrollSpy |
+| `susruta.js` | 206 | 15,177 | Suśruta Saṁhitā Surgical & Clinical Pillar (Śalya-tantra, 8 Śastra-karmas, 101 Yantras/20 Śastras, 107 Marmas, Agni-kṣāra-jalaukā, 4-stage Vraṇa) |
+| `favicon.svg` | 40 | 1,881 | Standalone SVG vector icon |
+| `README.md` | 48 | 3,859 | User-facing documentation |
 
 ## 3. Section Map (`index.html`)
 1. `#overview` — Āyurveda Knowledge Sanctuary hero & introductory verse (*Charaka Saṁhitā Sūtrasthāna 1.41*)
@@ -27,6 +28,7 @@
 9. `#rtucarya` — 8. *Ṛtu-caryā* (6 seasonal regimens: Śiśira, Vasanta, Grīṣma, Varṣā, Śarad, Hemanta; *Sañcaya, Prakopa, Praśamana*)
 10. `#dhatus` — 9. *Sapta Dhātus* (Rasa → Rakta → Māṁsa → Medas → Asthi → Majjā → Śukra → Ojas)
 11. `#branches` — 10. *Aṣṭāṅga Āyurveda* (8 clinical branches)
+12. `#susruta` — 11. *Suśruta Saṁhitā* — Surgery, 107 Marmas, 101 Yantras/20 Śastras, 8 *Śastra-karmas* & *Anuśastra* (`susruta.js`)
 
 ## 4. JavaScript Symbols (`ayurveda.js`)
 - **Top-Level Constants & State**:

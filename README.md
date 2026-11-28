@@ -23,6 +23,9 @@ The entire collection is hosted statically via **GitHub Pages**, providing zero-
 | **7. Vāstu-śāstra (వాస్తు శాస్త్రము • वास्तुशास्त्रम्)** | 🟢 Live | Sri Gouru Thirupati Reddy's 16-Zone Matrix, Vīthi Śūla (Road Thrusts), Gunakam 90° Set-Square & Layout Diagnostic | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Vaastu/) | [`./Vaastu`](Vaastu/) |
 | **8. Bṛhat Jātaka (बृहज्जातकम् • బృహజ్జాతకము)** | 🟢 Live | Varāhamihira's 28-chapter Natal Astrology: Ṣaḍvarga, Āyurdāya, Daśās, 336-Bindu Aṣṭakavarga, 32 Nābhasa Yogas, Naṣṭajātaka & 36 Drekkaṇas | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/BrihatJataka/) | [`./BrihatJataka`](BrihatJataka/) |
 | **9. Bṛhat Saṁhitā (बृहत्संहिता • బృహత్సంహిత)** | 🟢 Live | Varāhamihira's 107-chapter Encyclopaedia: Kūrmavibhāga, 195-Day Rain & Droṇas, 81-Pada Vāstu, Dakārgala, Pañca Mahāpuruṣa, Gandhārṇava Perfumes, Śākuna & Gocara | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/BrihatSamhita/) | [`./BrihatSamhita`](BrihatSamhita/) |
+| **10. Śvāsa Mahā Vijñān (శ్వాస మహా విజ్ఞాన్)** | 🟢 Live | Complete 2-part Breath Science & Aśvinī Sūktam Lab: 21,600 Breaths, 12-Aṅgula Siddhis, 72,000 Nāḍīs, Hamsa Gamanam SVG, Drāṁ & 108-Cycle Kriyā Yoga | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/SwasaMahaVignanam/) | [`./SwasaMahaVignanam`](SwasaMahaVignanam/) |
+| **11. Yoga Śāstra (योगशास्त्रम् • యోగశాస్త్రము)** | 🟢 Live | Pātañjala Yoga Sūtras & Haṭha Yoga Pradīpikā: 4 Pādas, 5 Vṛttis, 5 Kleśas, Aṣṭāṅga 8 Limbs, 6 Ṣaṭkarmas, 8 Kumbhakas (Web Audio Bhrāmarī) & 10 Mudrās | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/YogaShastra/) | [`./YogaShastra`](YogaShastra/) |
+| **12. Kauṭilya's Arthaśāstra (अर्थशास्त्रम् • అర్థశాస్త్రము)** | 🟢 Live | 15 Adhikaraṇas, Saptāṅga 7 Limbs, 18 Tīrthas, Interactive 12-King Rāja-Maṇḍala Ring, Ṣāḍguṇya Policy & Book II Weights/5-Year Yuga Converter | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Arthashastra/) | [`./Arthashastra`](Arthashastra/) |
 
 ---
 
@@ -179,6 +182,16 @@ Complete bilingual (**Dual / తెలుగు / English**) interactive encyclo
 - **Omens, Transits & Searchable Index**: *Śākuna* 8-Watch directional omen checker (`Ch. LXXXVI`), live *Gocara* planetary transit checker (`Ch. CIV`), searchable 107-Adhyāya index (`Ch. CVII`), and 12-question Mastery Quiz.
 
 👉 [**Launch Bṛhat Saṁhitā**](https://nikhilgajam.github.io/AncientWisdom/BrihatSamhita/) • [Read Documentation](./BrihatSamhita/README.md)
+
+---
+
+### 10. [Śvāsa Mahā Vijñān (అశ్వనీ సూక్త సహిత శ్వాస మహా విజ్ఞాన్)](./SwasaMahaVignanam/)
+Complete bilingual (**Dual / తెలుగు / English**) interactive digital laboratory for both volumes of *Śvāsa Mahā Vijñān* (Samartha Sadguru Vedapīṭhamu, Tenali):
+- **Foundations, Yajnopathy & Lifespan**: 24-crore-year Yuga Parivartana, Yajña Vidyā lab proofs, **21,600 daily breaths** & animal lifespan chart, and **12-to-1 Aṅgula Siddhis**.
+- **Nāḍīs, Svara Vijñāna & Hamsa Gamanam**: 72,000 Nāḍīs, Pañca Prāṇas, interactive nostril advisor, progeny/death-sign tables, and **animated 7-Chakra / 9-Planet Hamsa Gamanam SVG**.
+- **Sādhana Labs & Aśvinī Sūktam**: Web Audio guided breath pacer (Body Scan, Soham, 5-Day Pūrṇimā, Chakra Flow, **Drāṁ Sādhana** counter), **108-cycle Kriyā Yoga / Sāvitrī Sādhana**, full **12-verse Aśvinī Sūktam** with Red-Light mode, and searchable **162-topic Book Index**.
+
+👉 [**Launch Śvāsa Mahā Vijñān**](https://nikhilgajam.github.io/AncientWisdom/SwasaMahaVignanam/) • [Read Documentation](./SwasaMahaVignanam/README.md)
 
 ---
 

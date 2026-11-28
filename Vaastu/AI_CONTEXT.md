@@ -9,11 +9,11 @@
 ## 2. File Inventory
 | File | Lines | Bytes | Role |
 | :--- | ---: | ---: | :--- |
-| `index.html` | 1,778 | 154,631 | 15-section layout (`overview`, `zones`..`proverbs`) with sticky header, segmented language toggle, and slide-out drawer |
-| `style.css` | 1,555 | 31,298 | Dark architectural cyan/gold theme, bilingual display rules, drawer navigation, SVG containers |
-| `vaastu.js` | 6,855 | 535,013 | Complete bilingual datasets, SVG simulators (Vīthi Śūla, Gunakam, Staircase, Multi-Storey), House Layout Diagnostic, Item/Stair/Duplex/Separate-Floor validators |
-| `favicon.svg` | 64 | 3,445 | Standalone SVG vector icon |
-| `README.md` | 120 | 10,288 | 10-module documentation & citation |
+| `index.html` | 1,777 | 156,474 | 15-section layout (`overview`, `zones`..`proverbs`) with sticky header, segmented language toggle (`dual` default), and slide-out drawer |
+| `style.css` | 1,567 | 33,161 | Dark architectural cyan/gold theme, bilingual display rules, drawer navigation, expanded 16-zone matrix & SVG containers |
+| `vaastu.js` | 6,854 | 541,862 | Complete bilingual datasets, enlarged/centered Vīthi Śūla & Gunakam/Staircase/Multi-Storey SVGs, House Layout Diagnostic, Item/Stair/Duplex/Separate-Floor validators |
+| `favicon.svg` | 63 | 3,445 | Standalone SVG vector icon |
+| `README.md` | 119 | 10,288 | 10-module documentation & citation |
 
 ## 3. Section Map (`index.html` — 15 Sections)
 1. `#overview` — Hero & overview

@@ -1271,38 +1271,91 @@
 
       const info = {};
       const bySign = Array.from({ length: 12 }, () => []);
+      const byNavSign = Array.from({ length: 12 }, () => []);
       bodies.forEach(b => {
         const v = getVargaInfo(chart[b.k]);
         info[b.k] = v;
         bySign[v.signIdx].push(`${b.abbr} ${v.deg.toFixed(1)}°`);
+        byNavSign[v.navRasiId - 1].push(b.abbr);
       });
 
       const lagnaSign = info.lagna.signIdx;
+      const navLagnaSign = info.lagna.navRasiId - 1;
       const houseOf = (k) => ((info[k].signIdx - lagnaSign + 12) % 12) + 1;
 
-      // South-Indian Chart HTML
-      let chartHtml = "";
-      for (let r = 0; r < 4; r++) {
-        for (let c = 0; c < 4; c++) {
-          if (r >= 1 && r <= 2 && c >= 1 && c <= 2) {
-            if (r === 1 && c === 1) {
-              chartHtml += `<div class="sc-center">
-                <strong style="color:var(--gold-bright);">${bi("Janma Kundali", "జన్మకుండలి")}</strong>
-                <div style="font-size:0.78rem;color:var(--cyan-bright);margin-top:0.2rem;">${dateIn.value} ${timeIn.value}</div>
-                <div style="font-size:0.74rem;color:var(--text-muted);">${bi("Ayanāṁśa", "అయనాంశ")}: ${chart.ayanamsa.toFixed(2)}°</div>
-              </div>`;
+      function buildSouthChart(itemsBySign, lgIdx, titleEn, titleTe, subHtml) {
+        let html = "";
+        for (let r = 0; r < 4; r++) {
+          for (let c = 0; c < 4; c++) {
+            if (r >= 1 && r <= 2 && c >= 1 && c <= 2) {
+              if (r === 1 && c === 1) {
+                html += `<div class="sc-center">
+                  <strong style="color:var(--gold-bright);">${bi(titleEn, titleTe)}</strong>
+                  ${subHtml}
+                </div>`;
+              }
+              continue;
             }
-            continue;
+            const signId = parseInt(Object.keys(SOUTH_GRID_POS).find(k => SOUTH_GRID_POS[k][0] === r && SOUTH_GRID_POS[k][1] === c), 10);
+            const sIdx = signId - 1;
+            const isLg = sIdx === lgIdx;
+            html += `<div class="sc-cell ${isLg ? "active-house" : ""}">
+              <div style="font-size:0.7rem;color:var(--text-muted);">${BJ_RASIS[sIdx].symbol} ${bi(BJ_RASIS[sIdx].en.split(" ")[0], BJ_RASIS[sIdx].te)}</div>
+              <div class="mono" style="font-size:0.74rem;color:#fff;font-weight:600;line-height:1.35;">${itemsBySign[sIdx].join("<br>") || "—"}</div>
+            </div>`;
           }
-          const signId = parseInt(Object.keys(SOUTH_GRID_POS).find(k => SOUTH_GRID_POS[k][0] === r && SOUTH_GRID_POS[k][1] === c), 10);
-          const sIdx = signId - 1;
-          const isLg = sIdx === lagnaSign;
-          chartHtml += `<div class="sc-cell ${isLg ? "active-house" : ""}">
-            <div style="font-size:0.7rem;color:var(--text-muted);">${BJ_RASIS[sIdx].symbol} ${bi(BJ_RASIS[sIdx].en.split(" ")[0], BJ_RASIS[sIdx].te)}</div>
-            <div class="mono" style="font-size:0.74rem;color:#fff;font-weight:600;line-height:1.35;">${bySign[sIdx].join("<br>") || "—"}</div>
-          </div>`;
         }
+        return `<div class="south-chart">${html}</div>`;
       }
+
+      function buildNorthChart(itemsBySign, lgIdx, titleEn, titleTe) {
+        // Standard North-Indian Diamond house centers (1..12 counter-clockwise) in 320x320 viewBox
+        const houseCoords = [
+          [160, 78],  // H1 (top center)
+          [85, 36],   // H2 (top left)
+          [38, 82],   // H3 (left upper)
+          [82, 160],  // H4 (left center)
+          [38, 238],  // H5 (left lower)
+          [85, 284],  // H6 (bottom left)
+          [160, 242], // H7 (bottom center)
+          [235, 284], // H8 (bottom right)
+          [282, 238], // H9 (right lower)
+          [238, 160], // H10 (right center)
+          [282, 82],  // H11 (right upper)
+          [235, 36]   // H12 (top right)
+        ];
+        const housesSvg = houseCoords.map(([x, y], hIdx) => {
+          const sIdx = (lgIdx + hIdx) % 12;
+          const signNum = sIdx + 1;
+          const items = itemsBySign[sIdx].join(" ") || "—";
+          return `
+            <text x="${x}" y="${y - 10}" text-anchor="middle" fill="#ffd97d" font-size="10" font-weight="700">${signNum}</text>
+            <text x="${x}" y="${y + 5}" text-anchor="middle" fill="#e2e8f0" font-size="9.2" font-weight="600">${items.slice(0, 18)}</text>
+            ${items.length > 18 ? `<text x="${x}" y="${y + 16}" text-anchor="middle" fill="#7dd3fc" font-size="8.5">${items.slice(18, 36)}</text>` : ""}
+          `;
+        }).join("");
+        return `
+          <div style="text-align:center;">
+            <div style="font-size:0.82rem;color:var(--gold-bright);font-weight:700;margin-bottom:0.35rem;">${bi(titleEn, titleTe)}</div>
+            <svg viewBox="0 0 320 320" style="width:100%;max-width:320px;background:rgba(8,12,22,0.85);border:2px solid rgba(245,185,66,0.45);border-radius:10px;">
+              <rect x="2" y="2" width="316" height="316" fill="none" stroke="rgba(245,185,66,0.45)" stroke-width="1.5"/>
+              <line x1="2" y1="2" x2="318" y2="318" stroke="rgba(245,185,66,0.4)" stroke-width="1.2"/>
+              <line x1="318" y1="2" x2="2" y2="318" stroke="rgba(245,185,66,0.4)" stroke-width="1.2"/>
+              <polygon points="160,2 318,160 160,318 2,160" fill="none" stroke="rgba(245,185,66,0.55)" stroke-width="1.4"/>
+              ${housesSvg}
+            </svg>
+          </div>
+        `;
+      }
+
+      const subMetaHtml = `
+        <div style="font-size:0.78rem;color:var(--cyan-bright);margin-top:0.2rem;">${dateIn.value} ${timeIn.value}</div>
+        <div style="font-size:0.74rem;color:var(--text-muted);">${bi("Ayanāṁśa", "అయనాంశ")}: ${chart.ayanamsa.toFixed(2)}°</div>
+      `;
+      const rasiSouthHtml = buildSouthChart(bySign, lagnaSign, "D-1 Rāśi Kundali", "D-1 రాశి కుండలి", subMetaHtml);
+      const navSouthHtml = buildSouthChart(byNavSign, navLagnaSign, "D-9 Navāṁśa", "D-9 నవాంశ చక్రం", `<div style="font-size:0.74rem;color:var(--text-muted);margin-top:0.2rem;">${bi("Bṛhat Jātaka Ch. I-6", "బృహజ్జాతకం అధ్యా. 1-6")}</div>`);
+      const rasiNorthHtml = buildNorthChart(bySign, lagnaSign, "D-1 Rāśi (North)", "D-1 రాశి (ఉత్తర)");
+      const navNorthHtml = buildNorthChart(byNavSign, navLagnaSign, "D-9 Navāṁśa (North)", "D-9 నవాంశ (ఉత్తర)");
 
       // 1. Lagna & Rising Drekkaṇa (Ch. I, XXVII)
       const lgRasi = BJ_RASIS[lagnaSign];
@@ -1748,10 +1801,22 @@
       outDiv.innerHTML = `
         <div class="split-2">
           <div class="panel-box">
-            <div style="font-size:0.8rem;color:var(--cyan-bright);margin-bottom:0.55rem;">
-              <strong>${bi("What this is:", "ఇది ఏమిటి:")}</strong> ${bi("Your 12-box South-Indian Birth Chart (Janma Kundali). Lg = Lagna (Ascendant/1st House); count clockwise from Lg to find Houses 2–12.", "ఇది మీ ద్వాదశ రాశుల జన్మకుండలి. Lg = లగ్నం (1వ భావం); అక్కడి నుండి సవ్యదిశలో 2–12 భావాలు లెక్కించాలి.")}
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.55rem;">
+              <div style="font-size:0.8rem;color:var(--cyan-bright);">
+                <strong>${bi("D-1 Rāśi &amp; D-9 Navāṁśa Charts:", "రాశి &amp; నవాంశ కుండలి:")}</strong> ${bi("Lg = Lagna (1st House). Strictly 7 Grahas per Varāhamihira's Bṛhat Jātaka.", "Lg = లగ్నం. వరాహమిహిరుని సప్తగ్రహ సంప్రదాయం.")}
+              </div>
+              <button type="button" id="btnToggleChartStyle" class="btn-secondary no-print" style="padding:0.3rem 0.7rem;font-size:0.76rem;">
+                🔄 ${bi("Switch to North-Indian Diamond", "ఉత్తర భారత చక్రం చూపు")}
+              </button>
             </div>
-            <div class="south-chart">${chartHtml}</div>
+            <div id="chartsSouthWrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0.85rem;">
+              ${rasiSouthHtml}
+              ${navSouthHtml}
+            </div>
+            <div id="chartsNorthWrap" style="display:none;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0.85rem;">
+              ${rasiNorthHtml}
+              ${navNorthHtml}
+            </div>
           </div>
           <div class="panel-box">
             <h4 style="color:var(--gold-bright);margin-bottom:0.25rem;">${bi("Sidereal Positions, Dignity &amp; Ṣaḍvarga", "గ్రహ స్ఫుటాలు, బలం &amp; షడ్వర్గ")}</h4>
@@ -2125,6 +2190,21 @@
       }
       bindDasaClicks("naisargika-row", "naisargikaEffectBox", activeNaisargika, false);
       bindDasaClicks("personal-dasa-row", "personalDasaEffectBox", activePersonal, true);
+
+      const toggleStyleBtn = document.getElementById("btnToggleChartStyle");
+      if (toggleStyleBtn) {
+        let isNorth = false;
+        toggleStyleBtn.addEventListener("click", () => {
+          isNorth = !isNorth;
+          const sw = document.getElementById("chartsSouthWrap");
+          const nw = document.getElementById("chartsNorthWrap");
+          if (sw) sw.style.display = isNorth ? "none" : "grid";
+          if (nw) nw.style.display = isNorth ? "grid" : "none";
+          toggleStyleBtn.innerHTML = isNorth
+            ? `🔄 ${bi("Switch to South-Indian 4×4", "దక్షిణ భారత చక్రం చూపు")}`
+            : `🔄 ${bi("Switch to North-Indian Diamond", "ఉత్తర భారత చక్రం చూపు")}`;
+        });
+      }
     }
 
     document.getElementById("btnGenChart").addEventListener("click", generate);

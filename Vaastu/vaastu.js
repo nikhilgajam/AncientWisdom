@@ -3988,7 +3988,7 @@ const THIRUPATI_REDDY_PROVERBS = [
 ];
 
 // --- 9. Global State & Language Engine ---
-let currentLang = "bilingual";
+let currentLang = "dual";
 let selectedZoneId = "ene";
 let selectedVithiId = "ene";
 let selectedGunakamId = "ne_ext";

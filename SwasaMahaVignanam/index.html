@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Śvāsa Mahā Vijñān (శ్వాస మహా విజ్ఞాన్) — Complete Interactive Book Laboratory</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-lang="dual">
+
+  <div class="ambient-glow glow-sun"></div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="sun-icon"><img src="favicon.svg" alt="Śvāsa Mahā Vijñān" width="24" height="24" style="display:block;"></div>
+        <div class="logo-text">
+          <h1>Śvāsa Mahā Vijñān</h1>
+          <span>అశ్వనీ సూక్త సహిత శ్వాస మహా విజ్ఞాన్ • సమర్థ సద్గురు వేదపీఠము</span>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-segmented" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-opt active" data-lang-val="dual"><span class="lang-full">🌐 Dual</span><span class="lang-short">Dual</span></button>
+          <button type="button" class="lang-opt" data-lang-val="telugu"><span class="lang-full">తెలుగు</span><span class="lang-short">తెలుగు</span></button>
+          <button type="button" class="lang-opt" data-lang-val="english"><span class="lang-full">English</span><span class="lang-short">Eng</span></button>
+        </div>
+        <button id="menuToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+  <aside id="navDrawer" class="nav-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <div class="sun-icon" style="width:34px;height:34px;box-shadow:none;"><img src="favicon.svg" alt="Śvāsa" width="20" height="20"></div>
+        <div>
+          <div class="lang-en" style="font-weight:700;color:#fff;font-size:1.02rem;">Śvāsa Mahā Vijñān</div>
+          <div class="lang-te" style="font-weight:700;color:var(--gold-bright);font-size:0.95rem;">శ్వాస మహా విజ్ఞాన్ సూచిక</div>
+        </div>
+      </div>
+      <button id="closeDrawer" class="drawer-close-btn" aria-label="Close">✕</button>
+    </div>
+    <nav class="drawer-nav-list">
+      <a href="#sec-foundations" class="drawer-nav-item active"><span class="drawer-item-icon">🔥</span><span class="drawer-item-text"><span class="lang-en">1. Foundations, Yuga &amp; Yajña Vidyā</span><span class="lang-te">1. యుగపరివర్తన, అగ్ని-చక్రం &amp; యజ్ఞవిద్య</span></span></a>
+      <a href="#sec-lifespan" class="drawer-nav-item"><span class="drawer-item-icon">🫁</span><span class="drawer-item-text"><span class="lang-en">2. 21,600 Breaths, Lifespan &amp; 12-Aṅgula Ladder</span><span class="lang-te">2. 21,600 శ్వాసలు, ఆయుర్దాయం &amp; 12 అంగుళాలు</span></span></a>
+      <a href="#sec-svara" class="drawer-nav-item"><span class="drawer-item-icon">🧭</span><span class="drawer-item-text"><span class="lang-en">3. 72,000 Nāḍīs, Pañca Prāṇas &amp; Svara Vijñāna</span><span class="lang-te">3. 72,000 నాడులు, పంచప్రాణాలు &amp; స్వరవిజ్ఞానం</span></span></a>
+      <a href="#sec-hamsa" class="drawer-nav-item"><span class="drawer-item-icon">🪐</span><span class="drawer-item-text"><span class="lang-en">4. Hamsa Gamanam: 7 Chakras &amp; Navagraha Path</span><span class="lang-te">4. శరీరంలో హంసగమనం (చక్రాలు - నవగ్రహాలు)</span></span></a>
+      <a href="#sec-pacer" class="drawer-nav-item"><span class="drawer-item-icon">🌬️</span><span class="drawer-item-text"><span class="lang-en">5. Guided Breath Lab (Body Scan, Soham, Drāṁ)</span><span class="lang-te">5. శ్వాస సాధనా ప్రయోగశాల (సోహం, ద్రాం, పూర్ణిమ)</span></span></a>
+      <a href="#sec-kriya" class="drawer-nav-item"><span class="drawer-item-icon">⚡</span><span class="drawer-item-text"><span class="lang-en">6. Kriyā Yoga &amp; Sāvitrī Sādhana (108-Cycle)</span><span class="lang-te">6. క్రియా యోగం &amp; సావిత్రీ సాధన (108 ఆవృతాలు)</span></span></a>
+      <a href="#sec-aswini" class="drawer-nav-item"><span class="drawer-item-icon">🩺</span><span class="drawer-item-text"><span class="lang-en">7. Aśvinī Sūktam (12 Verses) &amp; Paired Organs</span><span class="lang-te">7. అశ్వనీ సూక్తం (12 శ్లోకాలు) &amp; జంట అవయవాలు</span></span></a>
+      <a href="#sec-gayatri" class="drawer-nav-item"><span class="drawer-item-icon">🕉️</span><span class="drawer-item-text"><span class="lang-en">8. Gāyatrī, Oṁkāra, Karma &amp; Cosmic Cycles</span><span class="lang-te">8. గాయత్రి, ఓంకారం, కర్మసిద్ధాంతం &amp; శాస్త్రం</span></span></a>
+      <a href="#sec-masters" class="drawer-nav-item"><span class="drawer-item-icon">📜</span><span class="drawer-item-text"><span class="lang-en">9. Lineage of Masters, Quotes &amp; Book Stories</span><span class="lang-te">9. గురుపరంపర, వాక్కులు &amp; గ్రంథ కథలు</span></span></a>
+      <a href="#sec-index" class="drawer-nav-item"><span class="drawer-item-icon">📚</span><span class="drawer-item-text"><span class="lang-en">10. Complete Book Index (54 + 108 Topics)</span><span class="lang-te">10. సంపూర్ణ విషయ సూచిక (భాగం 1 &amp; 2)</span></span></a>
+      <a href="#sec-quiz" class="drawer-nav-item"><span class="drawer-item-icon">🎓</span><span class="drawer-item-text"><span class="lang-en">11. Mastery Assessment Quiz</span><span class="lang-te">11. జ్ఞాన పరీక్ష (క్విజ్)</span></span></a>
+    </nav>
+  </aside>
+
+  <main class="main-wrap">
+
+    <section class="hero-banner">
+      <div class="hero-badge">🌬️ <span class="lang-en">Aśvinī Sūkta Sahita Śvāsa Mahā Vijñān • Parts 1 &amp; 2</span><span class="dual-sep">•</span><span class="lang-te">అశ్వనీ సూక్త సహిత శ్వాస మహా విజ్ఞాన్ (1 &amp; 2 భాగాలు)</span></div>
+      <h2 class="hero-title">Śvāsa Mahā Vijñān — The Supreme Science of Breath</h2>
+      <div class="hero-subtitle-te">శ్వాస మహా విజ్ఞాన్ (ఓ అత్యవసర రహస్యమయ విజ్ఞానము) — డా॥ మారెళ్ళ శ్రీరామకృష్ణ &amp; పండిత శ్రీరామశర్మ ఆచార్య గురుపరంపర</div>
+      <p class="hero-desc">
+        <span class="lang-en">A 100% faithful digital companion to both volumes of <em>Śvāsa Mahā Vijñān</em> published by Samartha Sadguru Vedapīṭhamu (Tenali): covering Yuga Parivartana, Yajnopathy, the 21,600 daily breaths &amp; animal lifespan laws, 12-to-1 Aṅgula Siddhis, 72,000 Nāḍīs &amp; Svara Vijñāna, the Hamsa Gamanam 7-Chakra/9-Planet traversal, Drāṁ &amp; Oṁkāra Sādhana, Lahiri Mahashaya's 108-cycle Kriyā Yoga / Sāvitrī Sādhana, and the complete 12-verse Aśvinī Sūktam.</span>
+        <span class="lang-te"><br>సమర్థ సద్గురు వేదపీఠము (తెనాలి) ప్రచురించిన <em>శ్వాస మహా విజ్ఞాన్</em> 1 &amp; 2 భాగాల సంపూర్ణ డిజిటల్ ప్రయోగశాల: యుగపరివర్తన, యజ్ఞోథెరపీ, రోజుకు 21,600 శ్వాసలు &amp; ప్రాణుల ఆయుర్దాయ గణన, 12–1 అంగుళాల శ్వాస సిద్ధులు, 72,000 నాడులు &amp; స్వరవిజ్ఞానం, శరీరంలో హంసగమనం (7 చక్రాలు – నవగ్రహాలు), ద్రాం &amp; ఓంకార సాధనలు, 108 ఆవృతాల క్రియాయోగ సావిత్రీ సాధన, మరియు సంపూర్ణ 12 శ్లోకాల అశ్వనీ సూక్తం.</span>
+      </p>
+      <div class="hero-stats">
+        <div class="stat-pill"><div class="val">21,600</div><div class="lbl"><span class="lang-en">Breaths / Day (12/min)</span><span class="dual-sep">/</span><span class="lang-te">రోజుకు శ్వాసలు</span></div></div>
+        <div class="stat-pill"><div class="val">72,000</div><div class="lbl"><span class="lang-en">Nāḍīs (10 Major, 3 Core)</span><span class="dual-sep">/</span><span class="lang-te">నాడులు (10 ముఖ్యం)</span></div></div>
+        <div class="stat-pill"><div class="val">108</div><div class="lbl"><span class="lang-en">Sāvitrī Cycle (100+4+4)</span><span class="dual-sep">/</span><span class="lang-te">సావిత్రీ సాధన ఆవృతం</span></div></div>
+        <div class="stat-pill"><div class="val">162</div><div class="lbl"><span class="lang-en">Indexed Topics (54 + 108)</span><span class="dual-sep">/</span><span class="lang-te">మొత్తం విషయాలు</span></div></div>
+      </div>
+    </section>
+
+    <!-- SECTION 1 -->
+    <section id="sec-foundations" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">1. Foundations, Yuga Parivartana, Pollution &amp; Yajña Vidyā</span></h3>
+          <div class="section-title-te"><span class="lang-te">1. యుగపరివర్తన, కాలుష్య హెచ్చరికలు, అగ్ని-చక్రం &amp; యజ్ఞోథెరపీ</span></div>
+        </div>
+        <span class="ch-badge">Part 1: pp. 1–25 • Part 2: pp. 1–28</span>
+      </div>
+      <div id="secFoundationsBody"></div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section id="sec-lifespan" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">2. 21,600 Breaths, Lifespan Math &amp; 12-to-1 Aṅgula Siddhis</span></h3>
+          <div class="section-title-te"><span class="lang-te">2. 21,600 శ్వాసలు, ప్రాణుల ఆయుర్దాయం &amp; 12 అంగుళాల శ్వాస సిద్ధులు</span></div>
+        </div>
+        <span class="ch-badge">Part 1: pp. 26–28, 37–43</span>
+      </div>
+      <div id="secLifespanBody"></div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section id="sec-svara" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">3. 72,000 Nāḍīs, Pañca Prāṇas &amp; Interactive Svara Vijñāna</span></h3>
+          <div class="section-title-te"><span class="lang-te">3. 72,000 నాడులు, పంచప్రాణాలు &amp; స్వరవిజ్ఞాన మార్గదర్శి</span></div>
+        </div>
+        <span class="ch-badge">Part 1: pp. 30–36, 44–45 • Part 2: pp. 100–106</span>
+      </div>
+      <div id="secSvaraBody"></div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section id="sec-hamsa" class="study-section" style="border-color:rgba(245,185,66,0.35);">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">4. Hamsa Gamanam — 7 Chakras &amp; 9 Planets Breath Path</span></h3>
+          <div class="section-title-te"><span class="lang-te">4. శరీరంలో హంసగమనము — 7 చక్రాలు, నవగ్రహాలు &amp; కిరణాల పథం</span></div>
+        </div>
+        <span class="ch-badge">Part 2: Diagram &amp; pp. 32–34, 145</span>
+      </div>
+      <div id="secHamsaBody"></div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section id="sec-pacer" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">5. Guided Breath &amp; Sādhana Laboratory (Body Scan, Soham, Drāṁ, Pūrṇimā)</span></h3>
+          <div class="section-title-te"><span class="lang-te">5. శ్వాస సాధనా ప్రయోగశాల (దేహవీక్షణ, సోహం, ద్రాం, పూర్ణిమ ధ్యానం)</span></div>
+        </div>
+        <span class="ch-badge">Part 1: pp. 6–7, 46–49, 83–86 • Part 2: pp. 35–36, 67</span>
+      </div>
+      <div id="secPacerBody"></div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section id="sec-kriya" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">6. Kriyā Yoga &amp; Sāvitrī Sādhana (108-Cycle &amp; Evolution Compressor)</span></h3>
+          <div class="section-title-te"><span class="lang-te">6. లాహిరీ మహాశయుల క్రియాయోగం &amp; సావిత్రీ సాధన (108 ఆవృతాలు)</span></div>
+        </div>
+        <span class="ch-badge">Part 2: pp. 130–159</span>
+      </div>
+      <div id="secKriyaBody"></div>
+    </section>
+
+    <!-- SECTION 7 -->
+    <section id="sec-aswini" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">7. Aśvinī Sūktam (12 Verses), Red-Light Practice &amp; Paired Organs</span></h3>
+          <div class="section-title-te"><span class="lang-te">7. సంపూర్ణ అశ్వనీ సూక్తము (12 శ్లోకాలు), ఎర్రకాంతి సాధన &amp; జంట అవయవాలు</span></div>
+        </div>
+        <span class="ch-badge">Part 1: pp. 7–8, 49–50, 86–88</span>
+      </div>
+      <div id="secAswiniBody"></div>
+    </section>
+
+    <!-- SECTION 8 -->
+    <section id="sec-gayatri" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">8. Gāyatrī, Oṁkāra, Karma Law, Solar Cycles &amp; Scientific Studies</span></h3>
+          <div class="section-title-te"><span class="lang-te">8. గాయత్రి, ఓంకారం, కర్మసిద్ధాంతం, సౌర చక్రాలు &amp; శాస్త్రీయ ఆధారాలు</span></div>
+        </div>
+        <span class="ch-badge">Part 1 &amp; 2 Synthesis</span>
+      </div>
+      <div id="secGayatriBody"></div>
+    </section>
+
+    <!-- SECTION 9 -->
+    <section id="sec-masters" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">9. Lineage of Masters, Great Souls &amp; Book Parables</span></h3>
+          <div class="section-title-te"><span class="lang-te">9. గురుపరంపర, మహాత్ములు &amp; గ్రంథంలోని కథలు-ఉపమానాలు</span></div>
+        </div>
+        <span class="ch-badge">Part 1 &amp; Part 2</span>
+      </div>
+      <div id="secMastersBody"></div>
+    </section>
+
+    <!-- SECTION 10 -->
+    <section id="sec-index" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">10. Complete Book Index (Part 1: 54 Topics + Part 2: 108 Topics)</span></h3>
+          <div class="section-title-te"><span class="lang-te">10. సంపూర్ణ గ్రంథ విషయ సూచిక (భాగం 1: 54 + భాగం 2: 108)</span></div>
+        </div>
+        <span class="ch-badge">162 Topics Total</span>
+      </div>
+      <div id="secIndexBody"></div>
+    </section>
+
+    <!-- SECTION 11 -->
+    <section id="sec-quiz" class="study-section">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title"><span class="lang-en">11. Mastery Assessment Quiz</span></h3>
+          <div class="section-title-te"><span class="lang-te">11. శ్వాస మహా విజ్ఞాన్ జ్ఞాన పరీక్ష (15 ప్రశ్నలు)</span></div>
+        </div>
+        <span class="ch-badge">15 Questions</span>
+      </div>
+      <div id="secQuizBody"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div style="margin-bottom: 1.25rem;">
+      <a href="../index.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid rgba(245, 185, 66, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(245, 185, 66, 0.12);">
+        <span class="lang-en">← Go to AncientWisdom Portal (प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము)</span>
+        <span class="lang-te">← ప్రాచీన జ్ఞానము పోర్టల్ కు వెళ్ళండి (AncientWisdom Portal)</span> 🏛️
+      </a>
+    </div>
+    <p><span class="lang-en">Śvāsa Mahā Vijñān Interactive Laboratory • Strictly faithful to Parts 1 &amp; 2 (Samartha Sadguru Vedapīṭhamu, Tenali).</span> <span class="dual-sep">•</span> <span class="lang-te">అశ్వనీ సూక్త సహిత శ్వాస మహా విజ్ఞాన్ (1 &amp; 2 భాగాలు • సమర్థ సద్గురు వేదపీఠము, తెనాలి).</span></p>
+  </footer>
+
+  <script src="data_part1.js"></script>
+  <script src="data_part2.js"></script>
+  <script src="swasa.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kauṭilya's Arthaśāstra (अर्थशास्त्रम् • అర్థశాస్త్రము) — Statecraft, Rāja-Maṇḍala &amp; Metrology</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="../SwasaMahaVignanam/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-lang="dual">
+
+  <div class="ambient-glow glow-sun"></div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="sun-icon"><img src="favicon.svg" alt="Arthaśāstra" width="24" height="24" style="display:block;"></div>
+        <div class="logo-text">
+          <h1>Arthaśāstra</h1>
+          <span>कौटिलीय अर्थशास्त्रम् • కౌటిల్య అర్థశాస్త్రము • Statecraft &amp; Economics</span>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-segmented" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-opt active" data-lang-val="dual"><span class="lang-full">🌐 Dual</span><span class="lang-short">Dual</span></button>
+          <button type="button" class="lang-opt" data-lang-val="telugu"><span class="lang-full">తెలుగు</span><span class="lang-short">తెలుగు</span></button>
+          <button type="button" class="lang-opt" data-lang-val="english"><span class="lang-full">English</span><span class="lang-short">Eng</span></button>
+        </div>
+        <button id="menuToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+  <aside id="navDrawer" class="nav-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <div class="sun-icon" style="width:34px;height:34px;box-shadow:none;"><img src="favicon.svg" alt="Artha" width="20" height="20"></div>
+        <div>
+          <div class="lang-en" style="font-weight:700;color:#fff;font-size:1.02rem;">Arthaśāstra Index</div>
+          <div class="lang-te" style="font-weight:700;color:var(--gold-bright);font-size:0.95rem;">అర్థశాస్త్ర విషయ సూచిక</div>
+        </div>
+      </div>
+      <button id="closeDrawer" class="drawer-close-btn" aria-label="Close">✕</button>
+    </div>
+    <nav class="drawer-nav-list">
+      <a href="#sec-overview" class="drawer-nav-item active"><span class="drawer-item-icon">📜</span><span class="drawer-item-text"><span class="lang-en">1. 15 Adhikaraṇas &amp; 4 Vidyās</span><span class="lang-te">1. 15 అధికరణలు &amp; 4 విద్యలు</span></span></a>
+      <a href="#sec-saptanga" class="drawer-nav-item"><span class="drawer-item-icon">👑</span><span class="drawer-item-text"><span class="lang-en">2. Saptāṅga (7 Limbs) &amp; 18 Tīrthas</span><span class="lang-te">2. సప్తాంగాలు &amp; 18 తీర్థులు</span></span></a>
+      <a href="#sec-mandala" class="drawer-nav-item"><span class="drawer-item-icon">🎯</span><span class="drawer-item-text"><span class="lang-en">3. 12-King Rāja-Maṇḍala &amp; Ṣāḍguṇya</span><span class="lang-te">3. 12 రాజుల రాజమండలం &amp; షాడ్గుణ్యం</span></span></a>
+      <a href="#sec-metrology" class="drawer-nav-item"><span class="drawer-item-icon">⚖️</span><span class="drawer-item-text"><span class="lang-en">4. Weights, Measures &amp; 5-Year Yuga</span><span class="lang-te">4. తూకాలు, కొలతలు &amp; 5 ఏళ్ళ యుగం</span></span></a>
+      <a href="#sec-wealth" class="drawer-nav-item"><span class="drawer-item-icon">💰</span><span class="drawer-item-text"><span class="lang-en">5. Wealth, Treasury &amp; 40 Leaks</span><span class="lang-te">5. ధన సంపద, ఖజానా &amp; 40 దోషాలు</span></span></a>
+      <a href="#sec-law" class="drawer-nav-item"><span class="drawer-item-icon">🏛️</span><span class="drawer-item-text"><span class="lang-en">6. Civil, Consumer Law &amp; Interest</span><span class="lang-te">6. న్యాయ, వినియోగదారుల చట్టాలు</span></span></a>
+      <a href="#sec-calamities" class="drawer-nav-item"><span class="drawer-item-icon">⚠️</span><span class="drawer-item-text"><span class="lang-en">7. Calamities &amp; 4 Royal Vices</span><span class="lang-te">7. రాజ్య వ్యసనాలు &amp; దోషాలు</span></span></a>
+      <a href="#sec-war" class="drawer-nav-item"><span class="drawer-item-icon">⚔️</span><span class="drawer-item-text"><span class="lang-en">8. War Formations &amp; Siegecraft</span><span class="lang-te">8. వ్యూహాలు &amp; దుర్గ విజయం</span></span></a>
+      <a href="#sec-governance" class="drawer-nav-item"><span class="drawer-item-icon">🕰️</span><span class="drawer-item-text"><span class="lang-en">9. Royal Routine, Envoys &amp; Salaries</span><span class="lang-te">9. రాజ దినచర్య, దూతలు &amp; వేతనాలు</span></span></a>
+      <a href="#sec-adhyakshas" class="drawer-nav-item"><span class="drawer-item-icon">🏗️</span><span class="drawer-item-text"><span class="lang-en">10. City Zoning &amp; 30+ Superintendents</span><span class="lang-te">10. నగర నిర్మాణం &amp; అధ్యక్షులు</span></span></a>
+      <a href="#sec-forensics" class="drawer-nav-item"><span class="drawer-item-icon">🔬</span><span class="drawer-item-text"><span class="lang-en">11. Inheritance, Guilds &amp; Forensics</span><span class="lang-te">11. వారసత్వం &amp; న్యాయ పరీక్షలు</span></span></a>
+      <a href="#sec-treaties-tantra" class="drawer-nav-item"><span class="drawer-item-icon">📖</span><span class="drawer-item-text"><span class="lang-en">12. Treaties, Book XIV &amp; 32 Tantrayuktis</span><span class="lang-te">12. సంధులు &amp; 32 తంత్రయుక్తులు</span></span></a>
+      <a href="#sec-quiz" class="drawer-nav-item"><span class="drawer-item-icon">🎓</span><span class="drawer-item-text"><span class="lang-en">13. Mastery Assessment Quiz</span><span class="lang-te">13. జ్ఞాన పరీక్ష (క్విజ్)</span></span></a>
+    </nav>
+  </aside>
+
+  <main class="main-wrap">
+    <section class="hero-banner">
+      <div class="hero-badge">👑 <span class="lang-en">Kauṭilya's Arthaśāstra • 15 Adhikaraṇas (150 Chapters)</span><span class="dual-sep">•</span><span class="lang-te">కౌటిల్య అర్థశాస్త్రము (15 అధికరణలు)</span></div>
+      <h2 class="hero-title">Kauṭilya's Arthaśāstra — Statecraft, Strategy &amp; Economy</h2>
+      <div class="hero-subtitle-te">సుఖస్య మూలం ధర్మః • ధర్మస్య మూలం అర్థః • అర్థస్య మూలం రాజ్యమ్</div>
+      <p class="hero-desc">
+        <span class="lang-en">The classical Mauryan treatise on statecraft, economics, diplomacy, and administration by Ācārya Kauṭilya (Cāṇakya): featuring the 4 Vidyās, Saptāṅga 7 Limbs of State, 18 Tīrthas, interactive 12-King Rāja-Maṇḍala geopolitical ring, 6-fold Ṣāḍguṇya policy, and Book II Ch. 19–20 Weights, Measures &amp; 5-Year Yuga Calendar.</span>
+        <span class="lang-te"><br>ఆచార్య కౌటిల్యుని (చాణక్యుని) ప్రామాణిక రాజనీతి &amp; ఆర్థిక శాస్త్రం: 4 విద్యలు, రాజ్య సప్తాంగాలు, 18 తీర్థులు, 12 రాజుల రాజమండల చక్రం, షాడ్గుణ్య నీతి, మరియు 2వ అధికరణం లోని తూకాలు, కొలతలు, 5 ఏళ్ళ యుగ కాలమానం.</span>
+      </p>
+      <div class="hero-stats">
+        <div class="stat-pill"><div class="val">15</div><div class="lbl"><span class="lang-en">Adhikaraṇas (Books)</span><span class="dual-sep">/</span><span class="lang-te">అధికరణలు</span></div></div>
+        <div class="stat-pill"><div class="val">7</div><div class="lbl"><span class="lang-en">Saptāṅga Limbs (VI.1)</span><span class="dual-sep">/</span><span class="lang-te">రాజ్య సప్తాంగాలు</span></div></div>
+        <div class="stat-pill"><div class="val">12</div><div class="lbl"><span class="lang-en">Rāja-Maṇḍala Kings (VI.2)</span><span class="dual-sep">/</span><span class="lang-te">రాజమండల రాజులు</span></div></div>
+        <div class="stat-pill"><div class="val">18</div><div class="lbl"><span class="lang-en">Tīrthas (Officials, I.12)</span><span class="dual-sep">/</span><span class="lang-te">అష్టాదశ తీర్థులు</span></div></div>
+      </div>
+    </section>
+
+    <section id="sec-overview" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">1. The 4 Vidyās &amp; 15 Adhikaraṇas (Books)</span></h3><div class="section-title-te"><span class="lang-te">1. చతుర్విద్యలు &amp; పంచదశ అధికరణలు</span></div></div>
+        <span class="ch-badge">Books I–XV</span>
+      </div>
+      <div id="secOverviewBody"></div>
+    </section>
+
+    <section id="sec-saptanga" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">2. Saptāṅga (7 Limbs of State) &amp; 18 Tīrthas</span></h3><div class="section-title-te"><span class="lang-te">2. సప్తాంగ సిద్ధాంతం &amp; అష్టాదశ తీర్థులు</span></div></div>
+        <span class="ch-badge">Book VI.1 &amp; Book I.12</span>
+      </div>
+      <div id="secSaptangaBody"></div>
+    </section>
+
+    <section id="sec-mandala" class="study-section" style="border-color:rgba(245,185,66,0.35);">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">3. Interactive 12-King Rāja-Maṇḍala &amp; Ṣāḍguṇya Policy</span></h3><div class="section-title-te"><span class="lang-te">3. ద్వాదశ రాజమండలం &amp; షాడ్గుణ్య విదేశాంగ నీతి</span></div></div>
+        <span class="ch-badge">Book VI.2 &amp; VII.1</span>
+      </div>
+      <div id="secMandalaBody"></div>
+    </section>
+
+    <section id="sec-metrology" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">4. Weights, Measures &amp; 5-Year Yuga Calendar</span></h3><div class="section-title-te"><span class="lang-te">4. తూకాలు, కొలతలు &amp; 5 ఏళ్ళ యుగ కాలమానము</span></div></div>
+        <span class="ch-badge">Book II, Ch. 19–20</span>
+      </div>
+      <div id="secMetrologyBody"></div>
+    </section>
+
+    <section id="sec-wealth" class="study-section" style="border-color:rgba(16,185,129,0.35);">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">5. Wealth Accumulation, Treasury &amp; 40 Embezzlement Traps</span></h3><div class="section-title-te"><span class="lang-te">5. ధనార్జన, కోశాగారం &amp; 40 ధనలోపాల నివారణ</span></div></div>
+        <span class="ch-badge">Books II &amp; V</span>
+      </div>
+      <div id="secWealthBody"></div>
+    </section>
+
+    <section id="sec-law" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">6. Civil, Commercial, Consumer Law &amp; Interest Rates</span></h3><div class="section-title-te"><span class="lang-te">6. ధర్మస్థీయ, కంటకశోధన &amp; వడ్డీ నియమాలు</span></div></div>
+        <span class="ch-badge">Books III–IV</span>
+      </div>
+      <div id="secLawBody"></div>
+    </section>
+
+    <section id="sec-calamities" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">7. State Calamities (Vyasanas) &amp; The 4 Royal Vices</span></h3><div class="section-title-te"><span class="lang-te">7. సప్తాంగ వ్యసనాలు &amp; కామక్రోధ దోషాలు</span></div></div>
+        <span class="ch-badge">Book VIII</span>
+      </div>
+      <div id="secCalamitiesBody"></div>
+    </section>
+
+    <section id="sec-war" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">8. War Formations (Vyūhas), Saṅghas &amp; Siegecraft</span></h3><div class="section-title-te"><span class="lang-te">8. యుద్ధ వ్యూహాలు, సంఘవృత్తం &amp; దుర్గలంబోపాయం</span></div></div>
+        <span class="ch-badge">Books IX–XV</span>
+      </div>
+      <div id="secWarBody"></div>
+    </section>
+
+    <section id="sec-governance" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">9. Royal 8-Part Routine, Envoys &amp; State Salary Scale</span></h3><div class="section-title-te"><span class="lang-te">9. రాజ దినచర్య (ఆహ్నికమ్), దూతలు &amp; వేతన శ్రేణులు</span></div></div>
+        <span class="ch-badge">Books I &amp; V</span>
+      </div>
+      <div id="secGovernanceBody"></div>
+    </section>
+
+    <section id="sec-adhyakshas" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">10. Capital Zoning &amp; The 30+ Departmental Superintendents</span></h3><div class="section-title-te"><span class="lang-te">10. దుర్గనివేశము &amp; 30+ అధ్యక్షుల విధులు</span></div></div>
+        <span class="ch-badge">Book II (Adhyakṣas)</span>
+      </div>
+      <div id="secAdhyakshasBody"></div>
+    </section>
+
+    <section id="sec-forensics" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">11. Inheritance, Guilds, Forensics &amp; Penal Schedules</span></h3><div class="section-title-te"><span class="lang-te">11. దాయభాగం, సంఘాలు, ఆశుమృతక పరీక్ష &amp; దండనలు</span></div></div>
+        <span class="ch-badge">Books III–IV</span>
+      </div>
+      <div id="secForensicsBody"></div>
+    </section>
+
+    <section id="sec-treaties-tantra" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">12. Specific Treaties, Book XIV &amp; All 32 Tantrayuktis</span></h3><div class="section-title-te"><span class="lang-te">12. సంధి భేదాలు, ఔపనిషదికం &amp; 32 తంత్రయుక్తులు</span></div></div>
+        <span class="ch-badge">Books VII, XIV–XV</span>
+      </div>
+      <div id="secTreatiesTantraBody"></div>
+    </section>
+
+    <section id="sec-quiz" class="study-section">
+      <div class="section-header">
+        <div><h3 class="section-title"><span class="lang-en">13. Arthaśāstra Mastery Quiz</span></h3><div class="section-title-te"><span class="lang-te">13. అర్థశాస్త్ర జ్ఞాన పరీక్ష</span></div></div>
+        <span class="ch-badge">20 Questions</span>
+      </div>
+      <div id="secQuizBody"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div style="margin-bottom: 1.25rem;">
+      <a href="../index.html" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid rgba(245, 185, 66, 0.45); color: #fff; padding: 0.65rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.92rem; background: rgba(245, 185, 66, 0.12);">
+        <span class="lang-en">← Go to AncientWisdom Portal (प्राचीन ज्ञानम् • ప్రాచీన జ్ఞానము)</span>
+        <span class="lang-te">← ప్రాచీన జ్ఞానము పోర్టల్ కు వెళ్ళండి (AncientWisdom Portal)</span> 🏛️
+      </a>
+    </div>
+    <p><span class="lang-en">Kauṭilya's Arthaśāstra Interactive Laboratory • Strictly grounded in Books I–XV (R. Shamasastry / R.P. Kangle canonical structure).</span> <span class="dual-sep">•</span> <span class="lang-te">కౌటిల్య అర్థశాస్త్రము (15 అధికరణలు).</span></p>
+  </footer>
+
+  <script src="arthashastra.js"></script>
+</body>
+</html>
