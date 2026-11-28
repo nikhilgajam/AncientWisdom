@@ -9,9 +9,11 @@
 ## 2. File Inventory
 | File | Lines | Bytes | Role |
 | :--- | ---: | ---: | :--- |
-| `index.html` | 216 | 17,380 | 11-section layout (`sec-overview`..`sec-quiz`) with sticky header, language toggle, drawer nav, and animated CSS Asana styles |
-| `yoga.js` | 587 | 63,989 | Canonical Yoga Sūtra & Haṭha datasets, animated CSS posture diagrams for all 15 Āsanas & 12 Sūrya Namaskāra steps, Bhrāmarī Web Audio pacer, and 15-question quiz |
+| `index.html` | 216 | 17,380 | 12-section layout (`sec-overview`..`sec-quiz`) with sticky header, language toggle, drawer nav, and animated CSS Asana styles |
+| `yoga.js` | 730+ | 68,000+ | Canonical Yoga Sūtra, Haṭha, Sūrya Namaskāra & VBT datasets, animated CSS posture diagrams, Bhrāmarī pacer, RMS-normalized sequential-loop 10-Nāda player, and 18-Q quiz |
+| `audio/` | 11 files | — | Local audio assets (`01_cini.wav`..`10_megha_garjana.ogg` + `breath_chime.wav`) |
 | `favicon.svg` | 8 | 668 | Standalone SVG vector icon |
+| `README.md` | — | — | Module documentation |
 
 ## 3. Section Map (`index.html` — 11 Sections)
 1. `#sec-overview` — 1. Structure of Pātañjala Yoga Sūtras (4 Pādas: Samādhi, Sādhana, Vibhūti, Kaivalya)

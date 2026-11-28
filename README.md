@@ -17,15 +17,15 @@ The entire collection is hosted statically via **GitHub Pages**, providing zero-
 | **1. KaTaPaYadi Master (कटपयादि • కటపయాది)** | 🟢 Live | Ancient Indian alphanumeric cipher, mnemonic studio, $\pi$ decoder & dual Sanskrit/Telugu foundation shlokas | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Katapayadi/) | [`./Katapayadi`](Katapayadi/) |
 | **2. Sūrya Siddhānta (सूर्यसिद्धान्त • సూర్యసిద్ధాంతః)** | 🟢 Live | Canonical astronomy, live ephemeris, Nakshatra visualizer, and epicycle simulator | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/SuryaSiddhanta/) | [`./SuryaSiddhanta`](SuryaSiddhanta/) |
 | **3. Vedic Mathematics (वैदिकगणितम् • వైదికగణితము)** | 🟢 Live | Complete 4-tier mental computation studio: 16 Sūtras + 13 Upa-Sūtras, Duplex squaring & Flag division | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/VedicMath/) | [`./VedicMath`](VedicMath/) |
-| **4. Āyurveda (आयुर्वेदः • ఆయుర్వేదము)** | 🟢 Live | Science of Life: Tridoṣa, Pañca-Mahābhūta, Prakṛti, Tri-Guṇa, Agni & Āma, Ṣaḍ-Rasa, Ṛtucaryā, Dinacaryā | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Ayurveda/) | [`./Ayurveda`](Ayurveda/) |
+| **4. Āyurveda (आयुर्वेदः • ఆయుర్వేదము)** | 🟢 Live | Science of Life: Tridoṣa, Pañca-Mahābhūta, Prakṛti, Tri-Guṇa, Agni & Āma, Ṣaḍ-Rasa, Ṛtucaryā, Dinacaryā & Suśruta Saṁhitā (107 Marmas, 101 Yantras) | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Ayurveda/) | [`./Ayurveda`](Ayurveda/) |
 | **5. Pañcāṅga (पञ्चाङ्गम् • పంచాంగము)** | 🟢 Live | Five Limbs of Time, Dynamic 60-Year Jovian Cycle, Kāla-Māna Units Converter & precision Muhūrtas | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Panchanga/) | [`./Panchanga`](Panchanga/) |
-| **6. Chandaḥ-śāstra (छन्दःशास्त्रम् • ఛందశ్శాస్త్రము)** | 🟢 Live | World's earliest binary system, Meru Prastāra (Pascal's Triangle), Live Metre Scanner & Cognitive Neuroscience of Mantras | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Chandas/) | [`./Chandas`](Chandas/) |
+| **6. Chandaḥ-śāstra (छन्दःशास्त्रम् • ఛందశ్శాస్త్రము)** | 🟢 Live | Beginner-to-Pro Sanskrit Studio (Picture-Word Cards, Flashcards, 23,040+ Sentence Builder), Pingala's Binary, Meru Prastāra & Live Metre Scanner | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Chandas/) | [`./Chandas`](Chandas/) |
 | **7. Vāstu-śāstra (వాస్తు శాస్త్రము • वास्तुशास्त्रम्)** | 🟢 Live | Sri Gouru Thirupati Reddy's 16-Zone Matrix, Vīthi Śūla (Road Thrusts), Gunakam 90° Set-Square & Layout Diagnostic | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Vaastu/) | [`./Vaastu`](Vaastu/) |
-| **8. Bṛhat Jātaka (बृहज्जातकम् • బృహజ్జాతకము)** | 🟢 Live | Varāhamihira's 28-chapter Natal Astrology: Ṣaḍvarga, Āyurdāya, Daśās, 336-Bindu Aṣṭakavarga, 32 Nābhasa Yogas, Naṣṭajātaka & 36 Drekkaṇas | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/BrihatJataka/) | [`./BrihatJataka`](BrihatJataka/) |
+| **8. Bṛhat Jātaka (बृहज्जातकम् • బృహజ్జాతకము)** | 🟢 Live | Varāhamihira's 28-chapter Natal Astrology: D-1/D-9 North & South Indian Kundali, Ṣaḍvarga, Āyurdāya, Daśās, 336-Bindu Aṣṭakavarga, 32 Nābhasa Yogas & 36 Drekkaṇas | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/BrihatJataka/) | [`./BrihatJataka`](BrihatJataka/) |
 | **9. Bṛhat Saṁhitā (बृहत्संहिता • బృహత్సంహిత)** | 🟢 Live | Varāhamihira's 107-chapter Encyclopaedia: Kūrmavibhāga, 195-Day Rain & Droṇas, 81-Pada Vāstu, Dakārgala, Pañca Mahāpuruṣa, Gandhārṇava Perfumes, Śākuna & Gocara | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/BrihatSamhita/) | [`./BrihatSamhita`](BrihatSamhita/) |
 | **10. Śvāsa Mahā Vijñān (శ్వాస మహా విజ్ఞాన్)** | 🟢 Live | Complete 2-part Breath Science & Aśvinī Sūktam Lab: 21,600 Breaths, 12-Aṅgula Siddhis, 72,000 Nāḍīs, Hamsa Gamanam SVG, Drāṁ & 108-Cycle Kriyā Yoga | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/SwasaMahaVignanam/) | [`./SwasaMahaVignanam`](SwasaMahaVignanam/) |
-| **11. Yoga Śāstra (योगशास्त्रम् • యోగశాస్త్రము)** | 🟢 Live | Pātañjala Yoga Sūtras & Haṭha Yoga Pradīpikā: 4 Pādas, 5 Vṛttis, 5 Kleśas, Aṣṭāṅga 8 Limbs, 6 Ṣaṭkarmas, 8 Kumbhakas (Web Audio Bhrāmarī) & 10 Mudrās | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/YogaShastra/) | [`./YogaShastra`](YogaShastra/) |
-| **12. Kauṭilya's Arthaśāstra (अर्थशास्त्रम् • అర్థశాస్త్రము)** | 🟢 Live | 15 Adhikaraṇas, Saptāṅga 7 Limbs, 18 Tīrthas, Interactive 12-King Rāja-Maṇḍala Ring, Ṣāḍguṇya Policy & Book II Weights/5-Year Yuga Converter | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Arthashastra/) | [`./Arthashastra`](Arthashastra/) |
+| **11. Yoga Śāstra (योगशास्त्रम् • యోగశాస్త్రము)** | 🟢 Live | Pātañjala Yoga Sūtras, Haṭha Yoga Pradīpikā, 15 Animated Āsanas, 12-Step Sūrya Namaskāra, 10 Nāda Audio Loop & Vijñāna Bhairava Tantra (112 Dhāraṇās) | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/YogaShastra/) | [`./YogaShastra`](YogaShastra/) |
+| **12. Kauṭilya's Arthaśāstra (अर्थशास्त्रम् • అర్థశాస్త్రము)** | 🟢 Live | Complete 15-Book Statecraft: Saptāṅga, 12-King Rāja-Maṇḍala, Wealth & 40 Embezzlement Traps, Law & Forensics, 28+ Adhyakṣas, Salaries & 32 Tantrayuktis | [**Launch App 🚀**](https://nikhilgajam.github.io/AncientWisdom/Arthashastra/) | [`./Arthashastra`](Arthashastra/) |
 
 ---
 
@@ -192,6 +192,24 @@ Complete bilingual (**Dual / తెలుగు / English**) interactive digital
 - **Sādhana Labs & Aśvinī Sūktam**: Web Audio guided breath pacer (Body Scan, Soham, 5-Day Pūrṇimā, Chakra Flow, **Drāṁ Sādhana** counter), **108-cycle Kriyā Yoga / Sāvitrī Sādhana**, full **12-verse Aśvinī Sūktam** with Red-Light mode, and searchable **162-topic Book Index**.
 
 👉 [**Launch Śvāsa Mahā Vijñān**](https://nikhilgajam.github.io/AncientWisdom/SwasaMahaVignanam/) • [Read Documentation](./SwasaMahaVignanam/README.md)
+
+---
+
+### 11. [Yoga Śāstra (योगशास्त्रम् • యోగశాస్త్రము)](./YogaShastra/)
+Complete bilingual (**Dual / తెలుగు / English**) interactive sanctuary uniting **Pātañjala Yoga Sūtras**, **Haṭha Yoga Pradīpikā**, **12-Step Sūrya Namaskāra**, and **Vijñāna Bhairava Tantra**:
+- **Yoga Sūtras & Haṭha Foundations**: 4 Pādas, 5 Vṛttis, 5 Kleśas, 9 Antarāyas, Aṣṭāṅga 8-limb map, **15 animated Āsanas**, 6 Ṣaṭkarmas, 8 Kumbhakas (with local chime & Bhrāmarī Web Audio pacer), 10 Mahā-Mudrās, Mitāhāra/Pathya diet, and Nāḍī Śuddhi.
+- **10 Inner Nāda Sounds & Vijñāna Bhairava Tantra**: Normalized sequential-loop audio player for all 10 Nāda sounds (`YogaShastra/audio/`), enlarged *3 Upāyas & Breath-Gap Doorway* SVG visual guide, and all **112 Dhāraṇās** across 10 bilingual pillars.
+
+👉 [**Launch Yoga Śāstra**](https://nikhilgajam.github.io/AncientWisdom/YogaShastra/) • [Read Documentation](./YogaShastra/README.md)
+
+---
+
+### 12. [Kauṭilya's Arthaśāstra (अर्थशास्त्रम् • అర్థశాస్త్రము)](./Arthashastra/)
+Complete bilingual (**Dual / తెలుగు / English**) 13-section laboratory covering all **15 Adhikaraṇas (150 Chapters)**:
+- **Statecraft, Diplomacy & Strategy**: 4 Vidyās, Saptāṅga, 18 Tīrthas, interactive 12-King Rāja-Maṇḍala SVG, Ṣāḍguṇya, 4 Upāyas, 4 Upadhās, 9 Spy Classes, Battle *Vyūhas*, Siegecraft, and Royal 8-Part Timetable.
+- **Wealth, Law, Forensics & Tantrayuktis**: 4-fold wealth cycle, 7 revenue sources, **40 Embezzlement Traps**, Profit & Interest Simulator, Civil/Consumer Law, Forensics (*Āśumṛtaka-parīkṣā*), State Salary Scale (`48,000`–`60` *paṇas*), 28+ filterable *Adhyakṣas*, and all **32 *Tantrayuktis***.
+
+👉 [**Launch Arthaśāstra**](https://nikhilgajam.github.io/AncientWisdom/Arthashastra/) • [Read Documentation](./Arthashastra/README.md)
 
 ---
 
